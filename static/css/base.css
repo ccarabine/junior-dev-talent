@@ -1,0 +1,93 @@
+html {
+    height: 100%;
+}
+
+body {
+
+    height: calc(100vh - 164px);
+    color: #555;
+    font-family: 'Roboto';
+}
+
+/* --- color variables --- */
+:root {
+    /* CSS HEX */
+    --color-midnight-blue: #00447C;
+
+  }
+
+
+/* from Bulma */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.logo-font {
+    text-transform: uppercase;
+    color: var(--color-midnight-blue);
+}
+
+.main-logo-link {
+    width: fit-content;
+}
+
+/* --- Shop styling --- */
+.shop-now-button {
+    background: black;
+    color: white;
+    min-width: 260px;
+}
+
+.btn-black {
+    background: black;
+    color: white;
+}
+
+/* --- buttons --- */
+.shop-now-button:hover,
+.shop-now-button:active,
+.shop-now-button:focus,
+.btn-black:hover,
+.btn-black:active,
+.btn-black:focus {
+    background: #222;
+    color: white;
+}
+
+.text-black {
+    color:black !important;
+}
+
+.border-black {
+    border: 1px solid black !important;
+}
+
+/* -------------------------------- Media Queries */
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
+/* fixed top navbar only on medium and up */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    /* add 164 pixels of padding to our header container class
+    to push the body down to the bottom of the main page header.*/
+    .header-container {
+        padding-top: 164px;
+    }
+}
