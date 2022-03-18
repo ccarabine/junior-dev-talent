@@ -59,7 +59,7 @@
 
     <title>Junior Dev Talent {% block extra_title %}{% endblock %}</title>
   </head>
-  <body>
+  <body class="d-flex flex-column min-vh-100">
     <header class="container-fluid fixed-top">
       <div id="topnav" class="row bg-white pt-lg-2 d-none d-md-flex">
           <div class="col-12 col-lg-6 col-md-8 my-auto py-1 py-lg-0 text-center text-lg-left">
@@ -86,6 +86,7 @@
                                   <a href="" class="dropdown-item">Product Management</a>
                               {% endif %}
                               <a href="" class="dropdown-item">My Profile</a>
+                              <a href="{% url 'account_change_password' %}" class="dropdown-item nav-color" aria-label="Change password">Change password</a>
                               <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                           {% else %}
                               <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
@@ -131,6 +132,7 @@
     {% endif %}
 
     {% block page_header %}
+    
     {% endblock %}
 
     {% block content %}
@@ -158,6 +160,7 @@
           </div>
           <div class="col-6">
             <div class="text-center pb-3">
+            <img src="{{ MEDIA_URL }}facebook.png" alt="facebook image" class="thumbnail newsletter-icon-facebook">
             <img src="media/facebook.png" alt="facebook image" class="thumbnail newsletter-icon-facebook"> 
             <h5 class="pt-2">Keep up to date with all our latest offers</h5>
             <div class="pt-3">

@@ -49,6 +49,21 @@ body {
 }
 
 
+    /* --- fooer styling --- */
+a:link,
+a:visited,
+a:active,
+a:focus{
+    color: var(--color-midnight-blue) !important;
+    
+    text-decoration: none;
+    cursor: pointer;
+}
+a:hover {
+    color:black !important;
+    text-decoration: underline;
+  }
+
 /* Icon styling */
 .newsletter-icon{
     width:5%;
@@ -68,21 +83,7 @@ body {
 .icon-size{
     width:50%;
 }
-/* --- fooer styling --- */
-.footer-links:link,
-.footer-links:visited,
-.footer-links:active,
-.footer-links:focus{
 
-    color:black !important;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.footer-links:hover {
-    color: var(--color-midnight-blue) !important;
-    transform: scale(1.5);
-  }
 
 
 /* --- card styling --- */
@@ -141,6 +142,12 @@ hr.solid {
     left: -5000px;
 }
 
+/* add 164 pixels of padding to our header container class
+to push the body down to the bottom of the main page header.*/
+.header-container {
+    padding-top: 164px;       
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
@@ -160,11 +167,7 @@ hr.solid {
         z-index: 1030;
     }
 
-    /* add 164 pixels of padding to our header container class
-    to push the body down to the bottom of the main page header.*/
-    .header-container {
-        padding-top: 150px;       
-    }
+   
 }
 
 @media (max-width: 768px) {
@@ -180,6 +183,7 @@ hr.solid {
     .newsletter-icon{
         width:15%;
     }
+
   }
 
 @media (max-width: 576px) {

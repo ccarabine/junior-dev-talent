@@ -15,6 +15,7 @@
                 <a href="" class="dropdown-item">Talent Center Management</a>
             {% endif %}
             <a href="" class="dropdown-item">My Profile</a>
+            <a href="{% url 'account_change_password' %}" class="dropdown-item nav-color" aria-label="Change password">Change password</a>
             <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
         {% else %}
             <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
