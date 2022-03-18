@@ -53,8 +53,14 @@ body {
 .newsletter-icon{
     width:5%;
 }
+.newsletter-icon-footer{
+    width:15%;
+}
 
 .newsletter-input-width{
+    width:80%
+}
+.newsletter-input-width-footer{
     width:50%
 }
 .icon-size{
@@ -105,6 +111,17 @@ body {
 hr.solid {
     border-top: 3px solid #bbb;
   }
+
+/* -------- Mail chimp styling----- */
+  #mc_embed_signup_form{
+     padding:0;
+     width:600px;
+    }
+  
+.mail-chimp-style{
+    position: absolute;
+    left: -5000px;
+}
 
 /* -------------------------------- Media Queries */
 
