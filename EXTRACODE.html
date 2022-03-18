@@ -1,0 +1,282 @@
+<div id="forum-section">
+    <div class="container mt-4 text-center header-container-scroll">
+        <h2>Start connecting with developers today</h2>
+       
+        <div class="row mt-4">
+            <div class="col col-sm-12 col-md-2 mb-2">
+                <img class="card-img-top img-fluid icon-size" src="media/communities.png" alt="software developer image divider"> 
+            </div>
+            <div class="col col-sm-12 col-md-2 mb-2">
+                <img class="card-img-top img-fluid icon-size " src="media/training.png" alt="software developer image divider"> 
+            </div>
+            <div class="col col-sm-12 col-md-2 mb-2">
+                <img class="card-img-top img-fluid icon-size" src="media/skills.png" alt="software developer image divider"> 
+            </div>
+            <div class="col col-sm-12 col-md-2 mb-2">
+                <img class="card-img-top img-fluid icon-size" src="media/interview.png" alt="software developer image divider"> 
+            </div>
+            <div class="col col-md-2 mb-2 d-lg-none d-xl-block">
+                <img class="card-img-top img-fluid icon-size" src="media/skills.png" alt="software developer image divider"> 
+            </div>
+            <div class="col col-md-2 mb-2 d-lg-none d-xl-block">
+                <img class="card-img-top img-fluid icon-size" src="media/skills.png" alt="software developer image divider"> 
+            </div>
+        </div>
+        <div class="row">
+            <small class="col col-sm-12 col-md-2">Join the Community forum
+            </small>
+            <small class="col col-sm-12 col-md-2">Share knowledge, answer questions, stay up to date and much more with like minded professionals
+            </small>
+            <small class="col col-sm-12 col-md-2">Develop your technical skills
+            </small>
+            <small class="col col-sm-12 col-md-2">Share interview tips and tricks
+            </small>
+            <small class="col col-md-2 d-lg-none d-xl-block">Share interview tips and tricks
+            </small>
+            <small class="col col-md-2 d-lg-none d-xl-block">Free for Junior Developers 
+            </small>
+        </div>
+    
+        <div class="text-center mt-4 background-grey">
+            <h2>Upload  your profile for employers to review 5 quick Interview questions and skills </h2>  
+            <button type="button" class="btn btn-dark mt-4 mb-4">Register</button>
+        </div>
+    </div>
+ 
+</div>
+
+
+
+6.05
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container ">
+        <img class="card-img-top img-fluid mx-4" src="media/header-image.png" alt="hero image">
+        
+        <!--  3 cards section-->
+        <div data-spy="scroll" data-target=".card-deck" data-offset="50" class="row background-grey px-5 py-3 my-3 ">
+            <div class="card-deck ">
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4 card shadow p-3 bg-white rounded">
+                    <a class="card-links scroll-link" href="#forum-section">
+                        <h5 class="card-header text-center">Forum</h5>
+                        <div class="card-img-top text-center pt-3 logo-font">
+                            <img class="card-img-top img-fluid icon-size" src="media/forum-card.png" alt="software developer image divider"> 
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Join the conversation in our community for junior software developers looking to get hired fast</p>
+                        </div>
+                    </a>
+                </div>
+               
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4 card shadow p-3  bg-white rounded">
+                    <a class="card-links" href="#growth-hub-section">
+                        <h5 class="card-header text-center">Growth hub</h5>
+                        <div class="card-img-top text-center pt-3 logo-font">
+                            <img class="card-img-top img-fluid icon-size " src="media/enablement.png" alt="software developer image divider"> 
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Power your potential with our selection of enablement courses, mentor programmes and events in our growth hub shop
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4 card shadow p-3  bg-white rounded">
+                    <a class="card-links" href="#talent-center-section">
+                        <h5 class="card-header text-center">Talent Center</h5>
+                        <div class="card-img-top text-center pt-3 logo-font">
+                            <img class="card-img-top img-fluid icon-size " src="media/talent-card.png" alt="software developer image divider"> 
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Employers find the best fresh Talent hot off the press before they're snatched up in our talent center
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!--Newsletter section-->
+        <div class="text-center background-grey my-4 py-4 px-4">
+    
+            <img src="media/newsletter.png" alt="newsletter image" class="thumbnail newsletter-icon"> 
+            <h2>Stay up to date with everything</h2>
+            <h5>Subscribe to our newsletter</h5>
+            <form action="https://herokuapp.us20.list-manage.com/subscribe/post?u=e5b424993e29ce6be7320595a&amp;id=dcba1d7b60" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate " target="_blank" novalidate>
+                <div class="input-group input-left newsletter-input-width mx-auto mt-3">
+                    <input type="email" value="" name="EMAIL" id="mce-EMAIL" required="required" class="form-control" placeholder="Enter your email" aria-labelledby="subscribe">
+                    
+                    <span class="input-group-append">
+                        <button class="btn btn-success" type="submit" id="subscribe">Subscribe</button>
+                    </span>
+                </div>
+            </form>
+            <!--End mc_embed_signup-->
+        </div>
+        <hr class="solid mx-5">
+
+        <!--Forum section-->
+        <div id="forum-section">
+            
+            <div class="container mt-4 text-center ">
+                <h2>Start connecting with developers today</h2>
+               
+                <div class="card-deck mt-4">
+
+                    <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                        <img class="card-img-top img-fluid icon-size" src="media/communities.png" alt="software developer image divider"> 
+                        <div class="card-body">
+                          <p class="card-text">Join the Community forum</p>
+                        </div>
+                    </div>
+                    <div class=" col-12 col-sm-12 col-md-2 col-lg-2">
+                        <img class="card-img-top img-fluid icon-size " src="media/training.png" alt="software developer image divider"> 
+                        <div class="card-body">
+                          <p class="card-text">Share knowledge, answer questions</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                        <img class="card-img-top img-fluid icon-size " src="media/skills.png" alt="software developer image divider"> 
+                        <div class="card-body">
+                          <p class="card-text">Develop your technical skills</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                        <img class="card-img-top img-fluid icon-size " src="media/interview.png" alt="software developer image divider"> 
+                        <div class="card-body">
+                          <p class="card-text">Share interview tips and tricks</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                        <img class="card-img-top img-fluid icon-size " src="media/training.png" alt="software developer image divider"> 
+                        <div class="card-body">
+                          <p class="card-text">Share interview tips and tricks</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                        <img class="card-img-top img-fluid icon-size" src="media/skills.png" alt="software developer image divider"> 
+                        <div class="card-body">
+                          <p class="card-text">Free for Junior Developers </p>
+                        </div>
+                    </div>
+                    <!--
+                    <div class="col col-sm-12 col-md-2 mb-2">
+                        <img class="card-img-top img-fluid icon-size" src="media/skills.png" alt="software developer image divider"> 
+                    </div>
+                    <div class="col col-sm-12 col-md-2 mb-2">
+                        <img class="card-img-top img-fluid icon-size" src="media/interview.png" alt="software developer image divider"> 
+                    </div>
+                    <div class="col col-md-2 mb-2 d-lg-none d-xl-block">
+                        <img class="card-img-top img-fluid icon-size" src="media/skills.png" alt="software developer image divider"> 
+                    </div>
+                    <div class="col col-md-2 mb-2 d-lg-none d-xl-block">
+                        <img class="card-img-top img-fluid icon-size" src="media/skills.png" alt="software developer image divider"> 
+                    </div>
+                </div>
+                <div class="row">
+                    <small class="col col-sm-12 col-md-2">Join the Community forum
+                    </small>
+                    <small class="col col-sm-12 col-md-2">Share knowledge, answer questions, stay up to date and much more with like minded professionals
+                    </small>
+                    <small class="col col-sm-12 col-md-2">Develop your technical skills
+                    </small>
+                    <small class="col col-sm-12 col-md-2">Share interview tips and tricks
+                    </small>
+                    <small class="col col-md-2 d-lg-none d-xl-block">Share interview tips and tricks
+                    </small>
+                    <small class="col col-md-2 d-lg-none d-xl-block">Free for Junior Developers 
+                    </small>
+                </div>
+            -->
+                <div class="text-center mt-4 background-grey">
+                    <h2>Upload  your profile for employers to review 5 quick Interview questions and skills </h2>  
+                    <button type="button" class="btn btn-dark mt-4 mb-4">Register</button>
+                </div>
+            </div>
+         
+        </div>
+                    
+  
+        <!-- divider image-->
+        <img class="card-img-top img-fluid mb-4" src="media/software-developer.png" alt="software developer image divider">
+        <hr class="solid mx-5">
+
+        <!--Growth hub section-->
+        <div id="growth-hub-section">
+            <h2 class="text-center">Visit the Growth Hub Shop</h2>     
+            <div class="container">
+                <div class="row mt-4">
+                    <div class="col mb-2">
+                        <img class="card-img-top img-fluid icon-size" src="media/communities.png" alt="software developer image divider"> 
+                    </div>
+                    <small class="col">Courses</small>
+                    <div class="col mb-2">
+                        <img class="card-img-top img-fluid icon-size" src="media/training.png" alt="software developer image divider"> 
+                    </div>
+                    <small class="col">Mentorships</small>
+                </div>
+                <div class="row">
+                    <div class="col mb-2">
+                        <img class="card-img-top img-fluid icon-size" src="media/skills.png" alt="software developer image divider"> 
+                    </div>
+                    <small class="col">CV Writing Skills</small>
+                    <div class="col mb-2">
+                        <img class="card-img-top img-fluid icon-size" src="media/interview.png" alt="software developer image divider"> 
+                    </div>
+                    <small class="col">Events</small>
+                </div>
+                
+                <div class="text-center mt-4 background-grey">
+                    <h2>Visit our Growth Hub Shop and power your potential with our selection of courses, mentor programmes and events</h2>  
+                    <button type="button" class="btn btn-dark mt-4 mb-4">Sign up</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- divider image-->
+        <img class="card-img-top img-fluid mb-4 mt-4" src="media/mentor.png" alt="software developer image divider">
+        <hr class="solid">
+    
+        <!--Growth hub section-->
+        <div id="talent-center-section">
+            <div class="container">
+                <h2 class="text-center">Get connected with Junior Developers instantly with a few simple steps</h2>
+                <div class="row mt-4 mt-4 ">
+                    <div class="col mb-2 text-center">
+                        <img class="card-img-top img-fluid icon-size" src="media/subscribe.png" alt="software developer image divider"> 
+                    </div>
+                    <div class="col mb-2 text-center">
+                        <img class="card-img-top img-fluid icon-size" src="media/talent-search.png" alt="software developer image divider"> 
+                    </div>
+                    <div class="col mb-2 text-center">
+                        <img class="card-img-top img-fluid icon-size" src="media/contact.png" alt="software developer image divider"> 
+                    </div>
+                </div>
+                <div class="row text-center mt-4">
+                    <h3 class="col">Subscribe</h3>
+                    <h3 class="col">Find talent</h3>
+                    <h3 class="col">Contact</h3>
+                </div>
+                <div class="text-center mt-4 mb-4 background-grey">
+                    <h2>Finding junior devs has never been easier</h2>  
+                    <button type="button" class="btn btn-dark mt-4 mb-4">Subscribe</button>
+                </div>
+            </div>
+        </div>
+     
+        <!-- divider image-->
+        <img class="card-img-top img-fluid mb-4 mt-4" src="media/talent.png" alt="software developer image divider">
+          
+    </div>
+
+   
+{% endblock %}

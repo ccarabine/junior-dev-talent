@@ -13,8 +13,21 @@ body {
 :root {
     /* CSS HEX */
     --color-midnight-blue: #00447C;
+    --color-cool-grey-c: #f5f6f7;
 
   }
+
+/* colour styling */
+.text-black {
+    color:black !important;
+}
+
+.border-black {
+    border: 1px solid black !important;
+}
+.background-grey{
+    background-color: var(--color-cool-grey-c);
+}
 
 
 /* from Bulma */
@@ -34,6 +47,36 @@ body {
 .main-logo-link {
     width: fit-content;
 }
+
+
+/* Icon styling */
+.newsletter-icon{
+    width:5%;
+}
+
+.newsletter-input-width{
+    width:50%
+}
+.icon-size{
+    width:50%;
+}
+
+/* --- card styling --- */
+.card-links:link,
+.card-links:visited,
+.card-links:active,
+.card-links:focus{
+    background: white;
+    color:black !important;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.card-links:hover {
+    color:black !important;
+    transform: scale(1.01);
+  }
+
 
 /* --- Shop styling --- */
 .shop-now-button {
@@ -58,13 +101,10 @@ body {
     color: white;
 }
 
-.text-black {
-    color:black !important;
-}
-
-.border-black {
-    border: 1px solid black !important;
-}
+/* Solid border */
+hr.solid {
+    border-top: 3px solid #bbb;
+  }
 
 /* -------------------------------- Media Queries */
 
@@ -88,6 +128,31 @@ body {
     /* add 164 pixels of padding to our header container class
     to push the body down to the bottom of the main page header.*/
     .header-container {
-        padding-top: 164px;
+        padding-top: 150px;       
     }
 }
+
+@media (max-width: 768px) {
+    .container {
+      max-width: 95%;
+    }
+    .icon-size{
+        width:20%;
+    }
+    .newsletter-input-width{
+        width:90%
+    }
+    .newsletter-icon{
+        width:15%;
+    }
+  }
+
+@media (max-width: 576px) {
+    .container {
+      max-width: 100%;
+    }
+    .icon-size{
+        width:10%;
+    }
+
+  }
