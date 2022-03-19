@@ -1,8 +1,12 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block page_header %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'forum/css/forum.css' %}">
 
+{% endblock %}
+
+{% block page_header %}
     <div class="container header-container">
         <div class="row">
             <div class="col"></div>
@@ -11,7 +15,44 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container ">
 
-    </div>           
+<div class="container">
+    <!--Title and describtion-->
+
+    <h2 class="logo-font text-center">Community Forum</h2>
+    <div class="row justify-content-center text-center mx-auto">
+        <h5>Make learning a community activity.  Our forum is the perfect place to ask questions, share tips and get clarity from fellow people</h5>
+    </div>
+   
+    <div class="group mt-4 mb-2">
+        <div class="item line pb-1"></div>
+        <h5 class="item text logo-font">Room Topics</h5>
+        <div class="item line pb-1"></div>
+    </div>
+    <!--Display room topics-->
+    <div class="row">
+        {% for topic in topics %}
+        <div class="col-sm-12 col-md-6 mb-4">
+            <div class="card h-100 ">
+
+                <div class="card-horizontal">
+                
+                    <div class="width-size">
+                        <img class="img-thumbnail " src="{{ topic.topic_image.url }}" alt="image for {{ topic.name }}">
+                      
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Discussion Room</h4>
+                         <p class="cad ">{{ topic.friendly_name |capfirst  }}</p>
+                    </div>
+                </div>
+             
+                
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+  
+</div>
+   
 {% endblock %}

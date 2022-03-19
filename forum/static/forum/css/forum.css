@@ -1,0 +1,38 @@
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+   
+  }
+
+
+  .img-thumbnail{
+    width:80%;
+    border:0;
+  
+  }
+  .width-size{
+    width:20%;
+    text-align: center;
+    margin: auto;
+  }
+
+
+/* --- all rooms title styling --- */
+.group { 
+  display: table;
+  width: 80%;
+  margin: 0 auto;
+} 
+.item {
+    display: table-cell;
+}
+.text { 
+    white-space: nowrap;
+    width: 1%;
+    padding: 0 10px;
+}
+.line {
+    border-bottom: 1px solid #000;
+    position: relative;
+    top: -.5em;
+}
