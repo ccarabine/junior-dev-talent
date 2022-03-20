@@ -35,9 +35,9 @@ class PostListView(ListView):
     Returns:
         Render of post list with context
     """
-    template_name = "postlist.html"
+    template_name = "post_list.html"
     context_object_name = "post_list"
-    paginate_by = 5
+    paginate_by = 6
 
     def get_queryset(self):  # get all the posts by topic
         queryset = Post.objects.filter(topic__slug=self.kwargs["topic"])
