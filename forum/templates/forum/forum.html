@@ -34,25 +34,21 @@
         {% for topic in topics %}
         <div class="col-sm-12 col-md-6 mb-4">
             <div class="card h-100 ">
-
-                <div class="card-horizontal">
-                
-                    <div class="width-size">
-                        <img class="img-thumbnail " src="{{ topic.topic_image.url }}" alt="image for {{ topic.name }}">
-                      
+                <a href="/forum/room/{{ topic.slug }}" class="dropdown-item nav-color" aria-label="{{ topic.name }}">
+                    <div class="card-horizontal">
+                        <div class="width-size">
+                            <img class="img-thumbnail " src="{{ topic.topic_image.url }}" >
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Discussion Room</h4>
+                            <p class="cad ">{{ topic.friendly_name |capfirst  }}</p>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <h4 class="card-title">Discussion Room</h4>
-                         <p class="cad ">{{ topic.friendly_name |capfirst  }}</p>
-                    </div>
-                </div>
-             
-                
+                </a>
             </div>
         </div>
         {% endfor %}
     </div>
-  
 </div>
    
 {% endblock %}

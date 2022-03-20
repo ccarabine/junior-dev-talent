@@ -2,7 +2,7 @@
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django.db import models
-
+from django.contrib.auth.models import User
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -22,6 +22,13 @@ class Topic(models.Model):
         null=True,
         blank=True,
         )
+    slug = models.SlugField(
+        verbose_name=("slug"),
+        max_length=150,
+        unique=True,
+        null=True,
+        blank=True,
+        )
     topic_image = models.ImageField(
         verbose_name=("topic_image"),
         null=True,
@@ -33,7 +40,7 @@ class Topic(models.Model):
         verbose_name = "Topic"
         verbose_name_plural = "Topics"
         ordering = ['name']
-        
+  
     def __str__(self):
         """
         Returns the topic name string
@@ -43,7 +50,7 @@ class Topic(models.Model):
             The topic name string
         """
         return str(self.name)
-    
+
     def get_friendly_name(self):
         """
         Returns the friendly name string
@@ -53,3 +60,75 @@ class Topic(models.Model):
             The friendly name name string
         """
         return self.friendly_name
+
+class Post(models.Model):
+    """
+    A class for the post model
+    """
+    topic = models.ForeignKey(
+        Topic,
+        on_delete=models.PROTECT,
+        default=1)
+    title = models.CharField(
+        verbose_name=("title"),
+        max_length=200,
+        unique=True
+        )
+    body = models.TextField(
+        verbose_name=("body"),
+        blank=True
+        )
+    user_name = models.CharField(
+        verbose_name=("user_name"),
+        max_length=200,
+        blank=True,
+        null=True
+        )
+    owner = models.ForeignKey(
+        User, on_delete=models.CASCADE,
+        related_name="post_owner")
+    slug = models.SlugField(
+        verbose_name=("slug"),
+        max_length=150,
+        unique=True
+        )
+    updated = models.DateTimeField(
+        verbose_name=("updated"),
+        auto_now=True
+        )
+    created = models.DateTimeField(
+        verbose_name=("created"),
+        auto_now_add=True
+        )
+    post_image = models.ImageField(
+        verbose_name=("post_image"),
+        null=True,
+        blank=True,
+        upload_to=""
+        )
+
+
+    class Meta:
+        verbose_name = "Post"
+        verbose_name_plural = "Posts"
+        ordering = ["-created"]
+
+    def __str__(self):
+        """
+        Returns the post name string
+        Args:
+            self (object): self.
+        Returns:
+            The post title string
+        """
+        return str(self.title)
+
+    def get_absolute_url(self):
+        """
+        Returns the post.pk string
+        Args:
+            self (object): self.
+        Returns:
+            The url string topic/post pk
+        """
+        return f"/topic/{self.pk}"

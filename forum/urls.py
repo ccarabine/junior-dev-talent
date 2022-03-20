@@ -3,5 +3,11 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-     path('', views.forum, name='forum')
+     path('',
+          views.forum,
+          name='forum'),
+     path("room/<topic>/",
+          views.PostListView.as_view(),
+          name="topic"),
+     
 ]
