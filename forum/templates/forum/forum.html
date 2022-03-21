@@ -34,7 +34,7 @@
         {% for topic in topics %}
         <div class="col-sm-12 col-md-6 mb-4">
             <div class="card h-100 ">
-                <a href="/forum/topic/{{ topic.slug }}"  aria-label="{{ topic.name }}">
+                <a href="/forum/{{ topic.slug }}"  aria-label="{{ topic.name }}">
                     <div class="card-horizontal">
                         <div class="width-size">
                             <img class="img-thumbnail " src="{{ topic.topic_image.url }}" >

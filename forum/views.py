@@ -3,15 +3,16 @@
 # Imports
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-from django.shortcuts import render, get_object_or_404
+from django.contrib import messages
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views.generic import ListView, DetailView
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+from django.template.defaultfilters import slugify
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+from .forms import PostForm
 from .models import Topic, Post
 
 
@@ -48,6 +49,7 @@ class PostListView(ListView):
         context["topic"] = Topic.objects.get(slug=self.kwargs["topic"])
         return context
 
+@method_decorator(login_required, name='dispatch')
 class PostDetailView(DetailView):
     """
     A view to show individual post
@@ -68,3 +70,36 @@ class PostDetailView(DetailView):
         context["post"] = post
     
         return context
+    
+@login_required
+def add_post(request, topic):
+    """
+    A view to add a post, redirects to the post when submitted
+    Args:
+        request (object): HTTP request object.
+        topic: topic
+    Returns:
+        Render of post form with context
+    """
+    if not request.user.is_authenticated:
+        messages.error(
+            request, 'Sorry, only logged in users can create a post.')
+        return redirect(reverse('home'))
+    form = PostForm()
+    if request.method == "POST":
+        form = PostForm(request.POST, request.FILES)
+        topic_obj = get_object_or_404(Topic, name=topic)
+
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.slug = slugify(request.POST["title"])
+            post.owner = request.user
+            post.user_name = request.user.username
+            post.topic = topic_obj
+            post.post_image = request.FILES.get("post_image")
+            post.owner = request.user
+            post.save()
+            messages.success(request, 'Post submitted')
+            return redirect(reverse("postdetail", args=[post.id]))
+    context = {"form": form, "topic": topic}
+    return render(request, "forum/postform.html", context)

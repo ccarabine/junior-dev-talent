@@ -28,8 +28,9 @@
         <h5 class="item text logo-font">{{ topic }}</h5>
         <div class="item line pb-1"></div>
     </div>
-   {{slug}}
-
+  
+    <a href="{% url 'addpost' topic %}" class="post-color card-links" aria-label="Create a new post"> -> Start a new post within this
+        topic</a>
     
     {% for post in post_list %}
         <div class="card mb-2 mt-2 card-post ">
