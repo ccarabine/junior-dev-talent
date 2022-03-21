@@ -7,7 +7,7 @@ from crispy_forms.layout import Submit, Row, Column, Layout, Field
 from crispy_forms.bootstrap import FormActions
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-from .models import Post
+from .models import Post, Comment
 
 
 class PostForm(forms.ModelForm):
@@ -59,4 +59,34 @@ class PostForm(forms.ModelForm):
                         )
                 ),
             ),
+        )
+class CommentForm(forms.ModelForm):
+    """
+    A class for comments
+    """
+    class Meta:
+        model = Comment
+        fields = ("comment_body",)
+  
+
+    def __init__(self, *args, **kwargs):
+        """
+        Set commentbody label to false and show comment body and submit button
+        Args:
+            self (object): Self object
+            *args: *args
+            **kwargs: **kwargs
+        Returns:
+            N/A
+        """
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.fields["comment_body"].label = False
+        self.helper.form_method = "post"
+        self.helper.layout = Layout(
+            Field("comment_body"),
+            Submit(
+                "submit",
+                "Add Comment",
+                css_class="btn btn-secondary"),
         )

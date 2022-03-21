@@ -5,17 +5,18 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django.contrib import messages
 from django.shortcuts import render, get_object_or_404, redirect, reverse
-from django.views.generic import ListView, DetailView, UpdateView, DeleteView
+from django.views.generic import ListView, DetailView, UpdateView, DeleteView, CreateView
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+from django.core.paginator import Paginator
 from django.template.defaultfilters import slugify
 from django.urls import reverse_lazy
 from django.contrib.messages.views import SuccessMessageMixin
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-from .forms import PostForm
-from .models import Topic, Post
+from .forms import PostForm, CommentForm
+from .models import Topic, Post, Comment
 
 
 def forum(request):
@@ -66,11 +67,21 @@ class PostDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(PostDetailView, self).get_context_data(**kwargs)
+        page = self.request.GET.get("page")
+        paginator = Paginator(self.object.comment_post.all(), 5)
         pk = self.kwargs["pk"]
+        form = CommentForm()
         post = get_object_or_404(Post, pk=pk)
-
+        comments = self.object.comment_post.all()
+        
+        context["page"] = page
+        context["paginator"] = paginator
+        context["object_list"] = context["paginator"].get_page(context["page"])
+        context["page_obj"] = paginator.get_page(page)
         context["post"] = post
-    
+        context["comments"] = comments
+        context["form"] = form
+
         return context
     
 @login_required
@@ -141,3 +152,45 @@ class DeletePostView(SuccessMessageMixin, DeleteView):
     template_name = "forum/delete_post.html"
     success_url = reverse_lazy("forum")
     success_message = "Post deleted"
+    
+@method_decorator(login_required, name='dispatch')
+class AddCommentView(SuccessMessageMixin, CreateView):
+    """
+    A view to add a comment
+    Args:
+        SuccessMessageMixin: SuccessMessageMixin (success message attribute)
+        CreateView: class based view
+    Returns:
+        Render of comment form with success message and context
+    """
+    model = Comment
+    form_class = CommentForm
+    template_name = "forum/commentform.html"
+    success_message = "Comment added"
+
+    def form_valid(self, form):
+        """
+        Set the post id and name to self instances
+        Returns form
+        Args:
+            self (object): self.
+            form (object): form.
+        Returns:
+            The form
+        """
+        form.instance.post_id = self.kwargs["pk"]
+        form.instance.name = self.request.user.username
+        return super().form_valid(form)
+
+    def get_context_data(self, **kwargs):
+        """
+        Gets the post, returns context
+        Args:
+            self (object): Self object
+            **kwargs: **kwargs
+        Returns:
+            Context
+        """
+        post = get_object_or_404(Post, pk=self.kwargs["pk"])
+        kwargs["post"] = post
+        return super().get_context_data(**kwargs)

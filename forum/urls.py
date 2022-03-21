@@ -21,5 +21,8 @@ urlpatterns = [
      path("topic/<int:pk>/remove",
           views.DeletePostView.as_view(),
           name="deletepost"),
+     path("topic/<int:pk>/comment/",
+          views.AddCommentView.as_view(),
+          name="addcomment"),
      
 ]

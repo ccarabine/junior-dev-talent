@@ -5,7 +5,7 @@ from django.contrib import admin
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-from .models import Topic, Post
+from .models import Topic, Post, Comment
 
 @admin.register(Topic)
 class TopicAdmin(admin.ModelAdmin):
@@ -40,4 +40,20 @@ class PostAdmin(admin.ModelAdmin):
     search_fields = (
         "title",
         "topic"
+        )
+    
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    """
+    Admin class for the comment model.
+    """
+    list_display = (
+        "name",
+        "comment_body",
+        "post",
+        "created"
+        )
+    search_fields = (
+        "name",
+        "body"
         )

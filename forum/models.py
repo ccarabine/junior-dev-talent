@@ -132,3 +132,48 @@ class Post(models.Model):
             The url string topic/post pk
         """
         return f"/forum/topic/{self.pk}"
+    
+class Comment(models.Model):
+    """
+    A class for the comment model
+    """
+    post = models.ForeignKey(
+        Post, on_delete=models.CASCADE,
+        related_name="comment_post"
+    )
+    name = models.CharField(
+        verbose_name=("name"),
+        max_length=80
+        )
+    comment_body = models.TextField(
+        verbose_name=("comment_body"),
+        )
+    created = models.DateTimeField(
+        verbose_name=("created"),
+        auto_now_add=True
+        )
+
+    class Meta:
+        ordering = ["created"]
+        verbose_name = "Comment"
+        verbose_name_plural = "Comments"
+
+    def __str__(self):
+        """
+        Returns the comment name string
+        Args:
+            self (object): self.
+        Returns:
+            The comment body by name string
+        """
+        return f"Comment {self.comment_body} by {self.name}"
+
+    def get_absolute_url(self):
+        """
+        Returns the post.id string
+        Args:
+            self (object): self.
+        Returns:
+            The url string forum/topic/post id
+        """
+        return f"/forum/topic/{self.post_id}"

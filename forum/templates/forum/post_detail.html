@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-
+{% load crispy_forms_tags %}
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'forum/css/forum.css' %}">
 
@@ -35,13 +35,14 @@
     <div class="row mb-3 ">
         <a href="{% url 'forum'%}" class="logo-font mr-2"> Back to forum
         </a>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
+       
         {% if user.id == post.owner.id %}
             <a href="{% url 'updatepost' post.pk %}" class="logo-font mr-2" aria-label="update post link"> Update</a>
             <a href="{% url 'deletepost' post.pk %}" class="logo-font mr-2" aria-label="delete post link">delete</a>
         {% endif %}
-    </div>
-    <div class="row">
-        <div class="col-sm-12 col-md-6">
             <div class="card-group">
                 <div class="card forum-border col mb-4">
             
@@ -66,14 +67,31 @@
                 </div>
             </div>
         </div>
-    </div>
+  
         <div class="col-sm-12 col-md-6">
-
-
+            gfdg
+            <div class="card-group">
+                <div class="card forum-border col mb-4">
+                    <h3 class="font-weight-bold mt-1 ">Comments </h3>
+                    <div class="card-body rounded">
+                        {% for comment in page_obj %}
+                            <p class="">  {{ comment.comment_body | safe}}</p>
+                                            
+                                <small class="mr-2"> Commented by {{comment.name|title}}</small>
+                                <small class="mr-2"> Created {{comment.created|timesince }} ago</small>
+                        
+                            <hr>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-  
+    
 </div>
+
+    
+
 {% endif %}
 
 {% endblock %}
