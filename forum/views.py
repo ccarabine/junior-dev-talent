@@ -4,8 +4,8 @@
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-from django.shortcuts import render
-from django.views.generic import ListView
+from django.shortcuts import render, get_object_or_404
+from django.views.generic import ListView, DetailView
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 
@@ -48,3 +48,23 @@ class PostListView(ListView):
         context["topic"] = Topic.objects.get(slug=self.kwargs["topic"])
         return context
 
+class PostDetailView(DetailView):
+    """
+    A view to show individual post
+   
+    Args:
+        DetailView: class based view
+    Returns:
+        Render of post detail with context
+    """
+    model = Post
+    template_name = "forum/post_detail.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(PostDetailView, self).get_context_data(**kwargs)
+        pk = self.kwargs["pk"]
+        post = get_object_or_404(Post, pk=pk)
+
+        context["post"] = post
+    
+        return context

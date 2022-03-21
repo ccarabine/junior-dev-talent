@@ -28,14 +28,13 @@
         <h5 class="item text logo-font">{{ topic }}</h5>
         <div class="item line pb-1"></div>
     </div>
-   
+   {{slug}}
 
     
     {% for post in post_list %}
         <div class="card mb-2 mt-2 card-post ">
-
             <div class="card-body px-2 pt-2 rounded">
-                <a href="" class="card-links" aria-label="Go to post">
+                <a href="{% url 'postdetail' post.id %}" class="card-links" aria-label="Go to post">
                 <h5 class="post-color">{{ post.title|title }}</h5>
                 </a>
                 <hr>

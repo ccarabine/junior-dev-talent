@@ -6,8 +6,11 @@ urlpatterns = [
      path('',
           views.forum,
           name='forum'),
-     path("room/<topic>/",
+     path("topic/<topic>/",
           views.PostListView.as_view(),
           name="topic"),
+     path("topic/<int:pk>",
+          views.PostDetailView.as_view(),
+          name="postdetail"),
      
 ]

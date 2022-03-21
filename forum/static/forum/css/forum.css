@@ -36,3 +36,8 @@
     position: relative;
     top: -.5em;
 }
+
+.forum-border{
+  border-top: 10px solid var(--color-midnight-blue) ;
+
+}
