@@ -131,4 +131,4 @@ class Post(models.Model):
         Returns:
             The url string topic/post pk
         """
-        return f"/topic/{self.pk}"
+        return f"/forum/topic/{self.pk}"

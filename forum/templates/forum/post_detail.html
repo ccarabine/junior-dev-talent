@@ -17,6 +17,8 @@
 {% block content %}
 {% if user.is_authenticated %}
 
+
+
 <div class="container ">    
     <h2 class="logo-font text-center"> Room topic: {{ post.topic }}</h2>
    
@@ -29,10 +31,14 @@
         <h5 class="item text logo-font">Post</h5>
         <div class="item line pb-1"></div>
     </div>
-
-    <a href="{{ post.topic.slug }}" class="header-links">
-        <h6 class="logo-font"> Back to {{ topic }} room topic</h6>
-    </a>
+    
+    <div class="row mb-3 ">
+        <a href="{% url 'forum'%}" class="logo-font mr-2"> Back to forum
+        </a>
+        {% if user.id == post.owner.id %}
+            <a href="{% url 'updatepost' post.pk %}" class="logo-font mr-2" aria-label="update post link"> Update</a>
+        {% endif %}
+    </div>
     <div class="row">
         <div class="col-sm-12 col-md-6">
             <div class="card-group">

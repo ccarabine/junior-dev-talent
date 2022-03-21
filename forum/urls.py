@@ -15,5 +15,8 @@ urlpatterns = [
      path("addpost/<topic>/",
           views.add_post,
           name="addpost"),
+     path("update/<int:pk>",
+          views.UpdatePostView.as_view(),
+          name="updatepost"),
      
 ]
