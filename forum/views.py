@@ -5,7 +5,7 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django.contrib import messages
 from django.shortcuts import render, get_object_or_404, redirect, reverse
-from django.views.generic import ListView, DetailView, UpdateView
+from django.views.generic import ListView, DetailView, UpdateView, DeleteView
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.template.defaultfilters import slugify
@@ -126,3 +126,18 @@ class UpdatePostView(SuccessMessageMixin, UpdateView):
     def get_queryset(self):
         owner = self.request.user
         return self.model.objects.filter(owner=owner)
+    
+@method_decorator(login_required, name='dispatch')
+class DeletePostView(SuccessMessageMixin, DeleteView):
+    """
+    A view to delete a post
+    Args:
+        SuccessMessageMixin: SuccessMessageMixin (success message attribute)
+        DeleteView: class based view
+    Returns:
+        Render of delete post with success message
+    """
+    model = Post
+    template_name = "forum/delete_post.html"
+    success_url = reverse_lazy("forum")
+    success_message = "Post deleted"

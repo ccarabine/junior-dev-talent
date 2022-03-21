@@ -18,5 +18,8 @@ urlpatterns = [
      path("update/<int:pk>",
           views.UpdatePostView.as_view(),
           name="updatepost"),
+     path("topic/<int:pk>/remove",
+          views.DeletePostView.as_view(),
+          name="deletepost"),
      
 ]

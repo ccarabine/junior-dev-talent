@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'forum/css/forum.css' %}">
+
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+{% block title %} Delete post {% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+    <div class="container ">    
+        <h2 class="logo-font text-center"> Room topic: {{ post.topic }}</h2>
+    
+        <div class="row justify-content-center text-center mx-auto">
+            <h5>Make learning a community activity.  Our forum is the perfect place to ask questions, share tips and get clarity from fellow people</h5>
+        </div>
+    
+        <div class="group mt-4 mb-2">
+            <div class="item line pb-1"></div>
+            <h5 class="item text logo-font">Delete Post </h5>
+            <div class="item line pb-1"></div>
+        </div>
+
+        {% if user.id == post.owner.id %}
+        <div class="form-group justify-content-center text-center mx-auto">
+            <form method="POST" enctype="multipart/form-data" class="mt-4">
+                {% csrf_token %}
+                <strong class="mb-4">Are you sure you want to delete post? </strong>
+                
+                <br>
+                <strong class="mb-4">{{post.title}}</strong>
+                <br>
+                <a href="{% url 'postdetail' post.id %}" class="mt-4 btn btn-secondary btn-border-none" aria-label="Go back to post">Cancel</a>
+                <button class="btn btn-danger mt-4" aria-label="delete post">Delete post! </button>
+            </form>
+        </div>
+        {% else %}
+            <h4>You can not delete this post</h4>
+        {% endif %}
+    </div>
+{% else %}
+    <h4>You are not logged in</h4>
+{% endif %}
+
+
+
+{% endblock %}
