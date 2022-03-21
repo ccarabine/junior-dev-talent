@@ -68,7 +68,7 @@ class PostDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(PostDetailView, self).get_context_data(**kwargs)
         page = self.request.GET.get("page")
-        paginator = Paginator(self.object.comment_post.all(), 5)
+        paginator = Paginator(self.object.comment_post.all(), 3)
         pk = self.kwargs["pk"]
         form = CommentForm()
         post = get_object_or_404(Post, pk=pk)
