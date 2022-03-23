@@ -35,10 +35,7 @@
         </div>
         <div class="row">
             <div class="col-sm-12 col-md-6">
-                {% if user.id == post.owner.id %}
-                    <a href="{% url 'updatepost' post.pk %}" class="logo-font mr-2" aria-label="update post link"> Update</a>
-                    <a href="{% url 'deletepost' post.pk %}" class="logo-font mr-2" aria-label="delete post link">delete</a>
-                {% endif %}
+
                 <div class="card-group">
                     <div class="card forum-border col mb-4">
                         <div class="card-body px-2 pt-2 post-color rounded">
@@ -53,22 +50,28 @@
                                 </a>
                             {% endif %}
                         </div>
-                           
                         <div class="card-body px-2 pt-2 post-color rounded">                       
                             <i class="far fa-comment"></i>
                             <span class="mr-1">{{post.comment_post.count}} </span>
                             <span class="mr-2"> Posted by {{post.user_name|title}}</span>
                             <span class="mr-2"> Created {{post.created|timesince }} ago</span>
                         </div>   
+                        {% if user.id == post.owner.id %}
+                            <small>
+                                <a href="{% url 'updatepost' post.pk %}" class="logo-font mr-2" aria-label="update post link"> Update</a>
+                                <a href="{% url 'deletepost' post.pk %}" class="logo-font mr-2" aria-label="delete post link">delete</a>
+                            </small>
+                        {% endif %}
                     </div>
                 </div>
             </div>
             <div class="col-sm-12 col-md-6">
-                <a href="{% url 'addcomment' post.pk %}" class="logo-font mr-2" aria-label="Add a comment link">Create Comment</a>
-                
-                <div class="card-group">
+                  <div class="card-group">
                     <div class="card forum-border col mb-4">
                         <h3 class="font-weight-bold mt-1 ">Comments </h3>
+                        <small>
+                            <a href="{% url 'addcomment' post.pk %}" class="logo-font mr-2" aria-label="Add a comment link">-> Add Comment</a>
+                        </small>
                         <div class="card-body rounded">
                             {% if not post.comment_post.all %}
                                 <span class="mb-2">No Comments Yet..</span>
@@ -77,13 +80,19 @@
                                     <p>  {{ comment.comment_body | safe}}</p>             
                                     <small class="mr-2"> Commented by {{comment.name|title}}</small>
                                     <small class="mr-2"> Created {{comment.created|timesince }} ago</small>
-                                    <hr>
+                                    {% if user.id == comment.owner.id %}
+                                        <br>
+                                        <small>
+                                            <a href="{% url 'updatecomment' comment.id %}" class="logo-font mr-2" aria-label="update comment link"> Update</a>
+                                            <a href="{% url 'deletecomment' comment.pk %}" class="logo-font mr-2" aria-label="delete comment link"> Delete</a>
+                                        </small>
+                                    {% endif %}
+                                    <hr>  
                                 {% endfor %}
                             {% endif %}
                         </div>
                         {% include 'forum/pagination.html' %}
                     </div>
-                   
                 </div>
             </div>
         </div>

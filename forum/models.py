@@ -141,6 +141,10 @@ class Comment(models.Model):
         Post, on_delete=models.CASCADE,
         related_name="comment_post"
     )
+    owner = models.ForeignKey(
+        User, on_delete=models.CASCADE,
+        default='',
+        related_name="comment_owner")
     name = models.CharField(
         verbose_name=("name"),
         max_length=80

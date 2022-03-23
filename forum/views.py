@@ -30,6 +30,7 @@ def forum(request):
     }
     return render(request, template, context)
 
+
 @method_decorator(login_required, name='dispatch')
 class PostListView(ListView):
     """
@@ -56,7 +57,7 @@ class PostListView(ListView):
 class PostDetailView(DetailView):
     """
     A view to show individual post
-   
+
     Args:
         DetailView: class based view
     Returns:
@@ -73,17 +74,18 @@ class PostDetailView(DetailView):
         form = CommentForm()
         post = get_object_or_404(Post, pk=pk)
         comments = self.object.comment_post.all()
-        
+        comment = Comment.objects.filter(owner=self.request.user)
         context["page"] = page
         context["paginator"] = paginator
         context["object_list"] = context["paginator"].get_page(context["page"])
         context["page_obj"] = paginator.get_page(page)
         context["post"] = post
         context["comments"] = comments
+        context["comment"] = comment
         context["form"] = form
-
         return context
-    
+
+
 @login_required
 def add_post(request, topic):
     """
@@ -132,12 +134,13 @@ class UpdatePostView(SuccessMessageMixin, UpdateView):
     form_class = PostForm
     template_name = "forum/update_post.html"
     success_message = "Post updated"
-   
+
 
     def get_queryset(self):
         owner = self.request.user
         return self.model.objects.filter(owner=owner)
-    
+
+
 @method_decorator(login_required, name='dispatch')
 class DeletePostView(SuccessMessageMixin, DeleteView):
     """
@@ -152,7 +155,8 @@ class DeletePostView(SuccessMessageMixin, DeleteView):
     template_name = "forum/delete_post.html"
     success_url = reverse_lazy("forum")
     success_message = "Post deleted"
-    
+
+
 @method_decorator(login_required, name='dispatch')
 class AddCommentView(SuccessMessageMixin, CreateView):
     """
@@ -180,6 +184,7 @@ class AddCommentView(SuccessMessageMixin, CreateView):
         """
         form.instance.post_id = self.kwargs["pk"]
         form.instance.name = self.request.user.username
+        form.instance.owner = self.request.user
         return super().form_valid(form)
 
     def get_context_data(self, **kwargs):
@@ -194,3 +199,38 @@ class AddCommentView(SuccessMessageMixin, CreateView):
         post = get_object_or_404(Post, pk=self.kwargs["pk"])
         kwargs["post"] = post
         return super().get_context_data(**kwargs)
+
+
+@method_decorator(login_required, name='dispatch')
+class UpdateCommentView(SuccessMessageMixin, UpdateView):
+    """
+    A view to edit a comment
+    Args:
+        SuccessMessageMixin: SuccessMessageMixin (success message attribute)
+        UpdateView: class based view
+    Returns:
+        Render of update comment with success message
+    """
+    model = Comment
+    form_class = CommentForm
+    template_name = "forum/update_comment.html"
+    success_message = "Comment updated"
+
+    def get_queryset(self):
+        owner = self.request.user
+        return self.model.objects.filter(owner=owner.id)
+
+@method_decorator(login_required, name='dispatch')
+class DeleteCommentView(SuccessMessageMixin, DeleteView):
+    """
+    A view to delete a comment
+    Args:
+        SuccessMessageMixin: SuccessMessageMixin (success message attribute)
+        DeleteView: class based view
+    Returns:
+        Render of delete comment with success message
+    """
+    model = Comment
+    template_name = "forum/delete_comment.html"
+    success_url = reverse_lazy("forum")
+    success_message = "Comment deleted"

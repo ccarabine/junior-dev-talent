@@ -17,7 +17,6 @@ class PostForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = ("title", "body", "post_image")
-  
 
     def __init__(self, *args, **kwargs):
         """
@@ -37,7 +36,7 @@ class PostForm(forms.ModelForm):
         self.fields['title'].label = False
         self.fields['body'].label = False
         self.fields["post_image"].label = False
-      
+
         self.helper.layout = Layout(
             Field(
                 "title",
@@ -50,7 +49,7 @@ class PostForm(forms.ModelForm):
                     Field(
                         "post_image",
                         placeholder="Image Upload")),
-                
+
                 FormActions(
                     Submit(
                         "submit",
@@ -67,7 +66,6 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ("comment_body",)
-  
 
     def __init__(self, *args, **kwargs):
         """

@@ -24,5 +24,10 @@ urlpatterns = [
      path("topic/<int:pk>/comment/",
           views.AddCommentView.as_view(),
           name="addcomment"),
-     
+     path("update/comment/<int:pk>",
+          views.UpdateCommentView.as_view(),
+          name="updatecomment"),
+     path("topic/comment/<int:pk>/remove",
+          views.DeleteCommentView.as_view(),
+          name="deletecomment"),
 ]

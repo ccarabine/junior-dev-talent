@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% load static %}
-{% load crispy_forms_tags %}
+
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'forum/css/forum.css' %}">
@@ -27,32 +27,31 @@
     
         <div class="group mt-4 mb-2">
             <div class="item line pb-1"></div>
-            <h5 class="item text logo-font">Update Post</h5>
+            <h5 class="item text logo-font">Update Comment</h5>
             <div class="item line pb-1"></div>
         </div>
 
         <a href="{% url 'forum' %}" class="header-links">
             <h6 class="logo-font"> Back to Forum</h6>
         </a>
-
-      <!-- {% if user.id == post.owner.id %}--> 
-        <div class="post-color mb-2 pt-1 pb-1 rounded">
-            <div class="col-12">
-                <div class="form-group">
-                    <form method="POST" enctype="multipart/form-data">
-                        {% csrf_token %}
-                        {% crispy form %}
-                    </form>
+        {% if user.id == comment.owner.id %}
+            <div class="post-color mb-2 pt-1 pb-1 rounded">
+                <div class="col-12">
+                    <div class="form-group">
+                        <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {% crispy form %}
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-    <!--    {% else %}
-            <h4>You can not edit this post</h4>
+        {% else %}
+            <h4>You can not edit this coment</h4>
         {% endif %}
     </div>
 {% else %}
     <h4>You are not logged in</h4>
-{% endif %}-->
+{% endif %}
 
 
 
