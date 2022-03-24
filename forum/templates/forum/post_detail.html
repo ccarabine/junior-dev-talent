@@ -55,8 +55,8 @@
                             <span class="mr-1">{{post.comment_post.count}} </span>
                             <span class="mr-2"> Posted by {{post.user_name|title}}</span>
                             <span class="mr-2"> Created {{post.created|timesince }} ago</span>
-                        </div>   
-                        {% if user.id == post.owner.id %}
+                        </div>
+                        {% if user.id == post.owner.id or request.user.is_superuser %}
                             <small>
                                 <a href="{% url 'updatepost' post.pk %}" class="logo-font mr-2" aria-label="update post link"> Update</a>
                                 <a href="{% url 'deletepost' post.pk %}" class="logo-font mr-2" aria-label="delete post link">delete</a>
@@ -80,7 +80,7 @@
                                     <p>  {{ comment.comment_body | safe}}</p>             
                                     <small class="mr-2"> Commented by {{comment.name|title}}</small>
                                     <small class="mr-2"> Created {{comment.created|timesince }} ago</small>
-                                    {% if user.id == comment.owner.id %}
+                                    {% if user.id == comment.owner.id or request.user.is_superuser %}
                                         <br>
                                         <small>
                                             <a href="{% url 'updatecomment' comment.id %}" class="logo-font mr-2" aria-label="update comment link"> Update</a>
