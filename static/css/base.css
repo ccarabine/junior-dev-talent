@@ -151,7 +151,11 @@ a:hover {
     transform: scale(1.01);
   }
 
-  
+.image-width {
+    width:auto;
+    height:200px;
+    text-align: center;
+}
 
 /* --- Shop styling --- */
 .shop-now-button {
@@ -164,6 +168,7 @@ a:hover {
     background: black;
     color: white;
 }
+
 
 /* --- buttons --- */
 .shop-now-button:hover,
