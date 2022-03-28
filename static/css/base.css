@@ -53,7 +53,7 @@ body {
     border-top: 10px solid var(--color-midnight-blue) ;
   
   }
-}
+
 /* from Bulma */
 .icon {
     align-items: center;
@@ -70,6 +70,23 @@ body {
 
 .main-logo-link {
     width: fit-content;
+}
+
+.btt-button {
+    height: 42px;
+    width: 42px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    
+}
+
+.btt-link {
+    cursor: pointer;
+}
+.fa-arrow-up:before{
+    color: var(--color-midnight-blue) !important;
+
 }
 
 .overlay {
@@ -181,6 +198,11 @@ to push the body down to the bottom of the main page header.*/
     padding-top: 164px;       
 }
 
+/* -------------------------------- pagination styling */
+.page-item.active .page-link{
+    background-color: var(--color-midnight-blue) !important;
+    border-color: var(--color-midnight-blue) !important;
+}
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
