@@ -29,7 +29,31 @@ body {
     background-color: var(--color-cool-grey-c);
 }
 
-
+/* --- sub header title styling --- */
+.group { 
+    display: table;
+    width: 80%;
+    margin: 0 auto;
+  } 
+  .item {
+      display: table-cell;
+  }
+  .text { 
+      white-space: nowrap;
+      width: 1%;
+      padding: 0 10px;
+  }
+  .line {
+      border-bottom: 1px solid #000;
+      position: relative;
+      top: -.5em;
+  }
+  
+  .forum-border{
+    border-top: 10px solid var(--color-midnight-blue) ;
+  
+  }
+}
 /* from Bulma */
 .icon {
     align-items: center;
@@ -222,6 +246,7 @@ to push the body down to the bottom of the main page header.*/
     .newsletter-icon{
         width:15%;
     }
+
  }
 
 @media (max-width: 576px) {
@@ -233,6 +258,10 @@ to push the body down to the bottom of the main page header.*/
     }
     .logo-font{
         font-size:80%;
+    }
+    .heading-responsive{
+        font-size:  1em;
+    }
   }
 
   @media (max-width: 400px) {
