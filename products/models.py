@@ -11,6 +11,12 @@ class Category(models.Model):
     """
     A class for the Category model
     """
+    class Meta:
+        """
+        Verbose name Categories
+        """
+        verbose_name_plural = 'Categories'
+        
     name = models.CharField(
         max_length=254
         )
@@ -44,10 +50,21 @@ class Product(models.Model):
     """
     A class for the Product model
     """
+    class Meta:
+        """
+        Verbose name Products
+        """
+        verbose_name_plural = 'Products'
+        
     category = models.ForeignKey(
         'Category', null=True,
         blank=True,
         on_delete=models.SET_NULL
+        )
+    sku = models.CharField(
+        max_length=254,
+        null=True,
+        blank=True
         )
     name = models.CharField(
         max_length=254

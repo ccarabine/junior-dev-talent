@@ -16,16 +16,19 @@ class ProductAdmin(admin.ModelAdmin):
     """
    
     list_display = (
+        'sku',
         "category",
         "name",
         "description",
         "price",
-        "rating"
+        "rating",
+        "image",
         )
     search_fields = (
         "name",
         "description"
         )
+    ordering = ('sku',)
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
