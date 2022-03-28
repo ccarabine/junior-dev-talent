@@ -8,7 +8,7 @@
     <div class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
         <form class="form" method="GET" action="{% url 'products' %}">
             <div class="input-group w-100">
-                <input class="form-control border border-blue rounded-0" type="text" name="q" placeholder="Search our site">
+                <input class="form-control border border-blue rounded-0" type="text" name="q" placeholder="Search our growth hub store">
                 <div class="input-group-append">
                     <button class="form-control form-control btn border border-blue rounded-0 logo-font" type="submit">
                         <span class="icon">
@@ -61,3 +61,22 @@
         </a>
     </li>
 {% endif %}
+ 
+<ul class="w-100 text-center d-block d-md-none">
+    <li class=" pb-3 list-inline-item ">
+        <a class="logo-font font-weight-bold mb-2" href="{% url 'forum' %}" id="all-products-link"  aria-haspopup="true" aria-expanded="false">
+            Forum
+        </a>          
+    </li>
+    <li class=" pb-3 list-inline-item">
+        <a class="logo-font font-weight-bold mb-2" href="{% url 'products' %}" id="all-products-link"  aria-haspopup="true" aria-expanded="false">
+            Growth Hub
+        </a>
+      
+    </li>
+    <li class=" pb-3 list-inline-item">
+        <a class="logo-font font-weight-bold " href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Talent Center
+        </a>
+    </li>
+</ul>

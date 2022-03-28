@@ -113,17 +113,38 @@
                       </a>
                   </li>
                   {% endif %}
+               
               </ul>
+             
           </div>
+         
+            <ul class="w-100 text-center ">
+                <li class=" pb-3 list-inline-item ">
+                    <a class="logo-font font-weight-bold h5 mr-5 mb-2" href="{% url 'forum' %}" id="all-products-link"  aria-haspopup="true" aria-expanded="false">
+                        Forum
+                    </a>          
+                </li>
+                <li class=" pb-3 list-inline-item">
+                    <a class="logo-font font-weight-bold h5 mr-5 mb-2" href="{% url 'products' %}" id="all-products-link"  aria-haspopup="true" aria-expanded="false">
+                        Growth Hub
+                    </a>
+                  
+                </li>
+                <li class=" pb-3 list-inline-item">
+                    <a class="logo-font font-weight-bold h5 mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Talent Center
+                    </a>
+                </li>
+            </ul>
       </div>
-  
+     
       <div class="row bg-white">
         <nav class="navbar navbar-expand-md navbar-light w-100">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             {% include 'includes/mobile-top-header.html' %}
-            {% include 'includes/main-nav.html' %}
+           
         </nav>
       </div>
 

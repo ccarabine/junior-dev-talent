@@ -231,17 +231,18 @@ to push the body down to the bottom of the main page header.*/
     .icon-size{
         width:10%;
     }
-   
+    .logo-font{
+        font-size:80%;
   }
 
   @media (max-width: 400px) {
  
     .logo-font{
-        font-size:60%;
+        font-size:70%;
     }
 
   }
-  @media (max-width: 300px) {
+  @media (max-width: 330px) {
  
     .logo-font{
         font-size:40%;
