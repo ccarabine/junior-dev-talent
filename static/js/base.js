@@ -11,3 +11,6 @@ if (messages)
   setTimeout(function () {
     alert.close();
   }, 5500);
+
+
+$('.toast').toast('show');
