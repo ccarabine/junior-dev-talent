@@ -81,7 +81,10 @@ body {
     
 }
 
-.btt-link {
+.btt-link,
+.update-link,
+.remove-item
+ {
     cursor: pointer;
 }
 .fa-arrow-up:before{
