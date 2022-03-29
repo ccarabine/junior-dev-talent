@@ -334,6 +334,10 @@ to push the body down to the bottom of the main page header.*/
     .jd-font{
         font-size:55%;
     }
+    .increment-qty, .decrement-qty {
+        padding: .2rem .3rem !important;
+    }
+
 }
 @media (max-width: 768px) {
     .container {
@@ -377,6 +381,9 @@ to push the body down to the bottom of the main page header.*/
  
     .logo-font{
         font-size:40%;
+    }
+    .fa-xsm{
+        font-size:5.75em;
     }
 
   }
