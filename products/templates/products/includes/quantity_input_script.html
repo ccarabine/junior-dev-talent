@@ -1,0 +1,79 @@
+es (39 sloc)  1.59 KB
+   
+<script type="text/javascript">
+
+    // Disable +/- buttons outside 1-99 range
+    // handle enabling and disabling the buttons based on the value of the input they are controlling.
+    // as each input will be associated with a specific product id.
+    // pass that item id into the .function and use it to get the current value of the input based on its id attribute.
+    // to disable the buttons. the prop method sets the disabled attribute on each button to true or false
+    // depending on whether the current value is less than 2 or greater than 98.
+    // We'll want to call this function each time either button is clicked.
+
+
+
+
+
+    function handleEnableDisable(itemId) {
+        var currentValue = parseInt($(`#id_qty_${itemId}`).val());
+        var minusDisabled = currentValue < 2;
+        var plusDisabled = currentValue > 98;
+        $(`#decrement-qty_${itemId}`).prop('disabled', minusDisabled);
+        $(`#increment-qty_${itemId}`).prop('disabled', plusDisabled);
+    }
+
+    // Ensure proper enabling/disabling of all inputs on page load
+    // Since the default of the input box is 1
+    // It allows us to click the minus button and potentially add a quantity of 0 to the bag.
+    // The input elements min and Max will prevent this via form validation.
+    // Add functionality just to solidify this.
+    // First  disable the minus button by default. By getting all the quantity inputs on the page.
+    // Iterating through them. And for each one calling the enable/disable function
+    // as soon as the page loads.
+
+    var allQtyInputs = $('.qty_input');
+    for(var i = 0; i < allQtyInputs.length; i++){
+        var itemId = $(allQtyInputs[i]).data('item_id');
+        handleEnableDisable(itemId);
+    }
+    
+    // Check enable/disable every time the input is changed
+    // enable/disable function won't be called if the user uses the built-in up and down arrows
+    // in the number box to change the quantity.
+    // But we can make that happen by listening to the change event on the quantity input
+    // and calling it every time the input changes. 
+    $('.qty_input').change(function() {
+        var itemId = $(this).data('item_id');
+        handleEnableDisable(itemId);
+    });
+
+    // Increment quantity
+    // On the click event of the increment quantity button.
+    // 1. Prevent the default button action.
+    // 2. And then find the closest input box.
+    // The closest method here searches up to the Dom. And the find method searches down.
+    // So from the button element go up the tree to the closest input group class. And 
+    // then drill down to find the first element with the class quantity input.
+    // 3. Cache the value that's currently in it in a variable called currentValue.
+    // 4.And use that variable to set the input boxes new value to the current value plus one.
+    // 5. Get the item id using the data method which pulls it from the data item id
+    // attribute we added on the button.
+    $('.increment-qty').click(function(e) {
+       e.preventDefault();
+       var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
+       var currentValue = parseInt($(closestInput).val());
+       $(closestInput).val(currentValue + 1);
+       var itemId = $(this).data('item_id');
+       handleEnableDisable(itemId);
+    });
+
+    // Decrement quantity
+    $('.decrement-qty').click(function(e) {
+       e.preventDefault();
+       var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
+       var currentValue = parseInt($(closestInput).val());
+       $(closestInput).val(currentValue - 1);
+       var itemId = $(this).data('item_id');
+       handleEnableDisable(itemId);
+    });
+</script>

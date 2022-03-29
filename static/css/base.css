@@ -180,10 +180,10 @@ a:hover {
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus,
-.btn-black:hover,
-.btn-black:active,
-.btn-black:focus {
-    background: #222;
+.btn-blue:hover,
+.btn-blue:active,
+.btn-blue:focus {
+    background: var(--color-midnight-blue);
     color: white;
 }
 
