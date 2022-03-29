@@ -159,18 +159,20 @@ a:hover {
 
 /* --- Shop styling --- */
 .shop-now-button {
-    background: black;
+    background: var(--color-midnight-blue);
     color: white;
     min-width: 260px;
 }
 
-.btn-black {
-    background: black;
+.btn-blue {
+    background: var(--color-midnight-blue);
     color: white;
 }
 
 .btn-outline-blue{
+    background:white;
     color: var(--color-midnight-blue) !important;
+    border:1px solid var(--color-midnight-blue);
 }
 
 
