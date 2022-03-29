@@ -55,6 +55,7 @@ class Product(models.Model):
         Verbose name Products
         """
         verbose_name_plural = 'Products'
+        ordering = ['category']
         
     category = models.ForeignKey(
         'Category', null=True,
