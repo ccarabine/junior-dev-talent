@@ -169,6 +169,10 @@ a:hover {
     color: white;
 }
 
+.btn-outline-blue{
+    color: var(--color-midnight-blue) !important;
+}
+
 
 /* --- buttons --- */
 .shop-now-button:hover,
