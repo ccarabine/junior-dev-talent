@@ -7,14 +7,15 @@ body {
     height: calc(100vh - 164px);
     color: #555;
     font-family: 'Roboto';
+    
+   
 }
 
 /* --- color variables --- */
 :root {
     /* CSS HEX */
-    --color-midnight-blue: #00447C;
+    --color-midnight-blue:#00447C;
     --color-cool-grey-c: #f5f6f7;
-
   }
 
 /* colour styling */
@@ -106,7 +107,7 @@ a:link,
 a:visited,
 a:active,
 a:focus{
-    color: var(--color-midnight-blue) !important;
+    color: var(--color-midnight-blue) ;
     
     text-decoration: none;
     cursor: pointer;
@@ -135,8 +136,6 @@ a:hover {
 .icon-size{
     width:50%;
 }
-
-
 
 /* --- card styling --- */
 .card-links:link,
@@ -167,9 +166,13 @@ a:hover {
     min-width: 260px;
 }
 
-.btn-blue {
+.btn-blue  {
     background: var(--color-midnight-blue);
     color: white;
+}
+
+.btn-white-txt {
+    color:white !important;
 }
 
 .btn-outline-blue{
@@ -177,7 +180,6 @@ a:hover {
     color: var(--color-midnight-blue) !important;
     border:1px solid var(--color-midnight-blue);
 }
-
 
 /* --- buttons --- */
 .shop-now-button:hover,
@@ -285,12 +287,6 @@ to push the body down to the bottom of the main page header.*/
 }
 /* -------------------------------- Media Queries */
 
-/* Slightly larger container on xl screens */
-@media (min-width: 1200px) {
-  .container {
-    max-width: 80%;
-  }
-}
 
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {

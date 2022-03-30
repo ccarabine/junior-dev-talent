@@ -188,7 +188,7 @@
                 <div class="input-group input-left newsletter-input-width mx-auto mt-3">
                     <input type="email" value="" name="EMAIL" id="mce-EMAIL" required="required" class="form-control" placeholder="Enter your email" aria-labelledby="subscribe">
                     <span class="input-group-append">
-                        <button class="btn btn-success" type="submit" id="subscribe">Join</button>
+                        <button class="btn btn-blue" type="submit" id="subscribe">Join</button>
                     </span>
                 </div>
             </form>
@@ -210,11 +210,11 @@
     </div>
     <div class="text-center">
       <!--Privacy Policy-->
-      <a href="#" class="footer-links" data-toggle="modal" data-target=".bd-example-modal-lg">
+      <a href="#" class="footer-links" data-toggle="modal" data-target=".privacy-modal">
         Privacy Policy
       </a>
       <span> | </span>
-      <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal fade privacy-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
             {% include 'includes/privacy_policy.html' %}
@@ -222,10 +222,10 @@
         </div>
       </div>
       <!--Terms of use-->
-      <a href="#" class="footer-links" data-toggle="modal" data-target=".bd-example-modal-lg2">
+      <a href="#" class="footer-links" data-toggle="modal" data-target=".terms-modal">
         Terms of use
       </a>
-      <div class="modal fade bd-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal fade terms-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
             {% include 'includes/terms_of_use.html' %}

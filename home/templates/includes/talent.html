@@ -1,0 +1,38 @@
+{% load static %}
+
+<div class="px-4 py-4 ">
+    <div class="container mt-4 text-center ">
+        <!--Talent Center section-->
+        <div>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <br>
+            <h2 class="card shadow py-2 strong">Get hired</h2> 
+        </div>
+        <div class="card-deck mt-4">
+            <div class="col-12 col-sm-4 col-md-4 col-lg-4 mx-auto">
+                <img class="card-img-top img-fluid icon-size" src="media/subscribe.png" alt="subscribe image"> 
+                <div class="card-body">
+                    <p class="card-text">Subscribe to discover new talent first</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-4 col-md-4 col-lg-4 mx-auto">
+                <img class="card-img-top img-fluid icon-size" src="media/talent-search.png" alt="Find Talent image"> 
+                <div class="card-body">
+                    <p class="card-text">Headhunt</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-4 col-md-4 col-lg-4 mx-auto ">
+                <img class="card-img-top img-fluid icon-size" src="media/contact.png" alt="Contact image"> 
+                <div class="card-body">
+                    <p class="card-text">Contact candidates</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center py-4 my-4 background-grey">
+        <h4 class="mx-4">Subscribe to Junior Dev Talent to find your next superstar</h4>  
+        <a href="{% url 'products'%}" class="btn btn-dark btn-white-txt" role="button" aria-pressed="true">Start now</a>
+    </div> 
+</div>

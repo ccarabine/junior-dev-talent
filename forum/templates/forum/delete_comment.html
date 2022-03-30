@@ -31,7 +31,7 @@
             <div class="item line pb-1"></div>
         </div>
 
-        {% if user.id == comment.owner.id %}
+        {% if user.id == post.owner.id or request.user.is_superuser %}
             <div class="form-group justify-content-center text-center mx-auto">
                 <form method="POST" enctype="multipart/form-data" class="mt-4">
                     {% csrf_token %}

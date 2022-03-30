@@ -11,218 +11,101 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container ">
+
+    <div class="container">
         <!--  Hero image-->
         <img class="card-img-top img-fluid mx-4" src="media/header-image.png" alt="hero image">
         
-        <!--  3 cards section-->
-        <div data-spy="scroll" data-target=".card-deck" data-offset="50" class="row background-grey px-5 py-3 my-3 ">
-            <div class="card-deck ">
-                <div class="col-12 col-sm-12 col-md-4 col-lg-4 card shadow p-3 bg-white rounded">
-                    <a class="card-links scroll-link" href="#forum-section">
-                        <h5 class="card-header text-center">Forum</h5>
-                        <div class="card-img-top text-center pt-3 logo-font">
-                            <img class="card-img-top img-fluid icon-size" src="media/forum-card.png" alt="forum card image"> 
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">Join the conversation in our community for junior software developers looking to get hired fast</p>
-                        </div>
-                    </a>
-                </div>
-               
-                <div class="col-12 col-sm-12 col-md-4 col-lg-4 card shadow p-3  bg-white rounded">
-                    <a class="card-links scroll-link" href="#growth-hub-section">
-                        <h5 class="card-header text-center">Growth hub</h5>
-                        <div class="card-img-top text-center pt-3 logo-font">
-                            <img class="card-img-top img-fluid icon-size " src="media/enablement.png" alt="enablement card image"> 
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">Power your potential with our selection of enablement courses, mentor programmes and events in our growth hub shop
-                            </p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-12 col-sm-12 col-md-4 col-lg-4 card shadow p-3  bg-white rounded">
-                    <a class="card-links" href="#talent-center-section">
-                        <h5 class="card-header text-center">Talent Center</h5>
-                        <div class="card-img-top text-center pt-3 logo-font">
-                            <img class="card-img-top img-fluid icon-size " src="media/talent-card.png" alt="talent card image"> 
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">Employers find the best fresh Talent hot off the press before they're snatched up in our talent center
-                            </p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <!--Newsletter section-->
-        <div class="text-center background-grey my-4 py-4 px-4">
-    
-            <img src="media/newsletter.png" alt="newsletter image" class="thumbnail newsletter-icon"> 
-            <h2>Stay up to date with everything</h2>
-            <h5>Subscribe to our newsletter</h5>
-            <form action="https://herokuapp.us20.list-manage.com/subscribe/post?u=e5b424993e29ce6be7320595a&amp;id=dcba1d7b60" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate " target="_blank" novalidate>
-                <div class="input-group input-left newsletter-input-width mx-auto mt-3">
-                    <input type="email" value="" name="EMAIL" id="mce-EMAIL" required="required" class="form-control" placeholder="Enter your email" aria-labelledby="subscribe">
-                    
-                    <span class="input-group-append">
-                        <button class="btn btn-success" type="submit" id="subscribe">Join</button>
-                    </span>
-                </div>
-            </form>
-
-            <!--End mc_embed_signup-->
-        </div>
-        <hr class="solid mx-5">
-
-        <!--Forum section-->
-        <div id="forum-section">
-            <div class="container mt-4 text-center ">
-                <h2>Start connecting with developers today</h2>
-                <a class="card-links" href="">
-                <div class="card-deck mt-4">
-
-                    <div class="col-12 col-sm-12 col-md-2 col-lg-2">
-                        <img class="card-img-top img-fluid icon-size" src="media/communities.png" alt="Communities image"> 
-                        <div class="card-body">
-                          <p class="card-text">Join the Community forum</p>
-                        </div>
+        <!--  4 cards section-->
+        <div class="row background-grey px-3 py-3 my-1">
+            <div class="card-deck">
+                <!--Get hired-->
+                <div class=" col-12 col-sm-12 col-md-3 col-lg-3 card shadow p-3 bg-white rounded"> 
+                <a href="#" class="card-links scroll-link" data-toggle="modal" data-target=".gethired-modal">
+                    <h5 class="card-header text-center">Get hired</h5>
+                    <div class="card-img-top text-center pt-3 logo-font">
+                        <img class="card-img-top img-fluid icon-size" src="media/recruitment.png" alt="get hired image"> 
                     </div>
-                    <div class=" col-12 col-sm-12 col-md-2 col-lg-2">
-                        <img class="card-img-top img-fluid icon-size " src="media/training.png" alt="training image"> 
-                        <div class="card-body">
-                          <p class="card-text">Share knowledge, answer questions</p>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-12 col-md-2 col-lg-2">
-                        <img class="card-img-top img-fluid icon-size " src="media/skills.png" alt="skills image"> 
-                        <div class="card-body">
-                          <p class="card-text">Develop your technical skills</p>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-12 col-md-2 col-lg-2">
-                        <img class="card-img-top img-fluid icon-size " src="media/interview.png" alt="interview image"> 
-                        <div class="card-body">
-                          <p class="card-text">Share interview tips and tricks</p>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-12 col-md-2 col-lg-2">
-                        <img class="card-img-top img-fluid icon-size " src="media/training.png" alt=" image"> 
-                        <div class="card-body">
-                          <p class="card-text">Share interview tips and tricks</p>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-12 col-md-2 col-lg-2">
-                        <img class="card-img-top img-fluid icon-size" src="media/skills.png" alt=" image"> 
-                        <div class="card-body">
-                          <p class="card-text">Free for Junior Developers </p>
-                        </div>
-                    </div>
-                    <!--
-              
-                    <small class="col col-sm-12 col-md-2">Share knowledge, answer questions, stay up to date and much more with like minded professionals
-                               -->
-            </div>
-      
-        </a>
-         
-        </div>
-                    
-        <div class="text-center py-4 my-4 background-grey">
-            <h4 class="px-4">Upload  your profile for employers to review 5 quick Interview questions and skills </h4>  
-            <button type="button" class="btn btn-dark mt-4">Register</button>
-        </div>
-        <!-- divider image-->
-        <img class="card-img-top img-fluid mb-4" src="media/software-developer.png" alt="software developer image">
-        <hr class="solid mx-5">
-
-        <!--Growth hub section-->
-        <div id="growth-hub-section">
-            <div class="container mt-4 text-center ">
-                <h2 class="text-center">Visit the Growth Hub Shop</h2>     
-                <a class="card-links" href="">
-                    <div class="card-deck mt-4">
-                
-                        <div class="col-12 col-sm-12 col-md-3 col-lg-3 mx-auto">
-                            <img class="card-img-top img-fluid icon-size" src="media/communities.png" alt="courses images"> 
-                            <div class="card-body">
-                                <p class="card-text">Courses</p>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-3 col-lg-3 mx-auto">
-                            <img class="card-img-top img-fluid icon-size" src="media/training.png" alt="Mentorships image"> 
-                            <div class="card-body">
-                            <p class="card-text">Mentorships</p>
-                            </div>
-                        </div>
-                
-                        <div class="col-12 col-sm-12 col-md-3 col-lg-3 mx-auto">
-                            <img class="card-img-top img-fluid icon-size" src="media/skills.png" alt="cv writing image"> 
-                            <div class="card-body">
-                            <p class="card-text">CV Writing</p>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-3 col-lg-3 mx-auto">
-                            <img class="card-img-top img-fluid icon-size" src="media/interview.png" alt="events image"> 
-                            <div class="card-body">
-                            <p class="card-text">Events</p>
-                            </div>
-                        </div>
-                    
-                </div>
-            </a>
-            </div>
-                <div class="text-center py-4 my-4 background-grey">
-                    <h2 class="mx-4">Visit our Growth Hub Shop and power your potential with our selection of courses, mentor programmes and events</h2>  
-                    <button type="button" class="btn btn-dark mt-4">Sign up</button>
-                </div>
-            
-        </div>
-     
-        <!-- divider image-->
-        <img class="card-img-top img-fluid mb-4 mt-4" src="media/mentor.png" alt="mentor image">
-        <hr class="solid">
-    
-        <!--Talent Center section-->
-        <div id="talent-center-section">
-            <div class="container mt-4 text-center ">
-                <h2 >Get connected with Junior Developers instantly with a few simple steps</h2>
-                <a class="card-links" href="">
-                    <div class="row align-items-center mt-4">
-                        <div class="col-12 col-sm-4 col-md-4 col-lg-4 mx-auto">
-                            <img class="card-img-top img-fluid icon-size" src="media/subscribe.png" alt="subscribe image"> 
-                            <div class="card-body">
-                                <p class="card-text">Subscribe</p>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-4 col-md-4 col-lg-4 mx-auto">
-                            <img class="card-img-top img-fluid icon-size" src="media/talent-search.png" alt="Find Talent image"> 
-                            <div class="card-body">
-                                <p class="card-text">Find Talent</p>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-4 col-md-4 col-lg-4 mx-auto ">
-                            <img class="card-img-top img-fluid icon-size" src="media/contact.png" alt="Contact image"> 
-                            <div class="card-body">
-                                <p class="card-text">Contact</p>
-                            </div>
-                        </div>
+                    <div class="card-body">
+                        <p class="card-text">Upload your career profile today and be found by subscribed hiring managers </p>
                     </div>
                 </a>
-            </div>
-            <div class="text-center py-4 my-4 background-grey">
-                <h2 class="mx-4">Finding junior devs has never been easier</h2>  
-                <button type="button" class="btn btn-dark ">Subscribe</button>
+                <div class="modal fade gethired-modal" tabindex="-1" role="dialog" aria-labelledby="gethiredmodalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        {% include 'includes/gethired.html' %}
+                    </div>
+                    </div>
+                </div>
             </div>
             
-          
-        </div>
-     
-        <!-- divider image-->
-        <img class="card-img-top img-fluid mb-4 mt-4" src="media/talent.png" alt="software developer image divider">
-          
-    </div>
+            <!--Get forum-->
+            <div class=" col-12 col-sm-12 col-md-3 col-lg-3 card shadow p-3 bg-white rounded"> 
+                <a href="#" class="card-links scroll-link" data-toggle="modal" data-target=".forum-modal">         <h5 class="card-header text-center">Forum</h5>
+                    <div class="card-img-top text-center pt-3 logo-font">
+                        <img class="card-img-top img-fluid icon-size" src="media/forum-card.png" alt="forum card image"> 
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Power your potential with our selection of enablement courses, mentor programmes and events in our growth hub shop</p>
+                    </div>
+                </a>
+                <div class="modal fade forum-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        {% include 'includes/forum.html' %}
+                    </div>
+                    </div>
+                </div>
+            </div>
 
-   
+            <!--Get Growth hub--> 
+            <div class=" col-12 col-sm-12 col-md-3 col-lg-3 card shadow p-3 bg-white rounded"> 
+                <a href="#" class="card-links scroll-link" data-toggle="modal" data-target=".growth-modal">
+                    <h5 class="card-header text-center">Growth hub</h5>
+                    <div class="card-img-top text-center pt-3 logo-font">
+                        <img class="card-img-top img-fluid icon-size " src="media/enablement.png" alt="enablement card image"> 
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Power your potential with our selection of enablement courses, mentor programmes and events in our growth hub shop
+                        </p>
+                    </div>
+                </a>
+                <div class="modal fade growth-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            {% include 'includes/growthhub.html' %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Get talent center-->  
+            <div class=" col-12 col-sm-12 col-md-3 col-lg-3 card shadow p-3 bg-white rounded"> 
+                <a href="#" class="card-links scroll-link" data-toggle="modal" data-target=".talent-modal">
+                    <h5 class="card-header text-center">Talent Center</h5>
+                    <div class="card-img-top text-center pt-3 logo-font">
+                        <img class="card-img-top img-fluid icon-size " src="media/talent-card.png" alt="talent card image"> 
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Employers find the best fresh Talent hot off the press before they're snatched up in our talent center
+                        </p>
+                    </div>
+                </a>
+                <div class="modal fade talent-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            {% include 'includes/talent.html' %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+              
+        </div>
+    </div>
+        
+    <!-- divider image-->
+    <hr class="solid">
+    <img class="card-img-top img-fluid mb-4 mt-4" src="media/talent.png" alt="software developer image divider">
+</div>             
 {% endblock %}
