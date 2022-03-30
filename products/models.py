@@ -16,7 +16,7 @@ class Category(models.Model):
         Verbose name Categories
         """
         verbose_name_plural = 'Categories'
-        
+
     name = models.CharField(
         max_length=254
         )
@@ -25,7 +25,7 @@ class Category(models.Model):
         null=True,
         blank=True
         )
-    
+
     def __str__(self):
         """
         Returns the category name string
@@ -35,7 +35,7 @@ class Category(models.Model):
             The category name string
         """
         return str(self.name)
-    
+
     def get_friendly_name(self):
         """
         Returns the friendly name name string
@@ -45,6 +45,7 @@ class Category(models.Model):
             The friendly name string
         """
         return self.friendly_name
+
 
 class Product(models.Model):
     """
@@ -56,7 +57,7 @@ class Product(models.Model):
         """
         verbose_name_plural = 'Products'
         ordering = ['category']
-        
+
     category = models.ForeignKey(
         'Category', null=True,
         blank=True,
