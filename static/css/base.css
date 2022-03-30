@@ -181,6 +181,10 @@ a:hover {
     border:1px solid var(--color-midnight-blue);
 }
 
+/* --- modal background --- */
+.modal-background{
+    background: var(--color-cool-grey-c);
+}
 /* --- buttons --- */
 .shop-now-button:hover,
 .shop-now-button:active,
@@ -190,6 +194,13 @@ a:hover {
 .btn-blue:focus {
     background: var(--color-midnight-blue);
     color: white;
+}
+
+.cta:hover,
+.cta:active,
+.cta:focus {
+    background: var(--color-midnight-blue);
+    color: white !important;
 }
 
 /* Solid border */
