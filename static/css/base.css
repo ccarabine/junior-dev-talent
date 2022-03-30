@@ -36,21 +36,24 @@ body {
     width: 80%;
     margin: 0 auto;
   } 
-  .item {
+
+.item {
       display: table-cell;
   }
-  .text { 
+
+.text { 
       white-space: nowrap;
       width: 1%;
       padding: 0 10px;
   }
-  .line {
+
+.line {
       border-bottom: 1px solid #000;
       position: relative;
       top: -.5em;
   }
   
-  .forum-border{
+.forum-border{
     border-top: 10px solid var(--color-midnight-blue) ;
   
   }
@@ -153,6 +156,13 @@ a:hover {
     transform: scale(1.01);
   }
 
+.card-back{
+    padding-top:20px;
+    border-style: solid;
+    border-radius: 5px;
+    background-color: white;
+  }
+
 .image-width {
     width:auto;
     height:200px;
@@ -183,7 +193,10 @@ a:hover {
 
 /* --- modal background --- */
 .modal-background{
-    background: var(--color-cool-grey-c);
+    background: #f37638;
+}
+.close {
+    color:white !important;
 }
 /* --- buttons --- */
 .shop-now-button:hover,
@@ -318,7 +331,7 @@ to push the body down to the bottom of the main page header.*/
 /* reduce size of nav logo text */
 @media (max-width: 1250px) {
     .jd-font{
-        font-size:75%;
+        font-size:65%;
     }
 }
 
@@ -332,7 +345,7 @@ to push the body down to the bottom of the main page header.*/
         height: calc(100vh - 116px);
     }
     .jd-font{
-        font-size:60%;
+        font-size:55%;
     }
 }
 
@@ -366,9 +379,7 @@ to push the body down to the bottom of the main page header.*/
     .container {
       max-width: 100%;
     }
-    .icon-size{
-        width:10%;
-    }
+  
     .logo-font{
         font-size:80%;
     }

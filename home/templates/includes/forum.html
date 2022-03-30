@@ -1,35 +1,36 @@
 {% load static %}
 
 <!--Forum section-->
+
 <div class="px-4 py-4 ">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true" class="white-txt">&times;</span>
+    </button>
     <div class="container mt-4 text-center">
         <div>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
             <br>
-            <h2 class="card shadow py-2 strong">Join the forum and start connecting with developers today</h2> 
+            <h2 class="card shadow py-2 strong btn-blue">Join the forum and start connecting with developers today</h2> 
         </div>
         <div class="card-deck mt-4">
-            <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 card-back">
                 <img class="card-img-top img-fluid icon-size" src="media/communities.png" alt="Communities image"> 
                 <div class="card-body">
                     <p class="card-text">Expand your network</p>
                 </div>
             </div>
-            <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 card-back">
                 <img class="card-img-top img-fluid icon-size " src="media/training.png" alt="training image"> 
                 <div class="card-body">
                     <p class="card-text">Share knowledge</p>
                 </div>
             </div>
-            <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 card-back">
                 <img class="card-img-top img-fluid icon-size " src="media/interview.png" alt="interview image"> 
                 <div class="card-body">
                     <p class="card-text">Discuss interview tips and tricks</p>
                 </div>
             </div>
-            <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 card-back">
                 <img class="card-img-top img-fluid icon-size " src="media/engagement.png" alt="engage image"> 
                 <div class="card-body">
                     <p class="card-text">Engage with your peers</p>
@@ -37,7 +38,7 @@
             </div>
         </div>
     </div>
-    <div class="text-center py-4 mt-4 background-grey">
+    <div class="text-center py-4 mt-4 card-back">
         <h4 class="mx-4">Explore the room topics and join the conversation </h4>  
         <a href="{% url 'forum'%}" class="btn btn-dark btn-white-txt cta mt-4" role="button" aria-pressed="true">Chat now</a>
     </div>

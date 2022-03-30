@@ -1,28 +1,28 @@
 {% load static %}
 
 <div class="px-4 py-4 ">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
     <div class="container mt-4 text-center ">
         <div>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
             <br>
-            <h2 class="card shadow py-2 strong">Get hired</h2> 
+            <h2 class="card shadow py-2 strong btn-blue">Get hired</h2> 
         </div>
-        <div class="row align-items-center mt-4">
-            <div class="col-12 col-sm-4 col-md-4 col-lg-4 mx-auto">
+        <div class="card-deck mt-4">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 card-back">
                 <img class="card-img-top img-fluid icon-size" src="media/network.png" alt="network image"> 
                 <div class="card-body">
                     <p class="card-text">Create your personal brand</p>
                 </div>
             </div>
-            <div class="col-12 col-sm-4 col-md-4 col-lg-4 mx-auto">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 card-back">
                 <img class="card-img-top img-fluid icon-size" src="media/cv-gethired.png" alt="Get hired image"> 
                 <div class="card-body">
                     <p class="card-text">Showcase skills and CV</p>
                 </div>
             </div>
-            <div class="col-12 col-sm-4 col-md-4 col-lg-4 mx-auto ">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4  card-back">
                 <img class="card-img-top img-fluid icon-size" src="media/headhunter.png" alt="headhunted image"> 
                 <div class="card-body">
                     <p class="card-text">Get headhunted</p>
@@ -30,7 +30,7 @@
             </div>
         </div>
     </div>
-    <div class="text-center py-4 mt-4 background-grey">
+    <div class="text-center py-4 mt-4 card-back">
         <h4 class="mx-4">Create your profile and upload your CV </h4>  
         
         <a href="{% url 'forum'%}" class="btn btn-dark btn-white-txt cta mt-4" role="button" aria-pressed="true">Start now</a>
