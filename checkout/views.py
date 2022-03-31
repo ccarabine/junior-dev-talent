@@ -1,6 +1,8 @@
 # Imports
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+import json
+import stripe
 from django.shortcuts import render, redirect, reverse, get_object_or_404, \
       HttpResponse
 from django.views.decorators.http import require_POST
@@ -14,8 +16,6 @@ from products.models import Product
 from .forms import OrderForm
 from .models import Order, OrderLineItem
 
-import stripe
-import json
 
 @require_POST
 def cache_checkout_data(request):
@@ -39,7 +39,8 @@ def cache_checkout_data(request):
         messages.error(request, 'Sorry, your payment cannot be \
             processed right now. Please try again later.')
         return HttpResponse(content=e, status=400)
-    
+
+
 def checkout(request):
     """
     Checkout for the user
@@ -67,7 +68,12 @@ def checkout(request):
         }
         order_form = OrderForm(form_data)
         if order_form.is_valid():
-            order = order_form.save()
+            order = order_form.save(commit=False)
+            pid = request.POST.get('client_secret').split('_secret')[0]
+            order.stripe_pid = pid
+            order.original_basket = json.dumps(basket)
+            order.save()
+            
             for item_id, item_data in basket.items():
                 try:
                     product = Product.objects.get(id=item_id)
