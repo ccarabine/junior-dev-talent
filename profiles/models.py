@@ -15,9 +15,19 @@ class UserProfile(models.Model):
     A user profile model for maintaining default
     billing information and order history
     """
+    
     user = models.OneToOneField(
         User,
         on_delete=models.CASCADE
+        )
+    is_hiring_manager = models.BooleanField(
+        default=False
+        )  
+    default_full_name = models.CharField(
+        max_length=50,
+        null=False,
+        blank=False,
+        default=""
         )
     default_phone_number = models.CharField(
         max_length=20,
