@@ -2,14 +2,14 @@
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django.shortcuts import render, get_object_or_404, redirect
-from django.urls import reverse_lazy
 from django.contrib import messages
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+from checkout.models import Order
 from .models import UserProfile
 from .forms import UserProfileForm
-from checkout.models import Order
+
 
 def profile(request):
     """ Display the user's profile. """
@@ -33,6 +33,7 @@ def profile(request):
 
     return render(request, template, context)
 
+
 def order_history(request, order_number):
     """ Display the user's order history. """
     order = get_object_or_404(Order, order_number=order_number)
@@ -50,35 +51,37 @@ def order_history(request, order_number):
 
     return render(request, template, context)
 
+
 def profile_type(request):
     """ User to select either user or employer status. """
-    profile = get_object_or_404(UserProfile, user=request.user)
+    profiles = get_object_or_404(UserProfile, user=request.user)
 
     if request.method == 'POST':
-        form = UserProfileForm(request.POST, instance=profile)     
+        form = UserProfileForm(request.POST, instance=profiles)
         if form.is_valid():
             form.save()
             if 'hiring_manager' in request.POST:
+                messages.success(request, 'Profile updated successfully')
                 return redirect("talent_center")
-            messages.success(request, 'Profile updated successfully')
+            
 
-    form = UserProfileForm(instance=profile)
-    
+    form = UserProfileForm(instance=profiles)
+
     template = 'profiles/register_user_type.html'
     context = {
-        'form': form,        
+        'form': form,
     }
 
     return render(request, template, context)
+
 
 def talent_center(request):
     """ Display talent center, list profiles. """
-    profile = profiles = UserProfile.objects.all()
-    
+    profiles = UserProfile.objects.all()
+
     template = 'profiles/talent-center.html'
     context = {
-        'profiles': profiles,        
+        'profiles': profiles,
     }
 
     return render(request, template, context)
-    

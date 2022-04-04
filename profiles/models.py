@@ -10,19 +10,21 @@ from django_countries.fields import CountryField
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+
 class UserProfile(models.Model):
     """
     A user profile model for maintaining default
     billing information and order history
     """
-    
+
     user = models.OneToOneField(
         User,
+        related_name="user_profile",
         on_delete=models.CASCADE
         )
     is_hiring_manager = models.BooleanField(
         default=False
-        )  
+        )
     default_full_name = models.CharField(
         max_length=50,
         null=True,
@@ -89,7 +91,7 @@ class UserProfile(models.Model):
         null=True,
         blank=True,
         upload_to='media/',
-        default="media/default_user.png"
+        default="default_user.png"
         )
     cv_file = models.FileField(
         null=True,
@@ -111,9 +113,9 @@ class UserProfile(models.Model):
     created = models.DateTimeField(
         auto_now_add=True,
         )
-    
+
     def __str__(self):
-        return self.user.username
+        return self.user.default_full_name
 
 
 @receiver(post_save, sender=User)

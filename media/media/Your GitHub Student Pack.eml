@@ -1,0 +1,222 @@
+Delivered-To: ccarabine12@gmail.com
+Received: by 2002:a05:7010:182b:b0:206:fd22:b38c with SMTP id q43csp634695mdm;
+        Tue, 15 Feb 2022 09:53:15 -0800 (PST)
+X-Received: by 2002:a25:6990:: with SMTP id e138mr81573ybc.268.1644947595451;
+        Tue, 15 Feb 2022 09:53:15 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1644947595; cv=none;
+        d=google.com; s=arc-20160816;
+        b=LM4f9SpbkI3us/HwrJ36iZzIkr0xV70ln7zDpjypgEbvmGi0f7liUWLPlDPoN6R2K8
+         /aonf460TmkE4CxWxBmNkFXud4Ci8AHMSTqVoedv32qXzLPyh6SkBd6JVXklm0zFWMkl
+         F78kr5aPXYd83mcmdjdWSS+GTBRomIoe8RzSLgIXNhMS18YkLd9dInLcRpIbAKHlzWdw
+         T7FckZbYolNLH7KwWbjMqpk3UI40uqeHHnm8Qyxn2S1wtNLP+yUXzk/PPCdWlPSLYCWC
+         b+iBVMVxLV2UDh+RSid/wJfzqTiq8nQu0fyN3N5064LFUBMkuIc87ygwa/hdXIBO4TuB
+         tixg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:reply-to:from:mime-version
+         :dkim-signature;
+        bh=WXmLeqUYeT3KI45doxQcM/Ef0FGkUF/+Wr42379xsvw=;
+        b=cQhE7v9U0uRfTjB9FWfklcfZg/k2WPRZl+jSs1gIxmkqEC9lU06oai9IKIp0Fruy/t
+         ZMHohdNJyKoeicCLNrK7A7N0rEcY/qNIE9/398ZwnMhFnTR9LPsLSWqxLvi3LRKhxkjd
+         K9WPYdbLJYHfOHWFewpinG79k68qywLy6fhP7e4zGaIxIFnAs2d5kbIgdnmY+qBtcJKm
+         vPQsHLAh2W0gVQvUW5E+cS5bWRC6f56DNn7ygXaJvopFntMpC0RBBgPIqJ+j2pqVvMyc
+         DQU7XSG0fxpaF996s+2REcsOP4QWZBA17xlQGLBI66bzDznw9RGWPaI2EBY1XedU1RXn
+         qrBg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@codeinstitute.net header.s=google header.b="YIBJ5/JK";
+       spf=pass (google.com: domain of community@codeinstitute.net designates 209.85.220.65 as permitted sender) smtp.mailfrom=community@codeinstitute.net;
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=codeinstitute.net
+Return-Path: <community@codeinstitute.net>
+Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
+        by mx.google.com with SMTPS id c131sor12061854ybf.138.2022.02.15.09.53.15
+        for <ccarabine12@gmail.com>
+        (Google Transport Security);
+        Tue, 15 Feb 2022 09:53:15 -0800 (PST)
+Received-SPF: pass (google.com: domain of community@codeinstitute.net designates 209.85.220.65 as permitted sender) client-ip=209.85.220.65;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@codeinstitute.net header.s=google header.b="YIBJ5/JK";
+       spf=pass (google.com: domain of community@codeinstitute.net designates 209.85.220.65 as permitted sender) smtp.mailfrom=community@codeinstitute.net;
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=codeinstitute.net
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=codeinstitute.net; s=google;
+        h=mime-version:from:reply-to:date:message-id:subject:to;
+        bh=WXmLeqUYeT3KI45doxQcM/Ef0FGkUF/+Wr42379xsvw=;
+        b=YIBJ5/JKVFWUGzeoLe23MH06mwzriWcBqUZfX2zZkh8o6ydtfmWY448jo2rUWEeYBr
+         1+v53SLk9ZFfokMekV/EBSzO16UK2ocEDYRKUC+UE89Ul9SITTZjoUPtP/+8IHpMiiAm
+         j+2iGA++AgM3oCE5IzwqDF9giqhFwu+WMfIVU=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:mime-version:from:reply-to:date:message-id
+         :subject:to;
+        bh=WXmLeqUYeT3KI45doxQcM/Ef0FGkUF/+Wr42379xsvw=;
+        b=1s0MQ6gl0rrY/8qUFyKEXF7W5G8i/N2bFhTj+LWnz9xsEqWStINatWJjsdnjZ8RWkX
+         bQCj0toi8drerXYbjooPuOOvbb/hlz5em1HQ9lV8VcrOESDkO6AdEX1E94huir5A4WHY
+         cYdjHkpiro5bUSL4kfDbWCYzrpaRrwNM2XQC5FLXjVlxVecoaS9EiP55HsJJ46ChD+mp
+         fpX7j7qZN+mljoZgf3vnJCfTUm79WZNMeTqhVb//wjRR/1ypcZImFpfAiB9TvF6JdTIQ
+         1P1HlRw6zBGhTx+wSBSEuU3y3vZO4SAAKPuPz8enRANM2dTQCtHWmryVX71cegkD1VK7
+         4C3g==
+X-Gm-Message-State: AOAM533xRRwiC+8rX9YsDqXtPOlUrYlPQtMJdhD810IRaCEnW5NIOTZV
+	cqfmB2x9BBIVXbw1asozCXe/3sljrz5iXSt/fUUQK4sq5UseeEatnxF9N3vurI2Buy3RAWtVmHl
+	LIhOQDsrxym+vGAxUxZat0uXugqNLWg==
+X-Google-Smtp-Source: ABdhPJzYWUqodUHLGalRj8tCtqWaVxc4SjUl9kBXltzS9mNdVS7CfyMyjiqi5JxlMBdd32yaa6rRiRyiI7IlQKtziWw=
+X-Received: by 2002:a25:7e81:: with SMTP id z123mr69883ybc.466.1644947594713;
+ Tue, 15 Feb 2022 09:53:14 -0800 (PST)
+Received: from 927538837578 named unknown by gmailapi.google.com with
+ HTTPREST; Tue, 15 Feb 2022 12:39:25 -0500
+MIME-Version: 1.0
+From: Code Institute Community <community@codeinstitute.net>
+Reply-To: community@codeinstitute.net
+Date: Tue, 15 Feb 2022 12:39:25 -0500
+Message-ID: <CAHoPBPAkg8N0hcaBEdHPPMO664dAnQxR+9VAUaOhTTMNQkZzPg@mail.gmail.com>
+Subject: Your GitHub Student Pack
+To: ccarabine12@gmail.com
+Content-Type: multipart/alternative; boundary="0000000000000eaa9d05d8123594"
+
+--0000000000000eaa9d05d8123594
+Content-Type: text/plain; charset="UTF-8"
+
+ Document [image: GitHub student pack banner]
+
+Hi Chris,
+
+Code Institute is proud to be a GitHub Campus Program partner school, and
+all of our current students gain access to some great benefits, which will
+help you along your coding journey with us.
+
+To get the GitHub Student Pack, please follow the steps below:
+
+   1. If you already have a GitHub account, please *SIGN IN*
+   <https://github.com/login> | If you do not yet have a GitHub account,
+   please *SIGN UP* <https://github.com/signup>
+   2. Click this: *ACTIVATION CODE*
+   <https://education.github.com/student/verify?school_id=11844&student_id=1267165000098194451&signature=30aa82f1fd43b885e6faf7d975ec55eed92fe0d0ec7d25c4f8fda32fcce8a04b>.
+   *Please do not share this URL as it is unique to your student profile.*
+   3. You will then receive a confirmation email from GitHub with a link to
+   the Student Pack and further information.
+
+*PLEASE NOTE: The activation of your benefits may take up to 24hrs, so
+please check again later if the pack is not immediately available.*
+
+If you need any assistance with this, please email
+community@codeinstitute.net
+
+Talk to you soon,
+
+*Your Code Institute Community Team*
+
+Code Institute | Community Team
+[image: Code Institute Logo]
+
+Check out our latest review - SwitchUp
+<https://www.switchup.org/bootcamps/code-institute> (No.1 Coding Bootcamp
+review site)
+Tru our free 5 Day Beginners' Coding Challenge - Sign Up Here
+<https://codeinstitute.net/ie/5-day-coding-challenge/?utm_expid=87467542-10.veDTV-EPSUOJtYlog1DeqA.0&utm_source=Rory&utm_medium=Email&utm_campaign=CodingChallenge>
+
+-- 
+
+ 
+<https://uk.trustpilot.com/review/codeinstitute.net?utm_medium=Trustbox&utm_source=EmailSignature2>
+ 
+<https://uk.trustpilot.com/review/codeinstitute.net?utm_medium=Trustbox&utm_source=EmailSignature2>
+
+--0000000000000eaa9d05d8123594
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+
+<html lang=3D"en">
+<head>
+    <meta charset=3D"UTF-8">
+    <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <img src=3D"https://codeinstitute-webpublic.s3.eu-west-1.amazonaws.=
+com/external_images/github-email-banner-700px.png" alt=3D"GitHub student pa=
+ck banner">
+    </header>
+    <p>
+        Hi Chris,=20
+        <br>
+        <br>
+        Code Institute is proud to be a GitHub Campus Program partner schoo=
+l, and all of our current students gain access to some great benefits, whic=
+h will help you along your coding journey with us.
+        <br>
+        <br>
+        To get the GitHub Student Pack, please follow the steps below:
+    </p>
+    <ol>
+        <li style=3D"margin-bottom:10px">
+            If you already have a GitHub account, please <a href=3D"https:/=
+/github.com/login"><b>SIGN IN</b></a> | If you do not yet have a GitHub acc=
+ount, please <a href=3D"https://github.com/signup"><b>SIGN UP</b></a>
+        </li>
+        <li style=3D"margin-bottom:10px">
+            Click this: <a href=3D"https://education.github.com/student/ver=
+ify?school_id=3D11844&amp;student_id=3D1267165000098194451&amp;signature=3D=
+30aa82f1fd43b885e6faf7d975ec55eed92fe0d0ec7d25c4f8fda32fcce8a04b"><b>ACTIVA=
+TION CODE</b></a>. <em>Please do not share this URL as it is unique to your=
+ student profile.</em>
+        </li>
+        <li>
+            You will then receive a confirmation email from GitHub with a l=
+ink to the Student Pack and further information.
+        </li>
+    </ol>
+    <p>
+        <b>PLEASE NOTE: The activation of your benefits may take up to 24hr=
+s, so please check again later if the pack is not immediately available.</b=
+>
+    </p>=20
+    <p>
+        If you need any assistance with this, please email <a href=3D"commu=
+nity@codeinstitute.net">community@codeinstitute.net</a>
+    </p>
+<p>Talk to you soon,</p>
+<p><strong>Your Code Institute Community Team</strong></p>
+<p><span style=3D"color:grey">Code Institute | Community Team</span></p>
+<img src=3D"https://codeinstitute-webpublic.s3.eu-west-1.amazonaws.com/exte=
+rnal_images/ci_logo_sm.png" alt=3D"Code Institute Logo">
+<p>
+Check out our latest review - <a href=3D"https://www.switchup.org/bootcamps=
+/code-institute">SwitchUp</a> (No.1 Coding Bootcamp review site)<br>
+Tru our free 5 Day Beginners&#39; Coding Challenge - <a href=3D"https://cod=
+einstitute.net/ie/5-day-coding-challenge/?utm_expid=3D87467542-10.veDTV-EPS=
+UOJtYlog1DeqA.0&amp;utm_source=3DRory&amp;utm_medium=3DEmail&amp;utm_campai=
+gn=3DCodingChallenge">Sign Up Here</a>
+</p>
+  =20
+</body>
+</html>
+
+<br>
+<a href=3D"https://uk.trustpilot.com/review/codeinstitute.net?utm_medium=3D=
+Trustbox&amp;utm_source=3DEmailSignature2" rel=3D"noopener noreferrer" styl=
+e=3D"background-image:initial;background-position:initial;background-repeat=
+:initial;color:rgb(54,140,215);line-height:inherit;font-family:Arial,&quot;=
+Arial Black&quot;,Tahoma,&quot;Trebuchet MS&quot;,Verdana,sans-serif;font-s=
+ize:12px" target=3D"_blank"><img src=3D"https://emailsignature.trustpilot.c=
+om/signature/en-GB/2/5c7d3cd27f012a000100d274/text.png" border=3D"0" height=
+=3D"16" alt=3D"Trustpilot rating" style=3D"border:none;max-width:100%;heigh=
+t:auto;display:inline-block;vertical-align:middle;max-height:16px"><br><img=
+ src=3D"https://emailsignature.trustpilot.com/signature/en-GB/2/5c7d3cd27f0=
+12a000100d274/stars.png" border=3D"0" width=3D"160" alt=3D"Trustpilot Stars=
+" style=3D"border:none;max-width:160px;height:auto;display:inline-block;ver=
+tical-align:middle;width:160px"></a><span style=3D"color:rgb(170,170,170);f=
+ont-family:Arial,&quot;Arial Black&quot;,Tahoma,&quot;Trebuchet MS&quot;,Ve=
+rdana,sans-serif;font-size:12px"></span><br style=3D"color:rgb(170,170,170)=
+;font-family:Arial,&quot;Arial Black&quot;,Tahoma,&quot;Trebuchet MS&quot;,=
+Verdana,sans-serif;font-size:12px"><a href=3D"https://uk.trustpilot.com/rev=
+iew/codeinstitute.net?utm_medium=3DTrustbox&amp;utm_source=3DEmailSignature=
+2" rel=3D"noopener noreferrer" style=3D"background-image:initial;background=
+-position:initial;background-repeat:initial;color:rgb(54,140,215);line-heig=
+ht:inherit;font-family:Arial,&quot;Arial Black&quot;,Tahoma,&quot;Trebuchet=
+ MS&quot;,Verdana,sans-serif;font-size:12px" target=3D"_blank"><img src=3D"=
+https://emailsignature.trustpilot.com/brand/s/2/logo.png" border=3D"0" widt=
+h=3D"79" alt=3D"Trustpilot Logo" style=3D"border:none;max-width:79px;height=
+:auto;display:inline-block;vertical-align:middle;width:79px"></a>
+--0000000000000eaa9d05d8123594--

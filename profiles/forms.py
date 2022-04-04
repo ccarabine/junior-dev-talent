@@ -26,14 +26,22 @@ class UserProfileForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)
         placeholders = {
-            'is_hiring_manager' : 'Is hiring manger?',
-            'default_full_name' : 'default_full_name',
-            'default_phone_number' : 'Phone Number',
+            'is_hiring_manager': 'Is hiring manger?',
+            'default_full_name': 'default_full_name',
+            'default_email': 'Email',
+            'default_phone_number': 'Phone Number',
             'default_postcode': 'Postal Code',
             'default_town_or_city': 'Town or City',
             'default_street_address1': 'Street Address 1',
             'default_street_address2': 'Street Address 2',
             'default_county': 'County',
+            'location': 'location',
+            'short_intro': 'Short intro',
+            'about': 'About',
+            'profile_image': 'profile Image',
+            'cv_file': 'CV',
+            'github_link': 'Github',
+            'linkedin_link': 'Linkedin',
         }
 
         self.fields['default_phone_number'].widget.attrs['autofocus'] = True

@@ -14,6 +14,7 @@ class UserProfileAdmin(admin.ModelAdmin):
     Admin class for the User Profile model.
     """
     fields = (
+        'user',
         'is_hiring_manager',
         'default_full_name',
         'default_phone_number',
