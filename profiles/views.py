@@ -63,7 +63,6 @@ def profile_type(request):
             if 'hiring_manager' in request.POST:
                 messages.success(request, 'Profile updated successfully')
                 return redirect("talent_center")
-            
 
     form = UserProfileForm(instance=profiles)
 
@@ -85,3 +84,13 @@ def talent_center(request):
     }
 
     return render(request, template, context)
+
+
+def talent_center_detail(request, pk):
+    """ Display talent center detail profile. """
+    profiles = UserProfile.objects.get(id=pk)
+
+    skills = profiles.skill_set.exclude(name__exact="")
+
+    context = {'profile': profiles, 'skills': skills}
+    return render(request, 'profiles/talent_center_detail.html', context)

@@ -59,6 +59,11 @@
     border: 4px solid #00447C;
     
   }
+.avatar--xl{
+    width: 220px;
+    height: 220px;
+}
+
 .header-font-size {
     font-size:2vw;
 }
@@ -73,6 +78,18 @@
     margin-right: 0.5rem;
 }
 
+.social_images {
+    margin: 3rem 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.background-grey{
+    background-color: #f5f6f7;
+} 
+
 @media screen and (max-width: 800px) {
     .header-font-size {
         font-size:3vw;
@@ -85,6 +102,10 @@
         background-color: #00447C;
         font-size: 1rem;
         margin-right: 0.5rem;
+    }
+    .avatar--xl{
+        width: 150px;
+        height: 150px;
     }
 }
 

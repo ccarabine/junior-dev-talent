@@ -28,4 +28,7 @@ urlpatterns = [
         views.talent_center,
         name='talent_center'
         ),
+    path('talent_center_detail/<str:pk>/',
+         views.talent_center_detail,
+         name="talent_center_detail"),
 ]
