@@ -17,12 +17,20 @@ class UserProfileAdmin(admin.ModelAdmin):
         'is_hiring_manager',
         'default_full_name',
         'default_phone_number',
+        'default_email',
         'default_street_address1',
         'default_street_address2',
         'default_town_or_city',
         'default_county',
         'default_postcode',
-        'default_country'
+        'default_country',
+        'location',
+        'short_intro',
+        'about',
+        'profile_image',
+        'cv_file',
+        'github_link',
+        'linkedin_link',
         )
     
     list_display = ('user','is_hiring_manager','default_full_name')

@@ -63,7 +63,55 @@ class UserProfile(models.Model):
         null=True,
         blank=True
         )
-
+    default_email = models.EmailField(
+        max_length=500,
+        blank=True,
+        null=True,
+        default=""
+        )
+    location = models.CharField(
+        max_length=200,
+        blank=True,
+        null=True,
+        default=""
+        )
+    short_intro = models.CharField(
+        max_length=200,
+        blank=True,
+        null=True
+        )
+    about = models.TextField(
+        blank=True,
+        null=True,
+        default=""
+        )
+    profile_image = models.ImageField(
+        null=True,
+        blank=True,
+        upload_to='media/',
+        default="media/default_user.png"
+        )
+    cv_file = models.FileField(
+        null=True,
+        blank=True,
+        upload_to='media/documents'
+        )
+    github_link = models.CharField(
+        max_length=200,
+        blank=True,
+        null=True,
+        default=""
+        )
+    linkedin_link = models.CharField(
+        max_length=200,
+        blank=True,
+        null=True,
+        default=""
+        )
+    created = models.DateTimeField(
+        auto_now_add=True,
+        )
+    
     def __str__(self):
         return self.user.username
 

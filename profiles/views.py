@@ -59,7 +59,7 @@ def profile_type(request):
         if form.is_valid():
             form.save()
             if 'hiring_manager' in request.POST:
-                return redirect("forum")
+                return redirect("talent_center")
             messages.success(request, 'Profile updated successfully')
 
     form = UserProfileForm(instance=profile)
@@ -70,3 +70,15 @@ def profile_type(request):
     }
 
     return render(request, template, context)
+
+def talent_center(request):
+    """ Display talent center, list profiles. """
+    profile = profiles = UserProfile.objects.all()
+    
+    template = 'profiles/talent-center.html'
+    context = {
+        'profiles': profiles,        
+    }
+
+    return render(request, template, context)
+    

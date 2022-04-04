@@ -23,4 +23,9 @@ urlpatterns = [
         views.profile_type,
         name='profile_type'
         ),
+    path(
+        'talent_center',
+        views.talent_center,
+        name='talent_center'
+        ),
 ]
