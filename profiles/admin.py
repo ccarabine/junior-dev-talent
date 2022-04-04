@@ -5,7 +5,7 @@ from django.contrib import admin
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-from .models import UserProfile
+from .models import UserProfile, Skill
 
 
 @admin.register(UserProfile)
@@ -37,3 +37,5 @@ class UserProfileAdmin(admin.ModelAdmin):
     list_display = ('user','is_hiring_manager','default_full_name')
 
     ordering = ('default_full_name',)
+
+admin.site.register(Skill)

@@ -115,7 +115,7 @@ class UserProfile(models.Model):
         )
 
     def __str__(self):
-        return self.user.default_full_name
+        return self.user.username
 
 
 @receiver(post_save, sender=User)
@@ -127,3 +127,25 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
         UserProfile.objects.create(user=instance)
     # Existing users: just save the profile
     instance.userprofile.save()
+
+class Skill(models.Model):
+    """
+    A skill model for skill of the user
+    """
+    owner = models.ForeignKey(
+        UserProfile,
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True
+        )
+    name = models.CharField(
+        max_length=200,
+        blank=True,
+        null=True
+        )
+    created = models.DateTimeField(
+        auto_now_add=True
+        )
+   
+    def __str__(self):
+        return str(self.name)

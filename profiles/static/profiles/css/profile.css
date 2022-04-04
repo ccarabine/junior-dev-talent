@@ -65,12 +65,26 @@
 .paragraph-font-size{
     font-size:1vw;
 }
+/* Skill badges  */
+.badges {
+    color: #fff;
+    background-color: #00447C;
+    font-size: 1.1rem;
+    margin-right: 0.5rem;
+}
+
 @media screen and (max-width: 800px) {
     .header-font-size {
         font-size:3vw;
     }
     .paragraph-font-size{
         font-size:3vw;
+    }
+    .badges {
+        color: #fff;
+        background-color: #00447C;
+        font-size: 1rem;
+        margin-right: 0.5rem;
     }
 }
 

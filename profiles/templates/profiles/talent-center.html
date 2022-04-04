@@ -18,10 +18,9 @@
             <div class="mb-2 title">
                 <h1>FIND THE BEST FRESH TALENT</h1>  
             </div>
-            <!--search bar--> 
         </div>
     </div>
-    {{% if request.user.user_profile.is_hiring_manager or request.user.is_superuser %}
+    {% if request.user.user_profile.is_hiring_manager or request.user.is_superuser %}
    
     <div class="background-grey px-3 py-3 ">
         <div class="row justify-content-center my-4 mx-4">
@@ -53,6 +52,14 @@
                         {% if profile.about %}
                             <p class="paragraph-font-size">{{profile.about|slice:"150"}}</p>
                         {% endif %}
+                    </div>
+                    <div class="mt-2 ml-2">
+
+                        {% for skill in profile.skill_set.all|slice:"5" %}
+                        <span class="badge badge-pill badges">
+                            <small>{{skill}}</small>
+                        </span> {% endfor %}
+
                     </div>
                 </div>
             </div>   
