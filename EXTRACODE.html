@@ -1,3 +1,78 @@
+<div class="container">
+  
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#demo-1">Launch Modal #1</button>
+  
+    <!-- [ Modal #1 ] -->
+    <div class="modal fade" id="demo-1" tabindex="-1">
+      <div class="modal-dialog">
+       <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal"><i class="icon-xs-o-md"></i></button>
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title caps"><strong>Demo Modal #1</strong></h4>
+        </div>
+        <div class="modal-body">
+        
+        </div>
+         <div class="modal-footer">
+           
+              <button type="button" class="btn btn-info" data-toggle="modal" data-target="#demo-2" data-dismiss="modal">Close current, Launch Modal #2</button>
+             
+          </div>
+       </div>
+      </div>
+    </div>
+  
+    <!-- [ Modal #2 ] -->
+    <div class="modal fade" id="demo-2" tabindex="-1">
+      <div class="modal-dialog">
+       <div class="modal-content">
+        
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title caps"><strong>Demo Modal #2</strong></h4>
+        </div>
+        <div class="modal-body">
+          
+         <div class="modal-footer">
+             
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#demo-1" data-dismiss="modal">Close current, Launch Modal #1</button>
+    
+          </div>
+       </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {% extends "base.html" %}
 {% load static %}
 

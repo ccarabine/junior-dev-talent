@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+{% endblock %}
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+{% block content %}
+<div class="container mt-4 text-center ">
+    <h2 class="card shadow py-2 mx-5 strong btn-blue">Register as a Hiring Manager</h2> 
+    <div class="my-4">
+        <img class="card-img-top img-fluid icon-size-talent" src="/media/hiring_manager.png" alt="subscribe image"> 
+        <form method="POST" action="{% url 'profile_type' %}">
+            {% csrf_token %}
+            {{ form.is_hiring_manager  }}
+            <button class="btn btn-dark btn-white-txt btn-lg cta mt-4" name="hiring_manager" id="hiring_manager_btn" type="submit">Register</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+{% block postloadjs %}
+{{ block.super }}
+<script>
+$("#hiring_manager_btn").on('click',function(){
+  $("#id_is_hiring_manager").prop("checked", true); 
+});
+</script>
+{% endblock %}

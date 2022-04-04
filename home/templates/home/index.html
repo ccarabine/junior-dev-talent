@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-
+{% load crispy_forms_tags %}
 {% block page_header %}
 
     <div class="container header-container">
@@ -78,10 +78,9 @@
                     </div>
                 </div>
             </div>
-
-            <!--Get talent center-->  
+            <!--Talent modal -->
             <div class="col-12 col-sm-12 col-md-6 col-lg-3 card shadow p-3 bg-white rounded"> 
-                <a href="#" class="card-links scroll-link" data-toggle="modal" data-target=".talent-modal">
+                <a href="#" class="card-links scroll-link" data-toggle="modal" data-target="#talent-modal" >
                     <h5 class="card-header text-center">Talent Center</h5>
                     <div class="card-img-top text-center pt-3 logo-font">
                         <img class="card-img-top img-fluid icon-size " src="media/talent-card.png" alt="talent card image"> 
@@ -91,18 +90,17 @@
                         </p>
                     </div>
                 </a>
-                <div class="modal fade talent-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content modal-background">
+            </div>
+            <div class="modal fade" id="talent-modal" tabindex="-1">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content modal-background">
+                        <div class="modal-footer">
                             {% include 'includes/talent.html' %}
                         </div>
                     </div>
                 </div>
             </div>
-        </div>      
-    </div>
-    
-        
+          
     <!-- divider image-->
     <hr class="solid">
     <img class="card-img-top img-fluid mb-4 mt-4" src="media/talent.png" alt="software developer image divider">

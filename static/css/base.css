@@ -139,7 +139,9 @@ a:hover {
 .icon-size{
     width:50%;
 }
-
+.icon-size-talent{
+    width:20%;
+}
 /* --- card styling --- */
 .card-links:link,
 .card-links:visited,
@@ -444,6 +446,8 @@ input[name='q']::placeholder {
     .heading-responsive{
         font-size:  1em;
     }
+    .icon-size-talent{
+        width:40%;
   }
 
   @media (max-width: 400px) {

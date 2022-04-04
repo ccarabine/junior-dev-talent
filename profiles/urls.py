@@ -18,4 +18,9 @@ urlpatterns = [
         views.order_history,
         name='order_history'
         ),
+    path(
+        'profile_type',
+        views.profile_type,
+        name='profile_type'
+        ),
 ]

@@ -25,8 +25,8 @@ class UserProfile(models.Model):
         )  
     default_full_name = models.CharField(
         max_length=50,
-        null=False,
-        blank=False,
+        null=True,
+        blank=True,
         default=""
         )
     default_phone_number = models.CharField(

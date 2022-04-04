@@ -1,7 +1,8 @@
 # Imports
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
+from django.urls import reverse_lazy
 from django.contrib import messages
 
 # Internal:
@@ -45,6 +46,27 @@ def order_history(request, order_number):
     context = {
         'order': order,
         'from_profile': True,
+    }
+
+    return render(request, template, context)
+
+def profile_type(request):
+    """ User to select either user or employer status. """
+    profile = get_object_or_404(UserProfile, user=request.user)
+
+    if request.method == 'POST':
+        form = UserProfileForm(request.POST, instance=profile)     
+        if form.is_valid():
+            form.save()
+            if 'hiring_manager' in request.POST:
+                return redirect("forum")
+            messages.success(request, 'Profile updated successfully')
+
+    form = UserProfileForm(instance=profile)
+    
+    template = 'profiles/register_user_type.html'
+    context = {
+        'form': form,        
     }
 
     return render(request, template, context)

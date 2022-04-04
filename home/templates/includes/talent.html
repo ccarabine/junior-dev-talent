@@ -1,5 +1,3 @@
-{% load static %}
-
 <div class="px-4 py-4 ">
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
@@ -32,8 +30,8 @@
             </div>
         </div>
     </div>
-    <div class="text-center py-4 mt-4 card-back">
-        <h4 class="mx-4">Subscribe to Junior Dev Talent to find your next superstar</h4>  
-        <a href="{% url 'products'%}" class="btn btn-dark btn-white-txt cta mt-4" role="button" aria-pressed="true">Start now</a>
+    <div class="text-center py-4 mt-4 card-back modal-center">
+        <h4 class="mx-4">Subscribe to Junior Dev Talent to find your next superstar</h4> 
+        <a href="{% url 'profile_type' %}" type="button" class="btn btn-dark btn-white-txt cta mt-4">Start Now</a>
     </div> 
 </div>
