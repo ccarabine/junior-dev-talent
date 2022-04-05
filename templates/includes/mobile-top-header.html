@@ -26,10 +26,10 @@
         
         <div class="text-center logo-font ">
             <div><i class="fas fa-user fa-lg"></i></div>
-            {% if request.user.is_authenticated %}
-            <p class="my-0 ">{{ request.user.user_profile.default_full_name }}</p>
+            {% if request.user.user_profile.default_full_name %}
+                <p class="my-0 ">{{ request.user.user_profile.default_full_name }}</p>
             {% else %}
-            <p class="my-0 ">Account</p>
+                <p class="my-0 ">Account</p>
             {% endif %}
         </div>
     </a>

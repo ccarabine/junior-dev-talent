@@ -85,8 +85,9 @@
                             <div class="text-center logo-font ">
                               <div><i class="fas fa-user fa-2xl"></i></div>
                               
-                              {% if request.user.is_authenticated %}
+                              {% if request.user.user_profile.default_full_name %}
                                 <p class=" font-weight-bold h6">{{ request.user.user_profile.default_full_name }}</p>
+                              
                               {% else %}
                                 <p class="my-0 ">Account</p>
                               {% endif %}
