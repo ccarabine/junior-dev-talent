@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="container background-grey py-4 mb-4">
+    <!--Title and describtion-->
+
+    <h2 class="contact-logo-font text-center">Direct Message</h2>
+    <div class="text-center py-2">
+        <img class="avatar avatar--xl" src="{{ profile.imageURL }}" />
+    </div>
+   
+    <div class="group mt-4 mb-4">
+        <div class="item line pb-1"></div>
+        <h3 class="item text contact-logo-font">{% if profile.default_full_name %} {{profile.default_full_name}}{% else %} Contact {% endif %}</h3>
+        <div class="item line pb-1"></div>
+    </div>
+    
+    <div class="form-border">
+        <form class="mb-2" method="post">
+            {% csrf_token %}
+            <div class="row">   
+                <p class="col-lg-12">
+                    <input type="text" aria-label="subject" name="message-subject" class="form-control mb-30" 
+                    placeholder="Subject"value="Message from Junior Dev Search: " required>
+                </p>
+                <p class="col-12">
+                    <textarea name="message" aria-label="message" class="form-control text-area pb-5" 
+                    placeholder="Your Message" required></textarea>
+                </p>
+                <p class="col-12 text-center">
+                    <button type="submit" class="btn btn-dark btn-white-txt cta mt-4">Send Message</button>
+                </p>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

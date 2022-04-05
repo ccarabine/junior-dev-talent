@@ -5,6 +5,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.db.models import Q
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.core.mail import send_mail
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -107,3 +108,37 @@ def talent_center_detail(request, pk):
 
     context = {'profile': profiles, 'skills': skills}
     return render(request, 'profiles/talent_center_detail.html', context)
+
+
+def contact_developer(request, pk):
+    """
+    Sends email -contact us form fields to admin or prints to the terminal
+    in development
+    Prepopulates email and username
+    Args:
+       request (object): HTTP request object.
+       slug: slug
+    Returns:
+       Render contact us page  with context
+    """
+    profile = get_object_or_404(UserProfile, pk=pk)
+  
+    if profile.default_email:
+        if request.method == "POST":
+            message_subject = request.POST['message-subject']
+            developer_email = profile.default_email
+            message_body = request.POST['message']
+            send_mail(
+                message_subject,
+                message_body,
+                'projectckcabs@gmail.com',
+                [developer_email],
+            )
+            messages.success(request, 'Email sent successfully')
+            return redirect("talent_center")
+    else:
+        messages.error(
+            request,
+            'Candidate does not have an email address unfortunately')
+        return redirect("talent_center")
+    return render(request, 'profiles/contact.html', {'profile': profile})

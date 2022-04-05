@@ -31,4 +31,7 @@ urlpatterns = [
     path('talent_center_detail/<str:pk>/',
          views.talent_center_detail,
          name="talent_center_detail"),
+    path("contact_developer/<str:pk>/",
+         views.contact_developer,
+         name="contact_developer"),
 ]
