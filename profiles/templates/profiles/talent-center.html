@@ -13,53 +13,58 @@
 {% endblock %}
 {% block content %}
 <div>
-    <div class="header-section text-center">
-        <div class="container container--narrow">
-            <div class="mb-2 title">
-                <h1>FIND THE BEST FRESH TALENT</h1>  
+    <div class="container header-section text-center">
+        <div class=" py-5 title">
+            <h1 class="search-heading font-weight-bold">FIND THE BEST FRESH TALENT</h1>  
+        </div> 
+        <div class="hero-section-search">
+        <form id="searchForm" class="form" action="{% url 'talent_center' %}" method="get">
+            <div class="container ">   
+                <input class="form-control form-control-lg " id="search_input" type="text" name="search_query" value="{{search_query}}" placeholder="Search" />
+                <input class="btn btn-white btn-lg my-4 font-weight-bold" type="submit" value="Search" />
             </div>
-        </div>
+        </form>
+    </div>
     </div>
     {% if request.user.user_profile.is_hiring_manager or request.user.is_superuser %}
-   
-    <div class="background-grey px-3 py-3 ">
-        <div class="row justify-content-center my-4 mx-4">
-            {% for profile in profiles %}
-                <div class="col-sm-12 col-md-4 col-lg-3 col-lg-2 card shadow p-3 bg-white rounded mr-2 mb-2"> 
-                    <div class="card h-100 px-2 py-2">
-                        <div class="profile">
-                            {% if profile.profile_image %}
-                                <a href="{% url 'talent_center_detail' profile.id %}" class="card-links">
-                                        <img class="avatar" src="{{ profile.profile_image.url }}" alt="{{ profile.default_full_name }} image" >
-                                    <div class="profile_short_details">
-                                        {% if profile.default_full_name %}
-                                            <h3 class="font-weight-bold header-font-size">{{profile.default_full_name|capfirst}}</h3>
-                                        {% endif %}
-                                        {% if profile.short_intro %}
-                                            <p class ="paragraph-font-size">{{profile.short_intro|slice:"60"}}</p>
-                                        {% endif %}
-                                    </div>
-                                    <div class="card-footer pb-0">
-                                        <p class="mb-0"></p>
-                                        {% if profile.about %}
-                                            <p class="paragraph-font-size">{{profile.about|slice:"150"}}</p>
-                                        {% endif %}
-                                    </div>
-                                    <div class="mt-2 ml-2">
-                                        {% for skill in profile.skill_set.all|slice:"6" %}
-                                            <span class="badge badge-pill badges">
-                                                <small>{{skill}}</small>
-                                            </span> 
-                                        {% endfor %}
-                                    </div>
-                                </a>
-                            {% endif %}
-                        </div>
-                    </div>   
-                </div>
-            {% endfor %}
+        <div>
+            <div class="row justify-content-center my-4 mx-4 px-3 py-3 background-grey">
+                {% for profile in profiles %}
+                    <div class="col-sm-12 col-md-4 col-lg-3 col-lg-2 card shadow p-3 bg-white rounded mr-2 mb-2"> 
+                        <div class="card h-100 px-2 py-2">
+                            <div class="profile">
+                                {% if profile.profile_image %}
+                                    <a href="{% url 'talent_center_detail' profile.id %}" class="card-links">
+                                            <img class="avatar" src="{{ profile.profile_image.url }}" alt="{{ profile.default_full_name }} image" >
+                                        <div class="profile_short_details">
+                                            {% if profile.default_full_name %}
+                                                <h3 class="font-weight-bold header-font-size">{{profile.default_full_name|capfirst}}</h3>
+                                            {% endif %}
+                                            {% if profile.short_intro %}
+                                                <p class ="paragraph-font-size">{{profile.short_intro|slice:"60"}}</p>
+                                            {% endif %}
+                                        </div>
+                                        <div class="card-footer pb-0">
+                                            <p class="mb-0"></p>
+                                            {% if profile.about %}
+                                                <p class="paragraph-font-size">{{profile.about|slice:"150"}}</p>
+                                            {% endif %}
+                                        </div>
+                                        <div class="mt-2 ml-2">
+                                            {% for skill in profile.skill_set.all|slice:"6" %}
+                                                <span class="badge badge-pill badges">
+                                                    <small>{{skill}}</small>
+                                                </span> 
+                                            {% endfor %}
+                                        </div>
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>   
+                    </div>
+                {% endfor %}
+            </div>
         </div>
-    </div>
-{% endif %}
-
+    {% endif %}
+</div>
 {% endblock content %}
