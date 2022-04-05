@@ -3,11 +3,12 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
+from django.db.models import Q
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from checkout.models import Order
-from .models import UserProfile
+from .models import UserProfile, Skill
 from .forms import UserProfileForm
 
 
@@ -75,15 +76,23 @@ def profile_type(request):
 
 
 def talent_center(request):
-    """ Display talent center, list profiles. """
-    profiles = UserProfile.objects.all()
+    """ Display talent center, list profiles by search query """
+    """ Using distinct to get only one instance of each user """
+    search_query = ''
 
-    template = 'profiles/talent-center.html'
-    context = {
-        'profiles': profiles,
-    }
+    if request.GET.get('search_query'):
+        search_query = request.GET.get('search_query')
 
-    return render(request, template, context)
+    skills = Skill.objects.filter(name__icontains=search_query)
+
+    profiles = UserProfile.objects.distinct().filter(
+        Q(default_full_name__icontains=search_query) |
+        Q(short_intro__icontains=search_query) |
+        Q(skill__in=skills)
+    )
+
+    context = {'profiles': profiles, 'skills': skills}
+    return render(request, 'profiles/talent-center.html', context)
 
 
 def talent_center_detail(request, pk):
