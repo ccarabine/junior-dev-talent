@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load product_tools %}
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
@@ -66,5 +67,6 @@
             </div>
         </div>
     {% endif %}
-</div>
+</div> 
+{% include 'profiles/pagination.html' %}
 {% endblock content %}

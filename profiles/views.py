@@ -4,13 +4,14 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.db.models import Q
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from checkout.models import Order
 from .models import UserProfile, Skill
 from .forms import UserProfileForm
-
+from util.util import pagination_setup
 
 def profile(request):
     """ Display the user's profile. """
@@ -78,6 +79,7 @@ def profile_type(request):
 def talent_center(request):
     """ Display talent center, list profiles by search query """
     """ Using distinct to get only one instance of each user """
+    """ Paginate by 6 """
     search_query = ''
 
     if request.GET.get('search_query'):
@@ -91,6 +93,8 @@ def talent_center(request):
         Q(skill__in=skills)
     )
 
+    profiles = pagination_setup(profiles, request, 6)
+    
     context = {'profiles': profiles, 'skills': skills}
     return render(request, 'profiles/talent-center.html', context)
 
