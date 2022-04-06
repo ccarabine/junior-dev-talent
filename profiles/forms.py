@@ -54,7 +54,7 @@ class UserAccountForm(forms.ModelForm):
                 self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'border-blue rounded-0 profile-form-input'
             self.fields[field].label = False
-
+            self.fields['is_hiring_manager'].label = "Enable talent center (disable candidate profile)"
 
 class UserProfileForm(forms.ModelForm):
     """
