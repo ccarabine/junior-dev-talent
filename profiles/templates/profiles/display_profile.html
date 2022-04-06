@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+{% endblock %}
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+{% block content %}
+<div>
+    <div class="header-section text-center">
+        <div class="container ">
+            <div class="py-5 title">
+                <h1>My Profile </h1>  
+            </div>
+        </div>
+    </div>
+   <div class="text-center mt-2">
+    <a href="{% url 'account_details' %}" class="text-center"><h5>Billing & order details</h5></a>
+   </div>
+    <div class="container">
+        <div class="row mx-5 my-5">
+            <div class="col-md">
+                <div class="card text-center background-grey">
+                    <div class="my-3 mx-2">
+                        <img class="avatar avatar--xl" src="{{ profile.imageURL }}" />
+                        {% if profile.default_full_name %}
+                            <h2 class="font-weight-bold">{{profile.default_full_name}}</h2>
+                        {% else %}
+                            <h5 class="text-danger">Name not completed</h5>
+                        {% endif %}
+                        {% if profile.default_email %}
+                            <h5 class="font-weight-bold">{{profile.default_email}}</h5>
+                        {% else %}
+                            <h5 class="text-danger">Email address not completed</h5>
+                        {% endif %}
+                        {% if profile.short_intro %}
+                            <h5>{{profile.short_intro}}</h5>
+                        {% else %}
+                            <h5 class="text-danger">Job title not completed</h5>
+                        {% endif %}
+                        {% if profile.location %}
+                            <h5>Based in {{profile.location}}</h5>
+                        {% else %}
+                            <h5 class="text-danger">Location not completed</h5>
+                        {% endif %}
+                        <div class="social_images">
+                            {% if profile.github_link %}
+                                <a title="Github" href="{{profile.github_link}}" target="_blank"><i
+                                            class="fa-brands fa-github fa-2xl"></i></a> 
+                            {% else %}
+                                <h5 class="text-danger">Github link not provided</h5>
+                            {% endif %}
+                            {% if profile.linkedin_link %}
+                                <a title="LinkedIn" href="{{profile.linkedin_link}}" target="_blank"><i
+                                            class="fa-brands fa-linkedin fa-2xl"></i></a>
+                            {% else %}
+                            <h5 class="text-danger">LinkedIn link not provided</h5>
+                            {% endif %}
+                        </div>
+                    <div>
+                    {% if profile.cv_file %}
+                        <!--CV section-->
+                        <a href="{{ profile.cv_file.url }}" target="_blank">
+                            <img class="" src="/media/cv_profile.png" alt="Cv download image" > 
+                        </a>
+                    {% else %}
+                        <h5 class="text-danger">CV not uploaded</h5>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div>
+            <h3 class="font-weight-bold mb-4">About Me</h3>
+            {% if profile.about %}
+            <p>{{profile.about}}</p>
+            {% else %}
+            <h5 class="text-danger">About me section not completed</h5>
+            {% endif %}
+        </div>
+        <div class="devInfo">
+            <h3 class="font-weight-bold mb-4">Skills</h3>
+            {% if skills %}
+            {% for skill in skills %}
+                <span class="badge badge-pill badges">
+                    <small>{{skill}}</small>
+                </span> 
+            {% endfor %}  
+            {% else %}
+                <h5 class="text-danger">Skills not added, adding skill will increase your chance to get noticed by a hiring manager</h5>
+            {% endif %}
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock content %}

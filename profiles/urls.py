@@ -34,4 +34,10 @@ urlpatterns = [
     path("contact_developer/<str:pk>/",
          views.contact_developer,
          name="contact_developer"),
+    path("display_profile",
+         views.display_profile,
+         name="display_profile"),
+    path("account_details",
+         views.account_details,
+         name="account_details"),
 ]

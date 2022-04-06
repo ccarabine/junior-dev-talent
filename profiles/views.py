@@ -142,3 +142,35 @@ def contact_developer(request, pk):
             'Candidate does not have an email address unfortunately')
         return redirect("talent_center")
     return render(request, 'profiles/contact.html', {'profile': profile})
+
+def display_profile(request):
+    """ Display the user's personal profile. """
+    profile = get_object_or_404(UserProfile, user=request.user)
+
+ 
+    skills = profile.skill_set.all()
+    
+
+    template = 'profiles/display_profile.html'
+    context = {
+        'on_profile_page': True,
+        'profile': profile,
+        'skills': skills
+        }
+
+
+    return render(request, template, context)
+
+def account_details(request):
+    """ Display the user's billing details and order. """
+    profile = get_object_or_404(UserProfile, user=request.user)
+    orders = profile.orders.all()
+    
+    template = 'profiles/account_details.html'
+    context = {
+        'orders':orders,
+        'on_profile_page': True,
+        'profile': profile,
+        }
+
+    return render(request, template, context)
