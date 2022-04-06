@@ -4,18 +4,17 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.db.models import Q
-from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
-from django.core.mail import send_mail
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from checkout.models import Order
-from .models import UserProfile, Skill
-from .forms import UserProfileForm
 from util.util import pagination_setup
+from .models import UserProfile, Skill
+from .forms import UserProfileForm, UserAccountForm
 
-def profile(request):
-    """ Display the user's profile. """
+
+def edit_profile(request):
+    """ Display the user's profile with instance and update """
     profile = get_object_or_404(UserProfile, user=request.user)
 
     if request.method == 'POST':
@@ -23,14 +22,35 @@ def profile(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Profile updated successfully')
-
+            return redirect("display_profile")
     form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
 
-    template = 'profiles/profile.html'
+    template = 'profiles/edit_profile.html'
     context = {
         'form': form,
         'orders': orders,
+        'on_profile_page': True
+    }
+    return render(request, template, context)
+
+
+def edit_account(request):
+    """ Display the user's profile account information. """
+    account_profile = get_object_or_404(UserProfile, user=request.user)
+
+    if request.method == 'POST':
+        form = UserAccountForm(request.POST, instance=account_profile)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Profile updated successfully')
+            return redirect("account_details")
+
+    form = UserAccountForm(instance=account_profile)
+
+    template = 'profiles/edit_account.html'
+    context = {
+        'form': form,
         'on_profile_page': True
     }
 
@@ -95,7 +115,7 @@ def talent_center(request):
     )
 
     profiles = pagination_setup(profiles, request, 6)
-    
+
     context = {'profiles': profiles, 'skills': skills}
     return render(request, 'profiles/talent-center.html', context)
 
@@ -122,7 +142,7 @@ def contact_developer(request, pk):
        Render contact us page  with context
     """
     profile = get_object_or_404(UserProfile, pk=pk)
-  
+
     if profile.default_email:
         if request.method == "POST":
             message_subject = request.POST['message-subject']
@@ -143,13 +163,12 @@ def contact_developer(request, pk):
         return redirect("talent_center")
     return render(request, 'profiles/contact.html', {'profile': profile})
 
+
 def display_profile(request):
     """ Display the user's personal profile. """
     profile = get_object_or_404(UserProfile, user=request.user)
 
- 
     skills = profile.skill_set.all()
-    
 
     template = 'profiles/display_profile.html'
     context = {
@@ -157,18 +176,17 @@ def display_profile(request):
         'profile': profile,
         'skills': skills
         }
-
-
     return render(request, template, context)
+
 
 def account_details(request):
     """ Display the user's billing details and order. """
     profile = get_object_or_404(UserProfile, user=request.user)
     orders = profile.orders.all()
-    
+
     template = 'profiles/account_details.html'
     context = {
-        'orders':orders,
+        'orders': orders,
         'on_profile_page': True,
         'profile': profile,
         }

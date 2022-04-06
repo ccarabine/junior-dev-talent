@@ -9,9 +9,14 @@ from . import views
 
 urlpatterns = [
     path(
-        '',
-        views.profile,
-        name='profile'
+        'edit_profile',
+        views.edit_profile,
+        name='edit_profile'
+        ),
+    path(
+        'edit_account',
+        views.edit_account,
+        name='edit_account'
         ),
     path(
         'order_history/<order_number>',

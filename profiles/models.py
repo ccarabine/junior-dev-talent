@@ -71,12 +71,6 @@ class UserProfile(models.Model):
         null=True,
         default=""
         )
-    location = models.CharField(
-        max_length=200,
-        blank=True,
-        null=True,
-        default=""
-        )
     short_intro = models.CharField(
         max_length=200,
         blank=True,
@@ -87,16 +81,17 @@ class UserProfile(models.Model):
         null=True,
         default=""
         )
+    location = models.CharField(
+        max_length=200,
+        blank=True,
+        null=True,
+        default=""
+        )
     profile_image = models.ImageField(
         null=True,
         blank=True,
         upload_to='media/',
         default="default_user.png"
-        )
-    cv_file = models.FileField(
-        null=True,
-        blank=True,
-        upload_to='media/documents'
         )
     github_link = models.CharField(
         max_length=200,
@@ -109,6 +104,11 @@ class UserProfile(models.Model):
         blank=True,
         null=True,
         default=""
+        )
+    cv_file = models.FileField(
+        null=True,
+        blank=True,
+        upload_to='media/documents'
         )
     created = models.DateTimeField(
         auto_now_add=True,
