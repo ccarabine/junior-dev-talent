@@ -81,7 +81,7 @@
       
     </li>
     <li class=" pb-3 list-inline-item">
-        <a class="logo-font font-weight-bold " href="{% url 'subscription' %}" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="logo-font font-weight-bold " {% if request.user.user_profile.is_hiring_manager %} href="{% url 'talent_center' %}" {% else %} href="{% url 'subscription' %}" {% endif %} id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Talent Center
         </a>
     </li>
