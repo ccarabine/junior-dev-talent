@@ -12,18 +12,19 @@ class UserAccountForm(forms.ModelForm):
     """
     A class for the user profile form
     """
+   
     class Meta:
         """
         A class for the Meta information
         """
         model = UserProfile
-        exclude = ('user', 'is_hiring_manager',
+        exclude = ('user', 
                    'location',
                    'short_intro', 'about',
                    'profile_image', 'cv_file',
                    'github_link', 'linkedin_link',
                    )
-
+  
     def __init__(self, *args, **kwargs):
         """
         Add placeholders and classes, remove auto-generated
@@ -31,6 +32,7 @@ class UserAccountForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)
         placeholders = {
+            'is_hiring_manager': 'Register as hiring manager',
             'default_full_name': 'Full name',
             'default_email': 'Email',
             'default_phone_number': 'Phone Number',
@@ -41,7 +43,7 @@ class UserAccountForm(forms.ModelForm):
             'default_county': 'County'
 
         }
-
+        
         self.fields['default_full_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if field != 'default_country':
@@ -93,7 +95,6 @@ class UserProfileForm(forms.ModelForm):
 
         self.fields['location'].widget.attrs['autofocus'] = True
         for field in self.fields:
-
             placeholder = placeholders[field]
             self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'border-blue rounded-0 profile-form-input'

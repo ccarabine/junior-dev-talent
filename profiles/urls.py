@@ -29,6 +29,12 @@ urlpatterns = [
         name='profile_type'
         ),
     path(
+        'register_hiring_manager',
+        views.register_hiring_manager,
+        name='register_hiring_manager'
+        ),
+    
+    path(
         'talent_center',
         views.talent_center,
         name='talent_center'

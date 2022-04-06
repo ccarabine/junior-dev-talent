@@ -98,7 +98,11 @@
                               {% if request.user.is_superuser %}
                                   <a href="" class="dropdown-item">Product Management</a>
                               {% endif %}
+                              {% if request.user.user_profile.is_hiring_manager %}
+                              <a href="{% url 'account_details' %}" class="dropdown-item">My Account</a>
+                              {% else %}
                               <a href="{% url 'display_profile' %}" class="dropdown-item">My Profile</a>
+                              {% endif %}
                               <a href="{% url 'account_change_password' %}" class="dropdown-item nav-color" aria-label="Change password">Change password</a>
                               <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                           {% else %}

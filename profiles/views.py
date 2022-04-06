@@ -4,6 +4,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.db.models import Q
+from django.contrib.auth.decorators import login_required
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -13,6 +14,7 @@ from .models import UserProfile, Skill
 from .forms import UserProfileForm, UserAccountForm
 
 
+@login_required
 def edit_profile(request):
     """ Display the user's profile with instance and update """
     profile = get_object_or_404(UserProfile, user=request.user)
@@ -35,6 +37,7 @@ def edit_profile(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_account(request):
     """ Display the user's profile account information. """
     account_profile = get_object_or_404(UserProfile, user=request.user)
@@ -57,6 +60,7 @@ def edit_account(request):
     return render(request, template, context)
 
 
+@login_required
 def order_history(request, order_number):
     """ Display the user's order history. """
     order = get_object_or_404(Order, order_number=order_number)
@@ -74,29 +78,26 @@ def order_history(request, order_number):
 
     return render(request, template, context)
 
+@login_required
+def register_hiring_manager(request):
+    """ When this function is called, it registers the user as a hiring manager. """
+    profile = get_object_or_404(UserProfile, user=request.user)
+    profile.is_hiring_manager = True
+    profile.save()
+    messages.success(request, 'Successfully registered as a hiring manager')
+    return redirect(talent_center)
 
+
+@login_required
 def profile_type(request):
-    """ User to select either user or employer status. """
-    profiles = get_object_or_404(UserProfile, user=request.user)
-
-    if request.method == 'POST':
-        form = UserProfileForm(request.POST, instance=profiles)
-        if form.is_valid():
-            form.save()
-            if 'hiring_manager' in request.POST:
-                messages.success(request, 'Profile updated successfully')
-                return redirect("talent_center")
-
-    form = UserProfileForm(instance=profiles)
+    """ Render the register user type template. """
 
     template = 'profiles/register_user_type.html'
-    context = {
-        'form': form,
-    }
 
-    return render(request, template, context)
+    return render(request, template)
 
-
+ 
+@login_required
 def talent_center(request):
     """ Display talent center, list profiles by search query """
     """ Using distinct to get only one instance of each user """
@@ -120,6 +121,7 @@ def talent_center(request):
     return render(request, 'profiles/talent-center.html', context)
 
 
+@login_required
 def talent_center_detail(request, pk):
     """ Display talent center detail profile. """
     profiles = UserProfile.objects.get(id=pk)
@@ -130,6 +132,7 @@ def talent_center_detail(request, pk):
     return render(request, 'profiles/talent_center_detail.html', context)
 
 
+@login_required
 def contact_developer(request, pk):
     """
     Sends email -contact us form fields to admin or prints to the terminal
@@ -164,6 +167,7 @@ def contact_developer(request, pk):
     return render(request, 'profiles/contact.html', {'profile': profile})
 
 
+@login_required
 def display_profile(request):
     """ Display the user's personal profile. """
     profile = get_object_or_404(UserProfile, user=request.user)
@@ -179,6 +183,7 @@ def display_profile(request):
     return render(request, template, context)
 
 
+@login_required
 def account_details(request):
     """ Display the user's billing details and order. """
     profile = get_object_or_404(UserProfile, user=request.user)
