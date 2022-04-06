@@ -129,17 +129,6 @@ class UserProfile(models.Model):
         return url
 
 
-@receiver(post_save, sender=User)
-def create_or_update_user_profile(sender, instance, created, **kwargs):
-    """
-    Create or update the user profile
-    """
-    if created:
-        UserProfile.objects.create(user=instance)
-    # Existing users: just save the profile
-    instance.user_profile.save()
-
-
 class Skill(models.Model):
     """
     A skill model for skill of the user
@@ -161,4 +150,3 @@ class Skill(models.Model):
 
     def __str__(self):
         return str(self.name)
-    
