@@ -51,4 +51,7 @@ urlpatterns = [
     path("account_details",
          views.account_details,
          name="account_details"),
+    path("subscription",
+         views.subscription,
+         name="subscription"),
 ]
