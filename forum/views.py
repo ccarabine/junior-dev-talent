@@ -252,6 +252,8 @@ def create_topic(request):
         if form.is_valid():
             topic = form.save(commit=False)
             topic.topic_image = request.FILES.get("topic_image")
+            topic.slug = slugify(request.POST["name"])
+            
             topic.save()
             messages.success(request, 'Topic was added successfully')
             return redirect('forum')
@@ -282,6 +284,8 @@ def update_topic(request, pk):
     if request.method == 'POST':
         form = TopicForm(request.POST, request.FILES, instance=topic)
         if form.is_valid():
+            topic = form.save(commit=False)
+            topic.slug = slugify(request.POST["name"])
             form.save()
             messages.success(request, 'Topic was updated successfully')
             return redirect('forum')
