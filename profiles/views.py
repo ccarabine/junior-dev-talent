@@ -223,11 +223,13 @@ def create_skill(request):
             skill.save()
             messages.success(request, 'Skill was added successfully')
             return redirect('display_profile')
-        
+    title = 'Create'
+    
     template = 'profiles/skill_form.html'
 
     context = {
-        'form': form
+        'form': form,
+        'title': title
         }
 
     return render(request, template, context)
@@ -248,11 +250,13 @@ def update_skill(request, pk):
             form.save()
             messages.success(request, 'Skill was updated successfully')
             return redirect('display_profile')
-        
+    title = 'Update'
+    
     template = 'profiles/skill_form.html'
 
     context = {
-        'form': form
+        'form': form,
+        'title': title
         }
 
     return render(request, template, context)
