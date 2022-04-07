@@ -29,7 +29,12 @@
             <div class="col-md">
                 <div class="card text-center background-grey">
                     <div class="my-3 mx-2">
-                        <img class="avatar avatar--xl" src="{{ profile.imageURL }}" />
+                        {% if profile.profile_image %}
+                            <img class="avatar avatar--xl" src="{{ profile.imageURL }}" alt="{{ product.profile.name }}" />
+                        {% else %}
+                            <img class="avatar avatar--xl" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.profile.name }}" />
+                           
+                        {% endif %}
                         {% if profile.default_full_name %}
                             <h2 class="font-weight-bold">{{profile.default_full_name}}</h2>
                         {% else %}
