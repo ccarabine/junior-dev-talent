@@ -5,6 +5,8 @@ from django import forms
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit, Row, Column, Layout, Field
 from crispy_forms.bootstrap import FormActions
+from .widgets import CustomClearableFileInput
+
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from .models import Post, Comment, Topic
@@ -16,7 +18,7 @@ class PostForm(forms.ModelForm):
     """
     class Meta:
         model = Post
-        fields = ("title", "body", "post_image")
+        fields = ("title", "body", "post_image",)
 
     def __init__(self, *args, **kwargs):
         """
@@ -54,11 +56,12 @@ class PostForm(forms.ModelForm):
                     Submit(
                         "submit",
                         "Submit post",
-                        css_class="btn btn-secondary"
+                        css_class="btn btn-dark btn-white-txt cta my-4 "
                         )
                 ),
             ),
         )
+        
 class CommentForm(forms.ModelForm):
     """
     A class for comments
@@ -100,7 +103,14 @@ class TopicForm(forms.ModelForm):
         """
         model = Topic
         fields = ('name', 'topic_image',)
-        
+ 
+    topic_image = forms.ImageField(
+        label='Image',
+        required=False,
+        widget=CustomClearableFileInput
+        )
+
+
     def __init__(self, *args, **kwargs):
         """
         Add placeholders and classes, remove auto-generated

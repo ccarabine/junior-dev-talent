@@ -292,7 +292,7 @@ def update_topic(request, pk):
 
     title = 'Update'
 
-    template = 'profiles/skill_form.html'
+    template = 'forum/topic_form.html'
 
     context = {
         'form': form,
