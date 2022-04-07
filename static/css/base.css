@@ -106,16 +106,15 @@ body {
 	z-index: -1;
 }
     /* --- footer styling --- */
-a:link,
-a:visited,
-a:active,
-a:focus{
+.footer-links:link,
+.footer-links:visited,
+.footer-links:active,
+.footer-links:focus{
     color: var(--color-midnight-blue) ;
-    
     text-decoration: none;
     cursor: pointer;
 }
-a:hover {
+.footer-links:hover {
     color:black !important;
     text-decoration: underline;
   }

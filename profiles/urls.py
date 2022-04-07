@@ -54,4 +54,7 @@ urlpatterns = [
     path("subscription",
          views.subscription,
          name="subscription"),
+    path("create_skill",
+         views.create_skill,
+         name="create_skill"),
 ]

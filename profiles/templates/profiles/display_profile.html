@@ -21,8 +21,8 @@
         </div>
     </div>
    <div class="text-center mt-2">
-    <a href="{% url 'account_details' %}" class="text-center"><h5>Billing & order details</h5></a>
-    <a href="{% url 'edit_profile' %}" class="text-center"><h5>Edit profile</h5></a>
+    <a href="{% url 'account_details' %}" class="text-center footer-links"><h5>Billing & order details</h5></a>
+    <a href="{% url 'edit_profile' %}" class="text-center footer-links"><h5>Edit profile</h5></a>
    </div>
     <div class="container">
         <div class="row mx-5 my-5">
@@ -88,6 +88,7 @@
         </div>
         <div class="devInfo">
             <h3 class="font-weight-bold mb-4">Skills</h3>
+            <a href="#" class="badge-pill add-skill-badge py-2 px-3"><span class="">+</span> Add Skill</a>
             {% if skills %}
             {% for skill in skills %}
                 <span class="badge badge-pill badges">

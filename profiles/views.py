@@ -205,3 +205,15 @@ def subscription(request):
     template = 'profiles/subscription.html'
 
     return render(request, template)
+
+@login_required
+def create_skill(request):
+    """ Render create skill template. """
+
+    template = 'profiles/skill_form.html'
+
+    context = {
+
+        }
+
+    return render(request, template, context)
