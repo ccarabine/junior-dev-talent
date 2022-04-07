@@ -59,7 +59,7 @@
                         {% if user.id == post.owner.id or request.user.is_superuser %}
                             <small>
                                 <a href="{% url 'updatepost' post.pk %}" class="logo-font mr-2" aria-label="update post link"> Update</a>
-                                <a href="{% url 'deletepost' post.pk %}" class="logo-font mr-2" aria-label="delete post link">Delete</a>
+                                <a href="{% url 'deletepost' post.pk %}" class="logo-font mr-2 text-danger" aria-label="delete post link">Delete</a>
                             </small>
                         {% endif %}
                     </div>

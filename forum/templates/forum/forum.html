@@ -42,20 +42,22 @@
                 {% if user.is_superuser %}
                     <div class="text-center">
                         <a class="footer-links d-inline" href="{% url 'update_topic' topic.id %}"> Edit</a>
-                        <a class="footer-links d-inline" href="{% url 'delete_topic' topic.id %}"> Delete</a>
+                        <a class="text-danger d-inline" href="{% url 'delete_topic' topic.id %}"> Delete</a>
                     </div>
                 {% endif %}
-                <a href="/forum/{{ topic.slug }}"  aria-label="{{ topic.name }}">
+                
                     <div class="card-horizontal">
                         <div class="width-size">
                             <img class="img-thumbnail " src="{{ topic.topic_image.url }}" >
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title">Discussion Room</h4>
-                            <p class="cad ">{{ topic.name |capfirst  }}</p>
+                            <h4 class="card-title ">Discussion Room</h4>
+                            <a href="/forum/{{ topic.slug }}" class="footer-links"  aria-label="{{ topic.name }}">
+                            <h4 class=" ">{{ topic.name |capfirst }}</h4>
+                            </a>
                         </div>
                     </div>
-                </a>
+                
             </div>
         </div>
         {% endfor %}

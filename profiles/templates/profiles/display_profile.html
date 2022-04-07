@@ -98,7 +98,7 @@
                     <small>{{skill}}</small>
                 </div> 
                 <a class="footer-links" href="{% url 'update_skill' skill.id %}"></i> Edit</a>
-                <a class="footer-links" href="{% url 'delete_skill' skill.id %}"></i> Delete</a>
+                <a class="text-danger" href="{% url 'delete_skill' skill.id %}"></i> Delete</a>
             </div>
             {% endfor %}  
             {% else %}
