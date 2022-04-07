@@ -202,7 +202,7 @@ def account_details(request):
 
     return render(request, template, context)
 
-@login_required
+
 def subscription(request):
     """ Render the subscription template. """
 
