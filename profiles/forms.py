@@ -2,6 +2,7 @@
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django import forms
+from .widgets import CustomClearableFileInput
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -24,7 +25,7 @@ class UserAccountForm(forms.ModelForm):
                    'profile_image', 'cv_file',
                    'github_link', 'linkedin_link',
                    )
-  
+        
     def __init__(self, *args, **kwargs):
         """
         Add placeholders and classes, remove auto-generated
@@ -76,6 +77,12 @@ class UserProfileForm(forms.ModelForm):
                    'default_country',
                    'default_county')
 
+    profile_image = forms.ImageField(
+        label='Image',
+        required=False,
+        widget=CustomClearableFileInput
+        )
+    
     def __init__(self, *args, **kwargs):
         """
         Add placeholders and classes, remove auto-generated
