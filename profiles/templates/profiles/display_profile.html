@@ -97,6 +97,7 @@
                     <small>{{skill}}</small>
                 </span> 
                 <a class="footer-links" href="{% url 'update_skill' skill.id %}"></i> Edit</a>
+                <a class="footer-links" href="{% url 'delete_skill' skill.id %}"></i> Delete</a>
             {% endfor %}  
             {% else %}
                 <h5 class="text-danger">Skills not added, adding skill will increase your chance to get noticed by a hiring manager</h5>

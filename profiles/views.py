@@ -256,3 +256,22 @@ def update_skill(request, pk):
         }
 
     return render(request, template, context)
+
+@login_required
+def delete_skill(request, pk):
+    """ Delete the skill  """
+    
+    profile = request.user.user_profile
+    skill = profile.skill_set.get(id=pk)
+    if request.method == 'POST':
+        skill.delete()
+        messages.success(request, 'Skill was deleted successfully')
+        return redirect('display_profile')
+    
+    template = 'profiles/delete_skill.html'
+    
+    context = {
+        'skill': skill
+        }
+
+    return render(request, template, context)

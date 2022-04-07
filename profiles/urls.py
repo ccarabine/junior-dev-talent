@@ -60,4 +60,7 @@ urlpatterns = [
     path("update_skill/<str:pk>",
          views.update_skill,
          name="update_skill"),
+    path("delete_skill/<str:pk>",
+         views.delete_skill,
+         name="delete_skill"),
 ]
