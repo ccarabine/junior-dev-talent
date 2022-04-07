@@ -243,7 +243,7 @@ def create_topic(request):
     """ Add the topic  """
     if not request.user.is_superuser:
         messages.error(
-            request, 'Sorry, only logged in users can create a post.')
+            request, 'Sorry, only logged in users can create a topic.')
         return redirect(reverse('forum'))
     form = TopicForm()
 
@@ -273,7 +273,7 @@ def update_topic(request, pk):
 
     if not request.user.is_superuser:
         messages.error(
-            request, 'Sorry, only logged in users can create a post.')
+            request, 'Sorry, only logged in users can update a topic.')
         return redirect(reverse('forum'))
     
     topic = get_object_or_404(Topic, pk=pk)
@@ -293,6 +293,31 @@ def update_topic(request, pk):
     context = {
         'form': form,
         'title': title
+        }
+
+    return render(request, template, context)
+
+
+@login_required
+def delete_topic(request, pk):
+    """ Delete topic  """
+    
+    topic = get_object_or_404(Topic, pk=pk)
+      
+    if not request.user.is_superuser:
+        messages.error(
+            request, 'Sorry, only logged in users can delete a topic.')
+        return redirect(reverse('forum'))
+    
+    if request.method == 'POST':
+        topic.delete()
+        messages.success(request, 'Topic was deleted successfully')
+        return redirect('forum')
+    
+    template = 'forum/delete_topic.html'
+    
+    context = {
+        'topic': topic
         }
 
     return render(request, template, context)

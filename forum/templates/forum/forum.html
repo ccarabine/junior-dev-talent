@@ -37,12 +37,13 @@
     <!--Display room topics-->
      <div class="row">
         {% for topic in topics %}
-        
         <div class="col-sm-12 col-md-6 mb-4">
-            
             <div class="card h-100 ">
                 {% if user.is_superuser %}
-                    <a class="footer-links text-center" href="{% url 'update_topic' topic.id %}"> Edit</a>
+                    <div class="text-center">
+                        <a class="footer-links d-inline" href="{% url 'update_topic' topic.id %}"> Edit</a>
+                        <a class="footer-links d-inline" href="{% url 'delete_topic' topic.id %}"> Delete</a>
+                    </div>
                 {% endif %}
                 <a href="/forum/{{ topic.slug }}"  aria-label="{{ topic.name }}">
                     <div class="card-horizontal">

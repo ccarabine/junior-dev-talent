@@ -36,4 +36,7 @@ urlpatterns = [
      path("topic/update_topic/<int:pk>",
           views.update_topic,
           name="update_topic"),
+     path("delete_topic/<str:pk>",
+          views.delete_topic,
+          name="delete_topic"),
 ]
