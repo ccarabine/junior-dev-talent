@@ -90,7 +90,7 @@ class UserProfile(models.Model):
     profile_image = models.ImageField(
         null=True,
         blank=True,
-        upload_to='media/',
+        upload_to='profile_images/',
         default="default_user.png"
         )
     github_link = models.CharField(
@@ -108,7 +108,7 @@ class UserProfile(models.Model):
     cv_file = models.FileField(
         null=True,
         blank=True,
-        upload_to='media/documents'
+        upload_to='documents/'
         )
     created = models.DateTimeField(
         auto_now_add=True,

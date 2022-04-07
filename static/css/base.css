@@ -396,7 +396,9 @@ input[name='q']::placeholder {
     border-color: #dc3545;
     border-radius: 0;
 }
-
+#btn.extra {
+    background-color: blue !important;
+}
 
 /* -------------------------------- Media Queries */
 

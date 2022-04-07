@@ -33,7 +33,7 @@
             <div class="col background-grey">
         
                 <h5 class="mt-3"> Profile Information</h5>
-                <form class="mt-3" action="{% url 'edit_account' %}" method="POST">
+                <form class="mt-3" action="{% url 'edit_account' %}" method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form|crispy }}
                     <button class="btn btn-dark btn-white-txt cta my-4 ">Update Information</button>
