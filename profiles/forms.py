@@ -5,7 +5,7 @@ from django import forms
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-from .models import UserProfile
+from .models import UserProfile, Skill
 
 
 class UserAccountForm(forms.ModelForm):
@@ -99,3 +99,26 @@ class UserProfileForm(forms.ModelForm):
             self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'border-blue rounded-0 profile-form-input'
             self.fields[field].label = False
+
+
+class SkillForm(forms.ModelForm):
+    """
+    A class for the skill form
+    """
+    class Meta:
+        """
+        A class for the Meta information
+        """
+        model = Skill
+        fields = ('name',)
+        
+    def __init__(self, *args, **kwargs):
+        """
+        Add placeholders and classes, remove auto-generated
+        labels and set autofocus on first field
+        """
+        super().__init__(*args, **kwargs)
+              
+        self.fields['name'].widget.attrs['autofocus'] = True
+        self.fields['name'].label = "Skill Name"
+

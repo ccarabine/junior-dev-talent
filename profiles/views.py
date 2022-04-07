@@ -11,7 +11,7 @@ from django.contrib.auth.decorators import login_required
 from checkout.models import Order
 from util.util import pagination_setup
 from .models import UserProfile, Skill
-from .forms import UserProfileForm, UserAccountForm
+from .forms import UserProfileForm, UserAccountForm, SkillForm
 
 
 @login_required
@@ -208,12 +208,51 @@ def subscription(request):
 
 @login_required
 def create_skill(request):
-    """ Render create skill template. """
-
+    """ Use the skill form using the post request """
+    """ Add the skill for the particular owner to their """
+    """ profile """
+    
+    profile = request.user.user_profile
+    form = SkillForm()
+    
+    if request.method == 'POST':
+        form = SkillForm(request.POST)
+        if form.is_valid():
+            skill = form.save(commit=False)
+            skill.owner = profile
+            skill.save()
+            messages.success(request, 'Skill was added successfully')
+            return redirect('display_profile')
+        
     template = 'profiles/skill_form.html'
 
     context = {
+        'form': form
+        }
 
+    return render(request, template, context)
+
+@login_required
+def update_skill(request, pk):
+    """ Use the skill form using the post request """
+    """ update the skill for the particular owner to their """
+    """ profile """
+    
+    profile = request.user.user_profile
+    skill = profile.skill_set.get(id=pk)
+    form = SkillForm(instance=skill)
+    
+    if request.method == 'POST':
+        form = SkillForm(request.POST, instance=skill)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Skill was updated successfully')
+            return redirect('display_profile')
+        
+    template = 'profiles/skill_form.html'
+
+    context = {
+        'form': form
         }
 
     return render(request, template, context)
