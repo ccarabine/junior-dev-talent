@@ -7,7 +7,7 @@ from crispy_forms.layout import Submit, Row, Column, Layout, Field
 from crispy_forms.bootstrap import FormActions
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-from .models import Post, Comment
+from .models import Post, Comment, Topic
 
 
 class PostForm(forms.ModelForm):
@@ -88,3 +88,25 @@ class CommentForm(forms.ModelForm):
                 "Add Comment",
                 css_class="btn btn-secondary"),
         )
+
+
+class TopicForm(forms.ModelForm):
+    """
+    A class for the Topic form
+    """
+    class Meta:
+        """
+        A class for the Meta information
+        """
+        model = Topic
+        fields = ('name', 'topic_image',)
+        
+    def __init__(self, *args, **kwargs):
+        """
+        Add placeholders and classes, remove auto-generated
+        labels and set autofocus on first field
+        """
+        super().__init__(*args, **kwargs)
+              
+        self.fields['name'].widget.attrs['autofocus'] = True
+        self.fields['name'].label = "Topic Name"

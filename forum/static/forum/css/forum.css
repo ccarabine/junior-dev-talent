@@ -16,4 +16,26 @@
     margin: auto;
   }
 
+/* Header search section  */
+.header-section {
+  background-color: #00447C;
+  color:white;
+}
 
+/* add skill badge  */
+
+
+.add-skill-badge:link,
+.add-skill-badge:visited,
+.add-skill-badge:active,
+.add-skill-badge:focus{
+    color: #00447C;
+    background-color:#fed5a4;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+.add-skill-badge:hover {
+    color: #fed5a4;
+    background-color:#00447C;
+  }

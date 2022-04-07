@@ -13,7 +13,10 @@ class Topic(models.Model):
     """
     name = models.CharField(
         verbose_name=("name"),
-        max_length=100
+        max_length=100,
+        unique=True,
+        null=True,
+        blank=False,
         )
     friendly_name = models.CharField(
         verbose_name=("friendly_name"),

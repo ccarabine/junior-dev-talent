@@ -30,4 +30,7 @@ urlpatterns = [
      path("topic/comment/<int:pk>/remove",
           views.DeleteCommentView.as_view(),
           name="deletecomment"),
+     path("topic/create_topic",
+          views.create_topic,
+          name="create_topic"),
 ]

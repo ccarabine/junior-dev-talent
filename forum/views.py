@@ -15,7 +15,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-from .forms import PostForm, CommentForm
+from .forms import PostForm, CommentForm, TopicForm
 from .models import Topic, Post, Comment
 
 
@@ -220,6 +220,7 @@ class UpdateCommentView(SuccessMessageMixin, UpdateView):
         owner = self.request.user
         return self.model.objects.filter(owner=owner.id)
 
+
 @method_decorator(login_required, name='dispatch')
 class DeleteCommentView(SuccessMessageMixin, DeleteView):
     """
@@ -234,3 +235,33 @@ class DeleteCommentView(SuccessMessageMixin, DeleteView):
     template_name = "forum/delete_comment.html"
     success_url = reverse_lazy("forum")
     success_message = "Comment deleted"
+
+ 
+@login_required
+def create_topic(request):
+    """ Use the create form using the post request """
+    """ Add the topic  """
+    if not request.user.is_superuser:
+        messages.error(
+            request, 'Sorry, only logged in users can create a post.')
+        return redirect(reverse('forum'))
+    form = TopicForm()
+
+    if request.method == 'POST':
+        form = TopicForm(request.POST, request.FILES)
+        if form.is_valid():
+            topic = form.save(commit=False)
+            topic.topic_image = request.FILES.get("topic_image")
+            topic.save()
+            messages.success(request, 'Topic was added successfully')
+            return redirect('forum')
+    title = 'Create'
+
+    template = 'forum/topic_form.html'
+
+    context = {
+        'form': form,
+        'title': title
+        }
+
+    return render(request, template, context)
