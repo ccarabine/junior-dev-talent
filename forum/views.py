@@ -265,3 +265,34 @@ def create_topic(request):
         }
 
     return render(request, template, context)
+
+@login_required
+def update_topic(request, pk):
+    """ Use the Topic form using the post request """
+    """ Get the topic by pk and update the topic"""
+
+    if not request.user.is_superuser:
+        messages.error(
+            request, 'Sorry, only logged in users can create a post.')
+        return redirect(reverse('forum'))
+    
+    topic = get_object_or_404(Topic, pk=pk)
+    form = TopicForm(instance=topic)
+
+    if request.method == 'POST':
+        form = TopicForm(request.POST, request.FILES, instance=topic)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Topic was updated successfully')
+            return redirect('forum')
+
+    title = 'Update'
+
+    template = 'profiles/skill_form.html'
+
+    context = {
+        'form': form,
+        'title': title
+        }
+
+    return render(request, template, context)
