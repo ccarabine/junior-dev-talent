@@ -39,3 +39,6 @@ handler404 = 'forum.views.error_404_view'
 handler500 = 'forum.views.error_500_view'
 handler404 = 'home.views.error_404_view'
 handler500 = 'home.views.error_500_view'
+handler404 = 'products.views.error_404_view'
+handler500 = 'products.views.error_500_view'
+
