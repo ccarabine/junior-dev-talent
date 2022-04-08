@@ -43,4 +43,6 @@ handler404 = 'products.views.error_404_view'
 handler500 = 'products.views.error_500_view'
 handler404 = 'profiles.views.error_404_view'
 handler500 = 'profiles.views.error_500_view'
+handler404 = 'checkout.views.error_404_view'
+handler500 = 'checkout.views.error_500_view'
 
