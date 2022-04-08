@@ -35,3 +35,5 @@ urlpatterns = [
     path('profiles/', include('profiles.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+handler404 = 'forum.views.error_404_view'
+handler500 = 'forum.views.error_500_view'
