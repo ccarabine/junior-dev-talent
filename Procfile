@@ -1,1 +1,1 @@
-web: gunicorn junior-dev-talent.wsgi
+web: gunicorn junior_dev_talent.wsgi
