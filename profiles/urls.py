@@ -39,28 +39,49 @@ urlpatterns = [
         views.talent_center,
         name='talent_center'
         ),
-    path('talent_center_detail/<str:pk>/',
+    path(
+         'talent_center_detail/<str:pk>/',
          views.talent_center_detail,
-         name="talent_center_detail"),
-    path("contact_developer/<str:pk>/",
+         name="talent_center_detail"
+         ),
+    path(
+         "contact_developer/<str:pk>/",
          views.contact_developer,
-         name="contact_developer"),
-    path("display_profile",
+         name="contact_developer"
+         ),
+    path(
+         "display_profile",
          views.display_profile,
-         name="display_profile"),
-    path("account_details",
+         name="display_profile"
+         ),
+    path(
+         "account_details",
          views.account_details,
-         name="account_details"),
-    path("subscription",
+         name="account_details"
+         ),
+    path(
+         "subscription",
          views.subscription,
-         name="subscription"),
-    path("create_skill",
+         name="subscription"
+         ),
+    path(
+         "create_skill",
          views.create_skill,
-         name="create_skill"),
-    path("update_skill/<str:pk>",
+         name="create_skill"
+         ),
+    path(
+         "update_skill/<str:pk>",
          views.update_skill,
-         name="update_skill"),
-    path("delete_skill/<str:pk>",
+         name="update_skill"
+         ),
+    path(
+         "delete_skill/<str:pk>",
          views.delete_skill,
-         name="delete_skill"),
+         name="delete_skill"
+         ),
+    path(
+         "delete_account/<int:pk>",
+         views.DeleteAccountView.as_view(),
+         name="delete_account"
+         ),
 ]

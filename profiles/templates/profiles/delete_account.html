@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="header-section text-center">
+    <div class="container ">
+        <div class="py-5 title">
+            <h1>Delete Account </h1>  
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row mx-4 my-4 justify-content-md-center">
+        <div class="col-lg-6 col-md-6 col-sm-12 background-grey">
+            <form class="mt-3"  method="POST" enctype="multipart/form-data" >
+                {% csrf_token %}
+               <h3 class="font-weight-bold"> Are you sure you want to delete your account?</h3>
+               {% if user %}
+               <h3> Username: {{user}}</h3>
+               {% endif %}
+               <h4 class="text-danger">This will permanently delete your account and any content you have generated</h4>
+               <div class="my-4">
+               <button class="btn btn-danger " aria-label="delete post">Delete Account! </button>
+                
+                <a href="{% url 'display_profile' %}" class="btn btn-dark btn-white-txt cta ">Back</a>
+            </div>
+            </form>
+        </div>
+    </div>    
+    <div class="my-3 text-center">
+        <img class="" src="/media/skills-profile.png" alt="skills image"> 
+    </div>
+</div>  
+{% endblock %}

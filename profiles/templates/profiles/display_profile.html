@@ -12,18 +12,20 @@
     </div>
 {% endblock %}
 {% block content %}
-<div>
-    <div class="header-section text-center">
-        <div class="container ">
-            <div class="py-5 title">
-                <h1>My Profile </h1>  
+    <div>
+        <div class="header-section text-center">
+            <div class="container ">
+                <div class="py-5 title">
+                    <h1>My Profile </h1>  
+                </div>
             </div>
         </div>
+        <div class="mt-2 text-center">
+            <a href="{% url 'account_details' %}" class=" footer-links d-inline custom_h5 mr-2">Billing & order details</a>
+            <a href="{% url 'edit_profile' %}" class=" footer-links d-inline custom_h5 mr-2">Edit profile</a>
+            <a href="{% url 'delete_account' user.pk %}" class="footer-links d-inline custom_h5"> Delete account</a>   
+        </div>
     </div>
-   <div class="text-center mt-2">
-    <a href="{% url 'account_details' %}" class="text-center footer-links"><h5>Billing & order details</h5></a>
-    <a href="{% url 'edit_profile' %}" class="text-center footer-links"><h5>Edit profile</h5></a>
-   </div>
     <div class="container">
         <div class="row mx-5 my-5">
             <div class="col-md">
@@ -33,7 +35,6 @@
                             <img class="avatar avatar--xl" src="{{ profile.imageURL }}" alt="{{ product.profile.name }}" />
                         {% else %}
                             <img class="avatar avatar--xl" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.profile.name }}" />
-                           
                         {% endif %}
                         {% if profile.default_full_name %}
                             <h2 class="font-weight-bold">{{profile.default_full_name}}</h2>
@@ -66,52 +67,49 @@
                                 <a title="LinkedIn" href="{{profile.linkedin_link}}" target="_blank"><i
                                             class="fa-brands fa-linkedin fa-2xl"></i></a>
                             {% else %}
-                            <h5 class="text-danger">LinkedIn link not provided</h5>
+                                <h5 class="text-danger">LinkedIn link not provided</h5>
                             {% endif %}
                         </div>
-                    <div>
-                    {% if profile.cv_file %}
-                        <!--CV section-->
-                        <a href="{{ profile.cv_file.url }}" target="_blank">
-                            <img class="" src="/media/cv_profile.png" alt="Cv download image" > 
-                        </a>
-                    {% else %}
-                        <h5 class="text-danger">CV not uploaded</h5>
-                    {% endif %}
+                        <div>
+                            {% if profile.cv_file %}
+                                <!--CV section-->
+                                <a href="{{ profile.cv_file.url }}" target="_blank">
+                                    <img class="" src="/media/cv_profile.png" alt="Cv download image" > 
+                                </a>
+                            {% else %}
+                                <h5 class="text-danger">CV not uploaded</h5>
+                            {% endif %}
+                        </div>
+                    </div>
                 </div>
             </div>
+            <div class="col">
+                <div>
+                    <h3 class="font-weight-bold mb-4">About Me</h3>
+                    {% if profile.about %}
+                        <p>{{profile.about}}</p>
+                    {% else %}
+                        <h5 class="text-danger">About me section not completed</h5>
+                    {% endif %}
+                </div>
+                <div class="mb-4">
+                    <h3 class="font-weight-bold d-inline">Skills</h3>
+                    <a href="{% url 'create_skill' %}" class="badge-pill add-skill-badge ml-4 py-2 px-3 d-inline"><span class="">+</span> Add Skill</a>
+                </div>
+                {% if skills %}
+                {% for skill in skills %}
+                    <div>
+                        <div class="badge badge-pill badges mb-2">
+                            <small>{{skill}}</small>
+                        </div> 
+                        <a class="footer-links" href="{% url 'update_skill' skill.id %}"></i> Edit</a>
+                        <a class="text-danger" href="{% url 'delete_skill' skill.id %}"></i> Delete</a>
+                    </div>
+                {% endfor %}  
+                {% else %}
+                    <h5 class="text-danger">Skills not added, adding skill will increase your chance to get noticed by a hiring manager</h5>
+                {% endif %}
+            </div>
         </div>
     </div>
-    <div class="col">
-        <div>
-            <h3 class="font-weight-bold mb-4">About Me</h3>
-            {% if profile.about %}
-            <p>{{profile.about}}</p>
-            {% else %}
-            <h5 class="text-danger">About me section not completed</h5>
-            {% endif %}
-        </div>
-        <div>
-            <div class="mb-4">
-            <h3 class="font-weight-bold d-inline">Skills</h3>
-            <a href="{% url 'create_skill' %}" class="badge-pill add-skill-badge ml-4 py-2 px-3 d-inline"><span class="">+</span> Add Skill</a>
-            </div>
-            {% if skills %}
-            {% for skill in skills %}
-            <div>
-                <div class="badge badge-pill badges mb-2">
-                    <small>{{skill}}</small>
-                </div> 
-                <a class="footer-links" href="{% url 'update_skill' skill.id %}"></i> Edit</a>
-                <a class="text-danger" href="{% url 'delete_skill' skill.id %}"></i> Delete</a>
-            </div>
-            {% endfor %}  
-            {% else %}
-                <h5 class="text-danger">Skills not added, adding skill will increase your chance to get noticed by a hiring manager</h5>
-            {% endif %}
-        </div>
-    </div>
-</div>
-</div>
-
 {% endblock content %}

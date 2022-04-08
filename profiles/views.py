@@ -5,12 +5,16 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
+from django.contrib.messages.views import SuccessMessageMixin
+from django.views.generic import DeleteView
+from django.urls import reverse_lazy
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from checkout.models import Order
 from util.util import pagination_setup
-from .models import UserProfile, Skill
+from .models import UserProfile, Skill, User
 from .forms import UserProfileForm, UserAccountForm, SkillForm
 
 
@@ -283,3 +287,19 @@ def delete_skill(request, pk):
         }
 
     return render(request, template, context)
+
+
+@method_decorator(login_required, name='dispatch')
+class DeleteAccountView(SuccessMessageMixin, DeleteView):
+    """
+    A view to delete a User
+    Args:
+        SuccessMessageMixin: SuccessMessageMixin (success message attribute)
+        DeleteView: class based view
+    Returns:
+        Render of delete user with success message
+    """
+    model = User
+    template_name = "profiles/delete_account.html"
+    success_url = reverse_lazy("home")
+    success_message = "Account and Profile deleted"

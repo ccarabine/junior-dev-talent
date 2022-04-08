@@ -103,6 +103,17 @@
     background-color: #f5f6f7;
 } 
 
+.custom_h5{
+    display: block;
+    font-size: 1.25rem;
+    margin-top: 1.67em;
+    margin-bottom: 1.67em;
+    margin-left: 0;
+    margin-right: 0;
+   
+}
+
+
 /* add skill badge  */
 
 
