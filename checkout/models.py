@@ -1,3 +1,4 @@
+# pylint: disable=missing-module-docstring
 # Imports
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -5,13 +6,13 @@ import uuid
 
 from django.db import models
 from django.db.models import Sum
-from django.conf import settings
 from django_countries.fields import CountryField
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from products.models import Product
 from profiles.models import UserProfile
+
 
 class Order(models.Model):
     """
@@ -45,7 +46,7 @@ class Order(models.Model):
         blank=False
         )
     country = CountryField(
-        blank_label='Country *', 
+        blank_label='Country *',
         null=False,
         blank=False
         )
@@ -166,4 +167,11 @@ class OrderLineItem(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return f'SKU {self.product.sku} on order {self.order.order_number}'
+        """
+        Returns the order number string
+        Args:
+            self (object): self.
+        Returns:
+            The order number string
+        """
+        return f'SKU {self.product.code} on order {self.order.order_number}'

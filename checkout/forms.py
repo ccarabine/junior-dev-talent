@@ -1,3 +1,4 @@
+# pylint: disable=missing-module-docstring
 # Imports
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -9,7 +10,13 @@ from .models import Order
 
 
 class OrderForm(forms.ModelForm):
+    """
+    A class for the order form
+    """
     class Meta:
+        """
+        A class for Meta information
+        """
         model = Order
         fields = ('full_name', 'email', 'phone_number',
                   'street_address1', 'street_address2',

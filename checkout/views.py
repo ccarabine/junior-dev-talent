@@ -1,3 +1,4 @@
+# pylint: disable=missing-module-docstring
 # Imports
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -99,7 +100,7 @@ def checkout(request):
             order.stripe_pid = pid
             order.original_basket = json.dumps(basket)
             order.save()
-            
+
             for item_id, item_data in basket.items():
                 try:
                     product = Product.objects.get(id=item_id)
@@ -143,7 +144,8 @@ def checkout(request):
 
         if request.user.is_authenticated:
             try:
-                # section completes the form in the checkout if the user is signed in
+                # section completes the form in the checkout
+                # if the user is signed in
                 profile = UserProfile.objects.get(user=request.user)
                 order_form = OrderForm(initial={
                     'full_name': profile.user.get_full_name(),
@@ -162,7 +164,7 @@ def checkout(request):
         else:
             # render an empty form
             order_form = OrderForm()
-            
+
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
             Did you forget to set it in your environment?')
@@ -183,7 +185,7 @@ def checkout_success(request, order_number):
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
-    
+
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
         # Attach the user's profile to the order
@@ -204,7 +206,7 @@ def checkout_success(request, order_number):
         user_profile_form = UserProfileForm(profile_data, instance=profile)
         if user_profile_form.is_valid():
             user_profile_form.save()
-            
+
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \
         email will be sent to {order.email}.')
