@@ -69,7 +69,7 @@
               <a href="{% url 'home' %}" class="nav-link main-logo-link">
                 <h3 class="logo-font my-0 text-center ">
                   
-                  <img src="/media/logo.png" alt="logo image" > 
+                  <img src="{{ MEDIA_URL }}logo.png" alt="logo image" > 
                   <strong class="jd-font d-md-none d-lg-block ">JUNIOR DEV TALENT</strong>
                 </h3>
               </a>
@@ -192,7 +192,7 @@
         <div class="col-6">
         <!-- Begin Mailchimp Signup Form -->
           <div class="text-center pb-3">
-            <img src="/media/newsletter.png" alt="newsletter image" class="thumbnail newsletter-icon-footer"> 
+            <img src="{{ MEDIA_URL }}newsletter.png" alt="newsletter image" class="thumbnail newsletter-icon-footer"> 
             <h5>Subscribe to our newsletter</h5>
               <form action="https://gitpod.us14.list-manage.com/subscribe/post?u=19b5ef1eb0c8ff7fddb2e45d0&amp;id=fcf2286564" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
                 <div class="input-group input-left newsletter-input-width mx-auto mt-3">
@@ -208,7 +208,7 @@
         <div class="col-6">
           <div class="text-center pb-3">
           
-          <img src="/media/facebook.png" alt="facebook image" class="thumbnail newsletter-icon-facebook"> 
+          <img src="{{ MEDIA_URL }}facebook.png" alt="facebook image" class="thumbnail newsletter-icon-facebook"> 
           <h5 class="pt-2">Keep up to date with all our latest offers</h5>
           <div class="pt-3">
             <a href="https://www.facebook.com/Junior-Dev-Talent-101277309201595" target="_blank" class="footer-links">

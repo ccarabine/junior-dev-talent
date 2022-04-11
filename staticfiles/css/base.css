@@ -515,6 +515,10 @@ input[name='q']::placeholder {
   @media (max-width: 330px) {
     .fa-xsm{
         font-size:5.75em;
+    
+    }
+    .font-logo{
+        font-size:5.75em;
     }
 
   }

@@ -74,7 +74,7 @@
                             {% if profile.cv_file %}
                                 <!--CV section-->
                                 <a href="{{ profile.cv_file.url }}" target="_blank">
-                                    <img class="" src="/media/cv_profile.png" alt="Cv download image" > 
+                                    <img class="" src="{{ MEDIA_URL }}cv_profile.png" alt="Cv download image" > 
                                 </a>
                             {% else %}
                                 <h5 class="text-danger">CV not uploaded</h5>

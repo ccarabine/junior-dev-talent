@@ -490,9 +490,7 @@ input[name='q']::placeholder {
   }
   @media (max-width: 330px) {
  
-    .logo-font{
-        font-size:40%;
-    }
+    
     .fa-xsm{
         font-size:5.75em;
     }
