@@ -25,15 +25,42 @@ from django.conf.urls.static import static
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('accounts/', include('allauth.urls')),
-    path('', include('home.urls')),
-    path('forum/', include('forum.urls')),
-    path('products/', include('products.urls')),
-    path('basket/', include('basket.urls')),
-    path('checkout/', include('checkout.urls')),
-    path('profiles/', include('profiles.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path(
+        'admin/',
+        admin.site.urls
+        ),
+    path(
+        'accounts/',
+        include('allauth.urls')
+        ),
+    path(
+        '',
+        include('home.urls')
+        ),
+    path(
+        'forum/',
+        include('forum.urls')
+        ),
+    path(
+        'products/',
+        include('products.urls')
+        ),
+    path(
+        'basket/',
+        include('basket.urls')
+        ),
+    path(
+        'checkout/',
+        include('checkout.urls')
+        ),
+    path(
+        'profiles/',
+        include('profiles.urls')
+        ),
+] + static(
+    settings.MEDIA_URL,
+    document_root=settings.MEDIA_ROOT
+    )
 
 HANDLER404 = 'forum.views.error_404_view'
 HANDLER500 = 'forum.views.error_500_view'
