@@ -457,8 +457,8 @@ input[name='q']::placeholder {
         padding: .375rem .375rem;
     }
 
-    .btn.btn-outline-black.rounded-0.btn-lg,
-    .btn.btn-black.rounded-0.btn-lg {
+    .btn.btn-outline-blue.rounded-0.btn-lg,
+    .btn.btn-blue.rounded-0.btn-lg {
         padding: .375rem .375rem;
         font-size: .75rem;
     }
@@ -513,6 +513,9 @@ input[name='q']::placeholder {
   @media (max-width: 400px) {
     .footer-icons{
         width:33%;
+    }
+    .text-uppercase{
+        font-size: .9rem;
     }
 
 
