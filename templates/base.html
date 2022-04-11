@@ -3,7 +3,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-
     {% block meta %}
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta charset="utf-8">
@@ -64,119 +63,91 @@
   </head>
   <body class="d-flex flex-column min-vh-100">
     <header class="container-fluid fixed-top">
-      <div id="topnav" class="row bg-white pt-lg-2 d-none d-md-flex">
-          <div class="col-12 col-md-4 my-auto py-1 py-lg-0 text-center text-lg-left">
-              <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                <h3 class="logo-font my-0 text-center ">
-                  
-                  <img src="{{ MEDIA_URL }}logo.png" alt="logo image" > 
-                  <strong class="jd-font d-md-none d-lg-block ">JUNIOR DEV TALENT</strong>
-                </h3>
+      <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
+        <div class="col-12 col-md-4 my-auto py-1 py-lg-0 text-center text-lg-left">
+          <a href="{% url 'home' %}" class="nav-link main-logo-link">
+            <h3 class="logo-font my-0 text-center ">
+              <img src="{{ MEDIA_URL }}logo.png" alt="logo image" > 
+              <strong class="jd-font d-md-none d-lg-block ">JUNIOR DEV TALENT</strong>
+            </h3>
+          </a>
+        </div>
+        {% block search_bar %}
+        {% include 'includes/search.html' %}
+        {% endblock %}
+        <div class="text-center logo-font "></div>
+        <div class="col-12 col-md-4 my-auto py-1 py-lg-0">
+          <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+            <li class="list-inline-item dropdown">
+              <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="text-center logo-font ">
+                  <div><i class="fas fa-user fa-2xl"></i></div>
+                  {% if request.user.user_profile.default_full_name %}
+                    <p class=" font-weight-bold h6">{{ request.user.user_profile.default_full_name }}</p>
+                  {% else %}
+                    <p class="my-0 ">Account</p>
+                  {% endif %}
+                </div>
               </a>
-          </div>
-          {% block search_bar %}
-          {% include 'includes/search.html' %}
-          {% endblock %}
-          <div class="text-center logo-font "></div>
-          <div class="col-12 col-md-4 my-auto py-1 py-lg-0">
-              <ul class="list-inline list-unstyled text-center text-lg-right my-0">
-                  <li class="list-inline-item dropdown">
-                      <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <div class="text-center logo-font ">
-                              <div><i class="fas fa-user fa-2xl"></i></div>
-                              
-                              {% if request.user.user_profile.default_full_name %}
-                                <p class=" font-weight-bold h6">{{ request.user.user_profile.default_full_name }}</p>
-                              
-                              {% else %}
-                                <p class="my-0 ">Account</p>
-                              {% endif %}
-                            </div>
-                      </a>
-                      <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                          {% if request.user.is_authenticated %}
-                              {% if request.user.user_profile.is_hiring_manager %}
-                                <a href="{% url 'account_details' %}" class="dropdown-item">My Account</a>
-                              {% else %}
-                                <a href="{% url 'display_profile' %}" class="dropdown-item">My Profile</a>
-                              {% endif %}
-                              <a href="{% url 'account_change_password' %}" class="dropdown-item nav-color" aria-label="Change password">Change password</a>
-                              <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                          {% else %}
-                              <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                              <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                          {% endif %}
-                      </div>
-                  </li>
-                 
-                  <li class="list-inline-item">
-                      <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_basket' %}">
-                          <div class="text-center logo-font ">
-                              
-                              <div><i class="fa-solid fa-basket-shopping fa-2xl"></i></div>
-                              <p class="my-1 font-weight-bold h6">
-                                  {% if grand_total %}
-                                      £{{ grand_total|floatformat:2 }}
-                                  {% else %}
-                                      £0.00
-                                  {% endif %}
-                              </p>
-                          </div>
-                      </a>
-                  </li>
-              
-               
-              </ul>
-             
-          </div>
-         
-            <ul class="w-100 text-center ">
-                <li class=" pb-3 list-inline-item ">
-                    <a class="logo-font font-weight-bold h5 mr-5 mb-2" href="{% url 'forum' %}" id="all-products-link"  aria-haspopup="true" aria-expanded="false">
-                        Forum
-                    </a>          
-                </li>
-                <li class=" pb-3 list-inline-item">
-                    <a class="logo-font font-weight-bold h5 mr-5 mb-2" href="{% url 'products' %}" id="all-products-link"  aria-haspopup="true" aria-expanded="false">
-                        Growth Hub
-                    </a>
-                  
-                </li>
-                <li class=" pb-3 list-inline-item">
-                  <a class="logo-font font-weight-bold h5 mr-5 mb-2" {% if request.user.user_profile.is_hiring_manager %} href="{% url 'talent_center' %}" {% else %} href="{% url 'subscription' %}" {% endif %} id="all-products-link"  aria-haspopup="true" aria-expanded="false">
-                        Talent Center
-                    </a>
-                </li>
-            </ul>
+              <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                {% if request.user.is_authenticated %}
+                  {% if request.user.user_profile.is_hiring_manager %}
+                    <a href="{% url 'account_details' %}" class="dropdown-item">My Account</a>
+                  {% else %}
+                    <a href="{% url 'display_profile' %}" class="dropdown-item">My Profile</a>
+                  {% endif %}
+                  <a href="{% url 'account_change_password' %}" class="dropdown-item nav-color" aria-label="Change password">Change password</a>
+                  <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                {% else %}
+                  <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                  <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                {% endif %}
+              </div>
+            </li>
+            <li class="list-inline-item">
+              <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_basket' %}">
+                <div class="text-center logo-font ">
+                  <div><i class="fa-solid fa-basket-shopping fa-2xl"></i></div>
+                  <p class="my-1 font-weight-bold h6">
+                    {% if grand_total %}
+                      £{{ grand_total|floatformat:2 }}
+                    {% else %}
+                      £0.00
+                    {% endif %}
+                  </p>
+                </div>
+              </a>
+            </li>      
+          </ul>
+        </div>
       </div>
-     
       <div class="row bg-white">
-        <nav class="navbar navbar-expand-md navbar-light w-100">
-            
-            {% include 'includes/mobile-top-header.html' %}
-           
+        <nav class="navbar navbar-expand-lg navbar-light w-100">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          {% include 'includes/mobile-top-header.html' %}
+          {% include 'includes/main-nav.html' %}
         </nav>
       </div>
-
     </header>
  
-
   {% if messages %}
-  <div class="message-container">
+    <div class="message-container">
       {% for message in messages %}
-          {% with message.level as level %}
-              {% if level == 40 %}
-                  {% include 'includes/toasts/toast_error.html' %}
-              {% elif level == 30 %}
-                  {% include 'includes/toasts/toast_warning.html' %}
-              {% elif level == 25 %}
-                  {% include 'includes/toasts/toast_success.html' %}
-              {% else %}
-                  {% include 'includes/toasts/toast_info.html' %}
-              {% endif %}
-          {% endwith %}
+        {% with message.level as level %}
+          {% if level == 40 %}
+            {% include 'includes/toasts/toast_error.html' %}
+          {% elif level == 30 %}
+            {% include 'includes/toasts/toast_warning.html' %}
+          {% elif level == 25 %}
+            {% include 'includes/toasts/toast_success.html' %}
+          {% else %}
+            {% include 'includes/toasts/toast_info.html' %}
+          {% endif %}
+        {% endwith %}
       {% endfor %}
-  </div>
+    </div>
   {% endif %}
   {% block page_header %}
   
