@@ -493,7 +493,7 @@ input[name='q']::placeholder {
         width:90%
     }
     .footer-icons{
-        width:23%;
+        width:16%;
     }
  
  }
@@ -509,14 +509,16 @@ input[name='q']::placeholder {
     .icon-size-talent{
         width:40%;
   }
+  .footer-icons{
+    width:13%;
+}
 
   @media (max-width: 400px) {
-    .footer-icons{
-        width:33%;
-    }
+ 
     .text-uppercase{
         font-size: .9rem;
     }
+  
 
 
   }
