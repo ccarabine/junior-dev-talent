@@ -1,3 +1,4 @@
+# pylint: disable=missing-module-docstring
 # Imports
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -40,10 +41,13 @@ class Topic(models.Model):
     )
 
     class Meta:
+        """
+        Set Verbose name Topic and ordering
+        """
         verbose_name = "Topic"
         verbose_name_plural = "Topics"
         ordering = ['name']
-  
+
     def __str__(self):
         """
         Returns the topic name string
@@ -63,6 +67,7 @@ class Topic(models.Model):
             The friendly name name string
         """
         return self.friendly_name
+
 
 class Post(models.Model):
     """
@@ -110,8 +115,10 @@ class Post(models.Model):
         upload_to=""
         )
 
-
     class Meta:
+        """
+        Set Verbose name Post and ordering
+        """
         verbose_name = "Post"
         verbose_name_plural = "Posts"
         ordering = ["-created"]
@@ -135,7 +142,8 @@ class Post(models.Model):
             The url string topic/post pk
         """
         return f"/forum/topic/{self.pk}"
-    
+
+
 class Comment(models.Model):
     """
     A class for the comment model
@@ -161,6 +169,9 @@ class Comment(models.Model):
         )
 
     class Meta:
+        """
+        Set Verbose name Comment and ordering
+        """
         ordering = ["created"]
         verbose_name = "Comment"
         verbose_name_plural = "Comments"

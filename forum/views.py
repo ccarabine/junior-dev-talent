@@ -1,11 +1,11 @@
-
-
+# pylint: disable=missing-module-docstring
 # Imports
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django.contrib import messages
 from django.shortcuts import render, get_object_or_404, redirect, reverse
-from django.views.generic import ListView, DetailView, UpdateView, DeleteView, CreateView
+from django.views.generic import ListView, DetailView, UpdateView, \
+    DeleteView, CreateView
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.core.paginator import Paginator
@@ -17,6 +17,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from .forms import PostForm, CommentForm, TopicForm
 from .models import Topic, Post, Comment
+
 
 def error_404_view(request, exception):
     """
@@ -40,6 +41,7 @@ def error_500_view(request):
         Render 500error page
     """
     return render(request, 'errors/500error.html', status=500)
+
 
 def forum(request):
     """
@@ -74,6 +76,7 @@ class PostListView(ListView):
         context = super().get_context_data(**kwargs)
         context["topic"] = Topic.objects.get(slug=self.kwargs["topic"])
         return context
+
 
 @method_decorator(login_required, name='dispatch')
 class PostDetailView(DetailView):
@@ -156,7 +159,6 @@ class UpdatePostView(SuccessMessageMixin, UpdateView):
     form_class = PostForm
     template_name = "forum/update_post.html"
     success_message = "Post updated"
-
 
     def get_queryset(self):
         owner = self.request.user
@@ -258,11 +260,13 @@ class DeleteCommentView(SuccessMessageMixin, DeleteView):
     success_url = reverse_lazy("forum")
     success_message = "Comment deleted"
 
- 
+
 @login_required
 def create_topic(request):
-    """ Use the create form using the post request """
-    """ Add the topic  """
+    """
+    Use the create form using the post request
+    Add the topic
+    """
     if not request.user.is_superuser:
         messages.error(
             request, 'Sorry, only logged in users can create a topic.')
@@ -275,7 +279,6 @@ def create_topic(request):
             topic = form.save(commit=False)
             topic.topic_image = request.FILES.get("topic_image")
             topic.slug = slugify(request.POST["name"])
-            
             topic.save()
             messages.success(request, 'Topic was added successfully')
             return redirect('forum')
@@ -290,16 +293,19 @@ def create_topic(request):
 
     return render(request, template, context)
 
+
 @login_required
 def update_topic(request, pk):
-    """ Use the Topic form using the post request """
-    """ Get the topic by pk and update the topic"""
+    """
+    Use the Topic form using the post request
+    Get the topic by pk and update the topic
+    """
 
     if not request.user.is_superuser:
         messages.error(
             request, 'Sorry, only logged in users can update a topic.')
         return redirect(reverse('forum'))
-    
+
     topic = get_object_or_404(Topic, pk=pk)
     form = TopicForm(instance=topic)
 
@@ -327,21 +333,22 @@ def update_topic(request, pk):
 @login_required
 def delete_topic(request, pk):
     """ Delete topic  """
-    
+
     topic = get_object_or_404(Topic, pk=pk)
-      
+
     if not request.user.is_superuser:
         messages.error(
             request, 'Sorry, only logged in users can delete a topic.')
         return redirect(reverse('forum'))
-    
+
     if request.method == 'POST':
         topic.delete()
         messages.success(request, 'Topic was deleted successfully')
         return redirect('forum')
-    
+
     template = 'forum/delete_topic.html'
-    
+
     context = {
         'topic': topic
         }
+    return render(request, template, context)

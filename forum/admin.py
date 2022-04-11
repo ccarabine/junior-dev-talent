@@ -1,3 +1,4 @@
+# pylint: disable=missing-module-docstring
 # Imports
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -6,6 +7,7 @@ from django.contrib import admin
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from .models import Topic, Post, Comment
+
 
 @admin.register(Topic)
 class TopicAdmin(admin.ModelAdmin):
@@ -22,7 +24,8 @@ class TopicAdmin(admin.ModelAdmin):
     search_fields = (
         "name",
         )
-    
+
+
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
     """
@@ -41,7 +44,8 @@ class PostAdmin(admin.ModelAdmin):
         "title",
         "topic"
         )
-    
+
+
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
     """

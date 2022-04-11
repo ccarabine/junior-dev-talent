@@ -1,3 +1,4 @@
+# pylint: disable=missing-module-docstring
 # Imports
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -17,6 +18,9 @@ class PostForm(forms.ModelForm):
     A class for post forms
     """
     class Meta:
+        """
+        A class for Meta information
+        """
         model = Post
         fields = ("title", "body", "post_image",)
 
@@ -61,12 +65,16 @@ class PostForm(forms.ModelForm):
                 ),
             ),
         )
-        
+
+
 class CommentForm(forms.ModelForm):
     """
     A class for comments
     """
     class Meta:
+        """
+        A class for Meta information
+        """
         model = Comment
         fields = ("comment_body",)
 
@@ -103,13 +111,12 @@ class TopicForm(forms.ModelForm):
         """
         model = Topic
         fields = ('name', 'topic_image',)
- 
+
     topic_image = forms.ImageField(
         label='Image',
         required=False,
         widget=CustomClearableFileInput
         )
-
 
     def __init__(self, *args, **kwargs):
         """
@@ -117,6 +124,6 @@ class TopicForm(forms.ModelForm):
         labels and set autofocus on first field
         """
         super().__init__(*args, **kwargs)
-              
+
         self.fields['name'].widget.attrs['autofocus'] = True
         self.fields['name'].label = "Topic Name"
