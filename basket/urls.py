@@ -1,4 +1,5 @@
-# Imports
+# pylint: disable=missing-module-docstring
+# # Imports
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django.urls import path

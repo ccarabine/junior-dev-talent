@@ -1,3 +1,4 @@
+# pylint: disable=missing-module-docstring
 # Imports
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -6,6 +7,7 @@ from django.shortcuts import get_object_or_404
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from products.models import Product
+
 
 def basket_contents(request):
     """
@@ -25,7 +27,7 @@ def basket_contents(request):
             'quantity': item_data,
             'product': product,
         })
-        
+
     grand_total = total
     context = {
         'basket_items': basket_items,
