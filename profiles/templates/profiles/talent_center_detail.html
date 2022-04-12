@@ -22,7 +22,7 @@
         </div>
         {% if request.user.user_profile.is_hiring_manager or request.user.is_superuser %}
             <div class="container">
-                <div class="row mx-5 my-5">
+                <div class="row ">
                     <div class="col-md">
                         <div class="card text-center background-grey">
                             <div class="my-3 mx-2">
@@ -56,7 +56,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col my-4">
                         <div>
                             <h3 class="font-weight-bold mb-4">About Me</h3>
                             <p>{{profile.about}}</p>
