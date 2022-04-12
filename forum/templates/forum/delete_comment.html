@@ -4,8 +4,7 @@
 {% load crispy_forms_tags %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'forum/css/forum.css' %}">
-
+    <link rel="stylesheet" href="{% static 'forum/css/forum.css' %}">
 {% endblock %}
 
 {% block page_header %}
@@ -17,41 +16,37 @@
 {% endblock %}
 {% block title %} Delete post {% endblock %}
 {% block content %}
-{% if user.is_authenticated %}
-    <div class="container ">    
-        <h2 class="logo-font text-center"> Room topic: {{ post.topic }}</h2>
-    
-        <div class="row justify-content-center text-center mx-auto">
-            <h5>Make learning a community activity.  Our forum is the perfect place to ask questions, share tips and get clarity from fellow people</h5>
-        </div>
-    
-        <div class="group mt-4 mb-2">
-            <div class="item line pb-1"></div>
-            <h5 class="item text logo-font">Delete Comment </h5>
-            <div class="item line pb-1"></div>
-        </div>
-
-        {% if user.id == post.owner.id or request.user.is_superuser %}
-            <div class="form-group justify-content-center text-center mx-auto">
-                <form method="POST" enctype="multipart/form-data" class="mt-4">
-                    {% csrf_token %}
-                    <strong class="mb-4">Are you sure you want to delete comment? </strong>
-                    
-                    <br>
-                    <strong class="mb-4">{{post.title}}</strong>
-                    <br>
-                    <a href="{% url 'postdetail' comment.id %}" class="mt-4 btn btn-secondary btn-border-none" aria-label="Go back to comment">Cancel</a>
-                    <button class="btn btn-danger mt-4" aria-label="delete post">Delete Comment! </button>
-                </form>
+    {% if user.is_authenticated %}
+        <div class="container ">    
+            <h2 class="logo-font text-center"> Room topic: {{ post.topic }}</h2>
+        
+            <div class="row justify-content-center text-center mx-auto">
+                <h5>Make learning a community activity.  Our forum is the perfect place to ask questions, share tips and get clarity from fellow people</h5>
             </div>
-        {% else %}
-            <h4>You can not delete this comment</h4>
-        {% endif %}
-    </div>
-{% else %}
-    <h4>You are not logged in</h4>
-{% endif %}
+        
+            <div class="group mt-4 mb-2">
+                <div class="item line pb-1"></div>
+                <h5 class="item text logo-font">Delete Comment </h5>
+                <div class="item line pb-1"></div>
+            </div>
 
-
-
+            {% if user.id == post.owner.id or request.user.is_superuser %}
+                <div class="form-group justify-content-center text-center mx-auto">
+                    <form method="POST" enctype="multipart/form-data" class="mt-4">
+                        {% csrf_token %}
+                        <strong class="mb-4">Are you sure you want to delete comment? </strong>
+                        <br>
+                        <strong class="mb-4">{{post.title}}</strong>
+                        <br>
+                        <a href="{% url 'postdetail' comment.id %}" class="mt-4 btn btn-secondary btn-border-none" aria-label="Go back to comment">Cancel</a>
+                        <button class="btn btn-danger mt-4" aria-label="delete post">Delete Comment! </button>
+                    </form>
+                </div>
+            {% else %}
+                <h4>You can not delete this comment</h4>
+            {% endif %}
+        </div>
+    {% else %}
+        <h4>You are not logged in</h4>
+    {% endif %}
 {% endblock %}

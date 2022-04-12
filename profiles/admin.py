@@ -35,7 +35,7 @@ class UserProfileAdmin(admin.ModelAdmin):
         'linkedin_link',
         )
 
-    list_display = ('user', 'is_hiring_manager default_full_name')
+    list_display = ('user', 'is_hiring_manager', 'default_full_name')
 
     ordering = ('default_full_name',)
 

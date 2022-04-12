@@ -2,8 +2,7 @@
 {% load static %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'forum/css/forum.css' %}">
-
+    <link rel="stylesheet" href="{% static 'forum/css/forum.css' %}">
 {% endblock %}
 
 {% block page_header %}
@@ -14,42 +13,38 @@
     </div>
 {% endblock %}
 
-
 {% block content %}
-<div class="container col-lg-8 col-md-10">
-
-    <h2 class="logo-font text-center">Room Topic</h2>
-    <div class="row justify-content-center text-center mx-auto">
-        <h5>Make learning a community activity.  Our forum is the perfect place to ask questions, share tips and get clarity from fellow people</h5>
-    </div>
-   
-    <div class="group mt-4 mb-2">
-        <div class="item line pb-1"></div>
-        <h5 class="item text logo-font">{{ topic }}</h5>
-        <div class="item line pb-1"></div>
-    </div>
-  
-    <a href="{% url 'addpost' topic %}" class="logo-font mr-2" aria-label="Create a new post"> -> Start a new post within this
-        topic</a>
+    <div class="container col-lg-8 col-md-10">
+        <h2 class="logo-font text-center">Room Topic</h2>
+        <div class="row justify-content-center text-center mx-auto">
+            <h5>Make learning a community activity.  Our forum is the perfect place to ask questions, share tips and get clarity from fellow people</h5>
+        </div>
     
-    {% for post in post_list %}
-        <div class="card mb-2 mt-2 card-post ">
-            <div class="card-body px-2 pt-2 rounded">
-                <a href="{% url 'postdetail' post.id %}" class="card-links" aria-label="Go to post">
-                <h5 class="post-color">{{ post.title|title }}</h5>
-                </a>
-                <hr>
-                <div class="post-details-color">
-                    
-                    <i class="far fa-comment"></i>
-                    <span class="mr-1"> {{post.comment_post.count}} </span>
-                    <span class="mr-2"> Posted by {{post.user_name}}</span>
-                    <span class="mr-2"> Created {{post.created|timesince }} ago</span>
+        <div class="group mt-4 mb-2">
+            <div class="item line pb-1"></div>
+            <h5 class="item text logo-font">{{ topic }}</h5>
+            <div class="item line pb-1"></div>
+        </div>
+    
+        <a href="{% url 'addpost' topic %}" class="logo-font mr-2" aria-label="Create a new post"> -> Start a new post within this
+            topic</a>
+        
+        {% for post in post_list %}
+            <div class="card mb-2 mt-2 card-post ">
+                <div class="card-body px-2 pt-2 rounded">
+                    <a href="{% url 'postdetail' post.id %}" class="card-links" aria-label="Go to post">
+                    <h5 class="post-color">{{ post.title|title }}</h5>
+                    </a>
+                    <hr>
+                    <div class="post-details-color">
+                        <i class="far fa-comment"></i>
+                        <span class="mr-1"> {{post.comment_post.count}} </span>
+                        <span class="mr-2"> Posted by {{post.user_name}}</span>
+                        <span class="mr-2"> Created {{post.created|timesince }} ago</span>
+                    </div>
                 </div>
             </div>
-        </div>
-    {% endfor %}
-</div>
-{% include 'forum/pagination.html' %}
-
+        {% endfor %}
+    </div>
+    {% include 'forum/pagination.html' %}
 {% endblock %}

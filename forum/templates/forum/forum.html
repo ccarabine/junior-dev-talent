@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'forum/css/forum.css' %}">
+    <link rel="stylesheet" href="{% static 'forum/css/forum.css' %}">
 
 {% endblock %}
 
@@ -15,53 +15,50 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
-    <!--Title and describtion-->
-    <h2 class="logo-font text-center">Community Forum</h2>
-    <div class="row justify-content-center text-center mx-auto">
-        <h5>Make learning a community activity.  Our forum is the perfect place to ask questions, share tips and get clarity from fellow people</h5>
-    </div>
-   
-    <div class="group mt-4 mb-2">
-        <div class="item line pb-1"></div>
-        <h5 class="item text logo-font">Room Topics</h5>
-        <div class="item line pb-1"></div>
-    </div>
-
-    {% if user.is_superuser %}
-    <div class="text-center mt-3 mb-5">
-        <a href="{% url 'create_topic' %}" class="badge-pill add-skill-badge ml-4 py-2 px-5 d-inline"><span class="">+</span> Add Topic</a>
-    </div>
-    {% endif %}
-    
-    <!--Display room topics-->
-     <div class="row">
-        {% for topic in topics %}
-        <div class="col-sm-12 col-md-6 mb-4">
-            <div class="card h-100 ">
-                {% if user.is_superuser %}
-                    <div class="text-center">
-                        <a class="footer-links d-inline" href="{% url 'update_topic' topic.id %}"> Edit</a>
-                        <a class="text-danger d-inline" href="{% url 'delete_topic' topic.id %}"> Delete</a>
-                    </div>
-                {% endif %}
-                
-                    <div class="card-horizontal">
-                        <div class="width-size">
-                            <img class="img-thumbnail " src="{{ topic.topic_image.url }}" >
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title ">Discussion Room</h4>
-                            <a href="/forum/{{ topic.slug }}" class="footer-links"  aria-label="{{ topic.name }}">
-                            <h4 class=" ">{{ topic.name |capfirst }}</h4>
-                            </a>
-                        </div>
-                    </div>
-                
-            </div>
+    <div class="container">
+        <!--Title and describtion-->
+        <h2 class="logo-font text-center">Community Forum</h2>
+        <div class="row justify-content-center text-center mx-auto">
+            <h5>Make learning a community activity.  Our forum is the perfect place to ask questions, share tips and get clarity from fellow people</h5>
         </div>
-        {% endfor %}
+    
+        <div class="group mt-4 mb-2">
+            <div class="item line pb-1"></div>
+            <h5 class="item text logo-font">Room Topics</h5>
+            <div class="item line pb-1"></div>
+        </div>
+
+        {% if user.is_superuser %}
+        <div class="text-center mt-3 mb-5">
+            <a href="{% url 'create_topic' %}" class="badge-pill add-skill-badge ml-4 py-2 px-5 d-inline"><span class="">+</span> Add Topic</a>
+        </div>
+        {% endif %}
+        
+        <!--Display room topics-->
+        <div class="row">
+            {% for topic in topics %}
+                <div class="col-sm-12 col-md-6 mb-4">
+                    <div class="card h-100 ">
+                        {% if user.is_superuser %}
+                            <div class="text-center">
+                                <a class="footer-links d-inline" href="{% url 'update_topic' topic.id %}"> Edit</a>
+                                <a class="text-danger d-inline" href="{% url 'delete_topic' topic.id %}"> Delete</a>
+                            </div>
+                        {% endif %}
+                        <div class="card-horizontal">
+                            <div class="width-size">
+                                <img class="img-thumbnail " src="{{ topic.topic_image.url }}" >
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title ">Discussion Room</h4>
+                                <a href="/forum/{{ topic.slug }}" class="footer-links"  aria-label="{{ topic.name }}">
+                                <h4 class=" ">{{ topic.name |capfirst }}</h4>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
     </div>
-</div>
-   
 {% endblock %}

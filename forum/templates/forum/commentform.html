@@ -3,8 +3,7 @@
 {% load crispy_forms_tags %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'forum/css/forum.css' %}">
-
+    <link rel="stylesheet" href="{% static 'forum/css/forum.css' %}">
 {% endblock %}
 
 {% block page_header %}
@@ -16,48 +15,45 @@
 {% endblock %}
 
 {% block content %}
-{% if user.is_authenticated %}
-    <div class="container ">    
-        <h2 class="logo-font text-center"> Room topic: {{ topic }}</h2>
-    
-        <div class="row justify-content-center text-center mx-auto">
-            <h5>Make learning a community activity.  Our forum is the perfect place to ask questions, share tips and get clarity from fellow people</h5>
-        </div>
-    
-        <div class="group mt-4 mb-2">
-            <div class="item line pb-1"></div>
-            <h5 class="item text logo-font">Add a comment</h5>
-            <div class="item line pb-1"></div>
-        </div>
+    {% if user.is_authenticated %}
+        <div class="container ">    
+            <h2 class="logo-font text-center"> Room topic: {{ topic }}</h2>
+            <div class="row justify-content-center text-center mx-auto">
+                <h5>Make learning a community activity.  Our forum is the perfect place to ask questions, share tips and get clarity from fellow people</h5>
+            </div>
+        
+            <div class="group mt-4 mb-2">
+                <div class="item line pb-1"></div>
+                <h5 class="item text logo-font">Add a comment</h5>
+                <div class="item line pb-1"></div>
+            </div>
 
-        <a href="{% url 'forum' %}" class="header-links">
-            <h6 class="logo-font"> Back to Forum</h6>
-        </a>
+            <a href="{% url 'forum' %}" class="header-links">
+                <h6 class="logo-font"> Back to Forum</h6>
+            </a>
 
-        <div class="card-body px-2 pt-2 post-color rounded">
-            <h4>{{ post }} </h4>
-            <h6 class="post-details-color">
-                <i class="far fa-comment"></i>
-                <span class="mr-1">{{post.comment_post.count}} </span>
-                <span class="mr-2"> Posted by {{user.username }}</span>
-                <span class="mr-2"> Created {{post.created|timesince }}</span>
-            </h6>
-            <hr>
-        </div>
-        <div class="post-color mb-2 pt-1 pb-1 rounded">
-            <div class="col-12">
-                <div class="form-group">
-                    <form method="POST" enctype="multipart/form-data">
-                        {% csrf_token %}
-                        {% crispy form %}
-                    </form>
+            <div class="card-body px-2 pt-2 post-color rounded">
+                <h4>{{ post }}</h4>
+                <h6 class="post-details-color">
+                    <i class="far fa-comment"></i>
+                    <span class="mr-1">{{post.comment_post.count}}</span>
+                    <span class="mr-2"> Posted by {{user.username }}</span>
+                    <span class="mr-2"> Created {{post.created|timesince }}</span>
+                </h6>
+                <hr>
+            </div>
+            <div class="post-color mb-2 pt-1 pb-1 rounded">
+                <div class="col-12">
+                    <div class="form-group">
+                        <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {% crispy form %}
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-{% else %}
-    <h4>You are not logged in</h4>
-{% endif %}
-
-
+    {% else %}
+        <h4>You are not logged in</h4>
+    {% endif %}
 {% endblock %}

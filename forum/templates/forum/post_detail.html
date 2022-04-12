@@ -2,7 +2,7 @@
 {% load static %}
 {% load crispy_forms_tags %}
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'forum/css/forum.css' %}">
+    <link rel="stylesheet" href="{% static 'forum/css/forum.css' %}">
 
 {% endblock %}
 
@@ -15,88 +15,86 @@
 {% endblock %}
 
 {% block content %}
-{% if user.is_authenticated %}
-    <div class="container ">    
-        <h2 class="logo-font text-center"> Room topic: {{ post.topic }}</h2>
-    
-        <div class="row justify-content-center text-center mx-auto">
-            <h5>Make learning a community activity.  Our forum is the perfect place to ask questions, share tips and get clarity from fellow people</h5>
-        </div>
-    
-        <div class="group mt-4 mb-2">
-            <div class="item line pb-1"></div>
-            <h5 class="item text logo-font">Post</h5>
-            <div class="item line pb-1"></div>
-        </div>
+    {% if user.is_authenticated %}
+        <div class="container ">    
+            <h2 class="logo-font text-center"> Room topic: {{ post.topic }}</h2>
         
-        <div class="row ml-3 mb-3 ">
-            <a href="{% url 'forum'%}" class="logo-font mr-2"> Back to forum
-            </a>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 col-md-6">
-
-                <div class="card-group">
-                    <div class="card forum-border col mb-4">
-                        <div class="card-body px-2 pt-2 post-color rounded">
-                            <h3 class="font-weight-bold ">{{ post.title | safe | title}}</h3>
-                            <div class="justify-content-start mt-3">
-                                <p>{{ post.body | safe }}</p>
+            <div class="row justify-content-center text-center mx-auto">
+                <h5>Make learning a community activity.  Our forum is the perfect place to ask questions, share tips and get clarity from fellow people</h5>
+            </div>
+        
+            <div class="group mt-4 mb-2">
+                <div class="item line pb-1"></div>
+                <h5 class="item text logo-font">Post</h5>
+                <div class="item line pb-1"></div>
+            </div>
+            
+            <div class="row ml-3 mb-3 ">
+                <a href="{% url 'forum'%}" class="logo-font mr-2"> Back to forum
+                </a>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <div class="card-group">
+                        <div class="card forum-border col mb-4">
+                            <div class="card-body px-2 pt-2 post-color rounded">
+                                <h3 class="font-weight-bold ">{{ post.title | safe | title}}</h3>
+                                <div class="justify-content-start mt-3">
+                                    <p>{{ post.body | safe }}</p>
+                                </div>
+                                {% if post.post_image %}
+                                    <a href="{% url 'postdetail' post.id %}">
+                                        <img src="{{ post.post_image.url }}" class="card-img-top "
+                                            alt="{{ post.name }}" aria-label="post image">
+                                    </a>
+                                {% endif %}
                             </div>
-                            {% if post.post_image %}
-                                <a href="{% url 'postdetail' post.id %}">
-                                    <img src="{{ post.post_image.url }}" class="card-img-top "
-                                        alt="{{ post.name }}" aria-label="post image">
-                                </a>
+                            <div class="card-body px-2 pt-2 post-color rounded">                       
+                                <i class="far fa-comment"></i>
+                                <span class="mr-1">{{post.comment_post.count}} </span>
+                                <span class="mr-2"> Posted by {{post.user_name|title}}</span>
+                                <span class="mr-2"> Created {{post.created|timesince }} ago</span>
+                            </div>
+                            {% if user.id == post.owner.id or request.user.is_superuser %}
+                                <small>
+                                    <a href="{% url 'updatepost' post.pk %}" class="logo-font mr-2" aria-label="update post link"> Update</a>
+                                    <a href="{% url 'deletepost' post.pk %}" class="logo-font mr-2 text-danger" aria-label="delete post link">Delete</a>
+                                </small>
                             {% endif %}
                         </div>
-                        <div class="card-body px-2 pt-2 post-color rounded">                       
-                            <i class="far fa-comment"></i>
-                            <span class="mr-1">{{post.comment_post.count}} </span>
-                            <span class="mr-2"> Posted by {{post.user_name|title}}</span>
-                            <span class="mr-2"> Created {{post.created|timesince }} ago</span>
-                        </div>
-                        {% if user.id == post.owner.id or request.user.is_superuser %}
-                            <small>
-                                <a href="{% url 'updatepost' post.pk %}" class="logo-font mr-2" aria-label="update post link"> Update</a>
-                                <a href="{% url 'deletepost' post.pk %}" class="logo-font mr-2 text-danger" aria-label="delete post link">Delete</a>
-                            </small>
-                        {% endif %}
                     </div>
                 </div>
-            </div>
-            <div class="col-sm-12 col-md-6">
-                  <div class="card-group">
-                    <div class="card forum-border col mb-4">
-                        <h3 class="font-weight-bold mt-1 ">Comments </h3>
-                        <small>
-                            <a href="{% url 'addcomment' post.pk %}" class="logo-font mr-2" aria-label="Add a comment link">-> Add Comment</a>
-                        </small>
-                        <div class="card-body rounded">
-                            {% if not post.comment_post.all %}
-                                <span class="mb-2">No Comments Yet..</span>
-                            {% else %}
-                                {% for comment in page_obj %}
-                                    <p>  {{ comment.comment_body | safe}}</p>             
-                                    <small class="mr-2"> Commented by {{comment.name|title}}</small>
-                                    <small class="mr-2"> Created {{comment.created|timesince }} ago</small>
-                                    {% if user.id == comment.owner.id or request.user.is_superuser %}
-                                        <br>
-                                        <small>
-                                            <a href="{% url 'updatecomment' comment.id %}" class="logo-font mr-2" aria-label="update comment link"> Update</a>
-                                            <a href="{% url 'deletecomment' comment.pk %}" class="logo-font mr-2" aria-label="delete comment link"> Delete</a>
-                                        </small>
-                                    {% endif %}
-                                    <hr>  
-                                {% endfor %}
-                            {% endif %}
+                <div class="col-sm-12 col-md-6">
+                    <div class="card-group">
+                        <div class="card forum-border col mb-4">
+                            <h3 class="font-weight-bold mt-1 ">Comments </h3>
+                            <small>
+                                <a href="{% url 'addcomment' post.pk %}" class="logo-font mr-2" aria-label="Add a comment link">-> Add Comment</a>
+                            </small>
+                            <div class="card-body rounded">
+                                {% if not post.comment_post.all %}
+                                    <span class="mb-2">No Comments Yet..</span>
+                                {% else %}
+                                    {% for comment in page_obj %}
+                                        <p>  {{ comment.comment_body | safe}}</p>             
+                                        <small class="mr-2"> Commented by {{comment.name|title}}</small>
+                                        <small class="mr-2"> Created {{comment.created|timesince }} ago</small>
+                                        {% if user.id == comment.owner.id or request.user.is_superuser %}
+                                            <br>
+                                            <small>
+                                                <a href="{% url 'updatecomment' comment.id %}" class="logo-font mr-2" aria-label="update comment link"> Update</a>
+                                                <a href="{% url 'deletecomment' comment.pk %}" class="logo-font mr-2" aria-label="delete comment link"> Delete</a>
+                                            </small>
+                                        {% endif %}
+                                        <hr>  
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                            {% include 'forum/pagination.html' %}
                         </div>
-                        {% include 'forum/pagination.html' %}
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-{% endif %}
-
+    {% endif %}
 {% endblock %}
