@@ -406,6 +406,21 @@ input[name='q']::placeholder {
     background-color: blue !important;
 }
 
+/* add product badge  */
+.add-product-badge:link,
+.add-product-badge:visited,
+.add-product-badge:active,
+.add-product-badge:focus{
+    color: #00447C;
+    background-color:#fed5a4;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+.add-product-badge:hover {
+    color: #fed5a4;
+    background-color:#00447C;
+  }
 /* -------------------------------- Media Queries */
 
 
