@@ -29,9 +29,9 @@
             {% endif %}
             <a href="{% url 'edit_account' %}" class="text-center footer-links"><h5>Edit Account details</h5></a>
         </div>
-        <div class="row mx-4 my-4">
-            <div class="col-12 col-lg-6 background-grey">
-                <h3 class="">Default Billing Information</h3>
+        <div class="row mx-2 my-4">
+            <div class="col-12 col-lg-6 background-grey ">
+                <h3 class="reduce-font-size font-weight-bold mt-2">Default Billing Information</h3>
                 <div class="table-responsive">
                     <table class="table table-sm table-borderless">
                         <thead>
@@ -43,11 +43,11 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <h5 class="font-weight-bold">Full Name</h5>
+                                    <h5 class="font-weight-bold reduce-font-size">Full Name</h5>
                                 </td>
                                 <td>
                                 {% if profile.default_full_name %}
-                                    <h5>{{profile.default_full_name}}</h5>
+                                    <h5 class="reduce-font-size">{{profile.default_full_name}}</h5>
                                 {% else %}
                                     <h5></h5>
                                 {% endif %}
@@ -55,11 +55,11 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <h5 class="font-weight-bold">Address 1</h5>
+                                    <h5 class="font-weight-bold reduce-font-size">Address 1</h5>
                                 </td>
                                 <td>
                                 {% if profile.default_street_address1 %}
-                                    <h5>{{profile.default_street_address1}}</h5>
+                                    <h5 class="reduce-font-size">{{profile.default_street_address1}}</h5>
                                 {% else %}
                                     <h5></h5>
                                 {% endif %}
@@ -67,11 +67,11 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <h5 class="font-weight-bold">Address 2</h5>
+                                    <h5 class="font-weight-bold reduce-font-size">Address 2</h5>
                                 </td>
                                 <td>
                                 {% if profile.default_street_address2 %}
-                                    <h5>{{profile.default_street_address2}}</h5>
+                                    <h5 class="reduce-font-size">{{profile.default_street_address2}}</h5>
                                 {% else %}
                                     <h5></h5>
                                 {% endif %}
@@ -79,11 +79,11 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <h5 class="font-weight-bold">Town or City</h5>
+                                    <h5 class="font-weight-bold reduce-font-size">Town or City</h5>
                                 </td>
                                 <td>
                                 {% if profile.default_town_or_city %}
-                                    <h5>{{profile.default_town_or_city}}</h5>
+                                    <h5 class="reduce-font-size">{{profile.default_town_or_city}}</h5>
                                 {% else %}
                                     <h5></h5>
                                 {% endif %}
@@ -92,11 +92,11 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <h5 class="font-weight-bold">County</h5>
+                                    <h5 class="font-weight-bold reduce-font-size">County</h5>
                                 </td>
                                 <td>
                                 {% if profile.default_county %}
-                                    <h5>{{profile.default_county}}</h5>
+                                    <h5 class="reduce-font-size">{{profile.default_county}}</h5>
                                 {% else %}
                                     <h5></h5>
                                 {% endif %}
@@ -104,11 +104,11 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <h5 class="font-weight-bold">Postcode</h5>
+                                    <h5 class="font-weight-bold reduce-font-size">Postcode</h5>
                                 </td>
                                 <td>
                                     {% if profile.default_postcode %}
-                                        <h5>{{profile.default_postcode}}</h5>
+                                        <h5 class="reduce-font-size">{{profile.default_postcode}}</h5>
                                     {% else %}
                                         <h5></h5>
                                     {% endif %}
@@ -116,11 +116,11 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <h5 class="font-weight-bold">Country</h5>
+                                        <h5 class="font-weight-bold reduce-font-size">Country</h5>
                                     </td>
                                     <td>
                                         {% if profile.default_country %}
-                                            <h5>{{profile.default_country}}</h5>
+                                            <h5 class="reduce-font-size">{{profile.default_country}}</h5>
                                         {% else %}
                                             <h5></h5>
                                         {% endif %}
@@ -128,11 +128,11 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <h5 class="font-weight-bold">Phone number</h5>
+                                        <h5 class="font-weight-bold reduce-font-size">Phone number</h5>
                                     </td>
                                     <td>    
                                     {% if profile.default_phone_number %}
-                                        <h5>{{profile.default_phone_number}}</h5>
+                                        <h5 class="reduce-font-size">{{profile.default_phone_number}}</h5>
                                     {% else %}
                                         <h5></h5>
                                     {% endif %}
@@ -140,11 +140,11 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <h5 class="font-weight-bold">Email Address</h5>
+                                        <h5 class="font-weight-bold reduce-font-size">Email Address</h5>
                                     </td>
                                     <td>
                                     {% if profile.default_email %}
-                                        <h5>{{profile.default_email}}</h5>
+                                        <h5 class="reduce-font-size">{{profile.default_email}}</h5>
                                     {% else %}
                                         <h5></h5>
                                     {% endif %}
@@ -156,7 +156,7 @@
             </div>
         
             <div class="col-12 col-lg-6 background-grey">
-                <h3 >Order History</h3>
+                <h3 class="reduce-font-size font-weight-bold mt-2" >Order History</h3>
                 <div class="order-history table-responsive">
                     <table class="table table-sm table-borderless">
                         <thead>

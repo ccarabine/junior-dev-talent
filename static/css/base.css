@@ -530,6 +530,9 @@ input[name='q']::placeholder {
     .text-uppercase{
         font-size: .7rem;
     }
+    .reduce-font-size{
+        font-size: .9rem;
+    }
   
 
 

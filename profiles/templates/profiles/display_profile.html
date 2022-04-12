@@ -27,10 +27,10 @@
         </div>
     </div>
     <div class="container">
-        <div class="row mx-5 my-5">
+        <div class="row mx-2 my-5">
             <div class="col-md">
                 <div class="card text-center background-grey">
-                    <div class="my-3 mx-2">
+                    <div class="my-3">
                         {% if profile.profile_image %}
                             <img class="avatar avatar--xl" src="{{ profile.imageURL }}" alt="{{ product.profile.name }}" />
                         {% else %}
@@ -83,7 +83,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col my-2">
                 <div>
                     <h3 class="font-weight-bold mb-4">About Me</h3>
                     {% if profile.about %}
