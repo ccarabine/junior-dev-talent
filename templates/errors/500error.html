@@ -13,27 +13,27 @@
     </div>
 {% endblock %}
 {% block content %}
-<div class="header-section text-center">
-    <div class="container ">
-        <div class="py-5 title">
-            <h1>Delete Account </h1>  
+    <div class="header-section text-center">
+        <div class="container ">
+            <div class="py-5 title">
+                <h1>Delete Account </h1>  
+            </div>
         </div>
     </div>
-</div>
-<div class="container">
-    <div class="row mx-4 my-4 justify-content-md-center">
-        <div class="col-lg-6 col-md-6 col-sm-12 background-grey">
-            <div class="jumbotron mx-2">
-                <h1 class="display-4">Something went wrong</h1>
-                <p class="lead">Server error - Try a bit later</p>
-                <p class="lead">{{e}}</p>
-                <hr class="my-4">
-                <p class="lead">
-                  <a class="btn btn-dark btn-white-txt cta" href="{% url 'home' %}"
-                  role="button">Home page</a>
-                </p>
-              </div>
+    <div class="container">
+        <div class="row mx-4 my-4 justify-content-md-center">
+            <div class="col-lg-6 col-md-6 col-sm-12 background-grey">
+                <div class="jumbotron mx-2">
+                    <h1 class="display-4">Something went wrong</h1>
+                    <p class="lead">Server error - Try a bit later</p>
+                    <p class="lead">{{e}}</p>
+                    <hr class="my-4">
+                    <p class="lead">
+                    <a class="btn btn-dark btn-white-txt cta" href="{% url 'home' %}"
+                    role="button">Home page</a>
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
-</div>
 {% endblock %}
