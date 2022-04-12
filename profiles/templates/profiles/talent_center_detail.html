@@ -33,24 +33,24 @@
                                 <div class="social_images">
                                     {% if profile.github_link %}
                                         <a title="Github" href="{{profile.github_link}}" target="_blank"><i
-                                                    class="fa-brands fa-github fa-2xl"></i></a>
+                                                    class="fa-brands fa-github fa-2xl profile-links"></i></a>
                                     {% endif %} 
                                     {% if profile.linkedin_link %}
                                         <a title="LinkedIn" href="{{profile.linkedin_link}}" target="_blank"><i
-                                                    class="fa-brands fa-linkedin fa-2xl"></i></a>
+                                                    class="fa-brands fa-linkedin fa-2xl profile-links"></i></a>
                                     {% endif %}
                                 </div>
                                 <div>
                                     {% if profile.cv_file %}
                                         <!--CV section-->
                                         <a href="{{ profile.cv_file.url }}" target="_blank">
-                                            <img class="" src="{{ MEDIA_URL }}cv_profile.png" alt="Cv download image" > 
+                                            <img class="profile-links" src="{{ MEDIA_URL }}cv_profile.png" alt="Cv download image" > 
                                         </a>
                                     {% endif %}
                                 </div>
                                 {% if request.user.profile.id != profile.id %}
-                                    <a href="{% url 'contact_developer' profile.pk %}" class="btn mt-4" aria-label="Contact developer">
-                                    <h2>Send Direct Message</h2> 
+                                    <a href="{% url 'contact_developer' profile.pk %}" class="btn mt-4 profile-links" aria-label="Contact developer">
+                                    <h3>Send Direct Message</h3> 
                                     </a> 
                                 {% endif %}
                             </div>
@@ -64,7 +64,7 @@
                         <div class="devInfo">
                             <h3 class="font-weight-bold mb-4">Skills</h3>
                             {% for skill in skills %}
-                                <span class="badge badge-pill badges">
+                                <span class="badge badge-pill badges mt-2">
                                     <small>{{skill}}</small>
                                 </span> 
                             {% endfor %}  

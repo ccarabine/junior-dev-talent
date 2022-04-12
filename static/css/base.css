@@ -211,6 +211,18 @@ body {
     color: white !important;
 }
 
+/* Links on talent detail template */
+.profile-links{
+    color: var(--color-midnight-blue);
+    cursor: pointer;
+}
+
+.profile-links:hover,
+.profile-links:active,
+.profile-links:focus {
+    transform: scale(1.03);
+}
+
 /* Solid border */
 hr.solid {
     border-top: 3px solid #bbb;
@@ -508,8 +520,9 @@ input[name='q']::placeholder {
     .icon-size-talent{
         width:40%;
   }
-  .footer-icons{
-    width:13%;
+    .footer-icons{
+        width:13%;
+    }
 }
 
   @media (max-width: 400px) {

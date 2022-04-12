@@ -59,13 +59,13 @@
                         <div class="social_images">
                             {% if profile.github_link %}
                                 <a title="Github" href="{{profile.github_link}}" target="_blank"><i
-                                            class="fa-brands fa-github fa-2xl"></i></a> 
+                                            class="fa-brands fa-github fa-2xl profile-links"></i></a> 
                             {% else %}
                                 <h5 class="text-danger">Github link not provided</h5>
                             {% endif %}
                             {% if profile.linkedin_link %}
                                 <a title="LinkedIn" href="{{profile.linkedin_link}}" target="_blank"><i
-                                            class="fa-brands fa-linkedin fa-2xl"></i></a>
+                                            class="fa-brands fa-linkedin fa-2xl profile-links"></i></a>
                             {% else %}
                                 <h5 class="text-danger">LinkedIn link not provided</h5>
                             {% endif %}
@@ -74,7 +74,7 @@
                             {% if profile.cv_file %}
                                 <!--CV section-->
                                 <a href="{{ profile.cv_file.url }}" target="_blank">
-                                    <img class="" src="{{ MEDIA_URL }}cv_profile.png" alt="Cv download image" > 
+                                    <img class="profile-links" src="{{ MEDIA_URL }}cv_profile.png" alt="Cv download image" > 
                                 </a>
                             {% else %}
                                 <h5 class="text-danger">CV not uploaded</h5>
