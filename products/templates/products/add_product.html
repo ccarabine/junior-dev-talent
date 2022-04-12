@@ -20,7 +20,6 @@
                 <hr>
             </div>
         </div>
-
         <div class="row">
             <div class="col-12 col-md-6">
                 <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
@@ -43,9 +42,7 @@
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
-
-    <!--  -->
+{{ block.super }}
     <script type="text/javascript">
         $('#new-image').change(function() {
             var file = $('#new-image')[0].files[0];
