@@ -25,7 +25,8 @@
         <div class="text-center logo-font ">
             <div><i class="fas fa-user fa-lg"></i></div>
             {% if request.user.user_profile.default_full_name %}
-                <p class="my-0 ">{{ request.user.user_profile.default_full_name }}</p>
+                <p class="my-0 d-none d-sm-block d-sm-none d-md-block">{{ request.user.user_profile.default_full_name }}</p>
+                <p class="my-0 d-block d-sm-none">{{ request.user }}</p>
             {% else %}
                 <p class="my-0 ">Account</p>
             {% endif %}
