@@ -67,8 +67,7 @@ class UserProfileForm(forms.ModelForm):
         """
         model = UserProfile
         exclude = ('user',  'is_hiring_manager',
-                   'default_full_name',
-                   'default_email',
+           
                    'default_phone_number',
                    'default_postcode',
                    'default_town_or_city',
@@ -90,7 +89,8 @@ class UserProfileForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)
         placeholders = {
-
+            'default_full_name': 'default_full_name',
+            'default_email': 'default_email',
             'location': 'location',
             'short_intro': 'Job title',
             'about': 'About',
