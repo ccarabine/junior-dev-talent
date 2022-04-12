@@ -155,14 +155,15 @@ class UpdatePostView(SuccessMessageMixin, UpdateView):
     Returns:
         Render of update post with success message
     """
+ 
     model = Post
     form_class = PostForm
     template_name = "forum/update_post.html"
     success_message = "Post updated"
 
     def get_queryset(self):
-        owner = self.request.user
-        return self.model.objects.filter(owner=owner)
+            owner = self.request.user
+            return self.model.objects.filter(owner=owner)
 
 
 @method_decorator(login_required, name='dispatch')

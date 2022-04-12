@@ -60,7 +60,7 @@ class PostForm(forms.ModelForm):
                     Submit(
                         "submit",
                         "Submit post",
-                        css_class="btn btn-dark btn-white-txt ctas "
+                        css_class="btn btn-dark btn-white-txt cta "
                         )
                 ),
             ),
