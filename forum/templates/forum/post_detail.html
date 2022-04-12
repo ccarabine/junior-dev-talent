@@ -44,7 +44,7 @@
                                 </div>
                                 {% if post.post_image %}
                                     <a href="{% url 'postdetail' post.id %}">
-                                        <img src="{{ post.post_image.url }}" class="card-img-top "
+                                        <img src="{{ post.post_image.url }}" class="img-fluid img-thumbnail"
                                             alt="{{ post.name }}" aria-label="post image">
                                     </a>
                                 {% endif %}
