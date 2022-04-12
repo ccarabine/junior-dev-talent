@@ -1,3 +1,4 @@
+# pylint: disable=missing-module-docstring
 # Imports
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -14,7 +15,7 @@ class ProductAdmin(admin.ModelAdmin):
     """
     Admin class for the product model.
     """
-   
+
     list_display = (
         'sku',
         "category",
@@ -30,12 +31,13 @@ class ProductAdmin(admin.ModelAdmin):
         )
     ordering = ('sku',)
 
+
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     """
     Admin class for the category model.
     """
- 
+
     list_display = (
         "name",
         "friendly_name"

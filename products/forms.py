@@ -1,3 +1,4 @@
+# pylint: disable=missing-module-docstring
 # Imports
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -8,11 +9,15 @@ from .widgets import CustomClearableFileInput
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from .models import Product, Category
 
+
 class ProductForm(forms.ModelForm):
     """
     A class for post forms
     """
     class Meta:
+        """
+        A class for Meta information
+        """
         model = Product
         fields = '__all__'
 
