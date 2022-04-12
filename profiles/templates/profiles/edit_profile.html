@@ -14,38 +14,32 @@
 {% endblock %}
 
 {% block content %}
-<div class="header-section text-center">
-    <div class="container ">
-        <div class="py-5 title">
-            <h1>Update Profile </h1>  
+    <div class="header-section text-center">
+        <div class="container ">
+            <div class="py-5 title">
+                <h1>Update Profile </h1>  
+            </div>
         </div>
     </div>
-</div>
-
-<div class="text-center mt-2">
-    <a href="{% url 'account_details' %}" class="text-center footer-links"><h5>Billing & order details</h5></a>
-    <a href="{% url 'display_profile' %}" class="text-center footer-links"><h5>My profile</h5></a>
-</div>
-<div class="container">
-    <div class="row mx-4 my-4">
-       
-        <div class="col background-grey">
-    
-            <h5 class="mt-3"> Profile Information</h5>
-            <form class="mt-3" action="{% url 'edit_profile' %}" method="POST" id="profile-update-form" enctype="multipart/form-data">
-                {% csrf_token %}
-                {{ form|crispy }}
-                <button class="btn btn-dark btn-white-txt cta my-4 ">Update Information</button>
-            </form>
-        </div>
-     
+    <div class="text-center mt-2">
+        <a href="{% url 'account_details' %}" class="text-center footer-links"><h5>Billing & order details</h5></a>
+        <a href="{% url 'display_profile' %}" class="text-center footer-links"><h5>My profile</h5></a>
     </div>
-</div>
-
-        
+    <div class="container">
+        <div class="row mx-4 my-4">
+            <div class="col background-grey">
+                <h5 class="mt-3"> Profile Information</h5>
+                <form class="mt-3" action="{% url 'edit_profile' %}" method="POST" id="profile-update-form" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button class="btn btn-dark btn-white-txt cta my-4 ">Update Information</button>
+                </form>
+            </div>
+        </div>
+    </div>  
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
+{{ block.super }}
     <script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
 {% endblock %}

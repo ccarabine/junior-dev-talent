@@ -97,15 +97,15 @@
                     <a href="{% url 'create_skill' %}" class="badge-pill add-skill-badge ml-4 py-2 px-3 d-inline"><span class="">+</span> Add Skill</a>
                 </div>
                 {% if skills %}
-                {% for skill in skills %}
-                    <div>
-                        <div class="badge badge-pill badges mb-2">
-                            <small>{{skill}}</small>
-                        </div> 
-                        <a class="footer-links" href="{% url 'update_skill' skill.id %}"></i> Edit</a>
-                        <a class="text-danger" href="{% url 'delete_skill' skill.id %}"></i> Delete</a>
-                    </div>
-                {% endfor %}  
+                    {% for skill in skills %}
+                        <div>
+                            <div class="badge badge-pill badges mb-2">
+                                <small>{{skill}}</small>
+                            </div> 
+                            <a class="footer-links" href="{% url 'update_skill' skill.id %}"></i> Edit</a>
+                            <a class="text-danger" href="{% url 'delete_skill' skill.id %}"></i> Delete</a>
+                        </div>
+                    {% endfor %}  
                 {% else %}
                     <h5 class="text-danger">Skills not added, adding skill will increase your chance to get noticed by a hiring manager</h5>
                 {% endif %}

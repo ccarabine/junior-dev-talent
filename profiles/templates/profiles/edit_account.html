@@ -14,7 +14,6 @@
 {% endblock %}
 
 {% block content %}
-
     <div class="header-section text-center">
         <div class="container ">
             <div class="py-5 title">
@@ -22,16 +21,12 @@
             </div>
         </div>
     </div>
-    
     <div class="text-center mt-2">
         <a href="{% url 'account_details' %}" class="text-center footer-links"><h5>Account details</h5></a>
-        
     </div>
     <div class="container">
         <div class="row mx-4 my-4">
-           
             <div class="col background-grey">
-        
                 <h5 class="mt-3"> Profile Information</h5>
                 <form class="mt-3" action="{% url 'edit_account' %}" method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
@@ -39,13 +34,11 @@
                     <button class="btn btn-dark btn-white-txt cta my-4 ">Update Information</button>
                 </form>
             </div>
-         
         </div>
     </div>
-
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
+{{ block.super }}
     <script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
 {% endblock %}

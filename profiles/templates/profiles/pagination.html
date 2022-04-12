@@ -4,25 +4,25 @@
     <div class="pagination-holder p-4 ">
         <!-- Pagination -->
         <nav aria-label="Products sorted">
-        <ul class="pagination justify-content-center">
-            {% if profiles.has_previous %}
-                <li class="page-item"><a class="page-link" href="?{% param_replace page=profiles.previous_page_number %}">Previous</a></li>
-            {% else %}
-                <li class="disabled page-item"><span class="page-link">Previous</span></li>
-            {% endif %}
-            {% for i in profiles.paginator.page_range %}
-                {% if profiles.number == i %}
-                    <li class="page-item active"><span class="page-link">{{ i }} <span class="sr-only">(current)</span></span></li>
+            <ul class="pagination justify-content-center">
+                {% if profiles.has_previous %}
+                    <li class="page-item"><a class="page-link" href="?{% param_replace page=profiles.previous_page_number %}">Previous</a></li>
                 {% else %}
-                    <li class="page-item"><a class="page-link" href="?{% param_replace page=i %}">{{ i }}</a></li>
+                    <li class="disabled page-item"><span class="page-link">Previous</span></li>
                 {% endif %}
-            {% endfor %}
-            {% if profiles.has_next %}
-                <li class="page-item"><a class="page-link" href="?{% param_replace page=profiles.next_page_number %}">Next</a></li>
-            {% else %}
-                <li class="disabled page-item"><span class="page-link">Next</span></li>
-            {% endif %}
-        </ul>
+                {% for i in profiles.paginator.page_range %}
+                    {% if profiles.number == i %}
+                        <li class="page-item active"><span class="page-link">{{ i }} <span class="sr-only">(current)</span></span></li>
+                    {% else %}
+                        <li class="page-item"><a class="page-link" href="?{% param_replace page=i %}">{{ i }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                {% if profiles.has_next %}
+                    <li class="page-item"><a class="page-link" href="?{% param_replace page=profiles.next_page_number %}">Next</a></li>
+                {% else %}
+                    <li class="disabled page-item"><span class="page-link">Next</span></li>
+                {% endif %}
+            </ul>
         </nav>
     </div>
 {% endif %}

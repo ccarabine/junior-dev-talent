@@ -12,26 +12,22 @@
     </div>
 {% endblock %}
 {% block content %}
-
-<div class="header-section text-center">
-    <div class="container ">
-        <div class="py-5 title">
-            <h1>Register as a Hiring Manager </h1>  
+    <div class="header-section text-center">
+        <div class="container ">
+            <div class="py-5 title">
+                <h1>Register as a Hiring Manager </h1>  
+            </div>
         </div>
     </div>
-</div>
-<div class="container text-center">
-    <div class=" mx-4 my-5">
-        <div class="col background-grey px-3 py-3">
-            <img class="card-img-top img-fluid icon-size-talent" src="{{ MEDIA_URL }}hiring_manager.png" alt="subscribe image"> 
-        
+    <div class="container text-center">
+        <div class=" mx-4 my-5">
+            <div class="col background-grey px-3 py-3">
+                <img class="card-img-top img-fluid icon-size-talent" src="{{ MEDIA_URL }}hiring_manager.png" alt="subscribe image"> 
+            </div>
         </div>
-    </div>
-    <div class=" mx-4 my-5">
-        <h2 >Free for a limited time only</h2>
-        <a href="{% url 'register_hiring_manager' %}" class="btn btn-dark btn-white-txt btn-lg cta my-5" >Register</a>
-    </div>
-</div>
-            
-            
+        <div class=" mx-4 my-5">
+            <h2 >Free for a limited time only</h2>
+            <a href="{% url 'register_hiring_manager' %}" class="btn btn-dark btn-white-txt btn-lg cta my-5" >Register</a>
+        </div>
+    </div>     
 {% endblock %}

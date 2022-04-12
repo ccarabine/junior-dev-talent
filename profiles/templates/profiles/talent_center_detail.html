@@ -12,67 +12,66 @@
     </div>
 {% endblock %}
 {% block content %}
-<div>
-    <div class="header-section text-center">
-        <div class="container container--narrow">
-            <div class="mb-2 title">
-                <h1>FIND THE BEST FRESH TALENT </h1>  
+    <div>
+        <div class="header-section text-center">
+            <div class="container container--narrow">
+                <div class="mb-2 title">
+                    <h1>FIND THE BEST FRESH TALENT </h1>  
+                </div>
             </div>
         </div>
-    </div>
-    {% if request.user.user_profile.is_hiring_manager or request.user.is_superuser %}
-        <div class="container">
-            <div class="row mx-5 my-5">
-                <div class="col-md">
-                    <div class="card text-center background-grey">
-                        <div class="my-3 mx-2">
-                            <img class="avatar avatar--xl" src="{{ profile.imageURL }}" />
-                            <h2 class="font-weight-bold">{{profile.default_full_name}}</h2>
-                            <h5>{{profile.short_intro}}</h5>
-                            <h5>Based in {{profile.location}}</h5>
-                            <div class="social_images">
-                                {% if profile.github_link %}
-                                    <a title="Github" href="{{profile.github_link}}" target="_blank"><i
-                                                class="fa-brands fa-github fa-2xl"></i></a>
-                                {% endif %} 
-                                {% if profile.linkedin_link %}
-                                    <a title="LinkedIn" href="{{profile.linkedin_link}}" target="_blank"><i
-                                                class="fa-brands fa-linkedin fa-2xl"></i></a>
+        {% if request.user.user_profile.is_hiring_manager or request.user.is_superuser %}
+            <div class="container">
+                <div class="row mx-5 my-5">
+                    <div class="col-md">
+                        <div class="card text-center background-grey">
+                            <div class="my-3 mx-2">
+                                <img class="avatar avatar--xl" src="{{ profile.imageURL }}" />
+                                <h2 class="font-weight-bold">{{profile.default_full_name}}</h2>
+                                <h5>{{profile.short_intro}}</h5>
+                                <h5>Based in {{profile.location}}</h5>
+                                <div class="social_images">
+                                    {% if profile.github_link %}
+                                        <a title="Github" href="{{profile.github_link}}" target="_blank"><i
+                                                    class="fa-brands fa-github fa-2xl"></i></a>
+                                    {% endif %} 
+                                    {% if profile.linkedin_link %}
+                                        <a title="LinkedIn" href="{{profile.linkedin_link}}" target="_blank"><i
+                                                    class="fa-brands fa-linkedin fa-2xl"></i></a>
+                                    {% endif %}
+                                </div>
+                                <div>
+                                    {% if profile.cv_file %}
+                                        <!--CV section-->
+                                        <a href="{{ profile.cv_file.url }}" target="_blank">
+                                            <img class="" src="{{ MEDIA_URL }}cv_profile.png" alt="Cv download image" > 
+                                        </a>
+                                    {% endif %}
+                                </div>
+                                {% if request.user.profile.id != profile.id %}
+                                    <a href="{% url 'contact_developer' profile.pk %}" class="btn mt-4" aria-label="Contact developer">
+                                    <h2>Send Direct Message</h2> 
+                                    </a> 
                                 {% endif %}
                             </div>
-                            <div>
-                                {% if profile.cv_file %}
-                                    <!--CV section-->
-                                    <a href="{{ profile.cv_file.url }}" target="_blank">
-                                        <img class="" src="{{ MEDIA_URL }}cv_profile.png" alt="Cv download image" > 
-                                    </a>
-                                {% endif %}
-                            </div>
-                            {% if request.user.profile.id != profile.id %}
-                                <a href="{% url 'contact_developer' profile.pk %}" class="btn mt-4" aria-label="Contact developer">
-                                <h2>Send Direct Message</h2> 
-                                </a> 
-                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div>
+                            <h3 class="font-weight-bold mb-4">About Me</h3>
+                            <p>{{profile.about}}</p>
+                        </div>
+                        <div class="devInfo">
+                            <h3 class="font-weight-bold mb-4">Skills</h3>
+                            {% for skill in skills %}
+                                <span class="badge badge-pill badges">
+                                    <small>{{skill}}</small>
+                                </span> 
+                            {% endfor %}  
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div>
-                        <h3 class="font-weight-bold mb-4">About Me</h3>
-                        <p>{{profile.about}}</p>
-                    </div>
-                    <div class="devInfo">
-                        <h3 class="font-weight-bold mb-4">Skills</h3>
-                        {% for skill in skills %}
-                            <span class="badge badge-pill badges">
-                                <small>{{skill}}</small>
-                            </span> 
-                        {% endfor %}  
-                    </div>
-                </div>
             </div>
-        </div>
-    {% endif %}
-</div>
-
+        {% endif %}
+    </div>
 {% endblock content %}
