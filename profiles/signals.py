@@ -52,11 +52,9 @@ def delete_user(sender, instance, **kwargs):
     Returns:
         N/A
     """
-    try:
-        user = instance.user
-        user.delete()
-    except:
-        pass
+
+    user = instance.user
+    user.delete()
 
 
 post_save.connect(create_user, sender=User)

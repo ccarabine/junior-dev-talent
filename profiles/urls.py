@@ -1,3 +1,4 @@
+# pylint: disable=missing-module-docstring
 # Imports
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -33,7 +34,6 @@ urlpatterns = [
         views.register_hiring_manager,
         name='register_hiring_manager'
         ),
-    
     path(
         'talent_center',
         views.talent_center,

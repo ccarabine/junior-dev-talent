@@ -1,3 +1,4 @@
+# pylint: disable=missing-module-docstring
 # Imports
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -9,6 +10,7 @@ from django.utils.decorators import method_decorator
 from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic import DeleteView
 from django.urls import reverse_lazy
+from django.core.mail import send_mail
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -54,9 +56,9 @@ def edit_profile(request):
             messages.success(request, 'Profile updated successfully')
             return redirect("display_profile")
         else:
-            messages.error(request, 'Failed to update profile. Please ensure the form is valid.')
+            messages.error(request, 'Failed to update profile. Please \
+                           ensure the form is valid.')
     else:
-       
         form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
 
@@ -110,9 +112,11 @@ def order_history(request, order_number):
 
     return render(request, template, context)
 
+
 @login_required
 def register_hiring_manager(request):
-    """ When this function is called, it registers the user as a hiring manager. """
+    """ When this function is called, it registers the user as a hiring \
+        manager. """
     profile = get_object_or_404(UserProfile, user=request.user)
     profile.is_hiring_manager = True
     profile.save()
@@ -128,12 +132,14 @@ def profile_type(request):
 
     return render(request, template)
 
- 
+
 @login_required
 def talent_center(request):
-    """ Display talent center, list profiles by search query """
-    """ Using distinct to get only one instance of each user """
-    """ Paginate by 6 """
+    """
+    Display talent center, list profiles by search query
+    Using distinct to get only one instance of each user
+    Paginate by 6
+    """
     search_query = ''
 
     if request.GET.get('search_query'):
@@ -238,15 +244,18 @@ def subscription(request):
 
     return render(request, template)
 
+
 @login_required
 def create_skill(request):
-    """ Use the skill form using the post request """
-    """ Add the skill for the particular owner to their """
-    """ profile """
-    
+    """
+    Use the skill form using the post request
+    Add the skill for the particular owner to their
+    profile
+    """
+
     profile = request.user.user_profile
     form = SkillForm()
-    
+
     if request.method == 'POST':
         form = SkillForm(request.POST)
         if form.is_valid():
@@ -256,7 +265,7 @@ def create_skill(request):
             messages.success(request, 'Skill was added successfully')
             return redirect('display_profile')
     title = 'Create'
-    
+
     template = 'profiles/skill_form.html'
 
     context = {
@@ -266,16 +275,19 @@ def create_skill(request):
 
     return render(request, template, context)
 
+
 @login_required
 def update_skill(request, pk):
-    """ Use the skill form using the post request """
-    """ update the skill for the particular owner to their """
-    """ profile """
-    
+    """
+    Use the skill form using the post request
+    update the skill for the particular owner to their
+    profile
+    """
+
     profile = request.user.user_profile
     skill = profile.skill_set.get(id=pk)
     form = SkillForm(instance=skill)
-    
+
     if request.method == 'POST':
         form = SkillForm(request.POST, instance=skill)
         if form.is_valid():
@@ -283,7 +295,7 @@ def update_skill(request, pk):
             messages.success(request, 'Skill was updated successfully')
             return redirect('display_profile')
     title = 'Update'
-    
+
     template = 'profiles/skill_form.html'
 
     context = {
@@ -293,19 +305,20 @@ def update_skill(request, pk):
 
     return render(request, template, context)
 
+
 @login_required
 def delete_skill(request, pk):
     """ Delete the skill  """
-    
+
     profile = request.user.user_profile
     skill = profile.skill_set.get(id=pk)
     if request.method == 'POST':
         skill.delete()
         messages.success(request, 'Skill was deleted successfully')
         return redirect('display_profile')
-    
+
     template = 'profiles/delete_skill.html'
-    
+
     context = {
         'skill': skill
         }

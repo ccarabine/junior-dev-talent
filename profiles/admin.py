@@ -1,3 +1,4 @@
+# pylint: disable=missing-module-docstring
 # Imports
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -33,9 +34,10 @@ class UserProfileAdmin(admin.ModelAdmin):
         'github_link',
         'linkedin_link',
         )
-    
-    list_display = ('user','is_hiring_manager','default_full_name')
+
+    list_display = ('user', 'is_hiring_manager default_full_name')
 
     ordering = ('default_full_name',)
+
 
 admin.site.register(Skill)
