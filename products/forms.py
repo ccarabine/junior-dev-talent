@@ -3,6 +3,7 @@
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django import forms
+from django_summernote.widgets import SummernoteWidget
 from .widgets import CustomClearableFileInput
 
 # Internal:
@@ -20,7 +21,9 @@ class ProductForm(forms.ModelForm):
         """
         model = Product
         fields = '__all__'
-
+        widgets = {
+            "description": SummernoteWidget(),
+        }
     image = forms.ImageField(
         label='Image',
         required=False,

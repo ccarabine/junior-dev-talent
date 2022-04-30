@@ -3,7 +3,7 @@
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django.contrib import admin
-
+from django_summernote.admin import SummernoteModelAdmin
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -11,7 +11,7 @@ from .models import Product, Category
 
 
 @admin.register(Product)
-class ProductAdmin(admin.ModelAdmin):
+class ProductAdmin(SummernoteModelAdmin):
     """
     Admin class for the product model.
     """
@@ -20,7 +20,6 @@ class ProductAdmin(admin.ModelAdmin):
         'sku',
         "category",
         "name",
-        "description",
         "price",
         "rating",
         "image",
@@ -30,7 +29,7 @@ class ProductAdmin(admin.ModelAdmin):
         "description"
         )
     ordering = ('sku',)
-
+    summernote_fields = ('description',)
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
