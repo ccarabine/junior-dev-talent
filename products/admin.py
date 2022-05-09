@@ -17,7 +17,6 @@ class ProductAdmin(SummernoteModelAdmin):
     """
 
     list_display = (
-        'sku',
         "category",
         "name",
         "price",
@@ -27,7 +26,7 @@ class ProductAdmin(SummernoteModelAdmin):
         "name",
         "description"
         )
-    ordering = ('sku',)
+    ordering = ('name',)
     summernote_fields = ('description',)
 
 @admin.register(Category)
