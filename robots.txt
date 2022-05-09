@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /bag/
+Disallow: /checkout/
+Sitemap: https://junior-dev-talent.herokuapp.com/sitemap.xml
