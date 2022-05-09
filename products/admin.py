@@ -21,7 +21,6 @@ class ProductAdmin(SummernoteModelAdmin):
         "category",
         "name",
         "price",
-        "rating",
         "image",
         )
     search_fields = (
