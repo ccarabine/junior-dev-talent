@@ -66,15 +66,21 @@ urlpatterns = [
     document_root=settings.MEDIA_ROOT
     )
 
-HANDLER404 = 'forum.views.error_404_view'
-HANDLER500 = 'forum.views.error_500_view'
-HANDLER404 = 'home.views.error_404_view'
-HANDLER500 = 'home.views.error_500_view'
-HANDLER404 = 'products.views.error_404_view'
-HANDLER500 = 'products.views.error_500_view'
-HANDLER404 = 'profiles.views.error_404_view'
-HANDLER500 = 'profiles.views.error_500_view'
-HANDLER404 = 'checkout.views.error_404_view'
-HANDLER500 = 'checkout.views.error_500_view'
-HANDLER404 = 'basket.views.error_404_view'
-HANDLER500 = 'basket.views.error_500_view'
+
+handler404 = 'forum.views.error_404_view'
+handler500 = 'forum.views.error_500_view'
+
+handler404 = 'home.views.error_404_view'
+handler500 = 'home.views.error_500_view'
+
+handler404 = 'products.views.error_404_view'
+handler500 = 'products.views.error_500_view'
+
+handler404 = 'profiles.views.error_404_view'
+handler500 = 'profiles.views.error_500_view'
+
+handler404 = 'checkout.views.error_404_view'
+handler500 = 'checkout.views.error_500_view'
+
+handler404 = 'basket.views.error_404_view'
+handler500 = 'basket.views.error_500_view'

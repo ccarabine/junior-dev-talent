@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'css/ base.css' %}">
+
 {% endblock %}
 
 {% block page_header %}
@@ -12,11 +12,12 @@
         </div>
     </div>
 {% endblock %}
+{% block extra_title %}500 Error{% endblock %}
 {% block content %}
     <div class="header-section text-center">
         <div class="container ">
             <div class="py-5 title">
-                <h1>Delete Account </h1>  
+ 
             </div>
         </div>
     </div>
