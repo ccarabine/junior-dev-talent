@@ -231,17 +231,11 @@ ___
 
 10.1. As a **site user** who is **directed to a non-existent page or resource**, I can **redirected to the relevant error page**
 
-10.2. As a **site admin** i want **non-logged users not to have access to forum( only access to logged in users), and talent center( access only to hiring managers)
+10.2. As a **site admin** i want **non-logged users not to have access to forum( only access to logged in users)**
 
 10.3. As a **site admin** i want **users only access their profile with products brought**
 
-to delete?
-future feature
-10.7. As a **site admin** I can **create a subscriptions model and content** so that **I can manage the site content**
 
-10.8. As a **site admin** I can **update subscriptions model and content** so that **I can manage the site content**
-
-10.9. As a **site admin** I can **delete subscriptions model and content** so that **I can manage the site content**
 
 
 [Table of Contents ](#home)
