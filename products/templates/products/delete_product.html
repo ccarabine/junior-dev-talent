@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+{% block title %} Delete post {% endblock %}
+{% block content %}
+    <div class="container h-100">  
+        {% if request.user.is_superuser %}  
+            <div class="group mt-4 mb-2">
+                <div class="item line pb-1"></div>
+                <h5 class="item text logo-font">Delete Product </h5>
+                <div class="item line pb-1"></div>
+            </div>
+
+            <div class="form-group justify-content-center text-center mx-auto">
+                <form method="POST" enctype="multipart/form-data" class="mt-4">
+                    {% csrf_token %}
+                    <strong class="mb-4">Are you sure you want to delete Product? </strong>
+                    <br>
+                    <strong class="mb-4">{{product.name}}</strong>
+                    <br>
+                    <a href="{% url 'product_detail' product.id %}" class="mt-4 btn btn-dark btn-white-txt cta" aria-label="Go back to post">Cancel</a>
+                    <button class="btn btn-danger mt-4" aria-label="delete post">Delete post! </button>
+                </form>
+            </div>
+        {% else %}
+            <h4>You can not delete this product</h4>
+        {% endif %}
+    </div>
+{% endblock %}
