@@ -762,54 +762,41 @@ Talent Center benefits |[SM](readme/images/balsamiq/talent_center_subscription_s
 My goal is to build a platform inclusive and accessible to everyone, so therefore it should be aesthetically pleasing in a generic style.
 
 ### **Color Palette**
-I selected a coronavirus image, one that has become recognisable and is commonly associated with COVID-19 and uploaded it onto a colour palette website. The colour palette website provided colour palette suggestions, from which I chose the defined colour palette below. 
+The colour palette website provided colour palette suggestions, from which I chose the defined colour palette below. 
 
 <details>
-<summary>Click here to view the coronavirus image </summary>
+<summary>Click here to view the hero image on the home page </summary>
 
-![screenshot of coronavirus image](readme/docs/images/surface/hero_image.jpg)
+![screenshot of hero image on home page](media/header-image.png)
 </details>
 
 <br>
 
-![screenshot of color palette](readme/docs/images/surface/color_palette.png)
+![screenshot of color palette](readme/images/surface/surface_palette.png)
 
 ### **Typography**
 
-The following font Roboto have been selected to ensure the text is easy to read, add value to the text, and invoke user to perceive a positive emotion from the text. The fonts chosen are generic and therefore should appeal to any demographic/user. It is rated as Google's best font. I chose font Lato as a fallback
+The following font Roboto have been selected to ensure the text is easy to read, add value to the text, and invoke user to perceive a positive emotion from the text. The fonts chosen are generic and therefore should appeal to any demographic/user. It is rated as Google's best font.
 
-![screenshot of google fonts](readme/docs/images/surface/google_fonts.png)
+![screenshot of google fonts](readme/images/surface/roboto_font.png)
 
 ### **Imagery**
-Likewise for the image carousel I selected imagery aligned to the theme of COVID-19, plus my colour palette to make the home page visually pleasing and eye catching whilst ensuring the styling throughout the platform is consistent
+Likewise for the hero images on the home page I selected imagery aligned to software engineering, plus my colour palette to make the home page visually pleasing and eye catching whilst ensuring the styling throughout the platform is consistent
 Please refer to further details in credits section for specific images used within the project
 
 <details>
-<summary>Click here to view carousel image 1</summary>
+<summary>Click here to view hero image 1 on home page</summary>
 
-![screenshot of carousel image 1](readme/docs/images/surface/hero_image.jpg)
+![screenshot of hero image on home page](media/header-image.png)
 </details>
 
 <br>
 <details>
-<summary>Click here to view carousel image 2</summary>
+<summary>Click here to view hero image 2 on home page</summary>
 
-![screenshot of carousel image 2](readme/docs/images/surface/carousel_2.png)
+![screenshot of hero image 2 on home page](media/talent.png)
 </details>
 
-<br>
-<details>
-<summary>Click here to view  carousel image 3</summary>
-
-![screenshot of carousel image 3](readme/docs/images/surface/carousel_3.jpg)
-</details>
-
-<br>
-<details>
-<summary>Click here to view coronavirus logo</summary>
-
-![screenshot of google fonts](readme/docs/images/surface/coronavirus_logo.jpg)
-</details>
 <br>
 
 [Table of Contents ](#home)
