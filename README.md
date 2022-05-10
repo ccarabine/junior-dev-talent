@@ -918,7 +918,7 @@ This section introduces the user to Junior Dev Talent with a hero image and 4 ca
     - **medium screen devices**
         - The cards will be stacked in two column, 2 rows
     - **Large screen devices**
-        - The cards will be in 1 column
+        - The cards will be in 1 row
 - Hero image with a hiring manager shaking the hand of a candidate through a laptop
 
 **Get Hired Modal** ( accessed from the home page "Get hired" card)
@@ -926,7 +926,7 @@ This section introduces the user to Junior Dev Talent with a hero image and 4 ca
     - **Small screen devices**
         - The cards will be stacked in one column
     - **Medium and large screen devices**
-        - The cards will be stacked 1 row
+        - The cards will be stacked in 1 row
 
     - User clicks on "Start Now", 
         - *Logged in users* - Update profile template is displayed
@@ -939,7 +939,7 @@ This section introduces the user to Junior Dev Talent with a hero image and 4 ca
     - **Medium screen devices**
         - The cards will be stacked in two column, 2 rows
     - **Large screen devices**
-        - The cards will be in 1 column
+        - The cards will be in 1 row
 
     - User clicks on Chat now, Forum template is displayed
 
@@ -950,7 +950,7 @@ This section introduces the user to Junior Dev Talent with a hero image and 4 ca
     - **Medium screen devices**
         - The cards will be stacked in two column, 2 rows
     - **Large screen devices**
-        - The cards will be in 1 column
+        - The cards will be in 1 row
 
     - User clicks on Shop now, Growth hub template is displayed
 
@@ -969,14 +969,12 @@ This section introduces the user to Junior Dev Talent with a hero image and 4 ca
 <br>
 
 ___
-## **Feature 4 Forum**
-
-The user will see value of signing up to be able to create/edit/delete posts in order to be an active user of the forum<br>
-
+## **Forum**
+The user will see value of signing up to be able to create/edit/delete posts and comments in order to be an active user of the forum<br>
 **Responsive on all devices** <br>
 
 ___
-### **Feature 5 –Topics** 
+### **Feature 4 –Topics** 
 ( accessed from the Navigation bar "Forum" link )
 
 **Display Forum Topic list**
@@ -990,7 +988,8 @@ ___
 
 - Selecting a topic allows the user to display a list of posts filtered by topic chosen
 <br>
-- *Admin user*
+
+- **Admin user**
     - +Add topic links will be displayed under the Room topic section divider to allow admin users to add a topic
     - Edit and delete link will be displayed in each card about room discussion to allow admin users to edit/delete a topic
 <br>
@@ -1018,7 +1017,7 @@ ___
     - There is a back button for users to go back to the forum page
     - Success message displayed “Topic was deleted successfully” when the user submits"
 ___
-### **Feature 6 –Posts** 
+### **Feature 5 –Posts** 
 
 **Post list**
 ( accessed from the forum page clicking on a room topic link )
@@ -1081,7 +1080,7 @@ ___
     - There is a cancel button for users to go back to the post
     - Success message displayed “Post deleted” when the user submits"
 ___
-### **Feature 7 –Comments** 
+### **Feature 6 –Comments** 
 
 **Edit Comment**
 ( accessed from the post detail page "edit" link)
@@ -1098,12 +1097,11 @@ ___
     - Success message displayed “Comment deleted” when the user submits"
 
 
-#####
-- If a user encounters an error, the relevant error page is displayed (404 )
-???????????????
+**404 error**
+- If a user goes to a not exist page, the relevant error page is displayed (404 )
 
 
-### **Feature 8 Talent center**
+### **Feature 7 Talent center**
 ( accessed from the Navigation bar "talent Center" link / talent center modal on the home page)
 - *Non logged in / is_hiring_manager=false*
     - Subscription page is displayed detailing the subscription fee and benefits of the service and a call to action button "Start now"
@@ -1169,15 +1167,13 @@ ___
     Success message - "Email sent successfully"
      
 
-### **Feature 9 Growth hub**
+### **Feature 8 Growth hub**
 ( accessed from the Navigation bar "Growth hub" link / growth hub modal on the home page)
     - Growth hub page displayed with all products paginated by 8
     - Sub heading links  with categories "courses", "Events", "Mentorship" which the user can click to show products by category
     - User is able to sort the product by 
         - Price Low to high.
         - Price High to low.
-        - Rating Low to high.
-        - Rating High to low.
         - Name (A-A)
         - Name(Z-A)
         - Category (A-Z)
@@ -1192,17 +1188,6 @@ ___
         - The cards will be stacked two rows
 
 User can click on a product to view in more detail
-
-
-**Add category**
-( accessed from the post list page "-> Start a new post within this topic" link )
-- *Logged in user*
-    - Title is required
-    - Description and  image are optional
-    - Success message displayed “Post submitted” when the user submits"
-
-- *Non logged in/logged in try to access edit/delete functionality* 
-    -Message displayed "Sorry, only store owners can do that."
 
 **Add Product**
 ( accessed from the Growth hub page )
@@ -1249,8 +1234,8 @@ User can click on a product to view in more detail
 **Delete product**
 ( accessed from the post detail page "delete" link)
 - *Only access by owner of the post*
-    - Confirm button if user would like to delete the post
-    - There is a cancel button for users to go back to the post
+    - Confirm button if user would like to delete the product
+    - There is a cancel button for users to go back to the product
     - Success message displayed “Product deleted” when the user submits"
 
 - *Non logged in/logged in* 
@@ -1263,7 +1248,7 @@ User can click on a product to view in more detail
 - Redirected to growth hub list page with products matching the search criteria
 
 
-### **Feature 10 Basket**
+### **Feature 9 Basket**
 ( accessed from the nav bar on all  pages)
 When a user selects a products and clicks add to basket.  The item goes into the basket in the toast message
 All the items added to the bag with the total quantity and price.
@@ -1273,9 +1258,9 @@ Other items added will appear on a new line
 User can update the basket quanity by selecting the quantity selector and clicking update or remove to remove all items from the line
 User is able to go back and browse more products by selecting the 'Keep Shopping' button
 Alternatively, user can commit to the basket and proceed with the purchase by selecting the 'Secure Checkout' button
+- notification when a user add/changes a product to the basket
 
-
-### **Feature 11 Checkout**
+### **Feature 10 Checkout**
 ( accessed from the "Secure checkout" button on the basket page)
 Checkout
 
@@ -1291,7 +1276,7 @@ success message "Order successfully processed! Your order number is x. A confirm
 redirected to order summary page displaying order details and invoice address
 
 
-### **Feature 12 My profile**
+### **Feature 11 My profile**
 ( accessed from the "account icon" on the nav bar)
 
 - *Logged in user - owner of the profile*
@@ -1302,30 +1287,6 @@ links for github, linked and cv, if they exist there related icon will display
 Users can add skills by clicking on the add skill button
 to the right of each skill, the user can edit or delete a skill by clicking on the relevant skill
 
-
-**Add skill**
-( accessed from the My profile page )
-- *Logged in user - owner of the profile*
-
-    - Name is required
-    - There is a back button for users to go back to the My profile page
-    - Success message displayed “Skill was added successfully ” when the user submits"
-
-**Edit Skill**
-( accessed from the My profile page )
-- *Logged in user - owner of the profile*
-
-    - Existing details will be displayed
-    - There is a back button for users to go back to the profile page
-    - Success message displayed “Skill was updated successfully" when the user submits"
-
-**Delete Skill**
-( accessed from the My profile page )
-- *Logged in user - owner of the profile*
-
-    - Confirm button if user would like to delete the skill
-    - There is a cancel button for users to go back to the skill
-    - Success message displayed “Skill was deleted successfully" when the user submits"
 
 **Edit Profile**
 ( accessed from the My profile page )
@@ -1356,6 +1317,32 @@ Order history summary with order confirmation link to view the order detailing o
     - There is a account details link  for users to go back to the account page
     - Success message displayed “Profile updated successfully"
 
+
+### **Feature 12 Candidate Skills**
+( accessed from the "profile" on the nav bar)
+**Add skill**
+( accessed from the My profile page )
+- *Logged in user - owner of the profile*
+
+    - Name is required
+    - There is a back button for users to go back to the My profile page
+    - Success message displayed “Skill was added successfully ” when the user submits"
+
+**Edit Skill**
+( accessed from the My profile page )
+- *Logged in user - owner of the profile*
+
+    - Existing details will be displayed
+    - There is a back button for users to go back to the profile page
+    - Success message displayed “Skill was updated successfully" when the user submits"
+
+**Delete Skill**
+( accessed from the My profile page )
+- *Logged in user - owner of the profile*
+
+    - Confirm button if user would like to delete the skill
+    - There is a cancel button for users to go back to the skill
+    - Success message displayed “Skill was deleted successfully" when the user submits"
 __
 ### **Feature 13 Account Management**
 This section allows the user to independently register for an account, sign in/out and change their password so they can access the site for more functionality<br>
@@ -1373,6 +1360,7 @@ This section allows the user to independently register for an account, sign in/o
 - User is required to confirm e-mail
 - User is required to confirm e-mail address
 - Success message – you have confirmed (username)
+- Profile created
 
 ## Sign in 
 ( accessed from the Nav bar account icon dropdown menu, click on login )
@@ -1409,20 +1397,27 @@ ___
 ___
 ### **Feature 14 - Privacy policy**
 ( accessed from the footer on all pages )
-
-**Responsive on all devices** <br>
 - Privacy Policy displayed
 
 ### **Feature 15 - Terms of use**
 ( accessed from the footer on all pages )
-
-**Responsive on all devices** <br>
 - Terms of use displayed
+
+### **Feature 16 - Sign up to newsletter**
+( accessed from the footer on all pages )
+
+### **Feature 17 - Error handling**
+- 404 error page displayed if a user goes to a non exist page
 
 
 ## ii. Features remaining to implement (long term objectives): <a name="features-toimplement"></a>
-- Subscription model
+- Subscription model to commercial opportunity
+- Direct messaging
 - Rating on products
+- Reviews on products
+- likes on posts
+- Advertising
+- Interview questions on candidate profiles
 
 - Direct message
 
