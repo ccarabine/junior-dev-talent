@@ -667,8 +667,95 @@ e.g.on the Post model topic is the Foreign Key to the Topic model
 ## iv. Skeleton / Technical design <a name="skeleton"></a> 
 I used Balsamiq to create wireframes for my project in order to plan out the layout of the interface, navigation and information design of the site on desktop, tablets and mobile devices.
 
-TO COMPLETE
 
+Home page
+Page | Wireframe | 
+------------ | ------------- 
+Home |[SM](readme/images/balsamiq/home_sm.png)
+Home |[MD](readme/images/balsamiq/home_md.png)
+Home |[LG](readme/images/balsamiq/home_lg.png)
+Nav bar |[SM/MD](readme/images/balsamiq/nav_bar_sm_md.png)
+Nav bar |[LG](readme/images/balsamiq/home_lg.png)
+Home page modals |[SM](readme/images/balsamiq/home_modal_sm.png)
+Home page modals |[MD](readme/images/balsamiq/home_modal_md.png)
+Home page modals |[LG](readme/images/balsamiq/home_modal_lg.png)
+
+Community Forum
+Page | Wireframe | 
+------------ | ------------- 
+Topic-Admin links |[SM/MD/LG](readme/images/balsamiq/communityforum_topics_admin_add_edit_delete_links.png)
+Add Topic(create) |[SM/MD/LG](readme/images/balsamiq/communityforum_add_topic.png)
+Topics(read) |[SM/MD](readme/images/balsamiq/communityforum_topics_sm_md.png)
+Topics(read) |[LG](readme/images/balsamiq/communityforum_topics_lg.png)
+Update Topic(update) |[SM/MD/LG](readme/images/balsamiq/communityforum_update_topic.png)
+Delete Topic(delete) |[SM/MD/LG](readme/images/balsamiq/communityforum_delete_topic.png)
+Create Post(create) |[SM/MD/LG](readme/images/balsamiq/create_post_sm_md_lg.png)
+Post Detail(read) |[MD/LG](readme/images/balsamiq/communityforum_post_detail_md_lg.png)
+Post Detail(read) |[SM](readme/images/balsamiq/communityforum_post_detail_sm.png)
+Post(update) |[SM/MD/LG](readme/images/balsamiq/edit_post_sm_md_lg.png)
+Delete Post(delete) |[SM/MD/LG](readme/images/balsamiq/delete_post_sm_md_lg.png)
+Post List(read) |[SM/MD/LG](readme/images/balsamiq/communityforum_postlist_sm_md_lg.png)
+Comment (Create) |[SM/MD/LG](readme/images/balsamiq/create_comment_sm_md_lg.png)
+Comment detail(read) |[MD/LG](readme/images/balsamiq/communityforum_post_detail_md_lg.png)
+Comment detail(read) |[SM](readme/images/balsamiq/communityforum_post_detail_sm.png)
+Comment (update) |[SM/MD/LG](readme/images/balsamiq/edit_comment_sm_md_lg.png)
+Comment (Delete) |[SM/MD/LG](readme/images/balsamiq/delete_comment_sm_md_lg.png)
+
+E-commerce
+Products
+Page | Wireframe | 
+------------ | ------------- 
+Product admin links |[SM/MD/LG](readme/images/balsamiq/ecommerce_admin_add_update_delete_product_link.png)
+Add product(Create) |[SM/MD/LG](readme/images/balsamiq/ecommerce_add_product.png)
+Update product(Update) |[SM/MD/LG](readme/images/balsamiq/ecommerce_edit_product.png)
+Delete product(Delete) |[SM/MD/LG](readme/images/balsamiq/ecommerce_delete_product.png)
+Product list(View) |[LG](readme/images/balsamiq/ecommerce_product_list_lg.png)
+Product list(View) |[SM/MD](readme/images/balsamiq/ecommerce_product_list_sm_md.png)
+Product list(View) |[XS](readme/images/balsamiq/ecommerce_product_list_xs.png)
+Product detail(View) |[SM/MD/LG](readme/images/balsamiq/ecommerce_product_detail_sm_md_lg.png)
+Product detail(View) |[XS](readme/images/balsamiq/ecommerce_product_detail_xs.png)
+
+Shopping basket
+Page | Wireframe | 
+------------ | ------------- 
+Shopping basket empty |[SM/MD/LG](readme/images/balsamiq/shopping_basket_empty.png)
+Shopping basket with products |[SM](readme/images/balsamiq/shopping_basket_with_products_sm.png)
+Shopping basket with products |[MD/LG](readme/images/balsamiq/shopping_basket_with_products_md_lg.png)
+
+Checkout
+Page | Wireframe | 
+------------ | ------------- 
+Checkout |[SM/MD](readme/images/balsamiq/checkout_lg.png)
+Checkout |[LG](readme/images/balsamiq/checkout_lg.png)
+Checkout success |[SM/MD/LG](readme/images/balsamiq/checkout_success_order_placed.png)
+
+Profile and Account details
+Page | Wireframe | 
+------------ | ------------- 
+Account detail |[MD/LG](readme/images/balsamiq/account_detail_md_lg.png)
+Account detail |[SM](readme/images/balsamiq/account_detail_sm.png)
+Edit Account detail |[MD/LG](readme/images/balsamiq/edit_account_details_sm_md_lg.png)
+My Profile |[MD/LG](readme/images/balsamiq/my_profile_md_lg.png)
+My Profile |[SM](readme/images/balsamiq/my_profile_sm.png)
+Edit Profile |[SM/MD/LG](readme/images/balsamiq/edit_profile_sm_md_lg.png)
+
+Page | Wireframe | 
+------------ | ------------- 
+Create skill(Create) |[SM/MD/LG](readme/images/balsamiq/create_skill_sm_md_lg.png)
+Update skill(Update) |[SM/MD/LG](readme/images/balsamiq/update_skill_sm_md_lg.png)
+Delete skill(Delete) |[SM/MD/LG](readme/images/balsamiq/delete_skill_sm_md_lg.png)
+
+Talent Center
+Page | Wireframe | 
+------------ | ------------- 
+Talent Center list |[SM](readme/images/balsamiq/talent_center_sm.png)
+Talent Center list |[MD/LG](readme/images/balsamiq/talent_center_md.png)
+Talent Center detail |[SM](readme/images/balsamiq/talent_center_detail_sm.png)
+Talent Center detail |[MD/LG](readme/images/balsamiq/talent_center_detail_md_lg.png)
+Register as a hiring manager|[SM/MD/LG](readme/images/balsamiq/talent_center_profile_type_sm_md_lg.png)
+Talent Center benefits |[LG](readme/images/balsamiq/talent_center_subscription_lg.png)
+Talent Center benefits |[MD/LG](readme/images/balsamiq/talent_center_subscription_md_lg.png)
+Talent Center benefits |[SM](readme/images/balsamiq/talent_center_subscription_sm.png)
 
 ---
 ## v. Surface <a name="surface"></a> 
