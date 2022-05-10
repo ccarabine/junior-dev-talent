@@ -1478,8 +1478,7 @@ No unfixed bugs
 ___
 
 # 4. Deployment <a name="deployment"></a> 
-[Click on the link to go to deployment ](https://github.com/ccarabine/coronavirusforum/blob/main/readme/deployment.md)
-to complete
+[Click on the link to go to deployment ](https://github.com/ccarabine/junior-dev-talent/blob/main/readme/docs/deployment.md) 
 
 ___
 
