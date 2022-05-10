@@ -251,15 +251,24 @@ ___
 ## Strategy Trade-offs
 I have rated the features on a scale of 1 to 5 in terms of importance (how important is it for the project now) and viability (how realistic is that we can implement a solution)
 
-To achieve the strategy goals, the following features highlighted in green will be implemented to create a minimal viable product due to the timescale and technical ability. The additional features in red will be added at a further stage
+To achieve the strategy goals, the following features not highlighted in red will be implemented to create a minimal viable product due to the timescale and technical ability. The additional features in red will be added at a further stage
 
 <br>
 <details>
-<summary>Click here to view strategy trade offs</summary>
+<summary>Click here to view strategy trade offs 1/3</summary>
 
-![screenshot of strategy trade offs](readme/docs/images/strategy_trade_offs.png)
+![screenshot of strategy trade offs 1/3](readme/images/trade_offs/trade_offs_1.png)
 </details>
+<details>
+<summary>Click here to view strategy trade offs 2/3</summary>
 
+![screenshot of strategy trade offs 2/3](readme/images/trade_offs/trade_offs_2.png)
+</details>
+<details>
+<summary>Click here to view strategy trade offs 3/3</summary>
+
+![screenshot of strategy trade offs 2/3](readme/images/trade_offs/trade_offs_3.png)
+</details>
 ---
 
 ## iii. Structure <a name="structure"></a> 
