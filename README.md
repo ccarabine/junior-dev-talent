@@ -489,28 +489,104 @@ During development SQLite DB was used and for production Postgres was used as th
 
 ## Data Schema
 
-(vote model is a many to many field)<br>
 
-![screenshot of data schema](readme/docs/images/database/dataschema_drawsql.png)
+<details>
+<summary>Click here to view the data schema for Junior Dev Talent</summary>
 
+![screenshot of data schema](readme/images/database/data_schema.png)
+</details>
+
+<br>
 ---
 <br>
 
 ## Models
 The following models were created to represent the database model structure for the website
-### User Model – One to many relationship - A user can have many posts
+### User Model – One to many relationship - A user can have one profile
 - The User model contains information about the user. It is part of the Django allauth library
 - The model contains the following fields: username, password, first_name, last_name, email, is_staff, is_active, is_superuser, last_login, date_joined
 
+### User profile Model – one  to one relationship – A userprofile can have one user
+- The user profile model contains information about user
+- Below are the fields and attribute for the uesr profile model
+
+<details>
+<summary>Click here to view user profile model part 1</summary>
+
+![screenshot of topic model](readme/images/database/userprofile_1.png)
+</details>
+<details>
+<summary>Click here to view user profile model part 2</summary>
+
+![screenshot of topic model](readme/images/database/userprofile_2.png)
+</details>
 <br>
 
-### Topic Model – many  to one relationship – A topic can have many posts
-- The topic model contains information about topic
-- Below are the fields and attribute for the Topic model
+### Skill Model – one  to many relationship – A userprofile can have many skills
+- The skill model contains information about skill
+- Below are the fields and attribute for the skill model
 <details>
-<summary>Click here to view topic model</summary>
+<summary>Click here to view skill model</summary>
 
-![screenshot of topic model](readme/docs/images/database/model_topic.png)
+![screenshot of topic model](readme/images/database/skill.png)
+
+</details>
+
+<br>
+
+### Order Model
+
+One to many relationship -a user profile can have many orders
+- The order model contains information about the user details, and costs.
+- Below are the fields and attribute for the Order model
+<details>
+<summary>Click here to view order model part 1</summary>
+
+![screenshot of topic model](readme/images/database/order_1.png)
+</details>
+<details>
+<summary>Click here to view order model part 2</summary>
+
+![screenshot of topic model](readme/images/database/order_2.png)
+</details>
+<br>
+
+### OrderLineItem Model
+Relationships
+- an orderlineitem can have one user profile
+- an orderlineitem can have many products
+
+- The orderlineitem model contains information about each product that is ordered by the user in their order.
+- Below are the fields and attribute for the Order model
+<details>
+<summary>Click here to view orderlineitem model </summary>
+
+![screenshot of topic model](readme/images/database/orderlineitem.png)
+</details>
+
+<br>
+
+### Product Model
+
+many to one relationship -a category can have many products
+- The product model contains information about each product 
+- Below are the fields and attribute for the product model
+<details>
+<summary>Click here to view product model </summary>
+
+![screenshot of topic model](readme/images/database/product.png)
+</details>
+
+<br>
+
+### Product category Model
+
+- The category model contains information about each category 
+- Below are the fields and attribute for the product model
+<details>
+<summary>Click here to view category model </summary>
+
+![screenshot of topic model](readme/images/database/product_category.png)
 </details>
 
 <br>
@@ -518,7 +594,6 @@ The following models were created to represent the database model structure for 
 ### Post Model 
 Relationships
 - a post can have many comments
-- a post can have many votes
 - a post can have one topic
 - a post can have one user
 
@@ -526,32 +601,12 @@ Relationships
 
 - The post model contains fields about the post.
 - This model captures the user and topic  to determine who made the post and the topic name.  These are foreign-keys
-- Votes is a many to many field to the user so we capture the user if they have pressed a thumbs up or thumbs down 
 - Below are the fields and attribute for the Post model
 
 <details>
-<summary>Click here to view post model - part 1</summary>
+<summary>Click here to view post model</summary>
 
-![screenshot of post model part1](readme/docs/images/database/model_post_part1.png)
-</details>
-
-<details>
-<summary>Click here to view post model - part 2</summary>
-
-![screenshot of post model part2](readme/docs/images/database/model_post_part2.png)
-</details>
-
-<br>
-
-### Vote Model– many to many relationship - many votes can have many posts 
-The vote model contains fields for the voting functionality - if the user has made a vote, true or false .
--	This model captures the user and post. These are foreign-keys
--	Below are the fields and attribute for the Vote model
-
-<details>
-<summary>Click here to view vote model</summary>
-
-![screenshot of vote model](readme/docs/images/database/model_vote.png)
+![screenshot of post model part1](readme/images/database/post.png)
 </details>
 
 <br>
@@ -563,7 +618,7 @@ The vote model contains fields for the voting functionality - if the user has ma
 <details>
 <summary>Click here to view comment model</summary>
 
-![screenshot of comment model](readme/docs/images/database/model_comment.png)
+![screenshot of comment model](readme/images/database/comment.png)
 </details>
 
 <br>
