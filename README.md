@@ -379,11 +379,53 @@ I have structured the templates into the following files and have used the base 
 ---
 ## Code Structure 
 The code is spilt using the Django framework into the following apps, folders and files
-### Coronavirus app (main project):
+### Junior_dev_talent app (main project):
 -	settings.py - Settings
 -	 urls.py - Website urls
-### Forum app (this app contains all the functionality)
+
+### Forum app (this app contains the functionality for the community forum)
 -	Admin.py  - used to display and customize the models in the Django admin panel
+-	Forms.py- used to customizing fields for the form to access
+-   Widgets.py - The widget handles the rendering of the HTML, and the extraction of data from a GET/POST dictionary that corresponds to the widget.
+-	Models.py – details all the model and every attribute 
+-	Signals.py - signals allow certain senders to notify a set of receivers that some action has taken place 
+-	Test_forms.py -automated testing for forms
+-	Test_models.py  automated testing for models
+-	Test_views.py automated testing for views
+-	Views.py –views are Python functions or classes that receive a web request and return a web response. All of the logic is held
+-   Urls.py - Website urls related to the forum app
+    ### Folders
+-	Static folder– custome css file
+
+### Basket app (this app contains the functionality for the basket app in the e-commerce store)
+-	Test_views.py automated testing for views
+-	Views.py –views are Python functions or classes that receive a web request and return a web response. All of the logic is held
+-   Urls.py - Website urls related to the basket app
+-   Context.py - used to access global variables across the site for the basket
+
+    ### Folders
+-	Templates tags– basket_tools.py - used to return the total of the basket
+
+### Checkout app (this app contains the functionality for the checkout app in the e-commerce store)
+-   Admin.py  - used to display and customize the models in the Django admin panel
+-	Forms.py- used to customizing fields for the form to access
+
+-	Models.py – details all the model and every attribute 
+-	Signals.py - signals allow certain senders to notify a set of receivers that some action has taken place 
+-	Test_forms.py -automated testing for forms
+-	Test_models.py  automated testing for models
+-	Test_views.py automated testing for views
+-	Views.py –views are Python functions or classes that receive a web request and return a web response. All of the logic is held
+-   Urls.py - Website urls related to the forum app
+-   Signals.py - used on save or delete to preform an update total function on the order
+-   Webhook_handler.py - sends data from stripe to users account with order details
+-   Webhooks -Stripe uses webhooks to notify our application when an event happens in your account.
+
+    ### Folders
+-	Static folder– custom css file
+
+### Products app (this app contains the functionality for the products app in the e-commerce store)
+-   Admin.py  - used to display and customize the models in the Django admin panel
 -	Forms.py- used to customizing fields for the form to access
 -	Models.py – details all the model and every attribute 
 -	Signals.py - signals allow certain senders to notify a set of receivers that some action has taken place 
@@ -391,13 +433,43 @@ The code is spilt using the Django framework into the following apps, folders an
 -	Test_models.py  automated testing for models
 -	Test_views.py automated testing for views
 -	Views.py –views are Python functions or classes that receive a web request and return a web response. All of the logic is held
+-   Urls.py - Website urls related to the forum app
+-   Widgets.py - The widget handles the rendering of the HTML, and the extraction of data from a GET/POST dictionary that corresponds to the widget.
+
+    ### Folders
+-	Templates tags– product_tools.py 
+
+### Profiles app (this app contains the functionality for the profiles app for the talent center and user profile information)
+-   Admin.py  - used to display and customize the models in the Django admin panel
+-	Forms.py- used to customizing fields for the form to access
+-	Models.py – details all the model and every attribute 
+-	Signals.py - signals allow certain senders to notify a set of receivers that some action has taken place 
+-	Test_forms.py -automated testing for forms
+-	Test_models.py  automated testing for models
+-	Test_views.py automated testing for views
+-	Views.py –views are Python functions or classes that receive a web request and return a web response. All of the logic is held
+-   Urls.py - Website urls related to the forum app
+-   Widgets.py - The widget handles the rendering of the HTML, and the extraction of data from a GET/POST dictionary that corresponds to the widget.
+
+    ### Folders
+-	Static folder– custom css file
+
+### Home app (this app contains the functionality for the home app on the home page)
+-	Test_views.py automated testing for views
+-	Views.py –views are Python functions or classes that receive a web request and return a web response. All of the logic is held
+-   Urls.py - Website urls related to the basket app
+
+
+
 ### Folders 
 -	Media folder – Media files uploaded by users
 -	Static folder– css, images and Javascript files
 -	Staticfiles - Django. contrib. staticfiles collects static files from each applications into a single location that can easily be served in production.
+-   Utils  - extends a python file code base  - pagination 
 -	Templates folder: 
     - all html files 
     - allauth(django authentication) 
+    -	Documentation - contains all files related to the readme
 ### Files
 -	manage.py: Main python file for starting the website
 -	custom_storage.py: AWS Boto3 configuration
@@ -405,7 +477,7 @@ The code is spilt using the Django framework into the following apps, folders an
 -	Requirements.txt: Containing the python libraries installed
 -	Db.sqlite3 – Database for development
 -	README.md: Readme documentation
--	TESTING.md: Testing documentation
+
 
 [Table of Contents ](#home)
 
