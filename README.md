@@ -1498,33 +1498,31 @@ ___
 
 - Python 3 - this projects core was created using Python, the back-end logic and the means to run/view the Website.
     - Python Modules used (These can be found in the requirements.txt project file):
-    - asgiref==3.4.1 (Support for Python asynchronous web apps and servers to communicate with each other)
-    - backports.zoneinfo==0.2.1 (timezone formatter)
-    - black==21.12b0(code formatter)
-    -	boto3==1.20.27 (Python SDK for AWS)
-    -	botocore==1.23.27  (Python SDK for AWS)
-    -	click==8.0.3(beautiful command line interfaces )
+    -   asgiref==3.5.0 (Support for Python asynchronous web apps and servers to communicate with each other)
+    -	boto3==1.21.37 (Python SDK for AWS)
+    -	botocore==1.24.37  (Python SDK for AWS)
     -	dj-database-url==0.5.0  (Support for DATABASE_URL environment variable)
-    -	Django==4.0.1 (Web framework)
-    -	django-allauth==0.47.0 (Web framework authentication)
-    -	django-crispy-forms==1.13.0(Django rendering of forms)
-    -	django-formtools==2.3(high-level abstractions for Django forms)
+    -	Django==3.2 (Web framework)
+    -	django-allauth==0.41.0 (Web framework authentication)
+    -	django-countries==7.3.2
+    -	django-crispy-forms==1.14.0(Django rendering of forms)
+    -   django-environ==0.8.1
     -	django-storages==1.12.3 (Django storage backend for AWS S3)
     -	django-summernote==0.8.20.0(WYSIWYG editor)
     -	gunicorn==20.1.0(Python WSGI Http server)
     -	jmespath==0.10.0(Full suite of data driven testcase)
     -	oauthlib==3.1.1(Framework for oauth1 and oauth2)
-    -	pathspec==0.9.0
-    -	Pillow==9.0.0 (Imaging library)
+    -	Pillow==9.0.1 (Imaging library)
     -	psycopg2==2.9.3 (Postgres adapter)
-    -	PyJWT==2.3.0(encode and decode JSON Web Tokens)
+    -	pylint-django==2.5.3
+    -	pylint-plugin-utils==0.7
     -	python3-openid==3.2.0(Support for the OpenID decentralized identity system)
+    -	pytz==2021.3
     -	requests-oauthlib==1.3.0(Authentication support for Requests)
     -	s3transfer==0.5.0 (Python library for managing Amazon S3 transfers)
     -	sqlparse==0.4.2(Non-validating SQL parser for Python)
-    -	tomli==1.2.3
-    -	tzdata==2021.5
-    -	whitenoise==5.3.0
+     -	stripe==2.70.0
+
 
 I have also utilised the following applications, platforms and libraries:
 -	Bootstrap (https://getbootstrap.com/readme/docs/4.0)
@@ -1613,13 +1611,15 @@ Class-based views provide an alternative way to implement views as Python object
 [Table of Contents ](#home)
 ___
 # 6. Credits <a name="credits"></a>
-See below list of tutorials and documentation i used throughout this project
-- The basic skelton setup for this project was based on  “I think therefore I blog project by the Code Institute 
-- I used and adapted code for the navbar , emails and search Boutique Ado project by the Code Institute
+
+- The basic skelton setup for this project was based on  “boutique ado" by the Code Institute 
+
 
 
 ## Media
-
+- Icons i used from  (https://www.flaticon.com/)
+- Images for the ecommerce store(https://unsplash.com/s/photos/profile)
+- Images for the profiles and data.  I sent out a message on slack to see if any one wanted to help with my site and the people on the site sent me their details and profile images to upload
 
 
 ___
