@@ -828,23 +828,6 @@ This section will allow the user to easily navigate from page to page across all
 **Account icon**
 - User can select from the dropdown menu - “Register” or “Login”
 
-- *Non-Logged in user*
-    - Under icon “Account”  will be displayed
-    
-- *Logged in user*
-    - Under icon User name will be displayed
-    - "Account"  will be displayed , If hiring manager is true in their profile
-    <br>
-    - User can then select from the dropdown menu
-    "My account" will be displayed, if hiring manager is true 
-
-    or
-
-    "My Profile" will be displayed, if hiring manager is false (normal user)
-
-    "Change password" for all users
-
-    "Logout" for all users
 
 **Basket icon**
 - Under icon, Total amount in GBP in basket is displayed
@@ -863,19 +846,6 @@ This section will allow the user to easily navigate from page to page across all
 **Account Icon**
 - User can then select from the dropdown menu - “Register” or “Login”
 
-- *Non-Logged in user*
-    - Under icon “Account”  will be displayed
-    
-- *Logged in user*
-    - Under icon “Full name” will be displayed if the user has completed the field in their profile
-    - "Account"  will be displayed , If hiring manager is true in their profile
-    <br>
-    - User can then select from the dropdown menu
-    "My account" will be displayed, if hiring manager is true  
-    or
-    "My Profile" will be displayed, they are a normal user
-    "Change password" for all users
-    "Logout" for all users
 
 **Basket Icon**
 - Total amount in GBP in basket
@@ -1369,8 +1339,24 @@ This section allows the user to independently register for an account, sign in/o
 ( accessed from the Nav bar account icon dropdown menu, click on login )
 - Required fields to complete a valid email address or username and password
 - If the user enters both fields correctly a success message ia displayed “successfully sign is as (username)”
-- Under the account icon, the text will change to username
 
+- *Non-Logged in user*
+    - Under account icon in the nav bar “Account”  will be displayed
+    
+- *Logged in user*
+    - Under icon User name will be displayed
+    - "Account"  will be displayed , If hiring manager is true in their profile
+    <br>
+    - User can then select from the dropdown menu
+    "My account" will be displayed, if hiring manager is true 
+
+    or
+
+    "My Profile" will be displayed, if hiring manager is false (normal user)
+
+    "Change password" for all users
+
+    "Logout" for all users
 ___
 
 ## Forgot password on the sign page

@@ -6,14 +6,114 @@
 ## Testing of Feature 1 - Navigation 
 User stories
 
-1.1 As a site user I can intuitively navigate the site so that the layout of the site is consistent
-1.2 As a site user I can click on the navigation bar so that I can select pages to view
-1.3 As a site user I can see a link in the footer to the site’s Facebook Business Page, so that I can follow the company on Facebook
+- 1.1 As a site user I can intuitively navigate the site so that the layout of the site is consistent
+- 1.2 As a site user I can click on the navigation bar so that I can select pages to view
+
+___
+
+**Action** 
+1.	Navigate to https://junior-dev-talent.herokuapp.com/
+2.	Navigate and click on menu icon (on SM/MD devices only)
+3.	Navigate and click on Search icon (on SM/MD devices only)
+4.	Navigate and click on the account icon
+5.	Navigate and click on the basket
+6.	Navigate and click on the Junior Dev Talent icon (on large devices only)
+7.  Navigate and click on Forum
+8.  Navigate and click on Growth Hub
+9.  Navigate and click on Talent center
+
+
+This action was tested on a logged in user, not logged user and admin
+</br>
+
+## Small/Medium screen devices
+
+Action|Expected result| Actual result| Status|
+------------ | ------------ | ------------ |------------ |
+|1|Navigation bar is displayed at the top of the page|[SM/MD](../images/testing/user_story/test1_1.png)|Passed|
+||**From left to right**|
+||Menu icon is displayed|see "SM/MD" link above|Passed|
+||Search icon with "Search" beneath is displayed|see "SM/MD" link above|Passed|
+||Profile icon with "Account"/name beneath is displayed|see "SM/MD" link above|Passed|
+||Shopping Basket icon with amount in GBP beneath is displayed|see "SM/MD" link above|Passed|
+|2|Dropdown menu displayed with the following links“Home”, “Forum”, “Growth Hub” ,“Talent Center” |[SM/MD](../images/testing/user_story/test1_2.png)|Passed|
+|3|Search bar displayed "Search our growth hub store is the placeholder within the search bar" |[SM/MD](../images/testing/user_story/test1_3.png)|Passed|
+|4|Dropdown menu displayed with the following links"Register", "Login" |[SM/MD](../images/testing/user_story/test1_4.png)|Passed|
+|5|Redirected to basket template |[SM/MD](../images/testing/user_story/test1_5.png)|Passed|
+|7|Redirected to forum template, navigation is consistent |[SM/MD](../images/testing/user_story/test1_7.png)|Passed|
+|8|Redirected to growth hub template, navigation is consistent |[SM/MD](../images/testing/user_story/test1_8.png)|Passed|
+|9|Redirected to Talent center template, navigation is consistent |[SM/MD](../images/testing/user_story/test1_9.png)|Passed|
+
+</br>
+
+## Large screen devices
+Action|Expected result| Actual result| Status|
+------------ | ------------ | ------------ |------------ |
+|1|Navigation bar is displayed at the top of the page|[LG](../images/testing/user_story/test1_1_1.png)|Passed|
+||**From left to right**|
+||Junior Dev Talent icon is displayed with "Junior Dev Talent" beneath|see "LG" link above|Passed|
+||Search bar with "Search our growth hub store" is the placeholder within the search bar|see "LG" link above|Passed|
+||Profile icon with "Account"/name beneath is displayed|see "SM/MD" link above|Passed|
+||Shopping Basket icon with amount in GBP beneath is displayed|see "SM/MD" link above|Passed|
+|4|Dropdown menu displayed with the following links"Register", "Login" |[LG](../images/testing/user_story/test_1_4_1.png)|Passed|
+|5|Redirected to basket template |[LG](../images/testing/user_story/test1_5_1.png)|Passed|
+|6|Redirected to home template |[LG](../images/testing/user_story/test1_6.png)|Passed|
+|7|Redirected to forum template, navigation is consistent |[LG](../images/testing/user_story/test1_7_1.png)|Passed|
+|8|Redirected to growth hub template, navigation is consistent |[LG](../images/testing/user_story/test1_8_1.png)|Passed|
+|9|Redirected to Talent center template, navigation is consistent |[LG](../images/testing/user_story/test1_9_1.png)|Passed|
+
+___
+
 
 ## Testing of Feature 2 - Footer 
-1.4 As a site user I can subscribe to get the newsletter, so that I can keep up to date with the company
-1.5 As a site user I can view the sites privacy policy, so that i can read more about the sites policy
-1.6 As a site user I can view the sites Terms of use policy, so that i can read more about the terms of use
+- 1.3 As a site user I can see a link in the footer to the site’s Facebook Business Page, so that I can follow the company on Facebook
+- 1.4 As a site user I can subscribe to get the newsletter, so that I can keep up to date with the company
+- 1.5 As a site user I can view the sites privacy policy, so that i can read more about the sites policy
+- 1.6 As a site user I can view the sites Terms of use policy, so that i can read more about the terms of use
+
+___
+
+**Action** 
+1.	Navigate to footer
+2.	Navigate to subscribe to our newsletter, enter email address and click join
+3.	Navigate and click on Follow us on facebook
+4.	Navigate and click on Privacy policy
+5.	Navigate and click on Terms of use
+
+
+This action was tested on a logged in user, not logged user and admin
+
+## Small/Medium/Large screen devices
+
+Action|Expected result| Actual result| Status|
+------------ | ------------ | ------------ |------------ |
+|1|Navigation bar is displayed at the top of the page|[SM/MD/LG](../images/testing/user_story/test2_1.png)|Passed|
+||**From top to bottom**|
+||There are two colums with |see "SM/MD" link above|Passed|
+||1. Newsletter icon, subscribe to our newsletter beneath and a input field with placeholder text "Enter your email" followed by a Join button |see "SM/MD/LG" link above|Passed|
+||2. Facebook icon, Keep upto date with all our latest offers, a link to the facebook site "follow us on facebook" |see "SM/MD/LG" link above|Passed|
+||Privacy Policy and Terms of use links are displayed|see "SM/MD/LG" link above|Passed|
+||Copyright information is displayed|see "SM/MD/LG" link above|Passed|
+|2|Redirected to subscription confirmation |[SM/MD/LG](../images/testing/user_story/test2_2.png)|Passed|
+|3|Redirected to facebook business page |[SM/MD/LG](../images/testing/user_story/test2_3.png)|Passed|
+|4|Privacy policy modal is displayed |[SM/MD/LG](../images/testing/user_story/test2_4.png)|Passed|
+|5|Terms of use modal is displayed|[SM/MD/LG](../images/testing/user_story/test2_5.png)|Passed|
+
+## X-Small screen devices
+
+Action|Expected result| Actual result| Status|
+------------ | ------------ | ------------ |------------ |
+|1|Navigation bar is displayed at the top of the page|[XS](../images/testing/user_story/test2_1.png)|Passed|
+||**From top to bottom**|
+||1. Newsletter icon, subscribe to our newsletter beneath and a input field with placeholder text "Enter your email" followed by a Join button |see "XS" link above|Passed|
+||2. Facebook icon, Keep upto date with all our latest offers, a link to the facebook site "follow us on facebook" |see "XS" link above|Passed|
+||Privacy Policy and Terms of use links are displayed|see "XS" link above|Passed|
+||Copyright information is displayed|see "XS" link above|Passed|
+|2|Redirected to subscription confirmation |[XS](../images/testing/user_story/test2_2.png)|Passed|
+|3|Redirected to facebook business page |[XS](../images/testing/user_story/test2_3.png)|Passed|
+|4|Privacy policy modal is displayed |[XS](../images/testing/user_story/test2_4_1.png)|Passed|
+|5|Terms of use modal is displayed|[XS](../images/testing/user_story/test2_5_1.png)|Passed|
+
 
 ## Testing of Feature 3 - Home page
 
