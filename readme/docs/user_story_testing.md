@@ -538,65 +538,15 @@ Action|Expected result| Actual result| Status|
 ||Name under account icon change to "Account"|[SM/MD/LG](../images/testing/user_story/test13_5_1a.png)|Passed|
 
 ## Testing of Feature 14 - Privacy policy
+Testing is covered in Feature 2-Footer
+
 ## Testing of Feature 15 - Terms of use
+Testing is covered in Feature 2-Footer
+
 ## Testing of Feature 16 - Sign up to newsletter
+Testing is covered in Feature 2-Footer
+
 ## Testing of Feature 17 - Error handling
 
 10.1. As a site user who is directed to a non-existent page or resource, I can redirected to the relevant error page
-
-Action|Expected result| Actual result| Status|
------------- | ------------ | ------------ |------------ |
-|1|**Medium and large screen devices**|[Medium ](docs/images/testing/features/test1_6.png)[large](docs/images/testing/features/test1_7.png)|Passed|
-||**On the Left**||
-||A coronavirus icon is displayed|see medium/large links above|Passed|
-||**Center**||
-||Search bar and submit button is displayed|see medium/large links above|Passed|
-||Navigation links are displayed -“Home”, “Topics”, “Latest Statistics” ,“About Us”|see medium/large links above|Passed|
-||**Right**||
-||**Not logged in user**|||
-||Account icon is displayed|see medium/large links above|Passed|
-||Under icon, “Sign in” is displayed
-|3.| “Sign up” or “Sign in” is displayed in the drop down menu|[Dropdown menu](docs/images/testing/features/test1_8.png)|Passed|
-||**Logged in user**|||
-||Account icon|see medium/large links above|Passed|
-|4.|Under icon  - “Welcome (username)” e.g. “Welcome Admin”|[Dropdown menu](docs/images/testing/features/test1_8a.png)|Passed|
-|5.|“Change password” is displayed in the drop down menu|[Dropdown menu](docs/images/testing/features/test1_9.png)|Passed|
-|| “Logout” is displayed in the drop down menu |see dropdown menu link above|Passed|
-
-___
-
-
-
-**Action** 
-1.	Navigate to https://coronavirusforum.herokuapp.com/
-2.	Navigate and click on menu icon
-3.	Navigate and click on the account icon
-4.	Navigate and click on account icon, sign in, enter credentials
-5.	Navigate and click on the account icon
-6.	Navigate and click on Search icon
-
-This action was tested on a logged in user, not logged user and admin
-
-Action|Expected result| Actual result| Status|
------------- | ------------ | ------------ |------------ |
-|1|**Small screen devices**|[Small](docs/images/testing/features/test1_1.png)|Passed|
-||Navigation bar is displayed at the top of the page|see "small" link|Passed|
-||**On the Left**|
-||Menu icon is displayed|see "small" link|Passed|
-|2|Navigation links are displayed “Home”, “Topics”, “Latest Statistics” ,“About Us”|[Dropdown menu](docs/images/testing/features/test1_2.png)|Passed|
-||**Center**|||
-||**Not logged in user**|||
-||Account icon is displayed|see small link above|Passed|
-|| “Sign in” link is displayed|see small link above|Passed|
-|3.| “Sign up” or “Sign in” is displayed in the drop down menu|[Dropdown menu](docs/images/testing/features/test1_3.png)|Passed|
-||**Logged in user**|||
-||Account icon is displayed|see small link above|Passed|
-|4.|“Welcome (username)” e.g. “Welcome Admin” displayed under icon|see small link above|Passed|
-|5.|“Change password” is displayed in the drop down menu|[Dropdown menu](docs/images/testing/features/test1_4.png)|Passed|
-|| “Logout” is displayed in the drop down menu|see dropdown menu link above|Passed|
-||**Right**|||
-||Search icon is displayed|see small link above|Passed|
-|6. |Search bar and submit button is displayed under the navigation menu|[Search bar](docs/images/testing/features/test1_5.png)|Passed|
-
-<br>
 
