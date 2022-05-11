@@ -54,13 +54,13 @@
                                 <span class="mr-1">{{post.comment_post.count}} </span>
                                 <span class="mr-2"> Posted by {{post.user_name|title}}</span>
                                 <span class="mr-2"> Created {{post.created|timesince }} ago</span>
+                                {% if user.id == post.owner.id or request.user.is_superuser %}
+                                    <small>
+                                        <a href="{% url 'updatepost' post.pk %}" class="logo-font mr-2" aria-label="update post link"> Update</a>
+                                        <a href="{% url 'deletepost' post.pk %}" class="logo-font mr-2 text-danger" aria-label="delete post link">Delete</a>
+                                    </small>
+                                {% endif %}
                             </div>
-                            {% if user.id == post.owner.id %}
-                                <small>
-                                    <a href="{% url 'updatepost' post.pk %}" class="logo-font mr-2" aria-label="update post link"> Update</a>
-                                    <a href="{% url 'deletepost' post.pk %}" class="logo-font mr-2 text-danger" aria-label="delete post link">Delete</a>
-                                </small>
-                            {% endif %}
                         </div>
                     </div>
                 </div>
@@ -79,11 +79,10 @@
                                         <p>  {{ comment.comment_body | safe}}</p>             
                                         <small class="mr-2"> Commented by {{comment.name|title}}</small>
                                         <small class="mr-2"> Created {{comment.created|timesince }} ago</small>
-                                        {% if user.id == comment.owner.id %}
-                                            <br>
+                                        {% if user.id == comment.owner.id or request.user.is_superuser %}
                                             <small>
                                                 <a href="{% url 'updatecomment' comment.id %}" class="logo-font mr-2" aria-label="update comment link"> Update</a>
-                                                <a href="{% url 'deletecomment' comment.pk %}" class="logo-font mr-2" aria-label="delete comment link"> Delete</a>
+                                                <a href="{% url 'deletecomment' comment.pk %}" class="logo-font mr-2 text-danger" aria-label="delete comment link"> Delete</a>
                                             </small>
                                         {% endif %}
                                         <hr>  
