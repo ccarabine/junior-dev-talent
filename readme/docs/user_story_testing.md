@@ -258,21 +258,67 @@ Action|Expected result| Actual result| Status|
 
 
 
-
-
-
-
-
-
 ## Testing of Feature 5 - forum posts
-4.2 As a logged-in site user I can view a list of posts by room so that I can select a post that interests me and view user comments
-4.3 As a logged-in site user I can view a paginated list of posts so that my screen doesn't get overpopulated with posts
-4.4 As a logged-in site user I can click on a post so that I can read the full article and related comments
-4.5 As a logged-in site user I can create a new post so that I can post content on the site for other users to view
-4.6 As a logged in site user (owner of post) I can edit a post (subject header /text body) so that I can change the content if required
-4.7 As a logged-in site user (owner of post) I can delete a post that I have posted so that I can take content off the website
-9.5. As a site admin I can Manage posts in the django admin area so that I can manage the site content
-10.2. As a site admin i want non-logged users not to have access to forum( only access to logged in users)
+- 4.2 As a logged-in site user I can view a list of posts by room so that I can select a post that interests me and view user comments
+- 4.3 As a logged-in site user I can view a paginated list of posts so that my screen doesn't get overpopulated with posts
+- 4.4 As a logged-in site user I can click on a post so that I can read the full article and related comments
+- 4.5 As a logged-in site user I can create a new post so that I can post content on the site for other users to view
+- 4.6 As a logged in site user (owner of post) I can edit a post (subject header /text body) so that I can change the content if required
+- 4.7 As a logged-in site user (owner of post) I can delete a post that I have posted so that I can take content off the website
+- 9.5. As a site admin I can Manage posts in the django admin area so that I can manage the site content
+- 10.2. As a site admin i want non-logged users not to have access to forum( only access to logged in users)
+
+___
+
+**Action** 
+1.	Log in, navigate to forum, click on a room topic  </br>
+2.	Navigate to forum, click on a room topic, click on number 2 on the pagination bar  </br>
+3.  Navigate to forum, click on a room topic, Click on a post </br>
+3.1.  Click on back to forum link
+4.  Navigate to forum, click on a room topic, Click on a -> Start a new post within this topic </br>
+4.1. Click on back to forum link</br>
+4.2. Click submit</br>
+4.3  Type a post name (required field) and click submit post</br>
+4.4 Navigate to forum, click on a room topic, Click on a -> Start a new post within this topic , enter a post title, description and upload an image, click submit</br>
+5.  Navigate to forum, click on a room topic, Click on a post that was just created</br>
+5.1. Click on edit
+5.2. Change name, description, and image and click submit
+6.  Navigate to forum, click on a room topic, Click on a post that was just created</br>
+6.1. Click on delete</br>
+6.2. Click on cancel</br>
+6.3. Click on delete post</br>
+7. Log in to django admin, click on posts and the post title to edit, update a field, click save, navigate to post on the site
+
+
+This action was tested on a not logged user and logged in user 
+
+Action|Expected result| Actual result| Status|
+------------ | ------------ | ------------ |------------ |
+|1|Room topic display, Post list displayed with number of comments and the time it was created from today |[SM/MD/LG](../images/testing/user_story/test5_1.png)|Passed|
+|2|list of posts displayed on second page |[SM/MD/LG](../images/testing/user_story/test5_2.png)|Passed|
+|3|Post displayed displayed with user who created the post , number of comments and the time it was created from today and related comments displayed with who created the comment the time it was created from today  stacked in one column|[SM](../images/testing/user_story/test5-3.png)|Passed|
+||Post displayed and related comments  stacked in two column|[MD/LG](../images/testing/user_story/test5_3_1.png)|Passed|
+|3.1|redirected to forum |[SM/MD/LG](../images/testing/user_story/test5_3_1_1.png)|Passed|
+|4|redirected to add new post template |[SM/MD/LG](../images/testing/user_story/test5_4.png)|Passed|
+|4.1|redirected to forum |[SM/MD/LG](../images/testing/user_story/test5_4_1.png)|Passed|
+|4.2|Validation error message" Please fill this field - referring to post name |[SM/MD/LG](../images/testing/user_story/test5_4_2.png)|Passed|
+|4.3|Success message displayed “Post submitted” |[SM/MD/LG](../images/testing/user_story/test5_4_3.png)|Passed|
+|4.4|Success message displayed “Post submitted” |[SM/MD/LG](../images/testing/user_story/test5_4_4.png)|Passed|
+||Redirected to post with images and fields displayed |||
+|5|Post displayed with Update and delete link under the post |[SM/MD/LG](../images/testing/user_story/test5_4.png)|Passed|
+|5.1|Redirected to update post template displayed with fields data |[SM/MD/LG](../images/testing/user_story/test5_4_1.png)|Passed|
+|5.2|Success message displayed “Post updated” |[SM/MD/LG](../images/testing/user_story/test5_5_2.png)|Passed|
+||Redirected to post template with updated data displayed  |[SM/MD/LG](../images/testing/user_story/test5_5_2a.png)|Passed|
+|6|Redirected to delete post template with post name displayed |[SM/MD/LG](../images/testing/user_story/test5_6.png)|Passed|
+|6.1|Redirected to update post template displayed with fields data |[SM/MD/LG](../images/testing/user_story/test5_6_1.png)|Passed|
+|6.2|Redirected to post |[SM/MD/LG](../images/testing/user_story/test5_6_2.png)|Passed|
+|6.3|Success message displayed “Post deleted” |[SM/MD/LG](../images/testing/user_story/test5_6_3.png)|Passed|
+||Redirected to forum |[SM/MD/LG](../images/testing/user_story/test5_6_4.png)|Passed|
+|7|Fields updated on post |[SM/MD/LG](../images/testing/user_story/test5_7.png)|Passed|
+
+
+
+
 
 ## Testing of Feature 6 - forum comments
 4.8 As a logged-in site user I can leave comments on a post so that I can take an active role in the forum (be involved in the conversation/express my opinion)
