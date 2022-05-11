@@ -296,7 +296,7 @@ Action|Expected result| Actual result| Status|
 ------------ | ------------ | ------------ |------------ |
 |1|Room topic display, Post list displayed with number of comments and the time it was created from today |[SM/MD/LG](../images/testing/user_story/test5_1.png)|Passed|
 |2|list of posts displayed on second page |[SM/MD/LG](../images/testing/user_story/test5_2.png)|Passed|
-|3|Post displayed displayed with user who created the post , number of comments and the time it was created from today and related comments displayed with who created the comment the time it was created from today  stacked in one column|[SM](../images/testing/user_story/test5-3.png)|Passed|
+|3|Post displayed displayed with user who created the post , number of comments and the time it was created from today and related comments displayed with who created the comment the time it was created from today  stacked in one column|[SM](../images/testing/user_story/test5_3.png)|Passed|
 ||Post displayed and related comments  stacked in two column|[MD/LG](../images/testing/user_story/test5_3_1.png)|Passed|
 |3.1|redirected to forum |[SM/MD/LG](../images/testing/user_story/test5_3_1_1.png)|Passed|
 |4|redirected to add new post template |[SM/MD/LG](../images/testing/user_story/test5_4.png)|Passed|
@@ -317,16 +317,55 @@ Action|Expected result| Actual result| Status|
 |7|Fields updated on post |[SM/MD/LG](../images/testing/user_story/test5_7.png)|Passed|
 
 
-
-
-
 ## Testing of Feature 6 - forum comments
-4.8 As a logged-in site user I can leave comments on a post so that I can take an active role in the forum (be involved in the conversation/express my opinion)
-4.9 As a logged in site user(owner of comment) I can edit a comment so that I can change the content if required
-4.10 As a logged-in site user(owner of comment) I can delete a comment that I have posted so that I can take content off the website
-4.11 As a logged-in site User(owner of comment), I can view a paginated list of comments so that my screen doesn't get overpopulated with comments
-4.12. As a site user who is directed to a non-existent page or resource, I can redirected to the relevant error page
-9.6. As a site admin I can Manage comments in the django admin area so that I can manage the site content 
+- 4.8 As a logged-in site user I can leave comments on a post so that I can take an active role in the forum (be involved in the conversation/express my opinion)
+- 4.9 As a logged in site user(owner of comment) I can edit a comment so that I can change the content if required
+- 4.10 As a logged-in site user(owner of comment) I can delete a comment that I have posted so that I can take content off the website
+- 4.11 As a logged-in site User(owner of comment), I can view a paginated list of comments so that my screen doesn't get overpopulated with comments
+- 4.12. As a site user who is directed to a non-existent page or resource, I can redirected to the relevant error page
+- 9.6. As a site admin I can Manage comments in the django admin area so that I can manage the site content 
+
+___
+
+**Action** 
+1.  Navigate to forum, click on a room topic, Click on a -> Start a new post within this topic, and enter details and click submit </br>
+1.1 Click on -> Add Comment</br>
+1.2. Click Add comment button</br>
+1.3. Click on back to forum link</br>
+1.4. Navigate back to add comment template, enter comment, click submit</br>
+
+2. Click on update</br>
+2.1 Click back to forum</br>
+2.2 Navigate back to comment, click update, change comment and click add comment</br>
+3. Navigate back to comment, click delete, click cancel on the delete template</br>
+3.1. Click delete on the comment, click delete comment on the delete template</br>
+4. Navigate to a post with more then 3 comments</br>
+4.1. Click on second page of comments</br>
+5. Go to a none exist post/comment e.g.https://junior-dev-talent.herokuapp.com/forum/update/comment/8
+6. Log in to django admin, click on comments and the user name to edit, update a field, click save, navigate to comment on the site
+
+
+This action was tested on a not logged user and logged in user 
+
+Action|Expected result| Actual result| Status|
+------------ | ------------ | ------------ |------------ |
+|1|Post and comments displayed, No comments displayed under comments|[SM/MD/LG](../images/testing/user_story/test6_1.png)|Passed|
+|1.1|Add comment template displayed with post and a field to enter comment|[SM/MD/LG](../images/testing/user_story/test6_1_1.png)|Passed|
+|1.2|Validation error message" Please fill this field - referring to comment name |[SM/MD/LG](../images/testing/user_story/test6_1_2.png)|Passed|
+|1.3|Redirected to forum |[SM/MD/LG](../images/testing/user_story/test6_1_3.png)|Passed|
+|1.4|Success message displayed “Comment added” |[SM/MD/LG](../images/testing/user_story/test6_1_4.png)|Passed|
+||redirect to post, comment displayed|[SM/MD/LG](../images/testing/user_story/test6_1_4a.png)|Passed|
+|2|Update template displayed with comment data displayed |[SM/MD/LG](../images/testing/user_story/test6_2.png)|Passed|
+|2.1|Redirected to forum |[SM/MD/LG](../images/testing/user_story/test6_2_1.png)|Passed|
+|2.2|Success message displayed “Comment updated” |[SM/MD/LG](../images/testing/user_story/test6_2_2.png)|Passed|
+||redirect to post, updated comment displayed|[SM/MD/LG](../images/testing/user_story/test6_2_2a.png)|Passed|
+|3|Redirected to post/comment |[SM/MD/LG](../images/testing/user_story/test6_3.png)|Passed|
+|3.1|Success message displayed “Comment deleted” |[SM/MD/LG](../images/testing/user_story/test6_3_1.png)|Passed|
+||redirect forum|[SM/MD/LG](../images/testing/user_story/test6_3_1a.png)|Passed|
+|4|3 comments displayed, paginatation bar displayed with 2 |[SM/MD/LG](../images/testing/user_story/test6_4_4.png)|Passed|
+|4.1|2nd page of comments displayed |[SM/MD/LG](../images/testing/user_story/test6_4_1.png)|Passed|
+|5|404 page displayed |[SM/MD/LG](../images/testing/user_story/test6_5.png)|Passed|
+|6|Fields updated on comment |[SM/MD/LG](../images/testing/user_story/test6_6.png)|Passed|
 
 ## Testing of Feature 7 - talent center
 8.1. As a site user, I can register so that i can access the talent center to view candidate profiles

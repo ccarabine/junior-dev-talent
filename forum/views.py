@@ -162,8 +162,8 @@ class UpdatePostView(SuccessMessageMixin, UpdateView):
     success_message = "Post updated"
 
     def get_queryset(self):
-            owner = self.request.user
-            return self.model.objects.filter(owner=owner)
+        owner = self.request.user
+        return self.model.objects.filter(owner=owner)
 
 
 @method_decorator(login_required, name='dispatch')
