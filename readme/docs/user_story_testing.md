@@ -123,6 +123,79 @@ Action|Expected result| Actual result| Status|
 2.3 As a site user I can click on Growth hub so that I can learn more about the service chosen and go to the shop
 2.4 As a site user I can click on the talent center so that I can learn more about the service chosen and register
 
+___
+
+**Action** 
+1.	Navigate to Home page
+2.	Navigate to click on get hired card </br>
+2.1 Click start now
+3. Navigate and click forum card </br>
+3.1 Click chat now
+4.	Navigate and click on growth hub card
+4.1 Click shop now
+5.	Navigate and click on talent center card
+5.1 Click start now
+
+This action was tested on a logged in user, not logged user and admin
+
+## Small screen devices
+
+Action|Expected result| Actual result| Status|
+------------ | ------------ | ------------ |------------ |
+|1|Hero image with a junior developer working at their computer|[SM](../images/testing/user_story/test3_1.png)|Passed|
+||4 cards stacked in one column explaining each of the services of the site|||
+||Get hired, Forum, Growth Hub and Talent Center|||
+||Hero image with a hiring manager shaking the hand of a candidate through a laptop|||
+|2|Get hired modal displayed with a title, 3 cards stacked in one column and a call to action button "Start now"|[SM](../images/testing/user_story/test3_2_1.png)|Passed|
+|2.1|Logged in users - Update profile template is displayed|[SM](../images/testing/user_story/test3_2_2.png)|Passed|
+||Non-Logged in users - Sign-in template is displayed|[SM](../images/testing/user_story/test3_2_3.png)|Passed|
+|3|Forum modal displayed with a title, 4 cards stacked in one column and a call to action button "Chat now"|[SM](../images/testing/user_story/test3_3.png)|Passed|
+|3.1|Redirect to forum|[SM](../images/testing/user_story/test3_3_1.png)|Passed|
+|4|Growth hub modal displayed with a title, 4 cards stacked in one column and a call to action button "Shop now"|[SM](../images/testing/user_story/test3_4.png)|Passed|
+|4.1|Redirect to Growth hub|[SM](../images/testing/user_story/test3_4_1.png)|Passed|
+|5|Talent modal displayed with a title, 3 cards stacked in one column and a call to action button "Start now"|[SM](../images/testing/user_story/test3_5.png)|Passed|
+|5.1|Non-Logged in user - Redirect to talent center benefits page(subscription)|[SM](../images/testing/user_story/test3_5_1_1.png)|Passed|
+||Logged in user and is_ hiring_manager is false -Redirect to talent center benefits page(subscription)|[SM](../images/testing/user_story/test3_5_1_2.png)|Passed|
+||Logged in user and is_ hiring_manager is true - talent center template displayed|[SM](../images/testing/user_story/test3_5_1_3.png)|Passed|
+
+## Medium screen devices
+Action|Expected result| Actual result| Status|
+------------ | ------------ | ------------ |------------ |
+|1|Hero image with a junior developer working at their computer|[MD](../images/testing/user_story/test3_1a.png)|Passed|
+||4 cards stacked in two column and two rows explaining each of the services of the site|||
+||Get hired, Forum, Growth Hub and Talent Center|||
+||Hero image with a hiring manager shaking the hand of a candidate through a laptop|||
+|2|Get hired modal displayed with a title, 3 cards stacked in one row and a call to action button "Start now"|[MD](../images/testing/user_story/test3_2_1a.png)|Passed|
+|2.1|Logged in users - Update profile template is displayed|[MD](../images/testing/user_story/test3_2_2a.png)|Passed|
+||Non-Logged in users - Sign-in template is displayed|[MD](../images/testing/user_story/test3_2_3a.png)|Passed|
+|3|Forum modal displayed with a title, 4 cards stacked in two columns and two rows and a call to action button "Chat now"|[MD](../images/testing/user_story/test3_3a.png)|Passed|
+|3.1|Redirect to forum|[MD](../images/testing/user_story/test3_3_1a.png)|Passed|
+|4|Growth hub modal displayed with a title, 4 cards stacked in two columns and two rows and a call to action button "Shop now"|[MD](../images/testing/user_story/test3_4a.png)|Passed|
+|4.1|Redirect to Growth hub|[MD](../images/testing/user_story/test3_4_1a.png)|Passed|
+|5|Talent modal displayed with a title, 3 cards stacked in one row and a call to action button "Start now"|[MD](../images/testing/user_story/test3_5a.png)|Passed|
+|5.1|Non-Logged in user - Redirect to talent center benefits page(subscription)|[SM](../images/testing/user_story/test3_5_1_1a.png)|Passed|
+||Logged in user and is_ hiring_manager is false -Redirect to talent center benefits page(subscription)|[SM](../images/testing/user_story/test3_5_1_2a.png)|Passed|
+||Logged in user and is_ hiring_manager is true - talent center template displayed|[SM](../images/testing/user_story/test3_5_1_3a.png)|Passed|
+
+## Large  screen devices
+Action|Expected result| Actual result| Status|
+------------ | ------------ | ------------ |------------ |
+|1|Hero image with a junior developer working at their computer|[LG](../images/testing/user_story/test3_1b.png)|Passed|
+||4 cards stacked in one rows explaining each of the services of the site|||
+||Get hired, Forum, Growth Hub and Talent Center|||
+||Hero image with a hiring manager shaking the hand of a candidate through a laptop|||
+|2|Get hired modal displayed with a title, 3 cards stacked in one row and a call to action button "Start now"|[LG](../images/testing/user_story/test3_2_1b.png)|Passed|
+|2.1|Logged in users - Update profile template is displayed|[LG](../images/testing/user_story/test3_2_2b.png)|Passed|
+||Non-Logged in users - Sign-in template is displayed|[LG](../images/testing/user_story/test3_2_3b.png)|Passed|
+|3|Forum modal displayed with a title, 4 cards stacked in one row and a call to action button "Chat now"|[LG](../images/testing/user_story/test3_3b.png)|Passed|
+|3.1|Redirect to forum|[LG](../images/testing/user_story/test3_3_1b.png)|Passed|
+|4|Growth hub modal displayed with a title, 4 cards stacked in one row and a call to action button "Shop now"|[LG](../images/testing/user_story/test3_4b.png)|Passed|
+|4.1|Redirect to Growth hub|[LG](../images/testing/user_story/test3_4_1b.png)|Passed|
+|5|Talent modal displayed with a title, 3 cards stacked in one row and a call to action button "Start now"|[LG](../images/testing/user_story/test3_5b.png)|Passed|
+|5.1|Non-Logged in user - Redirect to talent center benefits page(subscription)|[LG](../images/testing/user_story/test3_5_1_1b.png)|Passed|
+||Logged in user and is_ hiring_manager is false -Redirect to talent center benefits page(subscription)|[LG](../images/testing/user_story/test3_5_1_2b.png)|Passed|
+||Logged in user and is_ hiring_manager is true - talent center template displayed|[LG](../images/testing/user_story/test3_5_1_3b.png)|Passed|
+
 ## Testing of Feature 4 - forum topics
 4.1 As a site user I can view the room topics so I can select a room of interest
 9.1. As a site admin I can create a room topic so that I can manage the site content
