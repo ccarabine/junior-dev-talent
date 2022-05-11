@@ -333,7 +333,6 @@ ___
 1.2. Click Add comment button</br>
 1.3. Click on back to forum link</br>
 1.4. Navigate back to add comment template, enter comment, click submit</br>
-
 2. Click on update</br>
 2.1 Click back to forum</br>
 2.2 Navigate back to comment, click update, change comment and click add comment</br>
@@ -368,13 +367,53 @@ Action|Expected result| Actual result| Status|
 |6|Fields updated on comment |[SM/MD/LG](../images/testing/user_story/test6_6.png)|Passed|
 
 ## Testing of Feature 7 - talent center
-8.1. As a site user, I can register so that i can access the talent center to view candidate profiles
-8.2. As a employer site user I can click on talent center so I can view profiles that interest me
-8.3. As a employer site user I can search profiles by skill so I can view junior developers
-8.4. As a employer site user I can view candidates by date joined so that i can quickly junior developers by new and old
-8.5. As a employer site user I can view candidates linkedin /github so that see more information about them
-8.6. As a employer site user I can download a developers CV so that read their experience
-8.7. As a employer site user I can Contact a developer directly so that i can contact them about a job
+- 8.1. As a site user, I can register so that i can access the talent center to view candidate profiles
+- 8.2. As a employer site user I can click on talent center so I can view profiles that interest me
+- 8.3. As a employer site user I can search profiles by skill so I can view junior developers
+- 8.4. As a employer site user I can view candidates by date joined so that i can quickly junior developers by new and old
+- 8.5. As a employer site user I can view candidates linkedin /github so that see more information about them
+- 8.6. As a employer site user I can download a developers CV so that read their experience
+- 8.7. As a employer site user I can Contact a developer directly so that i can contact them about a job
+
+___
+
+**Action** 
+1.  Log in, Click on talent center, click start now</br>
+1.1. Click on register</br>
+1.2. Navigate to talent center, click on a candidate </br>
+1.3. Navigate to talent center, type python in the talent center search bar </br>
+1.4. Navigate to talent center </br>
+1.5. Navigate to talent center, click on a candidate </br>
+
+1.5.1. Click on github icon </br>
+1.5.2. Click on Linkedin icon </br>
+1.5.3. Click on Cv icon </br>
+1.5.4. Click on direct message</br>
+1.5.4.1. Click on send message</br>
+1.5.4.2. Type subject an message, Click on send message</br>
+
+
+This action was tested on a not logged user and logged in user </br>
+
+Action|Expected result| Actual result| Status|
+------------ | ------------ | ------------ |------------ |
+|1| Profile_type template displayed - register as a hiring manager|[SM/MD/LG](../images/testing/user_story/test7_1.png)|Passed|
+|1.1|Talent center template displayed cards stacked in one column|||
+||Talent center template displayed cards stacked in one column|[SM](../images/testing/user_story/test7_1_1.png)|Passed|
+||Talent center template displayed cards stacked in two columns, two rows|[MD](../images/testing/user_story/test7_1_1a.png)|Passed|
+||Talent center template displayed cards stacked in three columns, two rows|[LG](../images/testing/user_story/test7_1_1b.png)|Passed|
+||Success message displayed “Successfully registered as a hiring manager” |[SM/MD/LG](../images/testing/user_story/test7_1_1c.png)|Passed|
+|1.2|Talent center detail template displayed cards stacked in one column|[SM](../images/testing/user_story/test7_1_2.png)|Passed|
+||Talent center detail template displayed cards stacked in two columns|[MD/LG](../images/testing/user_story/test7_1_2a.png)|Passed|
+|1.3|Candidates displayed with python skills, paginated by 6|[SM/MD/LG](../images/testing/user_story/test7_1_3.png)|Passed|
+|1.4|Candidates ordered by date joined|[SM/MD/LG](../images/testing/user_story/test7_1_4.png)|Passed|
+|1.5|Candidate profile displayed, CV icon displayed|[SM/MD/LG](../images/testing/user_story/test7_1_5.png)|Passed|
+|1.5.1|Candidate git hub page opened in new tab|[Github](../images/testing/user_story/test7_1_5_1.png)|Passed|
+|1.5.2|Candidate linkedin page opened in new tab|[linkedIn](../images/testing/user_story/test7_1_5_2png)|Passed|
+|1.5.3|Candidate CV opened in new tab|[CV](../images/testing/user_story/test7_1_5_3.png)|Passed|
+|1.5.4|contact_developer template displayed with profile image and name|[SM/MD/LG](../images/testing/user_story/test7_1_5_4.png)|Passed|
+|1.5.4.1.|Validation error message "Please fill this field" - referring to message|[SM/MD/LG](../images/testing/user_story/test7_1_5_4_1.png)|Passed|
+|1.5.4.2.|Success message displayed “Email sent successfully” |[SM/MD/LG](../images/testing/user_story/test7_1_5_4_2.png)|Passed|
 
 ## Testing of Feature 8 - Ecommerce Store
 5.1. As a site user I can click on categories to view so that i can view products by courses, mentor programmes and events
