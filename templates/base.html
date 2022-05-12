@@ -6,6 +6,8 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="A recruitment site for junior developers where hiring managers search for developer candidates and connect to get hired. There is a community forum for the programmers to collaborate on topics such as interviews techniques, technical assesment and coding questions and  there is an ecommerce store to buy courses events and mentorships for junior developers.">
+        <meta name="keywords" content="junior developer courses, coder courses, courses for junior developers, events of junior developers, events for programmers, junior developer mentor, mentoring junior developers, resources for junior developers, technical interview, junior developer cv writing, junior developer interview questions, junior developer personal branding, career change into tech, technical assesment test, find junior developer candidates, get hired as a junior developer, junior developer recruitment, junior developer talent, how to get hired as a junior developer, junior developer community, junior developer chat forum, connect with developers, answer junior developer questions">
     {% endblock %}
 
     {% block extra_meta %}
@@ -65,7 +67,7 @@
         <div class="col-12 col-md-4 my-auto py-1 py-lg-0 text-center text-lg-left">
           <a href="{% url 'home' %}" class="nav-link main-logo-link">
             <h3 class="logo-font my-0 text-center ">
-              <img src="{{ MEDIA_URL }}logo.png" alt="logo image" > 
+              <img src="{{ MEDIA_URL }}logo.png" alt="Junior dev talenet logo image" > 
               <strong class="jd-font d-md-none d-lg-block ">JUNIOR DEV TALENT</strong>
             </h3>
           </a>
@@ -165,7 +167,7 @@
               <h5>Subscribe to our newsletter</h5>
               <form action="https://gitpod.us14.list-manage.com/subscribe/post?u=19b5ef1eb0c8ff7fddb2e45d0&amp;id=fcf2286564" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
                 <div class="input-group input-left newsletter-input-width mx-auto mt-3">
-                    <input type="email" value="" name="EMAIL" id="mce-EMAIL" required="required" class="form-control" placeholder="Enter your email" aria-labelledby="subscribe">
+                    <input type="email" value="" name="EMAIL" id="mce-EMAIL" required="required" class="form-control" placeholder="Enter your email" aria-labelledby="subscribe to newsletter">
                     <span class="input-group-append">
                         <button class="btn btn-dark btn-white-txt cta" type="submit" id="subscribe">Join</button>
                     </span>
@@ -179,7 +181,7 @@
               <img src="{{ MEDIA_URL }}facebook.png" alt="facebook image" class="thumbnail footer-icons"> 
               <h5 class="pt-2">Keep up to date with all our latest offers</h5>
               <div class="pt-3">
-                <a href="https://www.facebook.com/Junior-Dev-Talent-101277309201595" target="_blank" class="footer-links">
+                <a href="https://www.facebook.com/Junior-Dev-Talent-101277309201595" target="_blank" rel="noopener" aria-label="visit us on facebook (opens a new tab)" class="footer-links">
                     Follow us on Facebook!
                 </a>
               </div>
@@ -191,7 +193,7 @@
           <a href="#" class="footer-links" data-toggle="modal" data-target=".privacy-modal">
             Privacy Policy
           </a>
-          <div class="modal fade privacy-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+          <div class="modal fade privacy-modal" tabindex="-1" role="dialog" aria-labelledby="privacy policy modal" aria-hidden="true">
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
                 {% include 'includes/privacy_policy.html' %}
@@ -202,7 +204,7 @@
           <a href="#" class="footer-links" data-toggle="modal" data-target=".terms-modal">
             Terms of use
           </a>
-          <div class="modal fade terms-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+          <div class="modal fade terms-modal" tabindex="-1" role="dialog" aria-labelledby="terms of use modal" aria-hidden="true">
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
                 {% include 'includes/terms_of_use.html' %}
