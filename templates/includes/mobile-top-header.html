@@ -1,63 +1,65 @@
-<li class="list-inline-item">
-    <a class="text-black nav-link d-block d-lg-none" href="#" id="mobile-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <div class="text-center logo-font ">
-            <div><i class="fas fa-search fa-lg "></i></div>
-            <p class="my-0 ">Search</p>
-        </div>
-    </a>
-    <div class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
-        <form class="form" method="GET" action="{% url 'products' %}">
-            <div class="input-group w-100">
-                <input class="form-control border border-blue rounded-0" type="text" name="q" placeholder="Search our growth hub store">
-                <div class="input-group-append">
-                    <button class="form-control form-control btn border border-blue rounded-0 logo-font" type="submit">
-                        <span class="icon">
-                            <i class="fas fa-regular fa-magnifying-glass"></i>
-                        </span>
-                    </button>
-                </div>
+<ul>
+    <li class="list-inline-item">
+        <a class="text-black nav-link d-block d-lg-none" href="#" id="mobile-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="text-center logo-font ">
+                <div><i class="fas fa-search fa-lg "></i></div>
+                <p class="my-0 ">Search</p>
             </div>
-        </form>
-    </div>
-</li>
-<li class="list-inline-item dropdown">
-    <a class="text-black nav-link d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <div class="text-center logo-font ">
-            <div><i class="fas fa-user fa-lg"></i></div>
-            {% if request.user.user_profile.default_full_name %}
-                <p class="my-0 d-none d-sm-block d-sm-none d-md-block">{{ request.user.user_profile.default_full_name }}</p>
-                <p class="my-0 d-block d-sm-none">{{ request.user }}</p>
-            {% else %}
-                <p class="my-0 ">Account</p>
-            {% endif %}
+        </a>
+        <div class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
+            <form class="form" method="GET" action="{% url 'products' %}">
+                <div class="input-group w-100">
+                    <input class="form-control border border-blue rounded-0" type="text" name="q" placeholder="Search our growth hub store">
+                    <div class="input-group-append">
+                        <button class="form-control form-control btn border border-blue rounded-0 logo-font" type="submit" aria-label="Search buton">
+                            <span class="icon">
+                                <i class="fas fa-regular fa-magnifying-glass"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </form>
         </div>
-    </a>
-    <div class="dropdown-menu border-0" aria-labelledby="user-options">
-        {% if request.user.is_authenticated %}
-            {% if request.user.user_profile.is_hiring_manager %}
-                <a href="{% url 'account_details' %}" class="dropdown-item">My Account</a>
-            {% else %}
-                <a href="{% url 'display_profile' %}" class="dropdown-item">My Profile</a>
-            {% endif %}
-            <a href="{% url 'account_change_password' %}" class="dropdown-item nav-color" aria-label="Change password">Change password</a>
-            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-        {% else %}
-            <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-        {% endif %}
-    </div>
-</li>
-<li class="list-inline-item">
-    <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none" href="{% url 'view_basket' %}">
-        <div class="text-center logo-font">
-            <div><i class="fa-solid fa-basket-shopping fa-lg"></i></div>
-            <p class="my-0">
-                {% if grand_total %}
-                    £{{ grand_total|floatformat:2 }}
+    </li>
+    <li class="list-inline-item dropdown">
+        <a class="text-black nav-link d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="text-center logo-font ">
+                <div><i class="fas fa-user fa-lg"></i></div>
+                {% if request.user.user_profile.default_full_name %}
+                    <p class="my-0 d-none d-sm-block d-sm-none d-md-block">{{ request.user.user_profile.default_full_name }}</p>
+                    <p class="my-0 d-block d-sm-none">{{ request.user }}</p>
                 {% else %}
-                    £0.00
+                    <p class="my-0 ">Account</p>
                 {% endif %}
-            </p>
+            </div>
+        </a>
+        <div class="dropdown-menu border-0" aria-labelledby="Account management drop down menu options">
+            {% if request.user.is_authenticated %}
+                {% if request.user.user_profile.is_hiring_manager %}
+                    <a href="{% url 'account_details' %}" class="dropdown-item">My Account</a>
+                {% else %}
+                    <a href="{% url 'display_profile' %}" class="dropdown-item">My Profile</a>
+                {% endif %}
+                <a href="{% url 'account_change_password' %}" class="dropdown-item nav-color" aria-label="Change password">Change password</a>
+                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+            {% else %}
+                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+            {% endif %}
         </div>
-    </a>
-</li>
+    </li>
+    <li class="list-inline-item">
+        <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none" href="{% url 'view_basket' %}">
+            <div class="text-center logo-font">
+                <div><i class="fa-solid fa-basket-shopping fa-lg"></i></div>
+                <p class="my-0">
+                    {% if grand_total %}
+                        £{{ grand_total|floatformat:2 }}
+                    {% else %}
+                        £0.00
+                    {% endif %}
+                </p>
+            </div>
+        </a>
+    </li>
+</ul>

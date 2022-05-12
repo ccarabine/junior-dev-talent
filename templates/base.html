@@ -89,7 +89,7 @@
                   {% endif %}
                 </div>
               </a>
-              <div class="dropdown-menu border-0" aria-labelledby="user-options">
+              <div class="dropdown-menu border-0" aria-labelledby="Account management user-options">
                 {% if request.user.is_authenticated %}
                   {% if request.user.user_profile.is_hiring_manager %}
                     <a href="{% url 'account_details' %}" class="dropdown-item">My Account</a>
@@ -169,7 +169,7 @@
                 <div class="input-group input-left newsletter-input-width mx-auto mt-3">
                     <input type="email" value="" name="EMAIL" id="mce-EMAIL" required="required" class="form-control" placeholder="Enter your email" aria-labelledby="subscribe to newsletter">
                     <span class="input-group-append">
-                        <button class="btn btn-dark btn-white-txt cta" type="submit" id="subscribe">Join</button>
+                        <button class="btn btn-dark btn-white-txt cta" type="submit" id="subscribe" aria-label="subscribe to newsletter button">Join</button>
                     </span>
                 </div>
               </form>

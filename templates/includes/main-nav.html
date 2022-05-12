@@ -1,22 +1,22 @@
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
         <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link  mr-5" href="{% url 'home' %}" id="home-link">
+            <a class="font-weight-bold nav-link  mr-5" href="{% url 'home' %}" id="home-link">
                 Home
             </a>
         </li>
         <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link  mr-5" href="{% url 'forum' %}" >
+            <a class=" font-weight-bold nav-link  mr-5" href="{% url 'forum' %}" >
                 Forum
             </a>
         </li>
         <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link  mr-5" href="{% url 'products' %}">
+            <a class=" font-weight-bold nav-link  mr-5" href="{% url 'products' %}">
                 Growth Hub
             </a>
         </li>
         <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link  mr-5" {% if request.user.user_profile.is_hiring_manager %} href="{% url 'talent_center' %}" {% else %} href="{% url 'subscription' %}" {% endif %} >
+            <a class=" font-weight-bold nav-link  mr-5" {% if request.user.user_profile.is_hiring_manager %} href="{% url 'talent_center' %}" {% else %} href="{% url 'subscription' %}" {% endif %} >
                 Talent Center
             </a>
         </li>

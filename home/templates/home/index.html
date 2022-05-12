@@ -10,98 +10,100 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container h-100">
+    <div class="container">
         <!--  Hero image-->
         <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}header-image.png" alt="Junior developer coding">
         
         <!--  4 cards section-->
-        <div class="background-grey px-3 py-3 my-1">
-            <div class="row">
-                <!--Get hired-->
-                <div class="col-12 col-sm-12 col-md-6 col-lg-3 card shadow p-3 bg-white rounded"> 
-                    <a href="#" class="card-links scroll-link" data-toggle="modal" data-target=".gethired-modal">
-                        <h5 class="card-header text-center">Get hired</h5>
-                        <div class="card-img-top text-center pt-3 logo-font">
-                            <img class="card-img-top img-fluid icon-size" src="{{ MEDIA_URL }}recruitment.png" alt="get hired by talent manager icon"> 
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">Upload your career profile today and be found by subscribed hiring managers </p>
-                        </div>
-                    </a>
-                    <div class="modal fade gethired-modal" tabindex="-1" role="dialog" aria-labelledby="gethiredmodalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg">
-                            <div class="modal-content modal-background">
-                                {% include 'includes/gethired.html' %}
+        <section>
+            <div class="background-grey px-3 py-3 my-1">
+                <div class="row">
+                    <!--Get hired-->
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-3 card shadow p-3 bg-white rounded"> 
+                        <a href="#" class="card-links scroll-link" data-toggle="modal" data-target=".gethired-modal">
+                            <h2 class="card-header text-center">Get hired</h2>
+                            <div class="card-img-top text-center pt-3 logo-font">
+                                <img class="card-img-top img-fluid icon-size" src="{{ MEDIA_URL }}recruitment.png" alt="get hired by talent manager icon"> 
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Upload your career profile today and be found by subscribed hiring managers </p>
+                            </div>
+                        </a>
+                        <div class="modal fade gethired-modal" tabindex="-1" role="dialog" aria-labelledby="gethiredmodalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content modal-background">
+                                    {% include 'includes/gethired.html' %}
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            
-                <!--Get forum-->
-                <div class="col-12 col-sm-12 col-md-6 col-lg-3 card shadow p-3 bg-white rounded"> 
-                    <a href="#" class="card-links scroll-link" data-toggle="modal" data-target=".forum-modal">
-                        <h5 class="card-header text-center">Forum</h5>
-                        <div class="card-img-top text-center pt-3 logo-font">
-                            <img class="card-img-top img-fluid icon-size" src="{{ MEDIA_URL }}forum-card.png" alt="community forum icon"> 
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">Join the conversation in our community for junior software developers looking to get hired fast</p>
-                        </div>
-                    </a>
-                    <div class="modal fade forum-modal" tabindex="-1" role="dialog" aria-labelledby="chat forum modal" aria-hidden="true">
-                        <div class="modal-dialog modal-lg">
-                            <div class="modal-content modal-background">
-                                {% include 'includes/forum.html' %}
+                
+                    <!--Get forum-->
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-3 card shadow p-3 bg-white rounded"> 
+                        <a href="#" class="card-links scroll-link" data-toggle="modal" data-target=".forum-modal">
+                            <h2 class="card-header text-center">Forum</h2>
+                            <div class="card-img-top text-center pt-3 logo-font">
+                                <img class="card-img-top img-fluid icon-size" src="{{ MEDIA_URL }}forum-card.png" alt="community forum icon"> 
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Join the conversation in our community for junior software developers looking to get hired fast</p>
+                            </div>
+                        </a>
+                        <div class="modal fade forum-modal" tabindex="-1" role="dialog" aria-labelledby="chat forum modal" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content modal-background">
+                                    {% include 'includes/forum.html' %}
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!--Get Growth hub--> 
-                <div class="col-12 col-sm-12 col-md-6 col-lg-3 card shadow p-3 bg-white rounded"> 
-                    <a href="#" class="card-links scroll-link" data-toggle="modal" data-target=".growth-modal">
-                        <h5 class="card-header text-center">Growth hub</h5>
-                        <div class="card-img-top text-center pt-3 logo-font">
-                            <img class="card-img-top img-fluid icon-size " src="{{ MEDIA_URL }}enablement.png" alt="Ecommerce shop enablement courses icon"> 
+                    <!--Get Growth hub--> 
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-3 card shadow p-3 bg-white rounded"> 
+                        <a href="#" class="card-links scroll-link" data-toggle="modal" data-target=".growth-modal">
+                            <h2 class="card-header text-center">Growth hub</h2>
+                            <div class="card-img-top text-center pt-3 logo-font">
+                                <img class="card-img-top img-fluid icon-size " src="{{ MEDIA_URL }}enablement.png" alt="Ecommerce shop enablement courses icon"> 
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Power your potential with our selection of enablement courses, mentor programmes and events in our growth hub shop
+                                </p>
+                            </div>
+                        </a>
+                        <div class="modal fade growth-modal" tabindex="-1" role="dialog" aria-labelledby="Eccomerce shop modal" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content modal-background">
+                                    {% include 'includes/growthhub.html' %}
+                                </div>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <p class="card-text">Power your potential with our selection of enablement courses, mentor programmes and events in our growth hub shop
-                            </p>
-                        </div>
-                    </a>
-                    <div class="modal fade growth-modal" tabindex="-1" role="dialog" aria-labelledby="Eccomerce shop modal" aria-hidden="true">
+                    </div>
+
+                    <!--Talent modal -->
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-3 card shadow p-3 bg-white rounded"> 
+                        <a href="#" class="card-links scroll-link" data-toggle="modal" data-target="#talent-modal" >
+                            <h2 class="card-header text-center">Talent Center</h2>
+                            <div class="card-img-top text-center pt-3 logo-font">
+                                <img class="card-img-top img-fluid icon-size " src="{{ MEDIA_URL }}talent-card.png" alt="Junior developer recruitment center icon"> 
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Employers find the best fresh Talent hot off the press before they're snatched up in our talent center
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="modal fade" id="talent-modal" tabindex="-1">
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content modal-background">
-                                {% include 'includes/growthhub.html' %}
+                                <div class="modal-footer">
+                                    {% include 'includes/talent.html' %}
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!--Talent modal -->
-                <div class="col-12 col-sm-12 col-md-6 col-lg-3 card shadow p-3 bg-white rounded"> 
-                    <a href="#" class="card-links scroll-link" data-toggle="modal" data-target="#talent-modal" >
-                        <h5 class="card-header text-center">Talent Center</h5>
-                        <div class="card-img-top text-center pt-3 logo-font">
-                            <img class="card-img-top img-fluid icon-size " src="{{ MEDIA_URL }}talent-card.png" alt="Junior developer recruitment center icon"> 
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">Employers find the best fresh Talent hot off the press before they're snatched up in our talent center
-                            </p>
-                        </div>
-                    </a>
-                </div>
-                <div class="modal fade" id="talent-modal" tabindex="-1">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content modal-background">
-                            <div class="modal-footer">
-                                {% include 'includes/talent.html' %}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>    
+            </div>   
+        </section> 
         <!-- divider image-->
         <hr class="solid">
         <img class="card-img-top img-fluid mb-4 mt-4" src="{{ MEDIA_URL }}talent.png" alt="junior developer get hired image">
