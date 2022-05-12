@@ -22,7 +22,7 @@
         </div>
     </li>
     <li class="list-inline-item dropdown">
-        <a class="text-black nav-link d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="text-black nav-link d-block d-lg-none" href="#" id="user-options-mobile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div class="text-center logo-font ">
                 <div><i class="fas fa-user fa-lg"></i></div>
                 {% if request.user.user_profile.default_full_name %}
@@ -33,7 +33,7 @@
                 {% endif %}
             </div>
         </a>
-        <div class="dropdown-menu border-0" aria-labelledby="Account management drop down menu options">
+        <div class="dropdown-menu border-0" aria-labelledby="user-options-mobile">
             {% if request.user.is_authenticated %}
                 {% if request.user.user_profile.is_hiring_manager %}
                     <a href="{% url 'account_details' %}" class="dropdown-item">My Account</a>

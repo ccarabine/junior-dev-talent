@@ -31,11 +31,11 @@
       <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-      <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'>
+      <script src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'>
     </script>
       <!-- Stripe -->
       <script src="https://js.stripe.com/v3/"></script>
-      <script type='text/javascript'>
+      <script>
         (function($) {
           window.fnames = new Array();
           window.ftypes = new Array();fnames[0]='EMAIL';
@@ -79,7 +79,7 @@
         <div class="col-12 col-md-4 my-auto py-1 py-lg-0">
           <ul class="list-inline list-unstyled text-center text-lg-right my-0">
             <li class="list-inline-item dropdown">
-              <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="text-black nav-link" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="account-management-user-options">
                 <div class="text-center logo-font ">
                   <div><i class="fas fa-user fa-2xl"></i></div>
                   {% if request.user.user_profile.default_full_name %}
@@ -89,7 +89,7 @@
                   {% endif %}
                 </div>
               </a>
-              <div class="dropdown-menu border-0" aria-labelledby="Account management user-options">
+              <div class="dropdown-menu border-0" aria-labelledby="account-management-user-options">
                 {% if request.user.is_authenticated %}
                   {% if request.user.user_profile.is_hiring_manager %}
                     <a href="{% url 'account_details' %}" class="dropdown-item">My Account</a>
@@ -167,7 +167,7 @@
               <h5>Subscribe to our newsletter</h5>
               <form action="https://gitpod.us14.list-manage.com/subscribe/post?u=19b5ef1eb0c8ff7fddb2e45d0&amp;id=fcf2286564" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
                 <div class="input-group input-left newsletter-input-width mx-auto mt-3">
-                    <input type="email" value="" name="EMAIL" id="mce-EMAIL" required="required" class="form-control" placeholder="Enter your email" aria-labelledby="subscribe to newsletter">
+                    <input type="email" value="" name="EMAIL" id="mce-EMAIL" required="required" class="form-control" placeholder="Enter your email" aria-labelledby="mc-embedded-subscribe-form">
                     <span class="input-group-append">
                         <button class="btn btn-dark btn-white-txt cta" type="submit" id="subscribe" aria-label="subscribe to newsletter button">Join</button>
                     </span>
@@ -190,24 +190,13 @@
         </div>
         <div class="text-center">
           <!--Privacy Policy-->
-          <a href="#" class="footer-links" data-toggle="modal" data-target=".privacy-modal">
+          <a href="#" class="footer-links" data-toggle="modal" data-target=".privacy-modal" id="privacypolicymodal">
             Privacy Policy
           </a>
-          <div class="modal fade privacy-modal" tabindex="-1" role="dialog" aria-labelledby="privacy policy modal" aria-hidden="true">
+          <div class="modal fade privacy-modal" tabindex="-1" role="dialog" aria-labelledby="privacypolicymodal" aria-hidden="true">
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
                 {% include 'includes/privacy_policy.html' %}
-              </div>
-            </div>
-          </div>
-          <!--Terms of use-->
-          <a href="#" class="footer-links" data-toggle="modal" data-target=".terms-modal">
-            Terms of use
-          </a>
-          <div class="modal fade terms-modal" tabindex="-1" role="dialog" aria-labelledby="terms of use modal" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                {% include 'includes/terms_of_use.html' %}
               </div>
             </div>
           </div>

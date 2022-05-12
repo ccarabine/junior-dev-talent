@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
+    <div class="container ">
         <!--  Hero image-->
         <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}header-image.png" alt="Junior developer coding">
         
@@ -20,7 +20,7 @@
                 <div class="row">
                     <!--Get hired-->
                     <div class="col-12 col-sm-12 col-md-6 col-lg-3 card shadow p-3 bg-white rounded"> 
-                        <a href="#" class="card-links scroll-link" data-toggle="modal" data-target=".gethired-modal">
+                        <a href="#" class="card-links scroll-link" data-toggle="modal" data-target=".gethired-modal" id="gethiredmodal">
                             <h2 class="card-header text-center">Get hired</h2>
                             <div class="card-img-top text-center pt-3 logo-font">
                                 <img class="card-img-top img-fluid icon-size" src="{{ MEDIA_URL }}recruitment.png" alt="get hired by talent manager icon"> 
@@ -29,7 +29,7 @@
                                 <p class="card-text">Upload your career profile today and be found by subscribed hiring managers </p>
                             </div>
                         </a>
-                        <div class="modal fade gethired-modal" tabindex="-1" role="dialog" aria-labelledby="gethiredmodalLabel" aria-hidden="true">
+                        <div class="modal fade gethired-modal" tabindex="-1" role="dialog" aria-labelledby="gethiredmodal" aria-hidden="true">
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content modal-background">
                                     {% include 'includes/gethired.html' %}
@@ -40,7 +40,7 @@
                 
                     <!--Get forum-->
                     <div class="col-12 col-sm-12 col-md-6 col-lg-3 card shadow p-3 bg-white rounded"> 
-                        <a href="#" class="card-links scroll-link" data-toggle="modal" data-target=".forum-modal">
+                        <a href="#" class="card-links scroll-link" data-toggle="modal" data-target=".forum-modal" id="chat-forum-modal">
                             <h2 class="card-header text-center">Forum</h2>
                             <div class="card-img-top text-center pt-3 logo-font">
                                 <img class="card-img-top img-fluid icon-size" src="{{ MEDIA_URL }}forum-card.png" alt="community forum icon"> 
@@ -49,7 +49,7 @@
                                 <p class="card-text">Join the conversation in our community for junior software developers looking to get hired fast</p>
                             </div>
                         </a>
-                        <div class="modal fade forum-modal" tabindex="-1" role="dialog" aria-labelledby="chat forum modal" aria-hidden="true">
+                        <div class="modal fade forum-modal" tabindex="-1" role="dialog" aria-labelledby="chat-forum-modal" aria-hidden="true">
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content modal-background">
                                     {% include 'includes/forum.html' %}
@@ -60,7 +60,7 @@
 
                     <!--Get Growth hub--> 
                     <div class="col-12 col-sm-12 col-md-6 col-lg-3 card shadow p-3 bg-white rounded"> 
-                        <a href="#" class="card-links scroll-link" data-toggle="modal" data-target=".growth-modal">
+                        <a href="#" class="card-links scroll-link" data-toggle="modal" data-target=".growth-modal" id="Ecommerce-shop-modal">
                             <h2 class="card-header text-center">Growth hub</h2>
                             <div class="card-img-top text-center pt-3 logo-font">
                                 <img class="card-img-top img-fluid icon-size " src="{{ MEDIA_URL }}enablement.png" alt="Ecommerce shop enablement courses icon"> 
@@ -70,7 +70,7 @@
                                 </p>
                             </div>
                         </a>
-                        <div class="modal fade growth-modal" tabindex="-1" role="dialog" aria-labelledby="Eccomerce shop modal" aria-hidden="true">
+                        <div class="modal fade growth-modal" tabindex="-1" role="dialog" aria-labelledby="Ecommerce-shop-modal" aria-hidden="true">
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content modal-background">
                                     {% include 'includes/growthhub.html' %}
