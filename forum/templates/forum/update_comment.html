@@ -34,7 +34,6 @@
             <a href="{% url 'forum' %}" class="header-links">
                 <h6 class="logo-font"> Back to Forum</h6>
             </a>
-            {{user.id}}{{comment.owner.id}}
             {% if user.id == comment.owner.id or request.user.is_superuser %}
                 <div class="post-color mb-2 pt-1 pb-1 rounded">
                     <div class="col-12">

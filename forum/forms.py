@@ -114,7 +114,7 @@ class TopicForm(forms.ModelForm):
 
     topic_image = forms.ImageField(
         label='Image',
-        required=False,
+        required=True,
         widget=CustomClearableFileInput
         )
 
