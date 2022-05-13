@@ -456,11 +456,44 @@ Action|Expected result| Actual result| Status|
 
 9.10. As a site admin I can Manage Profiles in the django admin area so that I can manage the site content
 10.3. As a site admin i want users only access their profile with products brought
+
 ## Testing of Feature 12 - Candidate skills
 3.11. As a logged-in site user I can add a skill so that i can add a skill to my profile
 3.12. As a logged-in site user I can update a skill so that i can update the name of the skill on my profile
 3.13. As a logged-in site user I can delete a skill so that i can delete the name of the skill on my profile
 9.11. As a site admin I can Manage skills in the django admin area so that I can manage the site content
+
+___
+
+**Action** 
+1.  Sign in as a normal user, Click on the account icon in the nav bar and select my profile from the drop down menu</br>
+1.1 Click add skill</br>
+1.2 Click back</br>
+1.3 Click on add skill, click submit</br>
+1.4 Type "python", click submit</br>
+2. Navigate to my profile, goto a skill and click edit
+2.1. Change skill to python 3.10
+3. Navigate to my profile, goto a skill and click delete
+3.1 Click on confirm
+4. Log in to django admin, click on skills and the skill to edit, update a field, click save, navigate to comment on the site
+
+This action was tested on a not logged user and logged in user </br>
+
+Action|Expected result| Actual result| Status|
+------------ | ------------ | ------------ |------------ |
+|1| My profile display with Skill and add skill button|[Result](../images/testing/user_story/test12_1.png)|Passed|
+|1.1.|Addskill template displayed|[Result](../images/testing/user_story/test12_1_1.png)|Passed|
+|1.2.|My profile template displayed|[Result](../images/testing/user_story/test12_1_2.png)|Passed|
+|1.3.| Validation error message "Please fill this field" - referring to name|[Result](../images/testing/user_story/test12_1_3.png)|Passed|
+|1.4|Redirected to my profile - skill displayed |[Result](../images/testing/user_story/test12_1_4.png)|Passed|
+||Success message displayed “Skill was added successfully” |[Result](../images/testing/user_story/test12_1_4a.png)|Passed|
+|2|Redirected to update skill template - skill displayed |[Result](../images/testing/user_story/test12_2.png)|Passed|
+|2.1|Redirected to my profile - updated skill displayed |[Result](../images/testing/user_story/test12_2_1.png)|Passed|
+||Success message displayed “Skill was updated successfully” |[Result](../images/testing/user_story/test12_1_1a.png)|Passed|
+|3|Redirected to delete skill template - skill displayed |[Result](../images/testing/user_story/test12_3.png)|Passed|
+|3.1|Redirected to my profile - skill not displayed |[Result](../images/testing/user_story/test12_3_1.png)|Passed|
+||Success message displayed “Skill was deleted successfully” |[Result](../images/testing/user_story/test12_3_1a.png)|Passed|
+|4.|Updated skill displayed |[Result](../images/testing/user_story/test12_4.png)|Passed|
 
 ## Testing of Feature 13 - Account management
 - 3.1. As a site user I can sign up so that I have a role-based login and community functionality
