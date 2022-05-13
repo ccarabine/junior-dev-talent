@@ -81,7 +81,7 @@
                                         <small class="mr-2"> Created {{comment.created|timesince }} ago</small>
                                         {% if user.id == comment.owner.id or request.user.is_superuser %}
                                             <small>
-                                                <a href="{% url 'updatecomment' comment.id %}" class="logo-font mr-2" aria-label="update comment link"> Update</a>
+                                                <a href="{% url 'updatecomment' comment.pk %}" class="logo-font mr-2" aria-label="update comment link"> Update</a>
                                                 <a href="{% url 'deletecomment' comment.pk %}" class="logo-font mr-2 text-danger" aria-label="delete comment link"> Delete</a>
                                             </small>
                                         {% endif %}
