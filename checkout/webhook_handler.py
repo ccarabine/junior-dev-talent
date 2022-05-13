@@ -16,7 +16,6 @@ from .models import Order, OrderLineItem
 from profiles.models import UserProfile
 
 
-
 class StripeWH_Handler:
     """Handle Stripe webhooks"""
 
@@ -40,7 +39,6 @@ class StripeWH_Handler:
             [cust_email]
         )
 
-
     def handle_event(self, event):
         """
         Handle a generic/unknown/unexpected webhook event
@@ -53,7 +51,6 @@ class StripeWH_Handler:
         """
         Handle the payment_intent.succeeded webhook from Stripe
         """
-        print('im here line 56')
         intent = event.data.object
         pid = intent.id
         basket = intent.metadata.basket
@@ -89,10 +86,7 @@ class StripeWH_Handler:
         attempt = 1
         while attempt <= 5:
             try:
-                print('im here line 91')
-               
                 order = Order.objects.get(
-                    
                     full_name__iexact=shipping_details.name,
                     email__iexact=billing_details.email,
                     phone_number__iexact=shipping_details.phone,
@@ -109,18 +103,15 @@ class StripeWH_Handler:
                 order_exists = True
                 break
             except Order.DoesNotExist:
-                print('im here line 110')
                 attempt += 1
                 time.sleep(1)
         if order_exists:
-            print('im here line 115')
             self._send_confirmation_email(order)
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | SUCCESS: \
                     Verified order already in database',
                 status=200)
         else:
-            print('im here line 119')
             order = None
             try:
                 order = Order.objects.create(
@@ -137,7 +128,7 @@ class StripeWH_Handler:
                     original_basket=basket,
                     stripe_pid=pid,
                 )
-             
+
                 for item_id, item_data in json.loads(basket).items():
                     product = Product.objects.get(id=item_id)
                     if isinstance(item_data, int):
@@ -147,7 +138,6 @@ class StripeWH_Handler:
                             quantity=item_data,
                         )
                         order_line_item.save()
-                   
             except Exception as e:
                 if order:
                     order.delete()
@@ -155,7 +145,6 @@ class StripeWH_Handler:
                     content=f'Webhook received: {event["type"]} | ERROR: {e}',
                     status=500)
         self._send_confirmation_email(order)
-        print('line 156')
         return HttpResponse(
             content=f'Webhook received: {event["type"]} | SUCCESS: \
                 Created order in webhook',

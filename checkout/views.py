@@ -78,7 +78,6 @@ def checkout(request):
     """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
-    print('in the views line 81')
     if request.method == 'POST':
         basket = request.session.get('basket', {})
 
@@ -100,7 +99,6 @@ def checkout(request):
             order.stripe_pid = pid
             order.original_basket = json.dumps(basket)
             order.save()
-            print('in the views line 103')
             for item_id, item_data in basket.items():
                 try:
                     product = Product.objects.get(id=item_id)
@@ -132,7 +130,6 @@ def checkout(request):
             messages.error(request, "There's nothing in your basket"
                            "at the moment")
             return redirect(reverse('products'))
-        print('views line 135')
         current_basket = basket_contents(request)
         total = current_basket['grand_total']
         stripe_total = round(total * 100)
