@@ -78,7 +78,7 @@ def checkout(request):
     """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
-
+    print('in the views line 81')
     if request.method == 'POST':
         basket = request.session.get('basket', {})
 
@@ -100,7 +100,7 @@ def checkout(request):
             order.stripe_pid = pid
             order.original_basket = json.dumps(basket)
             order.save()
-
+            print('in the views line 103')
             for item_id, item_data in basket.items():
                 try:
                     product = Product.objects.get(id=item_id)
@@ -132,7 +132,7 @@ def checkout(request):
             messages.error(request, "There's nothing in your basket"
                            "at the moment")
             return redirect(reverse('products'))
-
+        print('views line 135')
         current_basket = basket_contents(request)
         total = current_basket['grand_total']
         stripe_total = round(total * 100)
@@ -192,22 +192,22 @@ def checkout_success(request, order_number):
         order.user_profile = profile
         order.save()
 
-    # Save the user's info
-    if save_info:
-        profile_data = {
-            'default_full_name': order.full_name,
-            'default_email': order.email,
-            'default_phone_number': order.phone_number,
-            'default_country': order.country,
-            'default_postcode': order.postcode,
-            'default_town_or_city': order.town_or_city,
-            'default_street_address1': order.street_address1,
-            'default_street_address2': order.street_address2,
-            'default_county': order.county,
-        }
-        user_profile_form = UserProfileForm(profile_data, instance=profile)
-        if user_profile_form.is_valid():
-            user_profile_form.save()
+        # Save the user's info
+        if save_info:
+            profile_data = {
+                'default_full_name': order.full_name,
+                'default_email': order.email,
+                'default_phone_number': order.phone_number,
+                'default_country': order.country,
+                'default_postcode': order.postcode,
+                'default_town_or_city': order.town_or_city,
+                'default_street_address1': order.street_address1,
+                'default_street_address2': order.street_address2,
+                'default_county': order.county,
+            }
+            user_profile_form = UserProfileForm(profile_data, instance=profile)
+            if user_profile_form.is_valid():
+                user_profile_form.save()
 
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \

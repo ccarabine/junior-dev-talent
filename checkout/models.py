@@ -174,4 +174,4 @@ class OrderLineItem(models.Model):
         Returns:
             The order number string
         """
-        return f'SKU {self.product.code} on order {self.order.order_number}'
+        return f'Item:{self.product.name} on order {self.order.order_number}'
