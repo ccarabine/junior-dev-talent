@@ -444,24 +444,63 @@ Action|Expected result| Actual result| Status|
 
 ## Testing of Feature 11 - My profile
 
-3.8: As a logged-in site user I can view my profile and see clearly what fields i haven't completed so i have a greater chance for hiring managers to view all my information about myself
-3.9. As a logged-in site user I can update my profile so that i can change information about myself
-3.10. As a logged-in site user I can delete my account so that my account is deleted and no longer have access to the functionality
+- 3.8: As a logged-in site user I can view my profile and see clearly what fields i haven't completed so i have a greater chance for hiring managers to view all my information about myself
+- 3.9. As a logged-in site user I can update my profile so that i can change information about myself
+- 3.10. As a logged-in site user I can delete my account so that my account is deleted and no longer have access to the functionality
 
-3.14: As a logged-in site user I can view my Default billing information: Full name, Street Address 1, Street Address 2, Town or City, County, Postal Code, Country, phone number and email address
-3.15: As a logged-in site user I can view my order history(Order Number, Date, Items and Order Total)
-3.16: As a logged-in site user I can click on an order number to view the order information
+- 3.14: As a logged-in site user I can view my Default billing information: Full name, Street Address 1, Street Address 2, Town or City, County, Postal Code, Country, phone number and email address
+- 3.15: As a logged-in site user I can view my order history(Order Number, Date, Items and Order Total)
+- 3.16: As a logged-in site user I can click on an order number to view the order information
 
-3.19. As a site user who is directed to a non-existent page or resource, I can redirected to the relevant error page
+- 3.19. As a site user who is directed to a non-existent page or resource, I can redirected to the relevant error page
 
-9.10. As a site admin I can Manage Profiles in the django admin area so that I can manage the site content
-10.3. As a site admin i want users only access their profile with products brought
+- 9.10. As a site admin I can Manage Profiles in the django admin area so that I can manage the site content
+- 10.3. As a site admin i want users only access their profile with products brought
+
+__
+
+**Action** 
+1.  Sign in as a normal user, Click on the account icon in the nav bar and select my profile from the drop down menu</br>
+2. Navigate to my profile, click edit profile</br>
+2.1 Update all fields, click update information</br>
+3. Navigate to my profile, click delete account</br>
+3.1 Click back</br>
+3.2 Click delete account, click confirm</br>
+4. Navigate to my profile, click billing and order details</br>
+4.1 Click on edit account details</br>
+4.2 Change some of the fields data, click update information</br>
+5. Navigate to my profile</br>
+6. Navigate to my profile, click on order number link</br>
+7. Navigate to my profile, enter "mike" in the url</br>
+8. Log in to django admin, click on profile and the user to edit, update a field, click save, navigate to my profile on the site</br>
+
+
+This action was tested on a not logged user and logged in user </br>
+
+Action|Expected result| Actual result| Status|
+------------ | ------------ | ------------ |------------ |
+|1| My profile display with a description in red with the fields not entered|[Result](../images/testing/user_story/test11.png)|Passed|
+|2| Edit profile template displayed with fields displayed|[Result](../images/testing/user_story/test11_2.png)|Passed|
+|2.1| My profile template displayed with updated data|[Result](../images/testing/user_story/test11_2_1.png)|Passed|
+||Success message displayed “Profile updated succesfully” |[Result](../images/testing/user_story/test11_2_1a.png)|Passed|
+|3| Delete account template displayed with username|[Result](../images/testing/user_story/test11_3.png)|Passed|
+|3.1| My profile template displayed|[Result](../images/testing/user_story/test11_3_1.png)|Passed|
+|3.2| Redirected to home page|[Result](../images/testing/user_story/test11_3_2.png)|Passed|
+||Success message displayed “Account deleted succesfully” |[Result](../images/testing/user_story/test11_3_2a.png)|Passed|
+|4| Billing and order details template displayed|[Result](../images/testing/user_story/test11_4.png)|Passed|
+|4.1| Edit Billing and order details template displayed with data displayed|[Result](../images/testing/user_story/test11_4_1.png)|Passed|
+|4.2| Redirected to account details page with updated data displayed|[Result](../images/testing/user_story/test11_4_2.png)|Passed|
+||Success message displayed “Profile updated succesfully” |[Result](../images/testing/user_story/test11_4_2a.png)|Passed|
+|5| Order history displayed|[Result](../images/testing/user_story/test11_5.png)|Passed|
+|6| Order information displayed|[Result](../images/testing/user_story/test11_6.png)|Passed|
+|7| 404 error page displayed|[Result](../images/testing/user_story/test11_7.png)|Passed|
+|8| Updated profile data displayed |[Result](../images/testing/user_story/test11_8.png)|Passed|
 
 ## Testing of Feature 12 - Candidate skills
-3.11. As a logged-in site user I can add a skill so that i can add a skill to my profile
-3.12. As a logged-in site user I can update a skill so that i can update the name of the skill on my profile
-3.13. As a logged-in site user I can delete a skill so that i can delete the name of the skill on my profile
-9.11. As a site admin I can Manage skills in the django admin area so that I can manage the site content
+- 3.11. As a logged-in site user I can add a skill so that i can add a skill to my profile
+- 3.12. As a logged-in site user I can update a skill so that i can update the name of the skill on my profile
+- 3.13. As a logged-in site user I can delete a skill so that i can delete the name of the skill on my profile
+- 9.11. As a site admin I can Manage skills in the django admin area so that I can manage the site content
 
 ___
 
@@ -471,11 +510,11 @@ ___
 1.2 Click back</br>
 1.3 Click on add skill, click submit</br>
 1.4 Type "python", click submit</br>
-2. Navigate to my profile, goto a skill and click edit
-2.1. Change skill to python 3.10
-3. Navigate to my profile, goto a skill and click delete
-3.1 Click on confirm
-4. Log in to django admin, click on skills and the skill to edit, update a field, click save, navigate to comment on the site
+2. Navigate to my profile, goto a skill and click edit</br>
+2.1. Change skill to python 3.10</br>
+3. Navigate to my profile, goto a skill and click delete</br>
+3.1 Click on confirm</br>
+4. Log in to django admin, click on skills and the skill to edit, update a field, click save, navigate to comment on the site</br>
 
 This action was tested on a not logged user and logged in user </br>
 
