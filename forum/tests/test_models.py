@@ -5,7 +5,7 @@ from django.test import TestCase
 from django.contrib.auth.models import User
 
 # Internal:
-from forum.models import Topic, Post
+from forum.models import Topic, Post, Comment
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -14,13 +14,12 @@ class TestTopicModel(TestCase):
     def setUp(self):
         chris_c = User.objects.create_user(
             username='chris_c', password='p2word')
-        
+
         self.topic = Topic.objects.create(
             name="Coding",
             friendly_name="Coding",
             slug="Coding",
             topic_image="topic_img",
-
             )
         self.post = Post.objects.create(
             topic=self.topic,
@@ -28,6 +27,21 @@ class TestTopicModel(TestCase):
             owner=chris_c,
             slug="interview%question"
         )
+        self.comment = Comment.objects.create(
+            post=self.post,
+            owner=chris_c,
+            comment_body="Great idea",
+            name="Chris Carabine"
+        )
+
+    def tearDown(self):
+        """
+        Delete test user, topic, post and comment
+        """
+        User.objects.all().delete()
+        Topic.objects.all().delete()
+        Post.objects.all().delete()
+        Comment.objects.all().delete()
 
     def test_topic_model_instance(self):
         """
@@ -57,3 +71,13 @@ class TestTopicModel(TestCase):
         """ Test get_absolute_url """
         post = self.post
         self.assertEquals(str(post.get_absolute_url()), '/forum/topic/1')
+
+    def test_comment_model_str_method(self):
+        """ Test Comment model string method """
+        comment = self.comment
+        self.assertEquals(str(comment), 'Comment Great idea by Chris Carabine')
+
+    def test_comment_model_get_absolute_url(self):
+        """ Test get_absolute_url """
+        comment = self.comment
+        self.assertEquals(str(comment.get_absolute_url()), '/forum/topic/1')
