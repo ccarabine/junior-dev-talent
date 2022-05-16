@@ -123,4 +123,36 @@ class TestTopicModel(TestCase):
         response = self.client.get('/forum/Coding/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'forum/post_list.html')
+    
+    def test_add_post_as_not_logged_in(self):
+        """
+        This test tests a user who is not logged in, can not create a post
+        checks
+        1. if the page redirects to the home page
+        2. if the message is the same as the not logged in user
+        3. that the status code is 302  - redirect
+        """
+        self.client.logout()
+        response = self.client.get('/forum/addpost/Coding/')
+        self.assertRedirects(response, '/accounts/login/?next=/forum/addpost/Coding/')
+        self.assertEqual(response.status_code, 302)
+        
+    def test_add_post_as_a_logged_in_user(self):
+        """
+        This test tests a logged in user can create a post
+        checks
+        1. the post the user created is equal to technical questions
+        2. if the message is the same as post submitted
+        3. the status code is 302  - redirect
+        4. redirected back to the postdetail page
+        """
+        self.client.login(username='chris_c', password='p2word')
+        response = self.client.post('/forum/addpost/Coding/',
+                                    {'title': 'technical questions'})
+        post = Post.objects.filter(pk=2).first()
+        self.assertEqual(post.title, 'technical questions')
+        messages = list(get_messages(response.wsgi_request))
+        self.assertEqual(str(messages[0]), "Post submitted")
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, reverse("postdetail", args=[post.id]))
 
