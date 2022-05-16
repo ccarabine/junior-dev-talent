@@ -123,7 +123,7 @@ class TestTopicModel(TestCase):
         response = self.client.get('/forum/Coding/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'forum/post_list.html')
-    
+
     def test_add_post_as_not_logged_in(self):
         """
         This test tests a user who is not logged in, can not create a post
@@ -134,7 +134,8 @@ class TestTopicModel(TestCase):
         """
         self.client.logout()
         response = self.client.get('/forum/addpost/Coding/')
-        self.assertRedirects(response, '/accounts/login/?next=/forum/addpost/Coding/')
+        self.assertRedirects(
+            response, '/accounts/login/?next=/forum/addpost/Coding/')
         self.assertEqual(response.status_code, 302)
         
     def test_add_post_as_a_logged_in_user(self):
@@ -156,3 +157,42 @@ class TestTopicModel(TestCase):
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, reverse("postdetail", args=[post.id]))
 
+    def test_update_post_as_an_owner(self):
+        """
+        This test tests an owner of a post can update their post
+        checks
+        1. the updated title equals the title that the user typed in.
+        2. if the message is the same as post submitted
+        3. that the status code is 302  - redirect
+        4. redirected back to the postdetail page
+        """
+        self.client.logout()
+        self.client.login(username='chris_c', password='p2word')
+        response = self.client.post('/forum/update/1',
+                                    {'title': 'updated title'}
+                                    )
+        post = Post.objects.filter(pk=1).first()
+        self.assertEqual(post.title, 'updated title')
+        messages = list(get_messages(response.wsgi_request))
+        self.assertEqual(str(messages[0]), "Post updated")
+        self.assertTrue(response.status_code, 302)
+        
+    def test_update_post_as_not_the_owner(self):
+        """
+        This test tests a user who has not created the post can not
+        edit the post
+        checks
+        1. a different user that trys to edit a post with the title field
+        is not saved
+        2. the updated title is not equals to the post title that the user
+        typed in.
+        3. that the status code is 304  - Not modified status code
+        """
+        self.client.logout()
+        self.client.login(username='peter', password='p2word')
+        response = self.client.post('/forum/update/1',
+                                    {'title': 'updated -notowner'}
+                                    )
+        post = Post.objects.filter(pk=1).first()
+        self.assertNotEqual(post.title, 'updated -notowner')
+        self.assertTrue(response.status_code, 202)
