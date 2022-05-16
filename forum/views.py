@@ -155,7 +155,7 @@ class UpdatePostView(SuccessMessageMixin, UpdateView):
     Returns:
         Render of update post with success message
     """
- 
+
     model = Post
     form_class = PostForm
     template_name = "forum/update_post.html"
@@ -180,7 +180,7 @@ class DeletePostView(SuccessMessageMixin, DeleteView):
     template_name = "forum/delete_post.html"
     success_url = reverse_lazy("forum")
     success_message = "Post deleted"
-    
+
     def delete(self, request, *args, **kwargs):
         messages.success(self.request, self.success_message)
         return super(DeletePostView, self).delete(request, *args, **kwargs)
@@ -264,10 +264,11 @@ class DeleteCommentView(SuccessMessageMixin, DeleteView):
     template_name = "forum/delete_comment.html"
     success_message = "Comment deleted"
     success_url = reverse_lazy("forum")
-    
+
     def delete(self, request, *args, **kwargs):
         messages.success(self.request, self.success_message)
         return super(DeleteCommentView, self).delete(request, *args, **kwargs)
+
 
 @login_required
 def create_topic(request):
