@@ -484,9 +484,27 @@ Action|Expected result| Actual result| Status|
 ## Testing of Feature 9 - Ecommerce Store - Basket
 - 6.1. As a site user I can always see the total price of my basket in the navigation bar, so that I know what the total cost will be when on the products page
 - 6.2. As a site user i can adjust the quantity of the product chosen after adding it to the shopping basket
-- 6.3. As a site user I can view the products added to my basket by clicking the basket icon or by adding an item to the basket
+- 6.3. As a site user I can view the products added to my basket by clicking the basket icon 
 - 6.4. As a site user I can click on Proceed to Checkout, so that I can purchase the items in my basket
 - 6.5. As a site user who is directed to a non-existent page or resource, I can redirected to the relevant error page
+___
+
+**Action** 
+1.  Navigate to Growth hub, click on C++ product, click add to basket</br>
+2.  Navigate to basket, click on the plus button and increase by2 and click on update</br>
+3.  Navigate to  basket</br>
+4. Click on secure checkout
+5. Navigate to https://junior-dev-talent.herokuapp.com/basket123
+
+This action was tested on a not logged user and logged in user </br>
+
+Action|Expected result| Actual result| Status|
+------------ | ------------ | ------------ |------------ |
+|1| Basket price updated with the value| [LG](../images/testing/user_story/test9_1.png)|Passed|
+|2| Success message displayed “Updated C++ course quality to 3” | [LG](../images/testing/user_story/test9_2.png)|Passed|
+|3| Basket template displayed | [LG](../images/testing/user_story/test9_3.png)|Passed|
+|4| Checkout template displayed | [LG](../images/testing/user_story/test9_4.png)|Passed|
+|5| 404 error page displayed | [LG](../images/testing/user_story/test9_5.png)|Passed|
 
 ## Testing of Feature 10 - Ecommerce Store - checkout
 7.1. As a site user i can review my basket before i pay , so that i can change my mind or proceed with order
