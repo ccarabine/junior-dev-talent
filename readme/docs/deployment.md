@@ -1,5 +1,5 @@
 # Deployment steps
-[Click here to go to the Readme file ](https://github.com/ccarabine/junior-dev-talent/blob/main/README.md#deployment) to update
+[Click here to go to the Readme file ](https://github.com/ccarabine/junior-dev-talent/blob/main/README.md#deployment) 
 ## Github 
 
 This is the process I took to deploy my project from its GitHub repository to Github Pages:
