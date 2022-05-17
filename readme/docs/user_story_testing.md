@@ -507,12 +507,35 @@ Action|Expected result| Actual result| Status|
 |5| 404 error page displayed | [LG](../images/testing/user_story/test9_5.png)|Passed|
 
 ## Testing of Feature 10 - Ecommerce Store - checkout
-7.1. As a site user i can review my basket before i pay , so that i can change my mind or proceed with order
-7.2. As a logged in site user i can complete my billing details so my records are correct
-7.3. As a logged-in site user i can update and save my billing details so for future purchases they are completed
-7.4. As a logged-in site user i can enter my card details on the checkout page, so that I can make the desired purchase
-7.5. As a logged-in site user I am informed of whether my purchase was successful or not via the Order Successful page, as well as via an email sent upon order confirmation
-7.6. As a site user who is directed to a non-existent page or resource, I can redirected to the relevant error page
+- 7.1. As a site user i can review my basket before i pay , so that i can change my mind or proceed with order
+- 7.2. As a site user i can complete my billing details so my records are correct
+- 7.3. As a logged-in site user i can update and save my billing details so for future purchases they are completed
+- 7.4. As a logged-in site user i can enter my card details on the checkout page, so that I can make the desired purchase
+- 7.5. As a logged-in site user I am informed of whether my purchase was successful or not via the Order Successful page, as well as via an email sent upon order confirmation
+- 7.6. As a site user who is directed to a non-existent page or resource, I can redirected to the relevant error page
+___
+
+**Action** 
+1.  Navigate to Growth hub, click on C++ product, click add to basket, click on basket icon and click on secure checkout</br>
+2.  Navigate to checkout, enter in all fields
+3. Log in, Navigate to checkout
+3.1. Update email address field to chris@gmail.com, click save this invoice information to my profile, enter payment details, click complete order.  Then go back to the growth hub, add a product, click add to basket, click goto checkout
+4.  Navigate to checkout, enter in all fields, enter payment card number "4242 4242 424 2424, month 2424 then cvc 242", click complete order
+5. Navigate to https://junior-dev-talent.herokuapp.com/checkout123
+
+This action was tested on a not logged user and logged in user </br>
+
+Action|Expected result| Actual result| Status|
+------------ | ------------ | ------------ |------------ |
+|1| checkout template displayed, order summary displayed| [LG](../images/testing/user_story/test10_1.png)|Passed|
+|2| checkout form displayed| [LG](../images/testing/user_story/test10_2.png)|Passed|
+|3| Saved fields in users template displayed| [LG](../images/testing/user_story/test10_3.png)|Passed|
+|3.1| updated field displayed in checkout form| [LG](../images/testing/user_story/test10_3_1.png)|Passed|
+|4| Redirected to checkout sucess template| [LG](../images/testing/user_story/test10_4.png)|Passed|
+|4.1| Success message displayed “Order successfully processed! ” | [LG](../images/testing/user_story/test10_4_1.png)|Passed|
+|4.1.2|Email received| [LG](../images/testing/user_story/test10_4_1_2.png)|Passed|
+|5| 404 error page displayed | [LG](../images/testing/user_story/test10_5.png)|Passed|
+
 
 ## Testing of Feature 11 - My profile
 
