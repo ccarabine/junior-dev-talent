@@ -137,7 +137,7 @@ class TestTopicModel(TestCase):
         self.assertRedirects(
             response, '/accounts/login/?next=/forum/addpost/Coding/')
         self.assertEqual(response.status_code, 302)
-        
+
     def test_add_post_as_a_logged_in_user(self):
         """
         This test tests a logged in user can create a post
@@ -176,7 +176,7 @@ class TestTopicModel(TestCase):
         messages = list(get_messages(response.wsgi_request))
         self.assertEqual(str(messages[0]), "Post updated")
         self.assertTrue(response.status_code, 302)
-        
+
     def test_update_post_as_not_the_owner(self):
         """
         This test tests a user who has not created the post can not
