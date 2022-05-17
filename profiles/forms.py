@@ -13,19 +13,19 @@ class UserAccountForm(forms.ModelForm):
     """
     A class for the user profile form
     """
-   
+
     class Meta:
         """
         A class for the Meta information
         """
         model = UserProfile
-        exclude = ('user', 
+        exclude = ('user',
                    'location',
                    'short_intro', 'about',
                    'profile_image', 'cv_file',
                    'github_link', 'linkedin_link',
                    )
-        
+
     def __init__(self, *args, **kwargs):
         """
         Add placeholders and classes, remove auto-generated
@@ -44,7 +44,7 @@ class UserAccountForm(forms.ModelForm):
             'default_county': 'County'
 
         }
-        
+
         self.fields['default_full_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if field != 'default_country':
@@ -53,9 +53,16 @@ class UserAccountForm(forms.ModelForm):
                 else:
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'border-blue rounded-0 profile-form-input'
+            self.fields[
+                field
+                ].widget.attrs[
+                    'class'
+                    ] = 'border-blue rounded-0 profile-form-input'
             self.fields[field].label = False
-            self.fields['is_hiring_manager'].label = "Enable talent center (disable candidate profile)"
+            self.fields[
+                'is_hiring_manager'
+                ].label = "Enable talent center (disable candidate profile)"
+
 
 class UserProfileForm(forms.ModelForm):
     """
@@ -67,7 +74,7 @@ class UserProfileForm(forms.ModelForm):
         """
         model = UserProfile
         exclude = ('user',  'is_hiring_manager',
-           
+
                    'default_phone_number',
                    'default_postcode',
                    'default_town_or_city',
@@ -81,7 +88,7 @@ class UserProfileForm(forms.ModelForm):
         required=False,
         widget=CustomClearableFileInput
         )
-    
+
     def __init__(self, *args, **kwargs):
         """
         Add placeholders and classes, remove auto-generated
@@ -104,7 +111,11 @@ class UserProfileForm(forms.ModelForm):
         for field in self.fields:
             placeholder = placeholders[field]
             self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'border-blue rounded-0 profile-form-input'
+            self.fields[
+                field
+                ].widget.attrs[
+                    'class'
+                    ] = 'border-blue rounded-0 profile-form-input'
             self.fields[field].label = False
 
 
@@ -118,14 +129,13 @@ class SkillForm(forms.ModelForm):
         """
         model = Skill
         fields = ('name',)
-        
+
     def __init__(self, *args, **kwargs):
         """
         Add placeholders and classes, remove auto-generated
         labels and set autofocus on first field
         """
         super().__init__(*args, **kwargs)
-              
+
         self.fields['name'].widget.attrs['autofocus'] = True
         self.fields['name'].label = "Skill Name"
-
