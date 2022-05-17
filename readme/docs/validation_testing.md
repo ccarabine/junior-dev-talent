@@ -71,9 +71,18 @@ ___
 
 Page | Result | Test Detail/Screenshot
 ------------ | ------------- | -------------
-static/js/script.js | 0 errors and 1 warning | [Results](../images/testing/jshint_testing/jshint.png)
+1.base.html | 0 errors and 2 warning | [Results](../images/testing/jshint_testing/base.png)
+2.basket/basket.html | 0 errors and 0 warning | [Results](../images/testing/jshint_testing/basket_basket.png)
+3.checkout/js/stripe_elementsjs.js 1/2| 0 errors and 0 warning | [Results](../images/testing/jshint_testing/checkout_stripe_elementsjs_1.png)
+4.checkout/js/stripe_elementsjs.js 2/2| 0 errors and 0 warning | [Results](../images/testing/jshint_testing/checkout_stripe_elementsjs_2.png)
+5.product/add_product | 0 errors and 0 warning | [Results](../images/testing/jshint_testing/product_add_product.png)
+6.product_update_product.html | 0 errors and 0 warning | [Results](../images/testing/jshint_testing/product_update_product.png)
+7.products/includes/quantity_input_script.html | 0 errors and 0 warning | [Results](../images/testing/jshint_testing/products_includes_quantity_input_script.png)
+8.products/products.html | 0 errors and 0 warning | [Results](../images/testing/jshint_testing/products_products.png)
+9.products/products.html | 0 errors and 0 warning | [Results](../images/testing/jshint_testing/profiles_countryfield_js.png)
 
-Warning -redefinition of alert
+1. Three underfined variables - fnames, ftypes,jQuery. Two warnings The array notation[] is preferable
+
 <br>
 
 
