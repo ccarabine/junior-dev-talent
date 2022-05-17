@@ -69,7 +69,6 @@ ___
 - 1.3 As a site user I can see a link in the footer to the site’s Facebook Business Page, so that I can follow the company on Facebook
 - 1.4 As a site user I can subscribe to get the newsletter, so that I can keep up to date with the company
 - 1.5 As a site user I can view the sites privacy policy, so that i can read more about the sites policy
-- 1.6 As a site user I can view the sites Terms of use policy, so that i can read more about the terms of use
 
 ___
 
@@ -78,8 +77,6 @@ ___
 2.	Navigate to subscribe to our newsletter, enter email address and click join
 3.	Navigate and click on Follow us on facebook
 4.	Navigate and click on Privacy policy
-5.	Navigate and click on Terms of use
-
 
 This action was tested on a logged in user, not logged user and admin
 
@@ -97,7 +94,7 @@ Action|Expected result| Actual result| Status|
 |2|Redirected to subscription confirmation |[SM/MD/LG](../images/testing/user_story/test2_2.png)|Passed|
 |3|Redirected to facebook business page |[SM/MD/LG](../images/testing/user_story/test2_3.png)|Passed|
 |4|Privacy policy modal is displayed |[SM/MD/LG](../images/testing/user_story/test2_4.png)|Passed|
-|5|Terms of use modal is displayed|[SM/MD/LG](../images/testing/user_story/test2_5.png)|Passed|
+
 
 ## X-Small screen devices
 
@@ -112,7 +109,6 @@ Action|Expected result| Actual result| Status|
 |2|Redirected to subscription confirmation |[XS](../images/testing/user_story/test2_2.png)|Passed|
 |3|Redirected to facebook business page |[XS](../images/testing/user_story/test2_3.png)|Passed|
 |4|Privacy policy modal is displayed |[XS](../images/testing/user_story/test2_4_1.png)|Passed|
-|5|Terms of use modal is displayed|[XS](../images/testing/user_story/test2_5_1.png)|Passed|
 
 
 ## Testing of Feature 3 - Home page
@@ -416,23 +412,81 @@ Action|Expected result| Actual result| Status|
 |1.5.4.2.|Success message displayed “Email sent successfully” |[SM/MD/LG](../images/testing/user_story/test7_1_5_4_2.png)|Passed|
 
 ## Testing of Feature 8 - Ecommerce Store
-5.1. As a site user I can click on categories to view so that i can view products by courses, mentor programmes and events
-5.2. As a site user I can click on a product so I can view learn more about the product
-5.3. As a site user I can add the product to my basket so that i can make a purchase
-5.4. As a site user I can search products by name so I can view products that interest me
-5.5. As a site user I can paginate search products so I can view a paginated list of products so they don’t over populate the page
-5.6. As a site user I can sort the products list by category, alphabetically so that i can quickly find the product I seek
-5.7. As a site user who is directed to a non-existent page or resource, I can redirected to the relevant error page
-9.7. As a site admin I can create a product so that I can manage the site content
-9.8. As a site admin I can update a product so that I can manage the site content
-9.9. As a site admin I can delete a product so that I can manage the site content
+- 5.1. As a site user I can click on a category  so that i can view products by courses, mentor programmes and events
+- 5.2. As a site user I can click on a product so I can view learn more about the product
+- 5.3. As a site user I can add the product to my basket so that i can make a purchase
+- 5.4. As a site user I can search products by name so I can view products that interest me
+- 5.5. As a site user I can paginate search products so I can view a paginated list of products so they don’t over populate the page
+- 5.6. As a site user I can sort the products list by category, alphabetically so that i can quickly find the product I seek
+- 5.7. As a site user who is directed to a non-existent page or resource, I can redirected to the relevant error page
+- 9.7. As a site admin I can create a product so that I can manage the site content
+- 9.8. As a site admin I can update a product so that I can manage the site content
+- 9.9. As a site admin I can delete a product so that I can manage the site content
+___
+
+**Action** 
+1.  Navigate to Growth hub, click on courses</br>
+1.1.  Click on Events</br>
+1.2.  Click on mentorships</br>
+2.  Navigate to Growth hub, click on "Trusted by leaders in technology - Introduction to C++ - 3 hours"</br>
+3.  Click on add to basket</br>
+4. Navigate to search bar in the growth hub, type in "AWS" and click on the search icon
+4a. Navigate to search bar in the growth hub, type in "AWS21" and click on the search icon
+5. Navigate to Growth hub, click on the pagination bar, number 2
+6. Navigate to Growth hub, click on "sort by", Category (A-Z)"
+6.1. Navigate to Growth hub, click on "sort by", Name (A-Z)"
+6.2. Navigate to Growth hub, click on "sort by", Price (high to low)"
+7. Navigate to https://junior-dev-talent.herokuapp.com/products/599/
+8. Sign in as admin, Navigate to Growth hub
+8.1. Click on "+add product"
+8.1.1. Click on "add product"
+8.1.2. Type in name field "Python", Click on "add product"
+8.1.3. Type in price field "45.00", Click on "add product"
+8.1.4. Type in description field "Python essentials", Click on "add product"
+9. Navigate to Python essentials, click on "Update"
+9.1. Update name to "python essentials 3 hour", click update product
+10. Navigate to Python essentials, click on "Delete"
+10.1 Click cancel
+10.1.2 Click on "Delete", Delete Post
+
+
+This action was tested on a not logged user and logged in user </br>
+
+Action|Expected result| Actual result| Status|
+------------ | ------------ | ------------ |------------ |
+|1| Products displayed by courses| [LG](../images/testing/user_story/test8_1.png)|Passed|
+|1.1| Products displayed by events| [LG](../images/testing/user_story/test8_1.1.png)|Passed|
+|1.2| Products displayed by Mentorships |[LG](../images/testing/user_story/test8_1.2.png)|Passed|
+|2| Redirected to detail view| [LG](../images/testing/user_story/test8_2.png)|Passed|
+|3| Basket value increase| [LG](../images/testing/user_story/test8_3.png)|Passed|
+||Success message displayed “Updated Trusted by leaders in technology - Introduction to C++ - 3 hours quantity to 3” |[LG](../images/testing/user_story/test8_3a.png)|Passed|
+|4| product list displayed by search term |[LG](../images/testing/user_story/test8_4.png)|Passed|
+|4a| no products displayed, "0 Products found for "AWS21" |[LG](../images/testing/user_story/test8_4a.png)|Passed|
+|5| page 2 of products displayed |[LG](../images/testing/user_story/test8_5.png)|Passed|
+|6| Products displayed by Alphabetically A-Z|[LG](../images/testing/user_story/test8_6.png)|Passed|
+|6.1| Products displayed by Name A-Z|[LG](../images/testing/user_story/test8_6_1.png)|Passed|
+|6.2.| Products displayed by Price High to low|[LG](../images/testing/user_story/test8_6_2.png)|Passed|
+|7.| 404 error page displayed|[LG](../images/testing/user_story/test8_6_2.png)|Passed|
+|8.| Growth hub templage displayed with "+Add Product" button displayed|[LG](../images/testing/user_story/test8_8.png)|Passed|
+|8.1.| Add Product page displayed"| [LG](../images/testing/user_story/test8_6_2.png)|Passed|
+|8.1.1|Validation error message" Please fill this field - referring to  name field |[LG](../images/testing/user_story/test8_1_1.png)|Passed|
+|8.1.2|Validation error message" Please fill this field - referring to  price field |[LG](../images/testing/user_story/test8_1_2.png)|Passed|
+|8.1.3|Validation error message" Failed to add product. Please ensurethe form is valid " |[LG](../images/testing/user_story/test8_1_3.png)|Passed|
+|8.1.4|Success message displayed “Successfully added product!” |[LG](../images/testing/user_story/test8_1_4.png)|Passed|
+|9|Success message displayed “You are editing Python essentials” |[LG](../images/testing/user_story/test9.png)|Passed|
+|9.1|Success message displayed “Successfully updated product!” |[LG](../images/testing/user_story/test9_1.png)|Passed|
+|9.2|Redirected to Product - with updated field|[LG](../images/testing/user_story/test9_2.png)|Passed|
+|10.|Redirected to delete product - with product name displayed|[LG](../images/testing/user_story/test10.png)|Passed|
+|10.1.1|Product detail view displayed|[LG](../images/testing/user_story/test10_1_1.png)|Passed|
+|10.1.2|Product detail view displayed|[LG](../images/testing/user_story/test10_1_2.png)|Passed|
+|10.1.3.|Success message displayed “Product deleted successfully” |[LG](../images/testing/user_story/test10_1_3.png)|Passed|
 
 ## Testing of Feature 9 - Ecommerce Store - Basket
-6.1. As a site user I can always see the total price of my basket in the navigation bar, so that I know what the total cost will be when on the products page
-6.2. As a site user i can adjust the quantity of the product chosen after adding it to the shopping basket
-6.3. As a site user I can view the products added to my basket by clicking the basket icon or by adding an item to the basket
-6.4. As a site user I can click on Proceed to Checkout, so that I can purchase the items in my basket
-6.5. As a site user who is directed to a non-existent page or resource, I can redirected to the relevant error page
+- 6.1. As a site user I can always see the total price of my basket in the navigation bar, so that I know what the total cost will be when on the products page
+- 6.2. As a site user i can adjust the quantity of the product chosen after adding it to the shopping basket
+- 6.3. As a site user I can view the products added to my basket by clicking the basket icon or by adding an item to the basket
+- 6.4. As a site user I can click on Proceed to Checkout, so that I can purchase the items in my basket
+- 6.5. As a site user who is directed to a non-existent page or resource, I can redirected to the relevant error page
 
 ## Testing of Feature 10 - Ecommerce Store - checkout
 7.1. As a site user i can review my basket before i pay , so that i can change my mind or proceed with order
@@ -610,9 +664,6 @@ Action|Expected result| Actual result| Status|
 ||Name under account icon change to "Account"|[SM/MD/LG](../images/testing/user_story/test13_5_1a.png)|Passed|
 
 ## Testing of Feature 14 - Privacy policy
-Testing is covered in Feature 2-Footer
-
-## Testing of Feature 15 - Terms of use
 Testing is covered in Feature 2-Footer
 
 ## Testing of Feature 16 - Sign up to newsletter
