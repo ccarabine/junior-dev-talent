@@ -34,10 +34,10 @@ I used https://jigsaw.w3.org/css-validator/ to validate the css(style.css)
 all css files
 Page | Result | Test Detail/Screenshot
 ------------ | ------------- | -------------
-static/css/style.css | Passed, No errors found | [Results](../images/testing/
-css_testing/css_validator_result.png) 
-static/css/style.css | Passed, No errors found | [Results](../images/testing/css_testing/css_validator_result.png)
-static/css/style.css | Passed, No errors found | [Results](../images/testing/css_testing/css_validator_result.png) 
+basestatic/css/style.css | Passed, No errors found | [Results](../images/testing/css_testing/main_css.png) 
+checkoutstatic/css/style.css | Passed, No errors found | [Results](../images/testing/css_testing/checkout_css.png)
+forumstatic/css/style.css | Passed, No errors found | [Results](../images/testing/css_testing/forum_css.png) 
+profilestatic/css/style.css | Passed, No errors found | [Results](../images/testing/css_testing/profile_css.png) 
 <br>
 
 ## Wave Accessibility
