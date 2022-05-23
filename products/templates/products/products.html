@@ -153,11 +153,11 @@
                         {% if products.number == i %}
                             <li class="page-item active"><span class="page-link">{{ i }} <span class="sr-only">(current)</span></span></li>
                         {% else %}
-                            <li class="page-item"><a class="page-link" href="?{% param_replace page=i %}">{{ i }}</a></li>
+                            <li class="page-item"><a class="page-link text-black" href="?{% param_replace page=i %}">{{ i }}</a></li>
                         {% endif %}
                         {% endfor %}
                         {% if products.has_next %}
-                            <li class="page-item"><a class="page-link" href="?{% param_replace page=products.next_page_number %}">Next</a></li>
+                            <li class="page-item"><a class="page-link text-black" href="?{% param_replace page=products.next_page_number %}">Next</a></li>
                         {% else %}
                             <li class="disabled page-item"><span class="page-link">Next</span></li>
                         {% endif %}

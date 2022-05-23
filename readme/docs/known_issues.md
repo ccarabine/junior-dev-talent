@@ -1,4 +1,4 @@
-## Known issues during development </a>
+z## Known issues during development </a>
 
 [Click here to go to the Readme file ](https://github.com/ccarabine/junior-dev-talent/blob/main/readme.md#known-issues)
 
@@ -129,52 +129,65 @@ ___
 
 ___
 
-## CSS vaildation issues 
-
-<details>
-<summary>Click here to view image </summary>
-
-![screenshot of CSS issues](docs/images/testing/css_testing/issues/css_issues.png)
-
-</details>
-
-- **Issue 1 :** 
-
-    *Value Error : background-color Parse Error var(-color-rich-black-fogra-29)*
-
-
-- **Corrective Action:** 
-
-    Remove background-color: var(-color-rich-black-fogra-29);
-
-
 
 ## Wave accessibility vaildation issues 
 
-#### **Post form**
+#### **Index**
 
 <details>
 <summary>Click here to view image </summary>
 
-![screenshot of CSS issues](docs/images/testing/wave_testing/issues/postform.png)
+![screenshot of CSS issues](../images/testing/wave_testing/issues/index_issues.png)
 
 </details>
 
-- **Issue 1 :** 
+- **Issue 1 & 2:** 
 
-    missing or uninformative page
-    language missing or invalid
+    Missing form labels
     
 
 - **Corrective Action:** 
 
-    They are included in the base.html
-    `<html lang="en">`
-    `<title>Corona Virus Forum</title>`
-    
-    The error may occur from not being signed in
+    Add aria label
 
-___
+
+#### **Product**
+
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of product issues](../images/testing/wave_testing/issues/product_issues.png)
+
+</details>
+
+- **Issue 1 & 2:** 
+
+    low contract errors on pagination numbers
+    
+
+- **Corrective Action:** 
+
+    Change to text black
+
+#### **Product detail**
+
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of product detail issues](../images/testing/wave_testing/issues/product_detail_issues.png)
+
+</details>
+
+- **Issue 1:** 
+
+    1. 1x mising form label
+    2. 2 x empty button
+    
+
+- **Corrective Action:** 
+
+   1. Add aria label
+   2. Add aria labels
 
 ___
    
@@ -184,7 +197,7 @@ ___
 <details>
 <summary>Click here to view image </summary>
 
-![screenshot of apps.py issues](docs/images/testing/pep8_testing/issues/apps.png)
+![screenshot of apps.py issues](../images/testing/pep8_testing/issues/apps.png)
 
 </details>
 

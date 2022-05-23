@@ -46,18 +46,13 @@ profilestatic/css/style.css | Passed, No errors found | [Results](../images/test
 Page | Result | Test Detail/Screenshot
 ------------ | ------------- | -------------
 index.html                       |0 errors | [Results](../images/testing/wave_testing/index.png)
-privacy_policy.html              |0 errors | [Results](../images/testing/wave_testing/privacy_policy.png)
 forum - forum.html               |0 errors | [Results](../images/testing/wave_testing/forum.png)
-profiles- subscription.html      |0 errors | [Results](../images/testing/wave_testing/subscription.png)
-profiles- profile_type.html      |0 errors | [Results](../images/testing/wave_testing/profile_type.png)
-profiles- register_user_type.html|0 errors | [Results](../images/testing/wave_testing/register_user_type.png)
-products- products.html          |0 errors | [Results](../images/testing/wave_testing/products.png)
+products- product.html          |0 errors | [Results](../images/testing/wave_testing/product.png)
 products- product_detail.html    |0 errors | [Results](../images/testing/wave_testing/product_detail.png)
 checkout- checkout.html          |0 errors | [Results](../images/testing/wave_testing/checkout.png)
 checkout -checkout_success.html  |0 errors | [Results](../images/testing/wave_testing/checkout_success.png)
 checkout- basket.html          |0 errors | [Results](../images/testing/wave_testing/basket.png)
-404errors.html          |0 errors | [Results](../images/testing/hwave_testing/404.png)
-500errors.html          |0 errors | [Results](../images/testing/wave_testing/500.png)
+
 
 
 ___
