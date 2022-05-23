@@ -29,6 +29,7 @@ class ProductAdmin(SummernoteModelAdmin):
     ordering = ('name',)
     summernote_fields = ('description',)
 
+
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     """
