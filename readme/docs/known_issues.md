@@ -31,25 +31,101 @@ ___
 
 ### HTML vaildation issues 
 
-#### **Postlist**
+#### **Forum**
 
 <details>
 <summary>Click here to view image </summary>
 
-![screenshot of image21](docs/images/testing/html_testing/issues/postlist_issues.png)
-
+![screenshot of forum issues](../images/testing/html_testing/issues/forum_issues.png)
 </details>
 
-- **Issue 1 :** 
+- **Issue 1,2,3 :** 
 
-    *Misuse of aria label*
+    *An img element must have an alt attribute*
 
 
 - **Corrective Action:** 
 
-    Removed aria-label
+    Add alt attribute alt="{{topic.name}} image">
+
+#### **Subscription**
+
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of subscription issues](../images/testing/html_testing/issues/subscription_issues.png)
+</details>
+
+- **Issue 1 :** 
+
+    *Bad value button for attribute type on element*
 
 
+- **Corrective Action:** 
+
+    Remove type
+
+#### **Product**
+
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of product issues](../images/testing/html_testing/issues/product_issues.png)
+</details>
+
+- **Issue 1 & 2:** 
+
+    *The type attribute is unnecessary for JavaScript resources.*
+
+
+- **Corrective Action:** 
+
+    Remove type
+
+#### **Product detail**
+
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of product detail issues](../images/testing/html_testing/issues/product_detail_issues.png)
+
+</details>
+
+- **Issue 1:** 
+
+    *No p element in scope but a p end tag seen*
+
+
+- **Corrective Action:** 
+
+    Remove close p tag
+
+
+- **Issue 2:** 
+
+    *The type attribute is unnecessary for JavaScript resources.*
+
+
+- **Corrective Action:** 
+
+    Remove type
+
+#### **Basket**
+
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of product issues](../images/testing/html_testing/issues/basket_issues.png)
+</details>
+
+- **Issue 1 & 2:** 
+
+    *The type attribute is unnecessary for JavaScript resources.*
+
+
+- **Corrective Action:** 
+
+    Remove type
 
 ___
 
