@@ -272,4 +272,23 @@ Removed the code to filter the owner and changed to update function
 
 ![screenshot of updated code](../images/testing/user_story/issues/test5_7b_issues.png)
 </details>
+
 ___
+
+- **Issue 6 :** 
+
+    SM/MD/LG - on post, delete comment, cancel. should go back to the comment Feature 6.3.1
+    Page not found
+
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of issue](../images/testing/user_story/issues/test6_3_1_issues.png)
+
+</details>
+
+<br>
+
+- **Corrective Action:** 
+
+Redirect to forum

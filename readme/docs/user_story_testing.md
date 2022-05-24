@@ -326,12 +326,13 @@ ___
 2. Click on update</br>
 2.1 Click back to forum</br>
 2.2 Navigate back to comment, click update, change comment and click add comment</br>
-3. Navigate back to comment, click delete, click cancel on the delete template</br>
-3.1. Click delete on the comment, click delete comment on the delete template</br>
+3. Navigate back to comment, click delete</br>
+3.1 Navigate back to comment, click delete, click cancel on the delete template</br>
+3.2. Click delete on the comment, click delete comment on the delete template</br>
 4. Navigate to a post with more then 3 comments</br>
 4.1. Click on second page of comments</br>
 5. Go to a none exist post/comment e.g.https://junior-dev-talent.herokuapp.com/forum/update/comment/8
-6. Log in to django admin, click on comments and the user name to edit, update a field, click save, navigate to comment on the site
+6. Log in as superuser,  click on comments and the user name to edit, update a field, click add comment
 
 
 This action was tested on a not logged user and logged in user 
@@ -343,18 +344,19 @@ Action|Expected result| Actual result| Status|
 |1.2|Validation error message" Please fill this field - referring to comment name |[SM/MD/LG](../images/testing/user_story/test6_1_2.png)|Passed|
 |1.3|Redirected to forum |[SM/MD/LG](../images/testing/user_story/test6_1_3.png)|Passed|
 |1.4|Success message displayed “Comment added” |[SM/MD/LG](../images/testing/user_story/test6_1_4.png)|Passed|
-||redirect to post, comment displayed|[SM/MD/LG](../images/testing/user_story/test6_1_4a.png)|Passed|
+||redirect to post, comment displayed|[SM/MD/LG](../images/testing/user_story/test6_1_4.png)|Passed|
 |2|Update template displayed with comment data displayed |[SM/MD/LG](../images/testing/user_story/test6_2.png)|Passed|
 |2.1|Redirected to forum |[SM/MD/LG](../images/testing/user_story/test6_2_1.png)|Passed|
 |2.2|Success message displayed “Comment updated” |[SM/MD/LG](../images/testing/user_story/test6_2_2.png)|Passed|
-||redirect to post, updated comment displayed|[SM/MD/LG](../images/testing/user_story/test6_2_2a.png)|Passed|
-|3|Redirected to post/comment |[SM/MD/LG](../images/testing/user_story/test6_3.png)|Passed|
-|3.1|Success message displayed “Comment deleted” |[SM/MD/LG](../images/testing/user_story/test6_3_1.png)|Passed|
-||redirect forum|[SM/MD/LG](../images/testing/user_story/test6_3_1a.png)|Passed|
-|4|3 comments displayed, paginatation bar displayed with 2 |[SM/MD/LG](../images/testing/user_story/test6_4_4.png)|Passed|
+||redirect to post, updated comment displayed|[SM/MD/LG](../images/testing/user_story/test6_2_2.png)|Passed|
+|3|Redirected to delete comment template |[SM/MD/LG](../images/testing/user_story/test6_3.png)|Passed|
+|3.1|Redirected to forum template |[SM/MD/LG](../images/testing/user_story/test6_3_1.png)|Passed|
+|3.2|Success message displayed “Comment deleted” |[SM/MD/LG](../images/testing/user_story/test6_3_2.png)|Passed|
+||Redirect forum|[SM/MD/LG](../images/testing/user_story/test6_3_2.png)|Passed|
+|4|3 comments displayed, paginatation bar displayed with 2 |[SM/MD/LG](../images/testing/user_story/test6_4.png)|Passed|
 |4.1|2nd page of comments displayed |[SM/MD/LG](../images/testing/user_story/test6_4_1.png)|Passed|
 |5|404 page displayed |[SM/MD/LG](../images/testing/user_story/test6_5.png)|Passed|
-|6|Fields updated on comment |[SM/MD/LG](../images/testing/user_story/test6_6.png)|Passed|
+|6|Redirected to post with comment updated, success message "Comment updated" |[SM/MD/LG](../images/testing/user_story/test6_6.png)|Passed|
 
 ## Testing of Feature 7 - talent center
 - 8.1. As a site user, I can register so that i can access the talent center to view candidate profiles
@@ -388,8 +390,7 @@ This action was tested on a not logged user and logged in user </br>
 Action|Expected result| Actual result| Status|
 ------------ | ------------ | ------------ |------------ |
 |1| Profile_type template displayed - register as a hiring manager|[SM/MD/LG](../images/testing/user_story/test7_1.png)|Passed|
-|1.1|Talent center template displayed cards stacked in one column|||
-||Talent center template displayed cards stacked in one column|[SM](../images/testing/user_story/test7_1_1.png)|Passed|
+|1.1|Talent center template displayed cards stacked in one column|[SM](../images/testing/user_story/test7_1_1.png)|Passed|
 ||Talent center template displayed cards stacked in two columns, two rows|[MD](../images/testing/user_story/test7_1_1a.png)|Passed|
 ||Talent center template displayed cards stacked in three columns, two rows|[LG](../images/testing/user_story/test7_1_1b.png)|Passed|
 ||Success message displayed “Successfully registered as a hiring manager” |[SM/MD/LG](../images/testing/user_story/test7_1_1c.png)|Passed|
