@@ -202,18 +202,16 @@ ___
 1.	Navigate to forum ( not logged in user) </br>
 1.1 Log in as a normal user </br>
 2. Log in as superuser, navigate to the forum</br>
-2.1 Click on Create Topic</br>
+2.1 Click on Add Topic</br>
 2.1.1 Click on back</br>
 2.1.2 Click submit</br>
 2.1.3 Enter name and click submit</br>
 2.1.4 Select image and click submit</br>
 3. Log in as superuser, navigate to the forum</br>
-3.1 Click on update Topic</br>
+3.1 Click on "Edit" Topic</br>
 3.1.1 Click on back</br>
-3.1.2 Click submit</br>
-3.1.3 Click on update , change name to Coding challenges, select image and change, click submit </br>
-3.1.4 Click on update , select remove,click submit </br>
-3.1.5 Click on update , select image, and change to a word document,click submit </br>
+3.1.2 Click on "Edit" Topic, Click submit</br>
+3.1.3 Click on "Edit" , change name to Coding challenges, select image and change, click submit </br>
 4. Log in as superuser, navigate to the forum</br>
 4.1 Click on delete</br>
 4.1.1 Click on back</br>
@@ -226,7 +224,7 @@ Action|Expected result| Actual result| Status|
 ------------ | ------------ | ------------ |------------ |
 |1 & 1.1|Display Forum title and a description followed by a sub heading room topics|||
 ||Room topics are displayed using cards stacked in one column|[SM](../images/testing/user_story/test4_1.png)|Passed|
-||Room topics are displayed using cards stacked two columns|[MD/LG](../images/testing/user_story/test4_1.png)|Passed|
+||Room topics are displayed using cards stacked two columns|[MD/LG](../images/testing/user_story/test4_1a.png)|Passed|
 ||Room icon and the name of the topic is displayed in each card|see above links|Passed|
 |||||
 |2|Logged in as superuser|[SM/MD/LG](../images/testing/user_story/test4_1_2.png)|Passed|
@@ -237,14 +235,12 @@ Action|Expected result| Actual result| Status|
 |2.1.2|Validation error message" Please fill this field - referring to topic name |[SM/MD/LG](../images/testing/user_story/test4_2_1_2.png)|Passed|
 |2.1.3|Validation error message" Please fill this field - referring to image |[SM/MD/LG](../images/testing/user_story/test4_2_1_3.png)|Passed|
 |2.1.4|Redirect to forum displaying the topics |[SM/MD/LG](../images/testing/user_story/test4_2_1_4.png)|Passed|
-||Success message displayed “Topic was added successfully” |[SM/MD/LG](../images/testing/user_story/test4_2_1_4a.png)|Passed|
+||Success message displayed “Topic was added successfully” |[SM/MD/LG](../images/testing/user_story/test4_2_1_4.png)|Passed|
 |||||
 |3.1|Update topic template displayed with the details displayed|[SM/MD/LG](../images/testing/user_story/test4_3_1.png)|Passed|
 |3.1.1|Redirect to forum displaying the topics|[SM/MD/LG](../images/testing/user_story/test4_3_1_1.png)|Passed|
 |3.1.2|Success message displayed “Topic was updated successfully” |[SM/MD/LG](../images/testing/user_story/test4_3_1_2.png)|Passed|
 |3.1.3|Success message displayed “Topic was updated successfully” |[SM/MD/LG](../images/testing/user_story/test4_3_1_3.png)|Passed|
-|3.1.4|No image displayed |[SM/MD/LG](../images/testing/user_story/test4_3_1_4.png)|Passed|
-|3.1.5|No image uploaded |[SM/MD/LG](../images/testing/user_story/test4_3_1_5.png)|Passed|
 |||||
 |4|Delete topic template displayed with the details displayed|[SM/MD/LG](../images/testing/user_story/test4_4.png)|Passed|
 |4.1|Redirect to forum displaying the topics|[SM/MD/LG](../images/testing/user_story/test4_4_1.png)|Passed|

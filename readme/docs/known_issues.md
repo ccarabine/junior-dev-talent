@@ -231,3 +231,21 @@ ___
 
     Remove card-footer
 ___
+- **Issue 4 :** 
+
+    SM/MD/LG - on topic delete page Feature 4
+    Footer doesn't stay at bottom of page
+
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of issue](../images/testing/user_story/issues/test4_4_issues.png)
+
+</details>
+
+<br>
+
+- **Corrective Action:** 
+
+Reorganise code and put h-100 in correct place
+___
