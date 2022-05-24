@@ -161,9 +161,9 @@ class UpdatePostView(SuccessMessageMixin, UpdateView):
     template_name = "forum/update_post.html"
     success_message = "Post updated"
 
-    def get_queryset(self):
-        owner = self.request.user
-        return self.model.objects.filter(owner=owner)
+    def update(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
+        return super(UpdatePostView, self).update(request, *args, **kwargs)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -245,9 +245,9 @@ class UpdateCommentView(SuccessMessageMixin, UpdateView):
     template_name = "forum/update_comment.html"
     success_message = "Comment updated"
 
-    def get_queryset(self):
-        owner = self.request.user
-        return self.model.objects.filter(owner=owner.id)
+    def update(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
+        return super(UpdateCommentView, self).update(request, *args, **kwargs)
 
 
 @method_decorator(login_required, name='dispatch')

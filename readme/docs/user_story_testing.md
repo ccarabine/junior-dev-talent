@@ -271,13 +271,13 @@ ___
 4.3  Type a post name (required field) and click submit post</br>
 4.4 Navigate to forum, click on a room topic, Click on a -> Start a new post within this topic , enter a post title, description and upload an image, click submit</br>
 5.  Navigate to forum, click on a room topic, Click on a post that was just created</br>
-5.1. Click on edit
-5.2. Change name, description, and image and click submit
+5.1. Click one update</br>
+5.2. Change name, description, and image and click submit</br>
 6.  Navigate to forum, click on a room topic, Click on a post that was just created</br>
 6.1. Click on delete</br>
 6.2. Click on cancel</br>
 6.3. Click on delete post</br>
-7. Log in to django admin, click on posts and the post title to edit, update a field, click save, navigate to post on the site
+7. Log in as superuser, click on a post and the post title to edit, update a field, click save, navigate to post on the site
 
 
 This action was tested on a not logged user and logged in user 
@@ -295,15 +295,15 @@ Action|Expected result| Actual result| Status|
 |4.3|Success message displayed “Post submitted” |[SM/MD/LG](../images/testing/user_story/test5_4_3.png)|Passed|
 |4.4|Success message displayed “Post submitted” |[SM/MD/LG](../images/testing/user_story/test5_4_4.png)|Passed|
 ||Redirected to post with images and fields displayed |||
-|5|Post displayed with Update and delete link under the post |[SM/MD/LG](../images/testing/user_story/test5_4.png)|Passed|
-|5.1|Redirected to update post template displayed with fields data |[SM/MD/LG](../images/testing/user_story/test5_4_1.png)|Passed|
+|5|Post displayed with Update and delete link under the post |[SM/MD/LG](../images/testing/user_story/test5_5.png)|Passed|
+|5.1|Redirected to update post template displayed with fields data |[SM/MD/LG](../images/testing/user_story/test5_5_1.png)|Passed|
 |5.2|Success message displayed “Post updated” |[SM/MD/LG](../images/testing/user_story/test5_5_2.png)|Passed|
-||Redirected to post template with updated data displayed  |[SM/MD/LG](../images/testing/user_story/test5_5_2a.png)|Passed|
+||Redirected to post template with updated data displayed  |[SM/MD/LG](../images/testing/user_story/test5_5_2.png)|Passed|
 |6|Redirected to delete post template with post name displayed |[SM/MD/LG](../images/testing/user_story/test5_6.png)|Passed|
-|6.1|Redirected to update post template displayed with fields data |[SM/MD/LG](../images/testing/user_story/test5_6_1.png)|Passed|
+|6.1|Redirected to post template displayed with fields data |[SM/MD/LG](../images/testing/user_story/test5_6_1.png)|Passed|
 |6.2|Redirected to post |[SM/MD/LG](../images/testing/user_story/test5_6_2.png)|Passed|
 |6.3|Success message displayed “Post deleted” |[SM/MD/LG](../images/testing/user_story/test5_6_3.png)|Passed|
-||Redirected to forum |[SM/MD/LG](../images/testing/user_story/test5_6_4.png)|Passed|
+||Redirected to forum |[SM/MD/LG](../images/testing/user_story/test5_6_3.png)|Passed|
 |7|Fields updated on post |[SM/MD/LG](../images/testing/user_story/test5_7.png)|Passed|
 
 

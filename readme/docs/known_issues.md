@@ -249,3 +249,27 @@ ___
 
 Reorganise code and put h-100 in correct place
 ___
+
+- **Issue 5 :** 
+
+    SM/MD/LG - on forum, post,  update post & comment as superuser Feature 5.7
+    Page not found
+
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of issue](../images/testing/user_story/issues/test5_7_issues.png)
+
+</details>
+
+<br>
+
+- **Corrective Action:** 
+
+Removed the code to filter the owner and changed to update function
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of updated code](../images/testing/user_story/issues/test5_7b_issues.png)
+</details>
+___

@@ -35,7 +35,7 @@
                 <h6 class="logo-font"> Back to Forum</h6>
             </a>
 
-            {% if user.id == post.owner.id %}
+            {% if user.id == post.owner.id or request.user.is_superuser %}
                 <div class="post-color mb-2 pt-1 pb-1 rounded">
                     <div class="col-12">
                         <div class="form-group">
