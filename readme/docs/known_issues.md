@@ -212,3 +212,22 @@ ___
     Add success code
     [code](../images/testing/user_story/issues/test2_2a_issues.png)
 ___
+
+- **Issue 3 :** 
+
+    SM/MD/LG - on subscription page Feature 5.1
+    Card footer is displayed and not needed. Doesn't look good
+
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of issue](../images/testing/user_story/issues/test3_5_1_1b_issues.png)
+
+</details>
+
+<br>
+
+- **Corrective Action:** 
+
+    Remove card-footer
+___

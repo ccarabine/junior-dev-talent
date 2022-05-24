@@ -111,11 +111,11 @@ Action|Expected result| Actual result| Status|
 
 ## Testing of Feature 3 - Home page
 
-2.1 As a site user I can view the home page so that I can learn more about the website and its purpose
-2.2 As a site user I can click on get hired so that I can learn more about the site and update my profile
-2.2 As a site user I can click on forum card so that I can learn more about the service chosen and goto the forum
-2.3 As a site user I can click on Growth hub so that I can learn more about the service chosen and go to the shop
-2.4 As a site user I can click on the talent center so that I can learn more about the service chosen and register
+- 2.1 As a site user I can view the home page so that I can learn more about the website and its purpose
+- 2.2 As a site user I can click on get hired so that I can learn more about the site and update my profile
+- 2.2 As a site user I can click on forum card so that I can learn more about the service chosen and goto the forum
+- 2.3 As a site user I can click on Growth hub so that I can learn more about the service chosen and go to the shop
+- 2.4 As a site user I can click on the talent center so that I can learn more about the service chosen and register
 
 ___
 
@@ -167,9 +167,9 @@ Action|Expected result| Actual result| Status|
 |4|Growth hub modal displayed with a title, 4 cards stacked in two columns and two rows and a call to action button "Shop now"|[MD](../images/testing/user_story/test3_4a.png)|Passed|
 |4.1|Redirect to Growth hub|[MD](../images/testing/user_story/test3_4_1a.png)|Passed|
 |5|Talent modal displayed with a title, 3 cards stacked in one row and a call to action button "Start now"|[MD](../images/testing/user_story/test3_5a.png)|Passed|
-|5.1|Non-Logged in user - Redirect to talent center benefits page(subscription)|[SM](../images/testing/user_story/test3_5_1_1a.png)|Passed|
-||Logged in user and is_ hiring_manager is false -Redirect to talent center benefits page(subscription)|[SM](../images/testing/user_story/test3_5_1_2a.png)|Passed|
-||Logged in user and is_ hiring_manager is true - talent center template displayed|[SM](../images/testing/user_story/test3_5_1_3a.png)|Passed|
+|5.1|Non-Logged in user - Redirect to talent center benefits page(subscription)|[MD](../images/testing/user_story/test3_5_1_1a.png)|Passed|
+||Logged in user and is_ hiring_manager is false -Redirect to talent center benefits page(subscription)|[MD](../images/testing/user_story/test3_5_1_2a.png)|Passed|
+||Logged in user and is_ hiring_manager is true - talent center template displayed|[MD](../images/testing/user_story/test3_5_1_3a.png)|Passed|
 
 ## Large  screen devices
 Action|Expected result| Actual result| Status|
