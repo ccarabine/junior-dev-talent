@@ -292,3 +292,81 @@ ___
 - **Corrective Action:** 
 
 Redirect to forum
+
+___
+
+- **Issue 7 :** 
+
+    SM/MD/LG - on profile_type page Feature 7.1
+    Footer doesn't stay at bottom of page
+
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of issue](../images/testing/user_story/issues/test7_1_issues.png)
+
+</details>
+
+<br>
+
+- **Corrective Action:** 
+
+add h-100 to container
+___
+
+- **Issue 8 :** 
+
+    SM/MD/LG - on profile_type page Feature 7.1.1
+    1. Profiles empty displayed
+    2. Footer doesn't stay at bottom of page
+
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of issue](../images/testing/user_story/issues/test7_1_issues.png)
+
+</details>
+
+<br>
+
+- **Corrective Action:** 
+1. Add if statement, so if the full name isn't filled out the profile doesn't show
+2. Add h-100 to container
+___
+
+
+- **Issue 9 :** 
+
+    SM/MD/LG - on profile_type page Feature 7.1.2
+    1. Footer doesn't stay at bottom of page
+
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of issue](../images/testing/user_story/issues/test7_1_2_issues.png)
+
+</details>
+
+<br>
+
+- **Corrective Action:** 
+1. Add h-100 to container
+___
+
+- **Issue 10 :** 
+
+    SM/MD/LG - on profile_type page Feature 7.1.5.4
+    1. Footer doesn't stay at bottom of page
+
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of issue](../images/testing/user_story/issues/test7_1_5_4_issues.png)
+
+</details>
+
+<br>
+
+- **Corrective Action:** 
+1. Add h-100 to container
+___

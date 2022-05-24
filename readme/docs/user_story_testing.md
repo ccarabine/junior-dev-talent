@@ -390,21 +390,21 @@ This action was tested on a not logged user and logged in user </br>
 Action|Expected result| Actual result| Status|
 ------------ | ------------ | ------------ |------------ |
 |1| Profile_type template displayed - register as a hiring manager|[SM/MD/LG](../images/testing/user_story/test7_1.png)|Passed|
-|1.1|Talent center template displayed cards stacked in one column|[SM](../images/testing/user_story/test7_1_1.png)|Passed|
-||Talent center template displayed cards stacked in two columns, two rows|[MD](../images/testing/user_story/test7_1_1a.png)|Passed|
-||Talent center template displayed cards stacked in three columns, two rows|[LG](../images/testing/user_story/test7_1_1b.png)|Passed|
-||Success message displayed “Successfully registered as a hiring manager” |[SM/MD/LG](../images/testing/user_story/test7_1_1c.png)|Passed|
+|1.1|Success message displayed “Successfully registered as a hiring manager” |[SM/MD/LG](../images/testing/user_story/test7_1_1.png)|Passed|
+|1.1a|Talent center template displayed cards stacked in one column|[SM](../images/testing/user_story/test7_1_1a.png)|Passed|
+|1.1b|Talent center template displayed cards stacked in two columns, two rows|[MD](../images/testing/user_story/test7_1_1b.png)|Passed|
+|1.1c|Talent center template displayed cards stacked in three columns, two rows|[LG](../images/testing/user_story/test7_1_1c.png)|Passed|
 |1.2|Talent center detail template displayed cards stacked in one column|[SM](../images/testing/user_story/test7_1_2.png)|Passed|
-||Talent center detail template displayed cards stacked in two columns|[MD/LG](../images/testing/user_story/test7_1_2a.png)|Passed|
+|1.2a|Talent center detail template displayed cards stacked in two columns|[MD/LG](../images/testing/user_story/test7_1_2a.png)|Passed|
 |1.3|Candidates displayed with python skills, paginated by 6|[SM/MD/LG](../images/testing/user_story/test7_1_3.png)|Passed|
-|1.4|Candidates ordered by date joined|[SM/MD/LG](../images/testing/user_story/test7_1_4.png)|Passed|
+|1.4|Candidates ordered by date joined|[SM/MD/LG](../images/testing/user_story/test7_1_3.png)|Passed|
 |1.5|Candidate profile displayed, CV icon displayed|[SM/MD/LG](../images/testing/user_story/test7_1_5.png)|Passed|
 |1.5.1|Candidate git hub page opened in new tab|[Github](../images/testing/user_story/test7_1_5_1.png)|Passed|
-|1.5.2|Candidate linkedin page opened in new tab|[linkedIn](../images/testing/user_story/test7_1_5_2png)|Passed|
+|1.5.2|Candidate linkedin page opened in new tab|[linkedIn](../images/testing/user_story/test7_1_5_2.png)|Passed|
 |1.5.3|Candidate CV opened in new tab|[CV](../images/testing/user_story/test7_1_5_3.png)|Passed|
-|1.5.4|contact_developer template displayed with profile image and name|[SM/MD/LG](../images/testing/user_story/test7_1_5_4.png)|Passed|
+|1.5.4|Contact_developer template displayed with profile image and name|[SM/MD/LG](../images/testing/user_story/test7_1_5_4.png)|Passed|
 |1.5.4.1.|Validation error message "Please fill this field" - referring to message|[SM/MD/LG](../images/testing/user_story/test7_1_5_4_1.png)|Passed|
-|1.5.4.2.|Success message displayed “Email sent successfully” |[SM/MD/LG](../images/testing/user_story/test7_1_5_4_2.png)|Passed|
+|1.5.4.2.|Success message displayed “Email sent successfully”, redirect to talent center |[SM/MD/LG](../images/testing/user_story/test7_1_5_4_2.png)|Passed|
 
 ## Testing of Feature 8 - Ecommerce Store
 - 5.1. As a site user I can click on a category  so that i can view products by courses, mentor programmes and events

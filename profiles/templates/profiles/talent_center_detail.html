@@ -12,17 +12,23 @@
     </div>
 {% endblock %}
 {% block content %}
-    <div>
+    <div class = "h-100">
         <div class="container header-section text-center my-3">
-           
-                <div class="py-5 title">
-                    <h1>FIND THE BEST FRESH TALENT </h1>  
-                </div>
-            
+            <div class="py-5 title">
+                <h1>FIND THE BEST FRESH TALENT </h1>  
+            </div>
+            <div class="hero-section-search">
+                <form id="searchForm" class="form" action="{% url 'talent_center' %}" method="get">
+                    <div class="container ">   
+                        <input class="form-control form-control-lg " id="search_input" type="text" name="search_query" value="{{search_query}}" placeholder="Search" />
+                        <input class="btn btn-white btn-lg my-4 font-weight-bold" type="submit" value="Search" />
+                    </div>
+                </form>
+            </div>
         </div>
         {% if request.user.user_profile.is_hiring_manager or request.user.is_superuser %} 
             <div class="container mb-3">
-                <div class="row ">
+                <div class="row">
                     <div class="col-md">
                         <div class="card text-center background-grey">
                             <div class="my-3 mx-2">
