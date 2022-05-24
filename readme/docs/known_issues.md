@@ -190,3 +190,25 @@ ___
 
     Added media query to reduce font size on max width 576
 ___
+
+
+- **Issue 2 :** 
+
+    SM/MD/LG - on footer
+    When the user enters their email address to subscribe to the newsletter, and clicks join, 
+    there is no feedback
+
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of issue](../images/testing/user_story/issues/test2_2_issues.png)
+
+</details>
+
+<br>
+
+- **Corrective Action:** 
+
+    Add success code
+    [code](../images/testing/user_story/issues/test2_2a_issues.png)
+___

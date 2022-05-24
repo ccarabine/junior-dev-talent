@@ -91,7 +91,7 @@ Action|Expected result| Actual result| Status|
 ||2. Facebook icon, Keep upto date with all our latest offers, a link to the facebook site "follow us on facebook" |see "SM/MD/LG" link above|Passed|
 ||Privacy Policy and Terms of use links are displayed|see "SM/MD/LG" link above|Passed|
 ||Copyright information is displayed|see "SM/MD/LG" link above|Passed|
-|2|Redirected to subscription confirmation |[SM/MD/LG](../images/testing/user_story/test2_2.png)|Passed|
+|2|Subscription feedback displayed |[SM/MD/LG](../images/testing/user_story/test2_2.png)|Passed|
 |3|Redirected to facebook business page |[SM/MD/LG](../images/testing/user_story/test2_3.png)|Passed|
 |4|Privacy policy modal is displayed |[SM/MD/LG](../images/testing/user_story/test2_4.png)|Passed|
 
@@ -100,15 +100,13 @@ Action|Expected result| Actual result| Status|
 
 Action|Expected result| Actual result| Status|
 ------------ | ------------ | ------------ |------------ |
-|1|Navigation bar is displayed at the top of the page|[XS](../images/testing/user_story/test2_1.png)|Passed|
+|1|Footer is displayed at the bottom of the page|[XS](../images/testing/user_story/test2_1a.png)|Passed|
 ||**From top to bottom**|
 ||1. Newsletter icon, subscribe to our newsletter beneath and a input field with placeholder text "Enter your email" followed by a Join button |see "XS" link above|Passed|
 ||2. Facebook icon, Keep upto date with all our latest offers, a link to the facebook site "follow us on facebook" |see "XS" link above|Passed|
 ||Privacy Policy and Terms of use links are displayed|see "XS" link above|Passed|
 ||Copyright information is displayed|see "XS" link above|Passed|
-|2|Redirected to subscription confirmation |[XS](../images/testing/user_story/test2_2.png)|Passed|
-|3|Redirected to facebook business page |[XS](../images/testing/user_story/test2_3.png)|Passed|
-|4|Privacy policy modal is displayed |[XS](../images/testing/user_story/test2_4_1.png)|Passed|
+
 
 
 ## Testing of Feature 3 - Home page
