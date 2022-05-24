@@ -538,6 +538,9 @@ input[name='q']::placeholder {
     .footer-icons{
         width:13%;
     }
+    .account-font-sm{
+        font-size:0.8rem;
+    }
 }
 
   @media (max-width: 400px) {

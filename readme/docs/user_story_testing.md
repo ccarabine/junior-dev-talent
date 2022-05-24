@@ -55,7 +55,7 @@ Action|Expected result| Actual result| Status|
 ||Search bar with "Search our growth hub store" is the placeholder within the search bar|see "LG" link above|Passed|
 ||Profile icon with "Account"/name beneath is displayed|see "SM/MD" link above|Passed|
 ||Shopping Basket icon with amount in GBP beneath is displayed|see "SM/MD" link above|Passed|
-|4|Dropdown menu displayed with the following links"Register", "Login" |[LG](../images/testing/user_story/test_1_4_1.png)|Passed|
+|4|Dropdown menu displayed with the following links"Register", "Login" |[LG](../images/testing/user_story/test1_4_1.png)|Passed|
 |5|Redirected to basket template |[LG](../images/testing/user_story/test1_5_1.png)|Passed|
 |6|Redirected to home template |[LG](../images/testing/user_story/test1_6.png)|Passed|
 |7|Redirected to forum template, navigation is consistent |[LG](../images/testing/user_story/test1_7_1.png)|Passed|

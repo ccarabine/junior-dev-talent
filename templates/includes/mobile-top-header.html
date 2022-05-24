@@ -36,15 +36,15 @@
         <div class="dropdown-menu border-0" aria-labelledby="user-options-mobile">
             {% if request.user.is_authenticated %}
                 {% if request.user.user_profile.is_hiring_manager %}
-                    <a href="{% url 'account_details' %}" class="dropdown-item">My Account</a>
+                    <a href="{% url 'account_details' %}" class="dropdown-item account-font-sm">My Account</a>
                 {% else %}
-                    <a href="{% url 'display_profile' %}" class="dropdown-item">My Profile</a>
+                    <a href="{% url 'display_profile' %}" class="dropdown-item account-font-sm">My Profile</a>
                 {% endif %}
-                <a href="{% url 'account_change_password' %}" class="dropdown-item nav-color" aria-label="Change password">Change password</a>
-                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                <a href="{% url 'account_change_password' %}" class="dropdown-item account-font-sm" aria-label="Change password">Change password</a>
+                <a href="{% url 'account_logout' %}" class="dropdown-item account-font-sm">Logout</a>
             {% else %}
-                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                <a href="{% url 'account_signup' %}" class="dropdown-item account-font-sm">Register</a>
+                <a href="{% url 'account_login' %}" class="dropdown-item account-font-sm">Login</a>
             {% endif %}
         </div>
     </li>

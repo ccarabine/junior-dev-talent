@@ -174,13 +174,13 @@ ___
 
 - **Issue 1 :** 
 
-    Mobile - on home page
-    On the account dropdown, "change password" doesn't show on drop down menu
+    SM/MD - on home page
+    On the account dropdown, "change password" doesn't show whole word
 
 <details>
 <summary>Click here to view image </summary>
 
-![screenshot of issue](docs/images/testing/features/issues/test_1_4.png)
+![screenshot of issue](../images/testing/user_story/issues/test1_4_issues.png)
 
 </details>
 
@@ -188,5 +188,5 @@ ___
 
 - **Corrective Action:** 
 
-    Added code to mobile-top-header
+    Added media query to reduce font size on max width 576
 ___
