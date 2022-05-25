@@ -495,7 +495,7 @@ This action was tested on a not logged user and logged in user </br>
 Action|Expected result| Actual result| Status|
 ------------ | ------------ | ------------ |------------ |
 |1| Basket price updated with the value| [LG](../images/testing/user_story/test9_1.png)|Passed|
-|2| Success message displayed “Updated C++ course quality to 3” | [LG](../images/testing/user_story/test9_2.png)|Passed|
+|2| Success message displayed “Updated C++ course quality to 3” | [LG](../images/testing/user_story/test9_1.png)|Passed|
 |3| Basket template displayed | [LG](../images/testing/user_story/test9_3.png)|Passed|
 |4| Checkout template displayed | [LG](../images/testing/user_story/test9_4.png)|Passed|
 |5| 404 error page displayed | [LG](../images/testing/user_story/test9_5.png)|Passed|

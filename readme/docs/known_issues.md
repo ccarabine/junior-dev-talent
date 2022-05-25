@@ -388,3 +388,22 @@ ___
 - **Corrective Action:** 
 1. Change col-4 to 6
 ___
+
+
+- **Issue 12 :** 
+
+    LG - on basket page Feature 9.1
+    1. plus sign has no border
+
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of issue](../images/testing/user_story/issues/test9_1_issues.png)
+
+</details>
+
+<br>
+
+- **Corrective Action:** 
+1. changed class from btn-black to btn-blue
+___
