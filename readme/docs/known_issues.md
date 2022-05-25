@@ -482,3 +482,59 @@ ___
 
 Add blank/Null = False to name field in Skill Model
 ___
+
+- **Issue 17 :** 
+
+    SM/MD/LG - Sign up page sign up button is black should be midnight blue Feature 13.1
+
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of issue](../images/testing/user_story/issues/test13_1_issues.png)
+
+</details>
+
+<br>
+
+- **Corrective Action:** 
+
+add css to background colour and colour to .allauth-form-inner-content button 
+
+___
+- **Issue 18 :** 
+
+    SM/MD/LG - Password reset page reset my password button is black should be midnight blue Feature 13.3
+
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of issue](../images/testing/user_story/issues/test13_3_issues.png)
+
+</details>
+
+<br>
+
+- **Corrective Action:** 
+
+add css to background colour and colour to - **Issue 17 :** 
+
+    SM/MD/LG - Sign up page sign up button is black should be midnight blue Feature 13.1
+
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of issue](../images/testing/user_story/issues/test13_1_issues.png)
+
+</details>
+
+<br>
+
+- **Corrective Action:** 
+
+add css to background colour and colour to .allauth-form-inner-content input[type='submit']
+
+___
+ 
+
+___
+

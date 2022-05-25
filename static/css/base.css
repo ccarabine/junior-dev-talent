@@ -176,6 +176,16 @@ body {
     color: white;
 }
 
+.allauth-form-inner-content button {
+    background: var(--color-midnight-blue) !important;
+    color: white !important;
+}
+
+.allauth-form-inner-content input[type='submit']{
+    background: var(--color-midnight-blue) !important;
+    color: white !important;
+}
+
 .btn-white-txt {
     color:white !important;
 }

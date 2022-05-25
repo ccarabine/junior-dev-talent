@@ -663,21 +663,19 @@ ___
 1.5 Enter "q1werty" in password1,Click sign up</br>
 1.6 Enter "q1werty" in password1,Click sign up</br>
 1.7 Enter "q1werty1234" in password1 and "qwerty5678" in password1 ,Click sign up</br>
-1.8 Enter "q1werty1234" in password1 and "q1werty1234" in password1 ,Click sign up</br>
-1.9 Goto email account and Click confirm email address link</br>
-1.9.1 Click confirm</br>
+1.9 Goto email account and select email</br>
+1.9.1 Click confirm email address link</br>
+1.9.2 Click confirm</br>
 2. Navigate to Sign in page, click sign in</br>
-2.1 Enter "pete1", password"petef3dd", click sign in</br>
+2.1 Enter "Dev1", password"petef3dd", click sign in</br>
 2.2 Enter correct username and password "johnr" and "Database1"</br>
-3. Login, click on the account icon in the nav bar and select change my password, click change password</br>
+3. Click on the account icon in the nav bar and select change my password, click change password</br>
 3.1. Enter current password "helll11222, click change password</br>
-3.2. Enter current password "helll11222, click change password</br>
-3.3. Enter current password "Database1", p1 "Database2" p2 "Database2",click change password</br>
+3.2. Enter current password "Database1", p1 "Database2" p2 "Database2",click change password</br>
 4. Logout, navigate to login page and click on forgot password</br>
 4.1 Enter email address and click reset my password</br>
 4.2 Go to email account, open email and click on link to reset password</br>
-4.3 In the change password template, click change password</br>
-4.4 In the change password template, "Database3", Database3" click change password</br>
+4.3 In the change password template, "Database3", Database3" click change password</br>
 5. Login, Click on the account icon, click on log out</br>
 5.1 Click on Sign out
 
@@ -692,31 +690,28 @@ Action|Expected result| Actual result| Status|
 |1.4.|Validation error message "Please fill this field" - referring to password1|[SM/MD/LG](../images/testing/user_story/test13_1_4.png)|Passed|
 |1.5.|Validation error message "Please fill this field" - referring to password2|[SM/MD/LG](../images/testing/user_story/test13_1_5.png)|Passed|
 |1.6.|Validation error message "This password is too short. It must contain at least 8 characters." - referring to password1&2|[SM/MD/LG](../images/testing/user_story/test13_1_6.png)|Passed|
-|1.7.|Validation error message "You must type the same password each time." - referring to password1&2|[SM/MD/LG](../images/testing/user_story/test13_1_7.png)|Passed|
-|1.8.|Redirected tp verify your email address template|[SM/MD/LG](../images/testing/user_story/test13_1_8.png)|Passed|
-||Success message "Confirmation email sent to EMAIL"|[SM/MD/LG](../images/testing/user_story/test13_1_8a.png)|Passed|
-|1.9|Redirected to confirm email address"|[SM/MD/LG](../images/testing/user_story/test13_1_9.png)|Passed|
-|1.9.1|Success message "You have confirmed EMAIL"|[SM/MD/LG](../images/testing/user_story/test13_1_9_1.png)|Passed|
-||Redirected to sign in template|||
-||Welcome Email received into email inbox|[email](../images/testing/user_story/test13_1_9_1a.png)|Passed|
+|1.7.|Redirected to verify your email address template|[SM/MD/LG](../images/testing/user_story/test13_1_7.png)|Passed|
+||Success message "Confirmation email sent to EMAIL"|[SM/MD/LG](../images/testing/user_story/test13_1_7.png)|Passed|
+|1.9|Email displayed"|[SM/MD/LG](../images/testing/user_story/test13_1_9.png)|Passed|
+|1.9.1|Redirected to confirm email address"|[SM/MD/LG](../images/testing/user_story/test13_1_9_1.png)|Passed|
+|1.9.2|Success message "You have confirmed EMAIL"|[SM/MD/LG](../images/testing/user_story/test13_1_9_2.png)|Passed|
+||Redirected to home template|||
 |2.|Validation error message "Please fill this field" - referring to username"|[SM/MD/LG](../images/testing/user_story/test13_2.png)|Passed|
 |2.1|Validation error message "The username and/or password you specified are not correct."|[SM/MD/LG](../images/testing/user_story/test13_2_1.png)|Passed|
 |2.2|Success message "Successfully signed in as JohnR."|[SM/MD/LG](../images/testing/user_story/test13_2_2.png)|Passed|
-||John Routledge displayed under account icon in nav bar"|[SM/MD/LG](../images/testing/user_story/test13_2_2a.png)|Passed|
+||John Routledge displayed under account icon in nav bar"|[SM/MD/LG](../images/testing/user_story/test13_2_2.png)|Passed|
 |3|Validation error message "Please fill this field" - referring to current password|[SM/MD/LG](../images/testing/user_story/test13_3.png)|Passed|
 |3.1.|Validation error message "Please fill this field" - referring to password1|[SM/MD/LG](../images/testing/user_story/test13_3_1.png)|Passed|
-|3.2.|Validation error message "Please type your current password."|[SM/MD/LG](../images/testing/user_story/test13_3_2.png)|Passed|
-|3.3|Success message "Password successfully changed."|[SM/MD/LG](../images/testing/user_story/test13_3_3.png)|Passed|
+|3.2|Success message "Password successfully changed."|[SM/MD/LG](../images/testing/user_story/test13_3_2.png)|Passed|
 |4|Redirected to password reset template|[SM/MD/LG](../images/testing/user_story/test13_4.png)|Passed|
 |4.1|Redirected to password reset-done template|[SM/MD/LG](../images/testing/user_story/test13_4_1.png)|Passed|
 ||Reset password email received into email inbox|[email](../images/testing/user_story/test13_4_1a.png)|Passed|
 |4.2|Redirected to change password template|[SM/MD/LG](../images/testing/user_story/test13_4_2.png)|Passed|
-|4.3|Validation error message "Please fill this field" - referring to password1|[SM/MD/LG](../images/testing/user_story/test13_4_3.png)|Passed|
-|4.4|Success message "Password successfully changed."|[SM/MD/LG](../images/testing/user_story/test13_4_4.png)|Passed|
-||Redirected to Change password template - Your password is now changed"|[SM/MD/LG](../images/testing/user_story/test13_4_4a.png)|Passed|
+|4.3|Success message "Password successfully changed."|[SM/MD/LG](../images/testing/user_story/test13_4_3.png)|Passed|
+||Redirected to Change password template - Your password is now changed"|[SM/MD/LG](../images/testing/user_story/test13_4_3.png)|Passed|
 |5|Redirected to logout page|[SM/MD/LG](../images/testing/user_story/test13_5.png)|Passed|
 |5.1|Success message "You have signed out"|[SM/MD/LG](../images/testing/user_story/test13_5_1.png)|Passed|
-||Name under account icon change to "Account"|[SM/MD/LG](../images/testing/user_story/test13_5_1a.png)|Passed|
+||Name under account icon change to "Account"|[SM/MD/LG](../images/testing/user_story/test13_5_1.png)|Passed|
 
 ## Testing of Feature 14 - Privacy policy
 Testing is covered in Feature 2-Footer
