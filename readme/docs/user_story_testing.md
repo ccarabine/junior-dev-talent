@@ -569,38 +569,38 @@ __
 1.  Sign in as a normal user, Click on the account icon in the nav bar and select my profile from the drop down menu</br>
 2. Navigate to my profile, click edit profile</br>
 2.1 Update all fields, click update information</br>
-3. Navigate to my profile, click delete account</br>
-3.1 Click back</br>
-3.2 Click delete account, click confirm</br>
-4. Navigate to my profile, click billing and order details</br>
-4.1 Click on edit account details</br>
-4.2 Change some of the fields data, click update information</br>
-5. Navigate to my profile</br>
-6. Navigate to my profile, click on order number link</br>
-7. Navigate to my profile, enter "mike" in the url</br>
-8. Log in to django admin, click on profile and the user to edit, update a field, click save, navigate to my profile on the site</br>
-
+3. Navigate to my profile, click billing and order details</br>
+3.1 Click on edit account details</br>
+3.2 Change some of the fields data, click update information</br>
+4. Navigate to my profile, account details</br>
+4.1. Navigate to my profile, account details, click on order number link</br>
+5. Navigate to my profile, enter "mike" in the url</br>
+6. Log in to django admin, click on profile and the user to edit, update phone number to 07773323575, click save, navigate to my profile on the site</br>
+7. Navigate to my profile, click delete account</br>
+7.1 Click back</br>
+7.2 Click delete account, click confirm</br>
 
 This action was tested on a not logged user and logged in user </br>
 
 Action|Expected result| Actual result| Status|
 ------------ | ------------ | ------------ |------------ |
-|1| My profile display with a description in red with the fields not entered|[Result](../images/testing/user_story/test11.png)|Passed|
+|1| My profile display with a description in red with the fields not entered|[Result](../images/testing/user_story/test11_1.png)|Passed|
 |2| Edit profile template displayed with fields displayed|[Result](../images/testing/user_story/test11_2.png)|Passed|
 |2.1| My profile template displayed with updated data|[Result](../images/testing/user_story/test11_2_1.png)|Passed|
-||Success message displayed “Profile updated succesfully” |[Result](../images/testing/user_story/test11_2_1a.png)|Passed|
-|3| Delete account template displayed with username|[Result](../images/testing/user_story/test11_3.png)|Passed|
-|3.1| My profile template displayed|[Result](../images/testing/user_story/test11_3_1.png)|Passed|
-|3.2| Redirected to home page|[Result](../images/testing/user_story/test11_3_2.png)|Passed|
-||Success message displayed “Account deleted succesfully” |[Result](../images/testing/user_story/test11_3_2a.png)|Passed|
-|4| Billing and order details template displayed|[Result](../images/testing/user_story/test11_4.png)|Passed|
-|4.1| Edit Billing and order details template displayed with data displayed|[Result](../images/testing/user_story/test11_4_1.png)|Passed|
-|4.2| Redirected to account details page with updated data displayed|[Result](../images/testing/user_story/test11_4_2.png)|Passed|
-||Success message displayed “Profile updated succesfully” |[Result](../images/testing/user_story/test11_4_2a.png)|Passed|
-|5| Order history displayed|[Result](../images/testing/user_story/test11_5.png)|Passed|
-|6| Order information displayed|[Result](../images/testing/user_story/test11_6.png)|Passed|
-|7| 404 error page displayed|[Result](../images/testing/user_story/test11_7.png)|Passed|
-|8| Updated profile data displayed |[Result](../images/testing/user_story/test11_8.png)|Passed|
+||Success message displayed “Profile updated succesfully” |[Result](../images/testing/user_story/test11_2_1.png)|Passed|
+|3| Billing and order details template displayed|[Result](../images/testing/user_story/test11_3.png)|Passed|
+|3.1| Edit Billing and order details template displayed with data displayed|[Result](../images/testing/user_story/test11_3_1.png)|Passed|
+|3.2| Redirected to account details page with updated data displayed|[Result](../images/testing/user_story/test11_3_2.png)|Passed|
+||Success message displayed “Profile updated succesfully” |[Result](../images/testing/user_story/test11_3_2.png)|Passed|
+|4| Order history displayed|[Result](../images/testing/user_story/test11_4.png)|Passed|
+|4.1| Order information displayed|[Result](../images/testing/user_story/test11_6.png)|Passed|
+|5| 404 error page displayed|[Result](../images/testing/user_story/test11_7.png)|Passed|
+|6| Django admin change user profile |[Result](../images/testing/user_story/test11_6.png)|Passed|
+|6a| Updated profile data displayed |[Result](../images/testing/user_story/test11_6a.png)|Passed|
+|7| Delete account template displayed with username|[Result](../images/testing/user_story/test11_7.png)|Passed|
+|7.1| My profile template displayed|[Result](../images/testing/user_story/test11_7_1.png)|Passed|
+|7.2| Redirected to home page|[Result](../images/testing/user_story/test11_7_2.png)|Passed|
+||Success message displayed “Account deleted succesfully” |[Result](../images/testing/user_story/test11_7_2.png)|Passed|
 
 ## Testing of Feature 12 - Candidate skills
 - 3.11. As a logged-in site user I can add a skill so that i can add a skill to my profile

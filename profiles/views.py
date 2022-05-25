@@ -340,3 +340,7 @@ class DeleteAccountView(SuccessMessageMixin, DeleteView):
     template_name = "profiles/delete_account.html"
     success_url = reverse_lazy("home")
     success_message = "Account and Profile deleted"
+
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
+        return super(DeleteAccountView, self).delete(request, *args, **kwargs)

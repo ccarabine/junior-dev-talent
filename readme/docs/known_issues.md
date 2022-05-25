@@ -426,3 +426,42 @@ ___
 - **Corrective Action:** 
 1. Changed to pound sign
 ___
+
+
+- **Issue 14 :** 
+
+    SM/MD/LG - on delete account page Feature 11.7
+    Footer doesn't stay at bottom of page
+
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of issue](../images/testing/user_story/issues/test11_7_issues.png)
+
+</details>
+
+<br>
+
+- **Corrective Action:** 
+
+Reorganise code and put h-100 in correct place
+___
+
+- **Issue 15 :** 
+
+    SM/MD/LG - on delete account page, when the user clicks on delete acccount, no success message is displayed Feature 11.7.2
+
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of issue](../images/testing/user_story/issues/test11_7_2_issues.png)
+
+</details>
+
+<br>
+
+- **Corrective Action:** 
+
+Add delete function success message in the class based view
+___
+
