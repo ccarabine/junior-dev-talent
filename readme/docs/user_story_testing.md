@@ -425,24 +425,24 @@ ___
 1.2.  Click on mentorships</br>
 2.  Navigate to Growth hub, click on "Trusted by leaders in technology - Introduction to C++ - 3 hours"</br>
 3.  Click on add to basket</br>
-4. Navigate to search bar in the growth hub, type in "AWS" and click on the search icon
-4a. Navigate to search bar in the growth hub, type in "AWS21" and click on the search icon
-5. Navigate to Growth hub, click on the pagination bar, number 2
-6. Navigate to Growth hub, click on "sort by", Category (A-Z)"
-6.1. Navigate to Growth hub, click on "sort by", Name (A-Z)"
-6.2. Navigate to Growth hub, click on "sort by", Price (high to low)"
-7. Navigate to https://junior-dev-talent.herokuapp.com/products/599/
-8. Sign in as admin, Navigate to Growth hub
-8.1. Click on "+add product"
-8.1.1. Click on "add product"
-8.1.2. Type in name field "Python", Click on "add product"
-8.1.3. Type in price field "45.00", Click on "add product"
-8.1.4. Type in description field "Python essentials", Click on "add product"
-9. Navigate to Python essentials, click on "Update"
-9.1. Update name to "python essentials 3 hour", click update product
-10. Navigate to Python essentials, click on "Delete"
-10.1 Click cancel
-10.1.2 Click on "Delete", Delete Post
+4. Navigate to search bar in the growth hub, type in "AWS" and click on the search icon</br>
+4a. Navigate to search bar in the growth hub, type in "AWS21" and click on the search icon</br>
+5. Navigate to Growth hub, click on the pagination bar, number 2</br>
+6. Navigate to Growth hub, click on "sort by", Category (A-Z)"</br>
+6.1. Navigate to Growth hub, click on "sort by", Name (A-Z)"</br>
+6.2. Navigate to Growth hub, click on "sort by", Price (high to low)"</br>
+7. Navigate to https://junior-dev-talent.herokuapp.com/products/599/</br>
+8. Sign in as admin, Navigate to Growth hub</br>
+8.1. Click on "+add product"</br>
+8.1.1. Click on "add product"</br>
+8.1.2. Type in name field "Python", Click on "add product"</br>
+8.1.3. Type in price field "45.00", Click on "add product"</br>
+8.1.4. Type in description field "Python essentials", Click on "add product"</br>
+9. Navigate to Python essentials, click on "Edit"</br>
+9.1. Update name to "python essentials 3 hour", click edit product</br>
+10. Navigate to Python essentials, click on "Delete"</br>
+10.1 Click cancel</br>
+10.1.2 Click on "Delete", Delete Post</br>
 
 
 This action was tested on a not logged user and logged in user </br>
@@ -450,31 +450,30 @@ This action was tested on a not logged user and logged in user </br>
 Action|Expected result| Actual result| Status|
 ------------ | ------------ | ------------ |------------ |
 |1| Products displayed by courses| [LG](../images/testing/user_story/test8_1.png)|Passed|
-|1.1| Products displayed by events| [LG](../images/testing/user_story/test8_1.1.png)|Passed|
-|1.2| Products displayed by Mentorships |[LG](../images/testing/user_story/test8_1.2.png)|Passed|
+|1.1| Products displayed by events| [LG](../images/testing/user_story/test8_1_1.png)|Passed|
+|1.2| Products displayed by Mentorships |[LG](../images/testing/user_story/test8_1_2.png)|Passed|
 |2| Redirected to detail view| [LG](../images/testing/user_story/test8_2.png)|Passed|
 |3| Basket value increase| [LG](../images/testing/user_story/test8_3.png)|Passed|
-||Success message displayed “Updated Trusted by leaders in technology - Introduction to C++ - 3 hours quantity to 3” |[LG](../images/testing/user_story/test8_3a.png)|Passed|
-|4| product list displayed by search term |[LG](../images/testing/user_story/test8_4.png)|Passed|
-|4a| no products displayed, "0 Products found for "AWS21" |[LG](../images/testing/user_story/test8_4a.png)|Passed|
-|5| page 2 of products displayed |[LG](../images/testing/user_story/test8_5.png)|Passed|
-|6| Products displayed by Alphabetically A-Z|[LG](../images/testing/user_story/test8_6.png)|Passed|
+||Success message displayed “Added Trusted by leaders in technology - Introduction to C++ - 3 hours to your basket” |[LG](../images/testing/user_story/test8_3.png)|Passed|
+|4| Product list displayed by search term |[LG](../images/testing/user_story/test8_4.png)|Passed|
+|4a| No products displayed, "0 Products found for "AWS21" |[LG](../images/testing/user_story/test8_4a.png)|Passed|
+|5| Page 2 of products displayed |[LG](../images/testing/user_story/test8_5.png)|Passed|
+|6| Products displayed by category alphabetically A-Z|[LG](../images/testing/user_story/test8_6.png)|Passed|
 |6.1| Products displayed by Name A-Z|[LG](../images/testing/user_story/test8_6_1.png)|Passed|
 |6.2.| Products displayed by Price High to low|[LG](../images/testing/user_story/test8_6_2.png)|Passed|
-|7.| 404 error page displayed|[LG](../images/testing/user_story/test8_6_2.png)|Passed|
+|7.| 404 error page displayed|[LG](../images/testing/user_story/test8_7.png)|Passed|
 |8.| Growth hub templage displayed with "+Add Product" button displayed|[LG](../images/testing/user_story/test8_8.png)|Passed|
-|8.1.| Add Product page displayed"| [LG](../images/testing/user_story/test8_6_2.png)|Passed|
-|8.1.1|Validation error message" Please fill this field - referring to  name field |[LG](../images/testing/user_story/test8_1_1.png)|Passed|
-|8.1.2|Validation error message" Please fill this field - referring to  price field |[LG](../images/testing/user_story/test8_1_2.png)|Passed|
-|8.1.3|Validation error message" Failed to add product. Please ensurethe form is valid " |[LG](../images/testing/user_story/test8_1_3.png)|Passed|
-|8.1.4|Success message displayed “Successfully added product!” |[LG](../images/testing/user_story/test8_1_4.png)|Passed|
-|9|Success message displayed “You are editing Python essentials” |[LG](../images/testing/user_story/test9.png)|Passed|
-|9.1|Success message displayed “Successfully updated product!” |[LG](../images/testing/user_story/test9_1.png)|Passed|
-|9.2|Redirected to Product - with updated field|[LG](../images/testing/user_story/test9_2.png)|Passed|
-|10.|Redirected to delete product - with product name displayed|[LG](../images/testing/user_story/test10.png)|Passed|
-|10.1.1|Product detail view displayed|[LG](../images/testing/user_story/test10_1_1.png)|Passed|
-|10.1.2|Product detail view displayed|[LG](../images/testing/user_story/test10_1_2.png)|Passed|
-|10.1.3.|Success message displayed “Product deleted successfully” |[LG](../images/testing/user_story/test10_1_3.png)|Passed|
+|8.1.| Add Product page displayed"| [LG](../images/testing/user_story/test8_8_1.png)|Passed|
+|8.1.1|Validation error message" Please fill this field - referring to  name field |[LG](../images/testing/user_story/test8_8_1_1.png)|Passed|
+|8.1.2|Validation error message" Please fill this field - referring to  price field |[LG](../images/testing/user_story/test8_8_1_2.png)|Passed|
+|8.1.3|Validation error message" Failed to add product. Please ensurethe form is valid " |[LG](../images/testing/user_story/test8_8_1_3.png)|Passed|
+|8.1.4|Success message displayed “Successfully added product!” |[LG](../images/testing/user_story/test8_8_1_4.png)|Passed|
+|9|Success message displayed “You are editing Python essentials” |[LG](../images/testing/user_story/test8_9.png)|Passed|
+|9.1|Success message displayed “Successfully updated product!” |[LG](../images/testing/user_story/test8_9_1.png)|Passed|
+|9.2|Redirected to Product - with updated field|[LG](../images/testing/user_story/test8_9_1.png)|Passed|
+|10.|Redirected to delete product - with product name displayed|[LG](../images/testing/user_story/test8_10.png)|Passed|
+|10.1|Product detail view displayed|[LG](../images/testing/user_story/test8_10_1.png)|Passed|
+|10.2.|Success message displayed “Product deleted successfully” |[LG](../images/testing/user_story/test8_10_2.png)|Passed|
 
 ## Testing of Feature 9 - Ecommerce Store - Basket
 - 6.1. As a site user I can always see the total price of my basket in the navigation bar, so that I know what the total cost will be when on the products page

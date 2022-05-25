@@ -370,3 +370,21 @@ ___
 - **Corrective Action:** 
 1. Add h-100 to container
 ___
+
+- **Issue 11 :** 
+
+    LG - on product detail page Feature 8.2
+    1. Add to basket button going on next line on lg
+
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of issue](../images/testing/user_story/issues/test8_2_issues.png)
+
+</details>
+
+<br>
+
+- **Corrective Action:** 
+1. Change col-4 to 6
+___
