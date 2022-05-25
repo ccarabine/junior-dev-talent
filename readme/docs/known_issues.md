@@ -407,3 +407,22 @@ ___
 - **Corrective Action:** 
 1. changed class from btn-black to btn-blue
 ___
+
+
+- **Issue 13 :** 
+
+    Email confirmation feature 10.2.2.9a
+    1. Has dollar sign instead of pound sign on the total
+
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of issue](../images/testing/user_story/issues/test10_2_2_9a_issues.png)
+
+</details>
+
+<br>
+
+- **Corrective Action:** 
+1. Changed to pound sign
+___

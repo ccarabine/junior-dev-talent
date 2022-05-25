@@ -511,24 +511,41 @@ ___
 
 **Action** 
 1.  Navigate to Growth hub, click on C++ product, click add to basket, click on basket icon and click on secure checkout</br>
-2.  Navigate to checkout, enter in all fields
-3. Log in, Navigate to checkout
-3.1. Update email address field to chris@gmail.com, click save this invoice information to my profile, enter payment details, click complete order.  Then go back to the growth hub, add a product, click add to basket, click goto checkout
-4.  Navigate to checkout, enter in all fields, enter payment card number "4242 4242 424 2424, month 2424 then cvc 242", click complete order
-5. Navigate to https://junior-dev-talent.herokuapp.com/checkout123
+2.1  Navigate to checkout, click on complete order</br>
+2.2.1  Complete full name field, click on complete order</br>
+2.2.2  Complete email address field, click on complete order</br>
+2.2.3  Complete phone number field, click on complete order</br>
+2.2.4  Complete Street Address 1 field, click on complete order</br>
+2.2.5  Complete Street Address 2 field, click on complete order</br>
+2.2.6  Complete town or city field, click on complete order</br>
+2.2.7  Complete Country field, click on complete order</br>
+2.2.8  Enter in payment details "42424", click on complete order</br>
+2.2.9  Enter payment card number "4242 4242 424 2424, month 2424 then cvc 242", click complete order</br>
+2.3. Login in and navigate to the growth hub, add aws course, click on basket, click on check out</br>
+2.3a. Complete fields, click on save this invoice information to my profile and click complete order</br>
+2.3. Login in and navigate to the growth hub, add aws course, click on basket, click on check out</br>
+2.4. Navigate to https://junior-dev-talent.herokuapp.com/checkout123</br>
 
 This action was tested on a not logged user and logged in user </br>
 
 Action|Expected result| Actual result| Status|
 ------------ | ------------ | ------------ |------------ |
-|1| checkout template displayed, order summary displayed| [LG](../images/testing/user_story/test10_1.png)|Passed|
-|2| checkout form displayed| [LG](../images/testing/user_story/test10_2.png)|Passed|
-|3| Saved fields in users template displayed| [LG](../images/testing/user_story/test10_3.png)|Passed|
-|3.1| updated field displayed in checkout form| [LG](../images/testing/user_story/test10_3_1.png)|Passed|
-|4| Redirected to checkout sucess template| [LG](../images/testing/user_story/test10_4.png)|Passed|
-|4.1| Success message displayed “Order successfully processed! ” | [LG](../images/testing/user_story/test10_4_1.png)|Passed|
-|4.1.2|Email received| [LG](../images/testing/user_story/test10_4_1_2.png)|Passed|
-|5| 404 error page displayed | [LG](../images/testing/user_story/test10_5.png)|Passed|
+|1| Checkout template displayed, order summary displayed| [LG](../images/testing/user_story/test10_1.png)|Passed|
+|2.1| Validation error message" Please fill in this field" refering to the full name field| [LG](../images/testing/user_story/test10_2_1.png)|Passed|
+|2.2.1| Validation error message" Please fill in this field" refering to the email address field| [LG](../images/testing/user_story/test10_2_2_1.png)|Passed|
+|2.2.2| Validation error message" Please fill in this field" refering to the phone number field| [LG](../images/testing/user_story/test10_2_2_2.png)|Passed|
+|2.2.3| Validation error message" Please fill in this field" refering to the Street address 1 field| [LG](../images/testing/user_story/test10_2_2_3.png)|Passed|
+|2.2.4| Validation error message" Please fill in this field" refering to the Street address 2 field| [LG](../images/testing/user_story/test10_2_2_4.png)|Passed|
+|2.2.5| Validation error message" Please fill in this field" refering to the town or city field| [LG](../images/testing/user_story/test10_2_2_5.png)|Passed|
+|2.2.6| Validation error message" Please fill in this field" refering to the country field| [LG](../images/testing/user_story/test10_2_2_6.png)|Passed|
+|2.2.7| Validation error message" Please fill in this field" refering to the Credit card number| [LG](../images/testing/user_story/test10_2_2_7.png)|Passed|
+|2.2.8| Validation error message" Your card number is incomplete| [LG](../images/testing/user_story/test10_2_2_8.png)|Passed|
+|2.2.9| Success message displayed “Order successfully processed! ” | [LG](../images/testing/user_story/test10_2_2_9.png)|Passed|
+|2.2.9a|Email received| [LG](../images/testing/user_story/test10_2_2_9a.png)|Passed|
+|2.3|Checkout displayed with all fields empty| [LG](../images/testing/user_story/test10_3.png)|Passed|
+|2.3.1|Redirected to checkout success page| [LG](../images/testing/user_story/test10_3_1.png)|Passed|
+|2.3.2|Checkout displayed with all fields complete| [LG](../images/testing/user_story/test10_3_2.png)|Passed|
+|2.4| 404 error page displayed | [LG](../images/testing/user_story/test10_4.png)|Passed|
 
 
 ## Testing of Feature 11 - My profile
