@@ -723,3 +723,5 @@ Testing is covered in Feature 2-Footer
 
 10.1. As a site user who is directed to a non-existent page or resource, I can redirected to the relevant error page
 
+Testing is covered in the above tests
+
