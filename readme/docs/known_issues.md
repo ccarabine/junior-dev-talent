@@ -1,6 +1,6 @@
 ## Known issues during development </a>
 
-[Click here to go to the Readme file ](https://github.com/ccarabine/junior-dev-talent/blob/main/readme/docs/known_issues.md)
+[Click here to go to the Readme file ](https://github.com/ccarabine/junior-dev-talent/blob/main/README.md)
 
 ### During development, the following issues were identified by user feedback and corrected
 ---
