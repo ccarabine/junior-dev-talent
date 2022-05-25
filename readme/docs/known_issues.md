@@ -516,9 +516,14 @@ ___
 
 - **Corrective Action:** 
 
-add css to background colour and colour to - **Issue 17 :** 
+add css to background colour and colour to .allauth-form-inner-content butto
+
+
+- **Issue 19 :** 
 
     SM/MD/LG - Sign up page sign up button is black should be midnight blue Feature 13.1
+
+
 
 <details>
 <summary>Click here to view image </summary>
@@ -535,6 +540,26 @@ add css to background colour and colour to .allauth-form-inner-content input[typ
 
 ___
  
+- **Issue 20 :** 
 
-___
+    SM/MD/LG - Toast remains on screen until user click x
+
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of issue](../images/testing/user_story/issues/test20_issues.png)
+
+</details>
+
+<br>
+
+- **Corrective Action:** 
+Add code to base.js to hide toast after 5000 ms
+<details>
+<summary>Click here to view issue fixed </summary>
+
+![screenshot of fix issue](../images/testing/user_story/issues/test20_fix.png)
+
+</details>
+
 
