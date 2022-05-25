@@ -465,3 +465,20 @@ ___
 Add delete function success message in the class based view
 ___
 
+- **Issue 16 :** 
+
+    SM/MD/LG - My profile page, add skill page -user  can submit an empty form Feature 12.1.3
+
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of issue](../images/testing/user_story/issues/test12_1_3_issues.png)
+
+</details>
+
+<br>
+
+- **Corrective Action:** 
+
+Add blank/Null = False to name field in Skill Model
+___

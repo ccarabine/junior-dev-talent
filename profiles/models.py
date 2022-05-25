@@ -142,7 +142,7 @@ class Skill(models.Model):
         )
     name = models.CharField(
         max_length=200,
-        blank=True,
+        blank=False,
         null=True
         )
     created = models.DateTimeField(

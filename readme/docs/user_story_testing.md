@@ -617,10 +617,11 @@ ___
 1.3 Click on add skill, click submit</br>
 1.4 Type "python", click submit</br>
 2. Navigate to my profile, goto a skill and click edit</br>
-2.1. Change skill to python 3.10</br>
+2.1. Change skill to python 3.10 and click submit</br>
 3. Navigate to my profile, goto a skill and click delete</br>
-3.1 Click on confirm</br>
-4. Log in to django admin, click on skills and the skill to edit, update a field, click save, navigate to comment on the site</br>
+3.1 Click on back</br>
+3.2 Click on delete, then confirm</br>
+4. Log in to django admin, click on skills and the skill to edit, update a field from python 5.11 to 5.12, click save, navigate to comment on the site</br>
 
 This action was tested on a not logged user and logged in user </br>
 
@@ -631,14 +632,16 @@ Action|Expected result| Actual result| Status|
 |1.2.|My profile template displayed|[Result](../images/testing/user_story/test12_1_2.png)|Passed|
 |1.3.| Validation error message "Please fill this field" - referring to name|[Result](../images/testing/user_story/test12_1_3.png)|Passed|
 |1.4|Redirected to my profile - skill displayed |[Result](../images/testing/user_story/test12_1_4.png)|Passed|
-||Success message displayed “Skill was added successfully” |[Result](../images/testing/user_story/test12_1_4a.png)|Passed|
+||Success message displayed “Skill was added successfully” |[Result](../images/testing/user_story/test12_1_4.png)|Passed|
 |2|Redirected to update skill template - skill displayed |[Result](../images/testing/user_story/test12_2.png)|Passed|
 |2.1|Redirected to my profile - updated skill displayed |[Result](../images/testing/user_story/test12_2_1.png)|Passed|
-||Success message displayed “Skill was updated successfully” |[Result](../images/testing/user_story/test12_1_1a.png)|Passed|
+||Success message displayed “Skill was updated successfully” |[Result](../images/testing/user_story/test12_1_1.png)|Passed|
 |3|Redirected to delete skill template - skill displayed |[Result](../images/testing/user_story/test12_3.png)|Passed|
-|3.1|Redirected to my profile - skill not displayed |[Result](../images/testing/user_story/test12_3_1.png)|Passed|
-||Success message displayed “Skill was deleted successfully” |[Result](../images/testing/user_story/test12_3_1a.png)|Passed|
-|4.|Updated skill displayed |[Result](../images/testing/user_story/test12_4.png)|Passed|
+|3.1|Redirected to my profile |[Result](../images/testing/user_story/test12_3_1.png)|Passed|
+|3.2|Redirected to my profile - skill not displayed (deleted) |[Result](../images/testing/user_story/test12_3_2.png)|Passed|
+||Success message displayed “Skill was deleted successfully” |[Result](../images/testing/user_story/test12_3_2.png)|Passed|
+|4.|Django admin edit skill |[Result](../images/testing/user_story/test12_4.png)|Passed|
+|4.1|Updated skill displayed on site|[Result](../images/testing/user_story/test12_4_1.png)|Passed|
 
 ## Testing of Feature 13 - Account management
 - 3.1. As a site user I can sign up so that I have a role-based login and community functionality
