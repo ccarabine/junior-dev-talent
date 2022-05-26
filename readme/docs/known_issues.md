@@ -588,4 +588,29 @@ Change code from form.submit() to form[0].requestSubmit();
 </details>
 
 
+___
+ 
+- **Issue 22 :** 
+
+    SM/MD/LG - Talent center - the pagination bar and footer goes over the profile cards
+
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of issue](../images/testing/user_story/issues/test22_issues.png)
+
+</details>
+
+<br>
+
+- **Corrective Action:** 
+Remove h-100
+
+<details>
+<summary>Click here to view issue fixed </summary>
+
+![screenshot of fix issue](../images/testing/user_story/issues/test22_fix.png)
+
+</details>
+
 

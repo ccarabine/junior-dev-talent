@@ -877,7 +877,7 @@ The colour palette website provided colour palette suggestions, from which I cho
 
 ### **Typography**
 
-The following font Roboto have been selected to ensure the text is easy to read, add value to the text, and invoke user to perceive a positive emotion from the text. The fonts chosen are generic and therefore should appeal to any demographic/user. It is rated as Google's best font.
+The following font Roboto have been selected to ensure the text is easy to read, add value to the text, and invoke user to perceive a positive emotion from the text. The fonts chosen are generic and therefore should appeal to any demographic/user. It is rated as Google's best font.I chose font Lato as a fallback
 
 ![screenshot of google fonts](readme/images/surface/roboto_font.png)
 

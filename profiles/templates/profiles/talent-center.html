@@ -28,7 +28,7 @@
             </div>
         </div>
         {% if request.user.user_profile.is_hiring_manager or request.user.is_superuser %}
-            <div class="h-100">
+            <div>
                 <div class="row justify-content-center my-4 mx-4 px-3 py-3 background-grey">
                     {% for profile in profiles %}
                         {% if profile.is_hiring_manager %}
