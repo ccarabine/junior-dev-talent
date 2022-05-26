@@ -42,10 +42,10 @@ class TestSkillForm(TestCase):
 
     def test_no_fields_are_required(self):
         """
-        This test tests the name field is not required
+        This test tests the name field is required
 
         """
         form = SkillForm({
             'name': '',
             })
-        self.assertTrue(form.is_valid())
+        self.assertFalse(form.is_valid())

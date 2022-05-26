@@ -136,6 +136,7 @@ I selected the final key words to use by considering the relevance of each optio
 To enhance ranking I have incorporated relevant external links onto the site to further increase the authority in presenting Junor Dev’s as a trusted site, adding value to the user experience and in turn encouraging visitors to remain on the site for longer.</br>
 A link for ‘Useful membership organizations to expand your personal network’ has also been added to the site footer. The link description has carefully been crafted utilizing a keyword. I selected and included relevant associations as valuable/trusted membership organizations which I believe will add value to our target audience through useful resources/rich content and networking opportunities.</br>
 
+[Table of Contents ](#home)
 
 ### **User stories**
 
@@ -359,6 +360,8 @@ To achieve the strategy goals, the following features not highlighted in red wil
 ![screenshot of strategy trade offs 2/3](readme/images/trade_offs/trade_offs_3.png)
 </details>
 
+[Table of Contents ](#home)
+
 ---
 
 ## iii. Structure <a name="structure"></a> 
@@ -473,6 +476,8 @@ I have structured the templates into the following files and have used the base 
 | Error pages                                                                                                                              |                                                                                                                                                      |                                                                                                                                     | in junior-dev-talent/templates/errors  |
 | 404error page                                                                                                                            | Page consists of a message to let the user know that the url doesn't exist                                                                           | Non logged in users & logged in                                                                                                     | 404error.html                          |
 | 500 error page                                                                                                                           | Page consists of a message to let the user know that their has been an server error                                                                  | Non logged in users & logged in                                                                                                     | 500error.html                          |
+
+[Table of Contents ](#home)
 
 ---
 ## Code Structure 
@@ -762,6 +767,7 @@ e.g.on the Post model topic is the Foreign Key to the Topic model
 -	get_absolute_url(self return f”/topic/{self.post.id}- converts the object in to a url string  “topic/post/1” for example
 
 [Table of Contents ](#home)
+
 ---
 
 
@@ -857,6 +863,8 @@ Register as a hiring manager|[SM/MD/LG](readme/images/balsamiq/talent_center_pro
 Talent Center benefits |[LG](readme/images/balsamiq/talent_center_subscription_lg.png)
 Talent Center benefits |[MD/LG](readme/images/balsamiq/talent_center_subscription_md_lg.png)
 Talent Center benefits |[SM](readme/images/balsamiq/talent_center_subscription_sm.png)
+
+[Table of Contents ](#home)
 
 ---
 ## v. Surface <a name="surface"></a> 
@@ -1515,7 +1523,7 @@ ___
 
 # 3. Testing <a name="testing"></a> 
 
-## i. User stories testing  <a name="user-stories-testing"></a>
+## i. Manual testing (User stories) <a name="user-stories-testing"></a>
 
 User stories are tested with the current features. All user stories passed the tests.
 

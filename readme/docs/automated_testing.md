@@ -164,3 +164,12 @@ ___
 ___
 ## Results from tests        
 ![screenshot of automated testing](../images/testing/automated_testing_results.png)
+
+## Results from coverage 1/3        
+![screenshot of coverage](../images/testing/coverage_report1.png)
+
+## Results from coverage 2/3        
+![screenshot of coverage](../images/testing/coverage_report2.png)
+
+## Results from coverage 3/3        
+![screenshot of coverage](../images/testing/coverage_report3.png)
