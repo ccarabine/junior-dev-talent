@@ -562,4 +562,30 @@ Add code to base.js to hide toast after 5000 ms
 
 </details>
 
+___
+ 
+- **Issue 21 :** 
+
+    SM/MD/LG - In the basket, if a user types 101 in the quanity field, the basket updates which is should only allow values between 1-99
+
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of issue](../images/testing/user_story/issues/test21_issues.png)
+
+</details>
+
+<br>
+
+- **Corrective Action:** 
+Change code from form.submit() to form[0].requestSubmit();
+
+<details>
+<summary>Click here to view issue fixed </summary>
+
+![screenshot of fix issue](../images/testing/user_story/issues/test21_fix.png)
+
+</details>
+
+
 
