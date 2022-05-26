@@ -2,8 +2,14 @@
 
 Overview - to complete
 
+You can test the card payment functionality without making a purchase. Using the followiing card details:</br>
+
+4242 4242 4242 4242 - 424
+
+
 **View the live site [here](https://junior-dev-talent.herokuapp.com/)**
 
+![screenshot of Responsive Image](readme/images/marketing/site_image.png)
 ___
 # Table of Contents <a name="Home"></a>
 
@@ -24,25 +30,116 @@ ___
     ii.  [Automated testing](#automated-testing)<br>
     iii.  [Known issues during development and testing](#known-issues)<br>
     iv. [Validation testing  ](#validation-testing)<br>
-    v. [Javascript testing](#js-testing)<br>
-    vi. [Unfixed bugs](#unfixed-bugs)<br>
+    v. [Unfixed bugs](#unfixed-bugs)<br>
 4. [Deployment](#deployment)<br>
 5. [Technologies Used](#technology-used)<br>
 6. [Credits](#credits)<br>
 7. [Acknowledgements](#acknowledgements)<br>
 
 # 1. User Experience (UX) <a name="ux"></a> 
-### **Project goals:**
 
-### **Site owner goal:**
-
-### **User goals:**
 ---
 
 ## i. Strategy <a name="strategy"></a>
 
-## User stories
-### **1. Functionality across site(EPIC)**
+### **Project goals:** 
+to do 
+
+### **Site owner goal:**
+to do 
+### **User goals:**
+to do 
+
+### **Agile methodology - Kanban board:**
+I used github pages projects and issues for my kanban board for this project. I broke down the columns into "Backlog", "To do", "In progress" and "Done".</br>
+I worked in iterations/sprints assigning tasks(userstories) which would give the highest value to the client first. Each iteration i would move the tasks from the "backlog" to the "to do" column, giving it a weight tag of "Must have", "should have", "could have", then moving the tasks to the "to do" column.  When i finished the task i would move them to the done column and close the task.</br>
+At the end of the iteration i would review the spirit, any tasks that was not complete i then moved them back to the "backlog" column and would reassess the tasks for the next iteration.</br>
+**[The completed Kanban board can be viewed here](https://github.com/ccarabine/junior-dev-talent/projects/1)**
+
+### **Business Model**
+Junior Dev’s ‘Growth Hub’ is a business to consumer (B2C) eCommerce platform created to sell relevant courses, events, and mentorships to a diverse target audience of junior developers, programmers, engineers, and coders of all demographics seeking compelling engagement, interaction, support and a job role within the industry.</br>
+
+### **Web Marketing Strategy**
+**Deployed Search Engine Optimization (SEO) Techniques**</br>
+To convert sales, I have implemented an initial marketing strategy utilizing both content marketing and Search Engine Optimization (SEO), plus chosen SEO techniques to improve audience as follows:<br>
+- All pages on the site can be reached by a link from another findable page
+- I have included a Meta description tag and a keyword tag within the application HTML
+- A site title has been incorporated into the parent template
+- As I have not utilized any paid links or distrusted content, there has been no need to define the relationship between a current document and a linked document.
+- I have included a rel=”noopener” attribute to the external Facebook link on the site footer to ensure Google does not include this link within its assessment of Junior Dev’s search engine ranking.
+- All sitemap links are canonical utilizing a free online sitemap generator **[www.xml-sitemaps.com](https://www.xml-sitemaps.com)**
+- Descriptive metadata has been utilized throughout the site to reflect the sites purpose.
+
+
+#### 1.	Content Marketing 
+To promote Junior Dev’s courses, events, and mentorship programmes effectively, I have utilized content marketing in the creation of a Facebook page and have facilitated email marketing campaigns via Mail Chimp to strategically attract and engage a diverse/wide audience, whilst crucially converting traffic into paying customers.</br>
+
+- Social Media- Facebook:</br>
+The Facebook page will attract visitors via organic growth initially and provides the ideal coverage for an audience rich in diversity, enabling Junior Dev to harness popularity and sharing to spread the brand. </br>
+<details>
+<summary>Facebook business page</summary>
+
+![Facebook business page](readme/images/marketing/facebook_business.png)
+</details>
+
+</br>
+
+- Email Marketing- Mail Chimp:</br>
+The email marketing campaigns will be facilitated via Mail Chimp using a standard subscription process and will be GDPR compliant, dictated by an ‘opt-in’.
+Both channels will provide compelling content for the wide/diverse target audience to continuously add value, enhance the user experience, and retain engagement, whilst recruiting new subscribers.</br>
+<details>
+<summary>Mail Chimp page</summary>
+
+![Mail Chimp](readme/images/marketing/mailchimp.png)
+</details>
+
+</br>
+
+- **Future strategy:**</br>
+Utilize key influencers and their followers already involved with Junior Dev, such as influential mentors/course tutors.</br>
+Create a loyalty discounting programme with discount codes for Junior Dev subscribers to feel supported. </br>
+Partner with other organizations such as large tech vendors to provide exclusive discounts/benefits for Junior Dev subscribers, utilizing their engaging marketing content/assets to continue talking to subscribers, always adding value.</br>
+Utilize paid social media campaigns to spread more coverage and brand awareness, for rapid growth and sales conversions.</br>
+Partner with tech accelerator progammes/incubators to increase Junior Dev’s member acquisition via other membership organizations membership bases.</br>
+Business subscription model for hiring managers to utilize the site as a cost-effective job recruitment tool to search and connect with junior developers.
+Analyze Google metrics </br>
+
+
+#### 2.	Search Engine Optimization (SEO)
+I have implemented an SEO strategy via keywords to ensure the search engine ranks Junior Dev’s website to the highest possible position on the search engine page.</br>
+My strategy has been aligned to Google as this is the most used search engine.</br>
+To determine the chosen Short-tail/Long-tail keywords, I deployed keyword research via Google.</br>
+The first step was to ‘brain dump’ and identify important words/topics relevant to Junior Dev’s business, prioritizing the key topics Junior Dev’s would like to be ranked highly for such as attracting web traffic to subscribe, engage and convert to paid sales.</br>
+The key topics were reviewed for key words.</br>
+By searching key words, I utilized Googles ‘People also ask’ and ’Related Searches’ functionality to discover alternative commonly used Long-tail/Short-tail keywords to incorporate into the site content.</br>
+I selected the final key words to use by considering the relevance of each option, ensuring each one aligned with Junior Dev’s product offering/value proposition and eliminating generic keywords that would not be optimized.</br>
+<details>
+<summary>Chosen keywords</summary>
+
+![Chosen keywords](readme/images/marketing/keywords1.png)
+</details>
+
+<details>
+<summary>Demonstration of searching for Short-tail keyword and how you selected a ‘People also ask’ Long-tail keyword to weave into content</summary>
+
+![demonstration of searching for Short-tail keyword and how you selected a ‘People also ask’ Long-tail keyword to weave into content](readme/images/marketing/keywords4.png)
+</details>
+
+<details>
+<summary>Seo keyword on the site</summary>
+
+![Seo keyword on the site](readme/images/marketing/keywords3.png)
+</details>
+</br>
+
+#### 2.	External Links to Relevant Websites
+To enhance ranking I have incorporated relevant external links onto the site to further increase the authority in presenting Junor Dev’s as a trusted site, adding value to the user experience and in turn encouraging visitors to remain on the site for longer.</br>
+A link for ‘Useful membership organizations to expand your personal network’ has also been added to the site footer. The link description has carefully been crafted utilizing a keyword. I selected and included relevant associations as valuable/trusted membership organizations which I believe will add value to our target audience through useful resources/rich content and networking opportunities.</br>
+
+
+### **User stories**
+
+#### **1. Functionality across site(EPIC)**
 
 1.1 As a **site user** I can **intuitively navigate the site** so that **the layout of the site is consistent**
 
@@ -54,9 +151,7 @@ ___
 
 1.5 As a **site user** I can **view the sites privacy policy**, so that **i can read more about the sites policy**
 
-1.6 As a **site user** I can **view the sites Terms of use policy**, so that **i can read more about the terms of use** 
-
-### **2.The home page(EPIC)**
+#### **2.The home page(EPIC)**
 
 2.1 As a **site user** I can **view the home page** so that **I can learn more about the website and its purpose**
 
@@ -68,7 +163,7 @@ ___
 
 2.4 As a **site user** I can **click on the talent center** so that **I can learn more about the service chosen and register**
 
-### **3. Account management(EPIC)**
+#### **3. Account management(EPIC)**
 
 **My Account**
 
@@ -112,7 +207,7 @@ ___
 
 3.19. As a **site user** who is **directed to a non-existent page or resource**, I can **redirected to the relevant error page**
 
-### **4. Forum(EPIC)**  
+#### **4. Forum(EPIC)**  
 
 4.1 As a **site user** I can **view the room topics** so I can **select a room of interest**
 
@@ -138,7 +233,7 @@ ___
 
 4.12. As a **site user** who is **directed to a non-existent page or resource**, I can **redirected to the relevant error page**
 
-### **5. E-commerce-Products(EPIC)**   
+#### **5. E-commerce-Products(EPIC)**   
 5.1. As a **site user** I can **click on categories to view** so that **i can view products by courses, mentor programmes and events**
 
 5.2. As a **site user** I can **click on a product** so I can **view learn more about the product**
@@ -154,7 +249,7 @@ ___
 5.7. As a **site user** who is **directed to a non-existent page or resource**, I can **redirected to the relevant error page**
 
 
-### **6. Basket(EPIC)**
+#### **6. Basket(EPIC)**
 
 6.1. As a **site user** I can **always see the total price of my basket in the navigation bar, so that I know what the total cost will be when on the products page**
 
@@ -166,7 +261,7 @@ ___
 
 6.5. As a **site user** who is **directed to a non-existent page or resource**, I can **redirected to the relevant error page**
 
-### **7. Checkout(EPIC)**
+#### **7. Checkout(EPIC)**
 
 7.1. As a **site user** i can **review my basket before i pay , so that i can change my mind or proceed with order**
 
@@ -180,7 +275,7 @@ ___
 
 7.6. As a **site user** who is **directed to a non-existent page or resource**, I can **redirected to the relevant error page**
 
-### **8.Talent center(EPIC)**
+#### **8.Talent center(EPIC)**
 
 8.1. As a **site user,** I can **register** so that **i can access the talent center to view candidate profiles**
 
@@ -198,7 +293,7 @@ ___
 
 
 
-### **9. Site admin(EPIC)**
+#### **9. Site admin(EPIC)**
 
 **Forum**
 
@@ -227,7 +322,7 @@ ___
 9.11. As a **site admin** I can **Manage skills in the django admin area ** so that **I can manage the site content**
 
 
-### **10. Authentication and error handling(EPIC)**
+#### **10. Authentication and error handling(EPIC)**
 
 10.1. As a **site user** who is **directed to a non-existent page or resource**, I can **redirected to the relevant error page**
 
@@ -263,6 +358,7 @@ To achieve the strategy goals, the following features not highlighted in red wil
 
 ![screenshot of strategy trade offs 2/3](readme/images/trade_offs/trade_offs_3.png)
 </details>
+
 ---
 
 ## iii. Structure <a name="structure"></a> 
@@ -281,7 +377,6 @@ I have structured the templates into the following files and have used the base 
 |                                                                                                                                          |                                                                                                                                                      |                                                                                                                                     |                                        |
 |                                                                                                                                          | The footer consists of the following links                                                                                                           |                                                                                                                                     |                                        |
 |                                                                                                                                          | A field for users to enter their email address to subscribe to the sites newsletter                                                                  |                                                                                                                                     |                                        |
-|                                                                                                                                          | Terms of use policy modal                                                                                                                            | Non logged in users & logged in                                                                                                     | includes/terms\_of\_use.html           |
 |                                                                                                                                          | Privacy policy modal                                                                                                                                 | Non logged in users & logged in                                                                                                     | includes/privacy\_policy.html          |
 |                                                                                                                                          | Facebook link - open in a new tab                                                                                                                    |                                                                                                                                     |                                        |
 |                                                                                                                                          |                                                                                                                                                      |                                                                                                                                     |                                        |
@@ -439,7 +534,7 @@ The code is spilt using the Django framework into the following apps, folders an
 -   Urls.py - Website urls related to the forum app
 -   Widgets.py - The widget handles the rendering of the HTML, and the extraction of data from a GET/POST dictionary that corresponds to the widget.
 
-    ### Folders
+### Folders
 -	Templates tags– product_tools.py 
 
 ### Profiles app (this app contains the functionality for the profiles app for the talent center and user profile information)
@@ -486,6 +581,7 @@ The code is spilt using the Django framework into the following apps, folders an
 
 
 ---
+
 # Database
 A relational database was used for this project.
 During development SQLite DB was used and for production Postgres was used as the main database, and for deployment all data was migrated to Heroku Postgres.
@@ -500,7 +596,9 @@ During development SQLite DB was used and for production Postgres was used as th
 </details>
 
 <br>
+
 ---
+
 <br>
 
 ## Models
@@ -811,6 +909,8 @@ Please refer to further details in credits section for specific images used with
 
 ## Existing features <a name="features-existing"></a>
 
+Images of the features can be found in the manual testing section
+
 ### **Feature 1 Navigation bar**
 
 Navigation bar is featured on all pages at the top of the screen<br>
@@ -852,7 +952,7 @@ This section will allow the user to easily navigate from page to page across all
 
 ___
 ### **Feature 2 Footer**
-The footer is displayed at the bottom of the page, Privacy Policy, terms of use, plus facebook link and newsletter subscription<br>
+The footer is displayed at the bottom of the page, Privacy Policy,  plus facebook link and newsletter subscription<br>
 The footer is valuable to the user as it provides important navigation options and encourages them to keep connected with the sites newsletter and facebook community<br>
 **Responsive on all devices** <br>
 
@@ -874,7 +974,6 @@ Displayed on 2 row, 1 column
 
 Next row
 - Privacy Policy
-- Terms of use
 
 ___
 ### **Feature 3 Home page**
@@ -1388,9 +1487,6 @@ ___
 ( accessed from the footer on all pages )
 - Privacy Policy displayed
 
-### **Feature 15 - Terms of use**
-( accessed from the footer on all pages )
-- Terms of use displayed
 
 ### **Feature 16 - Sign up to newsletter**
 ( accessed from the footer on all pages )
@@ -1401,6 +1497,7 @@ ___
 
 ## ii. Features remaining to implement (long term objectives): <a name="features-toimplement"></a>
 - Subscription model to commercial opportunity
+- Course delivery and content
 - Direct messaging
 - Rating on products
 - Reviews on products
@@ -1441,23 +1538,7 @@ User stories are tested with the current features. All user stories passed the t
 
 ___
 
-## v. Javascript testing:<a name="js-testing"></a>
-[Click on the link to go to Javascript testing](https://github.com/ccarabine/junior-dev-talent/blob/main/readme/docs/javascript_testing.md)
-
-
-___
-**I have disabled the following false errors:**
-
-script.js
-
-/*global bootstrap:false*/
-/*jshint esversion:6*/
-
-database url # nopep8
-
-___
-
-## vi. Unfixed Bugs <a name="unfixed-bugs"></a> 
+## v. Unfixed Bugs <a name="unfixed-bugs"></a> 
 No unfixed bugs
 ___
 
@@ -1607,7 +1688,7 @@ ___
 
 ___
 # 7. Acknowledgements <a name="acknowledgements"></a>
-A big thank you to my mentor Mo Shami for his help and guidance throughout my fifth project
+Thank you to my mentor Mo Shami for reviewing my project at the beginging and end of my fifth project
 
 Thank you to to the following:
 

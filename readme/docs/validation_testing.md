@@ -1,6 +1,6 @@
 # Code Validators and Website Analysis
 
-[Click here to go to the Readme file ](https://github.com/ccarabine/junior-dev-talent/blob/main/readme.md#validation-testing)
+[Click here to go to the Readme file ](https://github.com/ccarabine/junior-dev-talent/blob/main/README.md#validation-testing)
 
 The website's pages was tested against the following validators:
 

@@ -1,5 +1,5 @@
 ## User story testing
-[Click here to go to the Readme file ](https://github.com/ccarabine/junior-dev-talent/blob/main/readme.md#user-stories-testing)
+[Click here to go to the Readme file ](https://github.com/ccarabine/junior-dev-talent/blob/main/README.md#user-stories-testing)
 
 **All tests have been tested on google chrome inspect tools with small, medium and large devices**
 

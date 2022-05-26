@@ -1,6 +1,6 @@
 # Unit testing
 
-[Click here to go to the Readme file ](https://github.com/ccarabine/junior-dev-talent/blob/main/readme.md#automated-testing)
+[Click here to go to the Readme file ](https://github.com/ccarabine/junior-dev-talent/blob/main/README.md)
 
 For the BASKET app the following unit test were run on the views
 
