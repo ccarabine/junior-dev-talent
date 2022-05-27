@@ -639,3 +639,28 @@ Remove h-100
 ![screenshot of fix issue](../images/testing/user_story/issues/test23_fix.png)
 
 </details>
+
+___
+ 
+- **Issue 24 :** 
+
+    LG - Forum - the footer overlays the content
+
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of issue](../images/testing/user_story/issues/test24_issues.png)
+
+</details>
+
+<br>
+
+- **Corrective Action:** 
+Remove h-100
+
+<details>
+<summary>Click here to view issue fixed </summary>
+
+![screenshot of fix issue](../images/testing/user_story/issues/test24_fix.png)
+
+</details>
