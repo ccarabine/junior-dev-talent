@@ -664,3 +664,28 @@ Remove h-100
 ![screenshot of fix issue](../images/testing/user_story/issues/test24_fix.png)
 
 </details>
+
+___
+ 
+- **Issue 25 :** 
+
+    LG - The nav bar overflows the content on  the header on community forum and the growth hub due to logo increasing after 1250px
+
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of issue](../images/testing/user_story/issues/test25_issues.png)
+
+</details>
+
+<br>
+
+- **Corrective Action:** 
+Change media query to 1600px
+
+<details>
+<summary>Click here to view issue fixed </summary>
+
+![screenshot of fix issue](../images/testing/user_story/issues/test25_fix.png)
+
+</details>

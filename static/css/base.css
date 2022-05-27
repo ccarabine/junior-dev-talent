@@ -451,7 +451,7 @@ input[name='q']::placeholder {
     
 }
 /* reduce size of nav logo text */
-@media (max-width: 1250px) {
+@media (max-width: 1600px) {
     .jd-font{
         font-size:65%;
     }
