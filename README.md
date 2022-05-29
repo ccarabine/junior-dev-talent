@@ -1,10 +1,26 @@
 # Junior Dev Talent
 
-Overview - to complete
+Overview
 
-You can test the card payment functionality without making a purchase. Using the followiing card details:</br>
+Junior Dev Talent is an empowerment hub for junior/graduate developers enabling:
 
-4242 4242 4242 4242 - 424
+- the purchase of enablement courses, events and mentorship programs within the eCommerce ‘Growth Hub’ online store utilizing the stripe pay system.
+- the facility to upload their career profiles for hiring/recruitment managers to headhunt them for their first role.
+- the facility for hiring/recruitment managers to seek fresh new talent via skillset/keywords and connect with potential candidates for interview.
+- the facility to interact/engage and collaborate with likeminded people within a community forum, discussing topics from interview techniques to coding queries.
+
+The site has been created as an inclusive and positive environment to attract a wide target audience of junior developers, coders, software engineers and beginner programmers who have recently graduated, self-taught or embraced a career change and are now looking to land their first job within the industry.
+
+
+
+Notes</br>
+- To register as a hiring manager, log in, go to talent center, click start now, then click register
+- Admin users can add/update products in the store  and edit/delete posts and comments on the site. Email projectckcabs@gmail.com to request details</br>
+- Users can test the card payment functionality using the following card details: 4242 4242 4242 4242 CVC 424
+- This site was built for educational reasons and no orders will be fulfilled.
+ 
+ 
+
 
 
 **View the live site [here](https://junior-dev-talent.herokuapp.com/)**
@@ -40,15 +56,97 @@ ___
 
 ---
 
+### **Project goals:** </br>
+To create an engagement platform to provide support and enablement to junior/graduate developers/coders/software engineers/programmers seeking their first roles within the industry.
+
+- To enable users to securely purchase courses, events and mentorships to support their learning/development.
+- To enable guest users (not logged in) the facility to browse/purchase products in the eCommerce store only, with no access to the forum/talent center, therefore ensuring exclusivity/community feel for registered logged in users
+- To enable logged in users to join the community forum, edit, delete, and add their own posts/comments.
+- To enable logged in users to save billing details enabling future functionality to render their saved billing details during checkout process.
+- To enable logged in users to update their profile information and add skills for hiring/recruitment managers to view.
+- To enable hiring managers to register as a ‘hiring manager’ and access the talent center to seek/connect with potential job candidates
+- To enable hiring manager to find relevant candidates easily via specified skills and keywords.
+- To provide compelling, relevant, and engaging content to empower users, enhance SEO, encourage users to stay on the site for longer, revisit the site and ultimately boost sales conversion.
+- Generic branding to attract wide/diverse audience 
+- To enable all logged in users’ ability to update and delete their accounts when required 
+- To enable users to navigate with ease with the support of specified topics within community forum
+- To enable users’ easy navigation to the ‘Growth Hub’ eCommerce store, Community ‘forum’, and ‘Talent Centre’ 
+- External links to provide enhanced SEO/resources for users
+- That is intuitive to all users
+- To ensure a responsive site accessible to all, across multiple devices 
+
+### **Site owner goal:** </br>
+	
+- To enable users to navigate with ease, read compelling content with the option to ‘opt-in’ to be kept up to date with news/features- and interact in an engaging platform/environment where they can find support/resources during a daunting time at the start of their engineering/developer/programmer/coding career.
+- To generate revenue via the sale of products in the eCommerce store
+- To facilitate the future functionality of generating further revenue through the ‘Talent Centre’ recruitment tool 
+- To utilize content, keywords, and external links for enhanced SEO and optimized web traffic
+- The ability to add / update eCommerce content/data 
+- To receive automated payment for selling products in eCommerce store
+- For users to receive notification when an order has been placed
+- To provide a flawless customer journey and simple path to purchase
+- To encourage hiring managers to utilize the ‘Talent Centre’ career profile hub as a recruitment tool
+
+### **User goals:**</br>
+
+There will be 4 types of users with varying goals:
+1.	Guest (non-logged in user)
+2.	Registered (logged in user)
+3.	Admin
+4.	Hiring Manager
+
+**User Goals for all users:**</br>
+
+(Including guests who are visiting the site to browse content whilst not participating within the Community Chat Forum/Talent Centre. All users begin as a guest user)</br>
+
+- To find the platform intuitive and easy to use
+- To access the Growth Hub eCommerce online shop and make purchases
+- To find site accessible and responsive across multiple devices
+- To view privacy policy 
+- To feel assured the data they provide whilst registering as an account user is going to be kept secure
+- To find styling generic and aesthetically pleasing styling with a colour palette to suit all users and accessibility
+- To view eCommerce store’s products by category; Events, Courses, Mentorship
+- To sort products in eCommerce store by price, name, category
+- To view a product in more detail in the eCommerce store.
+- To add/amend product to basket in the eCommerce store.
+- To pay for products in the eCommerce store using their applicable payment card and receive a post order confirmation email
+- To opt-in for emailed newsletters to be kept abreast with information and news
+- To click on external links such as Junior Dev’s Talent Facebook profile and any other relevant resources.
+- To register for an account
+- To be compelled and engaged by content into converting from a guest user to a logged-in/Hiring Manager user.
+
+**Admin User Goals:**</br>
+Admin is required to manage the day-to-day running and management of the site.
+
+- To add, edit, delete posts & comments within the community chat forum, when necessary, for example – a safeguarding concern.
+- To add, edit, and delete products within the eCommerce Growth Hub online store
+- To login/logout of the site
+- To reset and change own password
+
+**Logged-in User Goals:**</br>
+Logged-in users are people taking an active part within either/both the Community Chat Forum and Talent Centre.
+- To register to view all posts in community chat forum
+- To add, edit and delete their own posts within Community chat forum
+- To save/render personal data/details during eCommerce checkout process in order to utilize it during future purchases, and therefore saving time.
+- To register and set up their own career profile 
+- To edit, add and delete career profile/account within Talent Centre.
+- To view time stamps on posts within the community chat forum in order to know when post/comments were created
+- To view community chat forum posts in chronological order and keep abreast with ‘hot topics’
+- To reset and change password
+- To login/logout of the site
+- To receive an email from a Hiring Manager
+
+**Hiring Manager Goals:**</br>
+Hiring Manager users are people wishing to search/headhunt potential candidates to place in job roles.
+- To register as a hiring manager in order to view all career profiles within the Talent Centre
+- To connect with potential candidates within the Talent Centre
+- To search for potential candidates quickly and efficiently by keywords and skillsets.
+- To reset and change password
+- To login/logout of the site
+
+___
+
 ## i. Strategy <a name="strategy"></a>
-
-### **Project goals:** 
-to do 
-
-### **Site owner goal:**
-to do 
-### **User goals:**
-to do 
 
 ### **Agile methodology - Kanban board:**
 I used github pages projects and issues for my kanban board for this project. I broke down the columns into "Backlog", "To do", "In progress" and "Done".</br>
@@ -60,7 +158,7 @@ At the end of the iteration i would review the spirit, any tasks that was not co
 Junior Dev’s ‘Growth Hub’ is a business to consumer (B2C) eCommerce platform created to sell relevant courses, events, and mentorships to a diverse target audience of junior developers, programmers, engineers, and coders of all demographics seeking compelling engagement, interaction, support and a job role within the industry.</br>
 
 ### **Web Marketing Strategy**
-**Deployed Search Engine Optimization (SEO) Techniques**</br>
+#### **Deployed Search Engine Optimization (SEO) Techniques**</br>
 To convert sales, I have implemented an initial marketing strategy utilizing both content marketing and Search Engine Optimization (SEO), plus chosen SEO techniques to improve audience as follows:<br>
 - All pages on the site can be reached by a link from another findable page
 - I have included a Meta description tag and a keyword tag within the application HTML

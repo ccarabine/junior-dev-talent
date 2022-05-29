@@ -5,7 +5,7 @@
 This is the process I took to deploy my project from its GitHub repository to Github Pages:
 1.	Open Github page up in the browser
 2.	Login using your username and password
-3.	Select "ccarabine/coronavirusforum" from repositories displayed on the left-hand side of screen
+3.	Select "ccarabine//junior-dev-talent" from repositories displayed on the left-hand side of screen
 4.	Click "settings” displayed in the navigation toolbar menu
 5.	Click “Pages” on the left-hand side navigation menu
 6.	Select "main" in the dropdown under the Source heading
