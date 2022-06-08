@@ -1645,7 +1645,17 @@ User stories are tested with the current features. All user stories passed the t
 ___
 
 ## v. Unfixed Bugs <a name="unfixed-bugs"></a> 
-No unfixed bugs
+
+I have pasted in content from microsoft word which included a list of bullets after doing the validation tests for some of the products in the e-commerce store.  Running the validation tests again on the product detail resulted in some errors in the description field.
+
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of unfix bug issues](readme/images/testing/unfix_bug.png)
+</details>
+
+I tried to remove the content and type in the text, but still resulted in the errors.  I tried also to look for the stray p tag.
+I contacted tutor support and they said that "the elements are not written as part of your code, but are being created by summernote.  Add it to your readme in the testing and bugs section"
 ___
 
 # 4. Deployment <a name="deployment"></a> 
