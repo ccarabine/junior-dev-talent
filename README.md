@@ -1646,7 +1646,7 @@ ___
 
 ## v. Unfixed Bugs <a name="unfixed-bugs"></a> 
 
-I have pasted in content from microsoft word which included a list of bullets after doing the validation tests for some of the products in the e-commerce store.  Running the validation tests again on the product detail resulted in some errors in the description field.
+1. I have pasted in content from microsoft word which included a list of bullets after doing the validation tests for some of the products in the e-commerce store.  Running the validation tests again on the product detail resulted in some errors in the description field.
 
 <details>
 <summary>Click here to view image </summary>
@@ -1656,6 +1656,25 @@ I have pasted in content from microsoft word which included a list of bullets af
 
 I tried to remove the content and type in the text, but still resulted in the errors.  I tried also to look for the stray p tag.
 I contacted tutor support and they said that "the elements are not written as part of your code, but are being created by summernote.  Add it to your readme in the testing and bugs section"
+
+2. In the Talent Center,  profiles should be paginated by 6. 2 profiles are displayed on page 1. On page 2, there are 6. 
+
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of unfix bug 2 issues](readme/images/testing/unfix_bug2.png)
+</details> 
+
+When a user searches for a candidate by keyword, e.g. django. displayed 6 profiles - Works ok. When a user searches for a candidate by keywork python, the profiles are paginated by 4
+
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of unfix bug 3 issues](readme/images/testing/unfix_bug3.png)
+</details> 
+
+I asked tutor support as well as investigating it myself and they couldn't get to the bottom of it.
+
 ___
 
 # 4. Deployment <a name="deployment"></a> 
