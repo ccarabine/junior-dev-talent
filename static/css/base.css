@@ -203,6 +203,14 @@ body {
 .close {
     color:white !important;
 }
+
+.close-black {
+    color:black !important;
+    background-color: white !important;
+    border:none;
+    font-size:2rem;
+}
+
 /* --- buttons --- */
 .shop-now-button:hover,
 .shop-now-button:active,
